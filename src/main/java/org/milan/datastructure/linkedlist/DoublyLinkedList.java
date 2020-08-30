@@ -22,10 +22,10 @@ public class DoublyLinkedList<E> {
     private int size;
 
     /**
-     * Constructs an empty list.
+     * Constructs an list with head
      */
-    public DoublyLinkedList() {
-        head = null;
+    public DoublyLinkedList(E data) {
+        this.head = new Node<>(data);
     }
 
     /**
@@ -251,7 +251,7 @@ public class DoublyLinkedList<E> {
         }
     }
 
-    static class Node<E> {
+    public static class Node<E> {
         E data;
 
         Node<E> prev;

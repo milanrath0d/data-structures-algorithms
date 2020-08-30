@@ -12,9 +12,6 @@ import java.util.TreeMap;
 
 /**
  * Problem: {@link @https://www.geeksforgeeks.org/print-binary-tree-vertical-order/}
- * <p>
- * Time complexity: O(nlogn)
- * Space complexity: O(n)
  *
  * @author Milan Rathod
  */
@@ -22,6 +19,9 @@ public class VerticalTraversal {
 
     /**
      * Vertical traversal of given tree using level order traversal
+     * <p>
+     * Time complexity: O(nlogn)
+     * Space complexity: O(n)
      *
      * @param root root of the binary tree
      * @return list of strings of vertical traversal
@@ -79,6 +79,63 @@ public class VerticalTraversal {
                 queue.add(ImmutablePair.of(root.right, hd + 1));
             }
         }
+    }
+
+    /**
+     * Vertical traversal of given tree
+     * <p>
+     * Time complexity: O(w*n) w is width of binary tree
+     * and n is number of nodes in binary tree
+     * <p>
+     * Worst case time complexity is O(n*n) when binary tree is complete tree
+     *
+     * @param root root of the binary tree
+     */
+    public void traverseV2(BinaryTree.Node root) {
+
+        Values value = new Values();
+
+        findMinMax(root, value, 0);
+
+        for (int line = value.min; line <= value.max; line++) {
+            traverseV2Util(root, line, 0);
+            System.out.println();
+        }
+    }
+
+    private void traverseV2Util(BinaryTree.Node node, int line, int hd) {
+        if (node == null) {
+            return;
+        }
+
+        if (hd == line) {
+            System.out.print(node.key + " ");
+        }
+
+        traverseV2Util(node.left, line, hd - 1);
+        traverseV2Util(node.right, line, hd + 1);
+    }
+
+    private void findMinMax(BinaryTree.Node node, Values value, int hd) {
+
+        // Base case
+        if (node == null) {
+            return;
+        }
+
+        if (hd < value.min) {
+            value.min = hd;
+        } else if (hd > value.max) {
+            value.max = hd;
+        }
+
+        // Recur for left and right subtrees
+        findMinMax(node.left, value, hd - 1);
+        findMinMax(node.right, value, hd + 1);
+    }
+
+    static class Values {
+        int min, max;
     }
 
 }

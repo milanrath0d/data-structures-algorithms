@@ -13,6 +13,7 @@ public class SegregateOddEvenNumbers {
      * Segregate all even numbers at start of array and odd numbers at the end of the array
      * <p>
      * Time complexity: O(n)
+     * Space complexity: O(1)
      * <p>
      * NOTE: Order of element might change in result
      *

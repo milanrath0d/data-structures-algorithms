@@ -35,4 +35,9 @@ public class VerticalTraversalTest {
 
         Assert.assertEquals(5, result.size());
     }
+
+    @Test
+    public void testTraverseV2() {
+        verticalTraversal.traverseV2(binaryTree.getRoot());
+    }
 }
