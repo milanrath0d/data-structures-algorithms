@@ -1,5 +1,8 @@
 package org.milan.datastructure.tree;
 
+import org.milan.datastructure.linkedlist.DoublyLinkedList;
+import org.milan.datastructure.linkedlist.LinkedList;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,6 +17,8 @@ public class VerticalSum {
 
     /**
      * Find vertical sum using in order recursive traversal
+     * <p>
+     * Using Hashing technique
      *
      * @param root root of the tree
      * @return List of sums for each vertical level
@@ -32,6 +37,74 @@ public class VerticalSum {
     }
 
     /**
+     * Find vertical sum using in order recursive traversal
+     * <p>
+     * Using doubly linked list
+     *
+     * @param root root of the tree
+     * @return List of sums for each vertical level
+     */
+    public List<Integer> sumUsingDLL(BinaryTree.Node root) {
+        // Base condition
+        if (root == null) {
+            throw new IllegalStateException("binary tree is empty");
+        }
+
+        // Create doubly linked list to store sum of vertical lines
+        DoublyLinkedList<Integer> dll = new DoublyLinkedList<>(0);
+
+        sumUsingDLLUtil(root, dll.getHead());
+
+        DoublyLinkedList.Node<Integer> temp = dll.getHead();
+
+        // Move temp to leftmost node
+        while (temp.getPrev() != null) {
+            temp = temp.getPrev();
+        }
+
+        List<Integer> outputList = new ArrayList<>();
+
+        // Iterating through each nodes
+        while (temp != null) {
+            outputList.add(temp.getData());
+            temp = temp.getNext();
+        }
+
+        return outputList;
+    }
+
+
+    /**
+     * Utility function to calculate vertical sum of each vertical lines
+     *
+     * @param root    root of the tree
+     * @param dllNode doubly linked list node
+     */
+    private void sumUsingDLLUtil(BinaryTree.Node root, DoublyLinkedList.Node<Integer> dllNode) {
+
+        // Add current node's data to its vertical line
+        dllNode.setData(dllNode.getData() + root.key);
+
+        // Recursively process for left subtree
+        if (root.left != null) {
+            if (dllNode.getPrev() == null) {
+                dllNode.setPrev(new DoublyLinkedList.Node<>(0));
+                dllNode.getPrev().setNext(dllNode);
+            }
+            sumUsingDLLUtil(root.left, dllNode.getPrev());
+        }
+
+        // Recursively process for right subtree
+        if (root.right != null) {
+            if (dllNode.getNext() == null) {
+                dllNode.setNext(new DoublyLinkedList.Node<>(0));
+                dllNode.getNext().setPrev(dllNode);
+            }
+            sumUsingDLLUtil(root.right, dllNode.getNext());
+        }
+    }
+
+    /**
      * Utility function to calculate vertical sum of each vertical lines
      *
      * @param root root of the tree
@@ -47,10 +120,11 @@ public class VerticalSum {
         sumUtil(root.getLeft(), hd - 1, map);
 
         // Update vertical sum for this horizontal distance
-        int previousSum = map.get(hd) == null ? 0 : map.get(hd);
+        int previousSum = map.getOrDefault(hd, 0);
         map.put(hd, previousSum + root.getKey());
 
         // Traverse right subtree with horizontal distance as hd + 1
         sumUtil(root.getRight(), hd + 1, map);
     }
+
 }

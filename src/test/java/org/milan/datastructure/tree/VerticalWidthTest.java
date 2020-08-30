@@ -4,23 +4,20 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Collections;
-import java.util.List;
+import static org.junit.Assert.*;
 
 /**
- * Test Class for {@link VerticalSum}
- *
  * @author Milan Rathod
  */
-public class VerticalSumTest {
+public class VerticalWidthTest {
 
     private BinaryTree binaryTree;
 
-    private VerticalSum verticalSum;
+    private VerticalWidth verticalWidth;
 
     @Before
     public void setup() {
-        verticalSum = new VerticalSum();
+        verticalWidth = new VerticalWidth();
         binaryTree = new BinaryTree(1);
         binaryTree.getRoot().left = new BinaryTree.Node(2);
         binaryTree.getRoot().right = new BinaryTree.Node(3);
@@ -31,20 +28,9 @@ public class VerticalSumTest {
     }
 
     @Test
-    public void testComputeSum() {
-        List<Integer> result = verticalSum.computeSum(binaryTree.getRoot());
+    public void testPreorderGet() {
+        int result = verticalWidth.get(binaryTree.getRoot());
 
-        Collections.sort(result);
-
-        Assert.assertEquals(result, List.of(2, 3, 4, 7, 12));
-    }
-
-    @Test
-    public void testSumUsingDLL() {
-        List<Integer> result = verticalSum.sumUsingDLL(binaryTree.getRoot());
-
-        Collections.sort(result);
-
-        Assert.assertEquals(result, List.of(2, 3, 4, 7, 12));
+        Assert.assertEquals(5, result);
     }
 }

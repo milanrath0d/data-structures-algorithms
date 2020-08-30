@@ -16,12 +16,12 @@ public class DeleteDuplicatesTest {
 
     @Test
     public void testReturnUniqueNumbers() {
-        DeleteDuplicates removeDup = new DeleteDuplicates();
+        DeleteDuplicates deleteDuplicates = new DeleteDuplicates();
         Integer[] original = {11, 2, 4, 2, 3};
         Integer[] finalValue = new Integer[original.length + 1];
 
         // method to return unique values
-        Integer[] unique = removeDup.returnUniqueNumbers(original, finalValue);
+        Integer[] unique = deleteDuplicates.returnUniqueNumbers(original, finalValue);
 
         Assert.assertEquals(4, Arrays.stream(unique).filter(Objects::nonNull).count());
     }

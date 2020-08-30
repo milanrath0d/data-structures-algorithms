@@ -32,7 +32,6 @@ public class ArrayKStacks {
         aks.pop(0);
         aks.pop(0);
         aks.pop(0);
-
     }
 
     public ArrayKStacks(int k, int n) {
