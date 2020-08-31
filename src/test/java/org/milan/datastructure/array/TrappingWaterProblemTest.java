@@ -1,15 +1,16 @@
 package org.milan.datastructure.array;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link TrappingWaterProblem}
  *
  * @author Milan Rathod
  */
-public class TrappingWaterProblemTest {
+class TrappingWaterProblemTest {
 
     private TrappingWaterProblem trappingWaterProblem;
 
@@ -19,8 +20,8 @@ public class TrappingWaterProblemTest {
 
     private int[] input3;
 
-    @Before
-    public void setUp() {
+    @BeforeEach
+    void setUp() {
         trappingWaterProblem = new TrappingWaterProblem();
         input1 = new int[]{2, 0, 2};
         input2 = new int[]{3, 0, 0, 2, 0, 4};
@@ -28,29 +29,29 @@ public class TrappingWaterProblemTest {
     }
 
     @Test
-    public void testMaxWater() {
-        Assert.assertEquals(2, trappingWaterProblem.maxWater(input1));
+    void testMaxWater() {
+        assertEquals(2, trappingWaterProblem.maxWater(input1));
 
-        Assert.assertEquals(10, trappingWaterProblem.maxWater(input2));
+        assertEquals(10, trappingWaterProblem.maxWater(input2));
 
-        Assert.assertEquals(6, trappingWaterProblem.maxWater(input3));
+        assertEquals(6, trappingWaterProblem.maxWater(input3));
     }
 
     @Test
-    public void testMaxWaterV2() {
-        Assert.assertEquals(2, trappingWaterProblem.maxWaterV2(input1));
+    void testMaxWaterV2() {
+        assertEquals(2, trappingWaterProblem.maxWaterV2(input1));
 
-        Assert.assertEquals(10, trappingWaterProblem.maxWaterV2(input2));
+        assertEquals(10, trappingWaterProblem.maxWaterV2(input2));
 
-        Assert.assertEquals(6, trappingWaterProblem.maxWaterV2(input3));
+        assertEquals(6, trappingWaterProblem.maxWaterV2(input3));
     }
 
     @Test
-    public void testMaxWaterV3() {
-        Assert.assertEquals(2, trappingWaterProblem.maxWaterV3(input1));
+    void testMaxWaterV3() {
+        assertEquals(2, trappingWaterProblem.maxWaterV3(input1));
 
-        Assert.assertEquals(10, trappingWaterProblem.maxWaterV3(input2));
+        assertEquals(10, trappingWaterProblem.maxWaterV3(input2));
 
-        Assert.assertEquals(6, trappingWaterProblem.maxWaterV3(input3));
+        assertEquals(6, trappingWaterProblem.maxWaterV3(input3));
     }
 }

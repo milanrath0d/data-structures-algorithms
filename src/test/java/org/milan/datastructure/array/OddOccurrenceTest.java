@@ -1,38 +1,39 @@
 package org.milan.datastructure.array;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link OddOccurrence}
  *
  * @author Milan Rathod
  */
-public class OddOccurrenceTest {
+class OddOccurrenceTest {
 
     private OddOccurrence oddOccurrence;
 
     private int[] inputArray;
 
-    @Before
-    public void setUp() {
+    @BeforeEach
+    void setUp() {
         oddOccurrence = new OddOccurrence();
 
         inputArray = new int[]{1, 2, 3, 2, 3, 1, 3};
     }
 
     @Test
-    public void findUsingHashing() {
+    void findUsingHashing() {
         int result = oddOccurrence.findUsingHashing(inputArray);
 
-        Assert.assertEquals(3, result);
+        assertEquals(3, result);
     }
 
     @Test
-    public void findUsingXOR() {
+    void findUsingXOR() {
         int result = oddOccurrence.findUsingXOR(inputArray);
 
-        Assert.assertEquals(3, result);
+        assertEquals(3, result);
     }
 }

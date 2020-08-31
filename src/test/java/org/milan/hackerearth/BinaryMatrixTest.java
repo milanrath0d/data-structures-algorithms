@@ -1,17 +1,18 @@
 package org.milan.hackerearth;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link BinaryMatrix}
  *
  * @author Milan Rathod
  */
-public class BinaryMatrixTest {
+class BinaryMatrixTest {
 
     @Test
-    public void testMaxRowValue() {
+    void testMaxRowValue() {
         BinaryMatrix binaryMatrix = new BinaryMatrix();
 
         int result = binaryMatrix.maxRowValue(new int[][]{
@@ -20,6 +21,6 @@ public class BinaryMatrixTest {
                 {0, 0, 1, 0},
                 {0, 0, 1, 1}});
 
-        Assert.assertEquals(2, result);
+        assertEquals(2, result);
     }
 }

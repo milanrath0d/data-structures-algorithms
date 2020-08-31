@@ -1,20 +1,22 @@
 package org.milan.datastructure.queue;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayDeque;
+import java.util.Objects;
 import java.util.Queue;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link InterleaveFirstHalfWithSecondHalf}
  *
  * @author Milan Rathod
  */
-public class InterleaveFirstHalfWithSecondHalfTest {
+class InterleaveFirstHalfWithSecondHalfTest {
 
     @Test
-    public void testInterleaveQueue() {
+    void testInterleaveQueue() {
         Queue<Integer> queue = new ArrayDeque<>();
 
         queue.add(10);
@@ -26,9 +28,9 @@ public class InterleaveFirstHalfWithSecondHalfTest {
 
         interleaveFirstHalfWithSecondHalf.interleaveQueue(queue);
 
-        Assert.assertEquals(10, queue.poll().intValue());
-        Assert.assertEquals(12, queue.poll().intValue());
-        Assert.assertEquals(11, queue.poll().intValue());
-        Assert.assertEquals(13, queue.poll().intValue());
+        assertEquals(10, Objects.requireNonNull(queue.poll()).intValue());
+        assertEquals(12, Objects.requireNonNull(queue.poll()).intValue());
+        assertEquals(11, Objects.requireNonNull(queue.poll()).intValue());
+        assertEquals(13, Objects.requireNonNull(queue.poll()).intValue());
     }
 }

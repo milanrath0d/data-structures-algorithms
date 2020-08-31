@@ -1,14 +1,13 @@
 package org.milan.datastructure.graph;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-public class VisitedNodesTest {
+class VisitedNodesTest {
 
     @Test
-    public void find() {
+    void find() {
         VisitedNodes visitedNodes = new VisitedNodes();
 
         int N = 6;
@@ -19,6 +18,6 @@ public class VisitedNodesTest {
 
         int[] result = visitedNodes.find(N, M, priorities, edges);
 
-        Assert.assertArrayEquals(new int[]{31, 5, 14, 20, 37, 11}, result);
+        assertArrayEquals(new int[]{31, 5, 14, 20, 37, 11}, result);
     }
 }

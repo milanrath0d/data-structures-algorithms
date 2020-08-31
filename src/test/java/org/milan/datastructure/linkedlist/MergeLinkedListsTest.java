@@ -1,15 +1,16 @@
 package org.milan.datastructure.linkedlist;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link MergeLinkedLists}
  *
  * @author Milan Rathod
  */
-public class MergeLinkedListsTest {
+class MergeLinkedListsTest {
 
     private LinkedList<Integer> firstLinkedList;
 
@@ -17,8 +18,8 @@ public class MergeLinkedListsTest {
 
     private MergeLinkedLists mergeLinkedLists;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         firstLinkedList = new LinkedList<>(new LinkedList.Node<>(5));
 
         firstLinkedList.insertAtEnd(10);
@@ -35,34 +36,32 @@ public class MergeLinkedListsTest {
     }
 
     @Test
-    public void testMergeByIterative() {
+    void testMergeByIterative() {
         LinkedList.Node<Integer> mergedHead = mergeLinkedLists.mergeByIterative(firstLinkedList.getHead(), secondLinkedList.getHead());
 
         LinkedList<Integer> mergedLinkedList = new LinkedList<>(mergedHead);
 
-        Assert.assertEquals(8, mergedLinkedList.getSize());
+        assertEquals(8, mergedLinkedList.getSize());
 
-        Assert.assertEquals(3, mergedLinkedList.searchByIndex(0).getData().intValue());
+        assertEquals(3, mergedLinkedList.searchByIndex(0).getData().intValue());
 
-        Assert.assertEquals(10, mergedLinkedList.searchByIndex(3).getData().intValue());
+        assertEquals(10, mergedLinkedList.searchByIndex(3).getData().intValue());
 
-        Assert.assertEquals(30, mergedLinkedList.searchByIndex(7).getData().intValue());
+        assertEquals(30, mergedLinkedList.searchByIndex(7).getData().intValue());
     }
 
     @Test
-    public void testMergeByRecursive() {
+    void testMergeByRecursive() {
         LinkedList.Node<Integer> mergedHead = mergeLinkedLists.mergeByRecursive(firstLinkedList.getHead(), secondLinkedList.getHead());
 
         LinkedList<Integer> mergedLinkedList = new LinkedList<>(mergedHead);
 
-        Assert.assertEquals(8, mergedLinkedList.getSize());
+        assertEquals(8, mergedLinkedList.getSize());
 
-        Assert.assertEquals(3, mergedLinkedList.searchByIndex(0).getData().intValue());
+        assertEquals(3, mergedLinkedList.searchByIndex(0).getData().intValue());
 
-        Assert.assertEquals(10, mergedLinkedList.searchByIndex(3).getData().intValue());
+        assertEquals(10, mergedLinkedList.searchByIndex(3).getData().intValue());
 
-        Assert.assertEquals(30, mergedLinkedList.searchByIndex(7).getData().intValue());
-
-
+        assertEquals(30, mergedLinkedList.searchByIndex(7).getData().intValue());
     }
 }

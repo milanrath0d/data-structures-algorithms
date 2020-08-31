@@ -1,38 +1,39 @@
 package org.milan.algorithm.sorting;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
  * Test Class for {@link BubbleSort}
  *
  * @author Milan Rathod
  */
-public class BubbleSortTest {
+class BubbleSortTest {
 
     private int[] inputArray;
 
     private BubbleSort bubbleSort;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         inputArray = new int[]{23, 12, 3, 56, 77, 44, 13, 99};
 
         bubbleSort = new BubbleSort();
     }
 
     @Test
-    public void testSort() {
+    void testSort() {
         int[] result = bubbleSort.sort(inputArray);
 
-        Assert.assertArrayEquals(new int[]{3, 12, 13, 23, 44, 56, 77, 99}, result);
+        assertArrayEquals(new int[]{3, 12, 13, 23, 44, 56, 77, 99}, result);
     }
 
     @Test
-    public void testRecursiveSort() {
+    void testRecursiveSort() {
         bubbleSort.recursiveSort(inputArray, inputArray.length);
 
-        Assert.assertArrayEquals(new int[]{3, 12, 13, 23, 44, 56, 77, 99}, inputArray);
+        assertArrayEquals(new int[]{3, 12, 13, 23, 44, 56, 77, 99}, inputArray);
     }
 }

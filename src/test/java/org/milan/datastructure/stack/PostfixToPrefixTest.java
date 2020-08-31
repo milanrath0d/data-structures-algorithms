@@ -1,19 +1,20 @@
 package org.milan.datastructure.stack;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class {@link PostfixToPrefix}
  *
  * @author Milan Rathod
  */
-public class PostfixToPrefixTest {
+class PostfixToPrefixTest {
 
     @Test
-    public void testConversion() {
+    void testConversion() {
         PostfixToPrefix postfixToPrefix = new PostfixToPrefix();
 
-        Assert.assertEquals("*+AB-CD", postfixToPrefix.conversion("AB+CD-*"));
+        assertEquals("*+AB-CD", postfixToPrefix.conversion("AB+CD-*"));
     }
 }

@@ -1,21 +1,22 @@
 package org.milan.datastructure.linkedlist;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link Flattening}
  *
  * @author Milan Rathod
  */
-public class FlatteningTest {
+class FlatteningTest {
 
     @Test
-    public void testFlatten() {
+    void testFlatten() {
         Flattening.Node<Integer> head = new Flattening.Node<>(5);
 
         // First down list
@@ -51,6 +52,6 @@ public class FlatteningTest {
             newHead = newHead.down;
         }
 
-        Assert.assertEquals(result, Arrays.asList(5, 7, 8, 10, 19, 20, 22, 30, 50));
+        assertEquals(result, Arrays.asList(5, 7, 8, 10, 19, 20, 22, 30, 50));
     }
 }

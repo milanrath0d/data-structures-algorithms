@@ -1,17 +1,18 @@
 package org.milan.datastructure.tree;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link ConvertBinaryTree2SumTree}
  *
  * @author Milan Rathod
  */
-public class ConvertBinaryTree2SumTreeTest {
+class ConvertBinaryTree2SumTreeTest {
 
     @Test
-    public void testConvert() {
+    void testConvert() {
         ConvertBinaryTree2SumTree convertBinaryTree2SumTree = new ConvertBinaryTree2SumTree();
 
         BinaryTree binaryTree = new BinaryTree(10);
@@ -24,8 +25,8 @@ public class ConvertBinaryTree2SumTreeTest {
 
         convertBinaryTree2SumTree.convert(binaryTree.getRoot());
 
-        Assert.assertEquals(20, binaryTree.getRoot().key);
-        Assert.assertEquals(4, binaryTree.getRoot().left.key);
-        Assert.assertEquals(12, binaryTree.getRoot().right.key);
+        assertEquals(20, binaryTree.getRoot().key);
+        assertEquals(4, binaryTree.getRoot().left.key);
+        assertEquals(12, binaryTree.getRoot().right.key);
     }
 }

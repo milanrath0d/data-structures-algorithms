@@ -1,19 +1,20 @@
 package org.milan.datastructure.linkedlist;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link MiddleElement}
  *
  * @author Milan Rathod
  */
-public class MiddleElementTest {
+class MiddleElementTest {
 
     private LinkedList<Integer> linkedList;
 
     @Test
-    public void testOddLengthLinkedList() {
+    void testOddLengthLinkedList() {
         linkedList = new LinkedList<>(new LinkedList.Node<>(1));
 
         linkedList.insertAtEnd(2);
@@ -25,15 +26,15 @@ public class MiddleElementTest {
 
         LinkedList.Node<Integer> result = middleElement.find(linkedList.getHead());
 
-        Assert.assertEquals(3, result.data.intValue());
+        assertEquals(3, result.data.intValue());
 
         result = middleElement.findV2(linkedList.getHead());
 
-        Assert.assertEquals(3, result.data.intValue());
+        assertEquals(3, result.data.intValue());
     }
 
     @Test
-    public void testEvenLengthLinkedList() {
+    void testEvenLengthLinkedList() {
         linkedList = new LinkedList<>(new LinkedList.Node<>(1));
 
         linkedList.insertAtEnd(2);
@@ -46,10 +47,10 @@ public class MiddleElementTest {
 
         LinkedList.Node<Integer> result = middleElement.find(linkedList.getHead());
 
-        Assert.assertEquals(4, result.data.intValue());
+        assertEquals(4, result.data.intValue());
 
         result = middleElement.findV2(linkedList.getHead());
 
-        Assert.assertEquals(4, result.data.intValue());
+        assertEquals(4, result.data.intValue());
     }
 }

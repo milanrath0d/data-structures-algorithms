@@ -1,25 +1,26 @@
 package org.milan.datastructure.tree;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link VerticalSum}
  *
  * @author Milan Rathod
  */
-public class VerticalSumTest {
+class VerticalSumTest {
 
     private BinaryTree binaryTree;
 
     private VerticalSum verticalSum;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         verticalSum = new VerticalSum();
         binaryTree = new BinaryTree(1);
         binaryTree.getRoot().left = new BinaryTree.Node(2);
@@ -31,20 +32,20 @@ public class VerticalSumTest {
     }
 
     @Test
-    public void testComputeSum() {
+    void testComputeSum() {
         List<Integer> result = verticalSum.computeSum(binaryTree.getRoot());
 
         Collections.sort(result);
 
-        Assert.assertEquals(result, List.of(2, 3, 4, 7, 12));
+        assertEquals(result, List.of(2, 3, 4, 7, 12));
     }
 
     @Test
-    public void testSumUsingDLL() {
+    void testSumUsingDLL() {
         List<Integer> result = verticalSum.sumUsingDLL(binaryTree.getRoot());
 
         Collections.sort(result);
 
-        Assert.assertEquals(result, List.of(2, 3, 4, 7, 12));
+        assertEquals(result, List.of(2, 3, 4, 7, 12));
     }
 }

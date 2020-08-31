@@ -1,17 +1,18 @@
 package org.milan.datastructure.linkedlist;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link RemoveDuplicates}
  *
  * @author Milan Rathod
  */
-public class RemoveDuplicatesTest {
+class RemoveDuplicatesTest {
 
     @Test
-    public void removeDuplicatesSorted() {
+    void removeDuplicatesSorted() {
         LinkedList<Integer> linkedList = new LinkedList<>(new LinkedList.Node<>(1));
         linkedList.insertAtEnd(2);
         linkedList.insertAtEnd(2);
@@ -26,11 +27,11 @@ public class RemoveDuplicatesTest {
 
         linkedList = new LinkedList<>(newHead);
 
-        Assert.assertEquals(4, linkedList.getSize());
+        assertEquals(4, linkedList.getSize());
     }
 
     @Test
-    public void removeDuplicatesUnsorted() {
+    void removeDuplicatesUnsorted() {
         LinkedList<Integer> linkedList = new LinkedList<>(new LinkedList.Node<>(1));
         linkedList.insertAtEnd(2);
         linkedList.insertAtEnd(3);
@@ -45,6 +46,6 @@ public class RemoveDuplicatesTest {
 
         linkedList = new LinkedList<>(newHead);
 
-        Assert.assertEquals(4, linkedList.getSize());
+        assertEquals(4, linkedList.getSize());
     }
 }

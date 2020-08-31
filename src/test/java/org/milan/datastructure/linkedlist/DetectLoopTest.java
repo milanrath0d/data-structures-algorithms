@@ -1,24 +1,24 @@
 package org.milan.datastructure.linkedlist;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 /**
  * Test Class for {@link DetectLoop}
  *
  * @author Milan Rathod
  */
-public class DetectLoopTest {
+class DetectLoopTest {
 
     private LinkedList<Integer> linkedList;
 
     private DetectLoop detectLoop;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         linkedList = new LinkedList<>(new LinkedList.Node<>(5));
 
         linkedList.insertAfterSpecifiedPosition(10, 0);
@@ -28,12 +28,12 @@ public class DetectLoopTest {
     }
 
     @Test
-    public void testDetectLoop_LoopExists() {
-        assertNull(null, detectLoop.detect(linkedList.getHead()));
+    void testDetectLoop_LoopExists() {
+        assertNull(detectLoop.detect(linkedList.getHead()));
     }
 
     @Test
-    public void testDetectLoop_LoopNotExists() {
+    void testDetectLoop_LoopNotExists() {
         linkedList.insertAtEnd(20);
 
         LinkedList.Node<Integer> node = linkedList.searchByIndex(2);

@@ -1,17 +1,18 @@
 package org.milan.datastructure.linkedlist;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link SwapNodes}
  *
  * @author Milan Rathod
  */
-public class SwapNodesTest {
+class SwapNodesTest {
 
     @Test
-    public void testSwap() {
+    void testSwap() {
         LinkedList<Integer> linkedList = new LinkedList<>(new LinkedList.Node<>(1));
         linkedList.insertAtEnd(7);
         linkedList.insertAtEnd(2);
@@ -25,8 +26,8 @@ public class SwapNodesTest {
 
         linkedList = new LinkedList<>(newHead);
 
-        Assert.assertEquals(4, linkedList.searchByIndex(2).getData().intValue());
+        assertEquals(4, linkedList.searchByIndex(2).getData().intValue());
 
-        Assert.assertEquals(2, linkedList.searchByIndex(4).getData().intValue());
+        assertEquals(2, linkedList.searchByIndex(4).getData().intValue());
     }
 }

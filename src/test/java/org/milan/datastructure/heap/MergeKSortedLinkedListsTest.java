@@ -1,19 +1,20 @@
 package org.milan.datastructure.heap;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.milan.datastructure.linkedlist.LinkedList;
 
 import java.util.Arrays;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link MergeKSortedLinkedLists}
  *
  * @author Milan Rathod
  */
-public class MergeKSortedLinkedListsTest {
+class MergeKSortedLinkedListsTest {
 
     private LinkedList<Integer> linkedList1;
 
@@ -21,8 +22,8 @@ public class MergeKSortedLinkedListsTest {
 
     private LinkedList<Integer> linkedList3;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         linkedList1 = new LinkedList<>(new LinkedList.Node<>(2));
         linkedList1.insertAtEnd(6);
         linkedList1.insertAtEnd(12);
@@ -40,13 +41,13 @@ public class MergeKSortedLinkedListsTest {
     }
 
     @Test
-    public void testMerge() {
+    void testMerge() {
         MergeKSortedLinkedLists mergeKSortedLinkedLists = new MergeKSortedLinkedLists();
 
         List<LinkedList.Node<Integer>> lists = Arrays.asList(linkedList1.getHead(), linkedList2.getHead(), linkedList3.getHead());
 
         LinkedList.Node<Integer> mergedHead = mergeKSortedLinkedLists.merge(lists, 3);
 
-        Assert.assertEquals(1, mergedHead.getData().intValue());
+        assertEquals(1, mergedHead.getData().intValue());
     }
 }

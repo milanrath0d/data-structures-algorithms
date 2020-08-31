@@ -1,22 +1,23 @@
 package org.milan.datastructure.queue;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.milan.exception.EmptyQueueException;
 import org.milan.exception.FullQueueException;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Test Class for {@link FixedSizeArrayQueue}
  *
  * @author Milan Rathod
  */
-public class FixedSizeArrayQueueTest {
+class FixedSizeArrayQueueTest {
 
     @Test
-    public void testQueueOperations() {
+    void testQueueOperations() {
         FixedSizeArrayQueue queue = new FixedSizeArrayQueue(4);
 
-        Assert.assertTrue(queue.isEmpty());
+        assertTrue(queue.isEmpty());
 
         // Enqueue operations
         queue.enqueue(4);
@@ -24,39 +25,39 @@ public class FixedSizeArrayQueueTest {
         queue.enqueue(3);
         queue.enqueue(1);
 
-        Assert.assertTrue(queue.isFull());
+        assertTrue(queue.isFull());
 
-        Assert.assertEquals(4, queue.dequeue());
-        Assert.assertEquals(2, queue.dequeue());
-        Assert.assertEquals(3, queue.dequeue());
-        Assert.assertEquals(1, queue.dequeue());
+        assertEquals(4, queue.dequeue());
+        assertEquals(2, queue.dequeue());
+        assertEquals(3, queue.dequeue());
+        assertEquals(1, queue.dequeue());
 
-        Assert.assertTrue(queue.isEmpty());
+        assertTrue(queue.isEmpty());
     }
 
-    @Test(expected = FullQueueException.class)
-    public void testFullQueueException() {
+    @Test
+    void testFullQueueException() {
         FixedSizeArrayQueue queue = new FixedSizeArrayQueue(2);
 
-        Assert.assertTrue(queue.isEmpty());
+        assertTrue(queue.isEmpty());
 
         // Enqueue operations
         queue.enqueue(4);
         queue.enqueue(2);
 
-        Assert.assertTrue(queue.isFull());
+        assertTrue(queue.isFull());
 
-        // Should throw FullQueueException
-        queue.enqueue(3);
+        assertThrows(FullQueueException.class, () -> {
+            queue.enqueue(3);
+        });
     }
 
-    @Test(expected = EmptyQueueException.class)
-    public void testEmptyQueueException() {
+    @Test
+    void testEmptyQueueException() {
         FixedSizeArrayQueue queue = new FixedSizeArrayQueue(2);
 
-        Assert.assertTrue(queue.isEmpty());
+        assertTrue(queue.isEmpty());
 
-        // Should throw EmptyQueueException
-        queue.dequeue();
+        assertThrows(EmptyQueueException.class, queue::dequeue);
     }
 }

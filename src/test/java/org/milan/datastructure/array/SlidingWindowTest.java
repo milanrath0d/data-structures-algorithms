@@ -1,34 +1,34 @@
 package org.milan.datastructure.array;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link SlidingWindow}
  *
  * @author Milan Rathod
  */
-public class SlidingWindowTest {
+class SlidingWindowTest {
 
     private int[] input;
 
     private SlidingWindow slidingWindow;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         input = new int[]{1, 2, 3, 1, 4, 5, 2, 3, 6};
 
         slidingWindow = new SlidingWindow();
     }
 
     @Test
-    public void testGetAllMax() {
+    void testGetAllMax() {
         List<Integer> result = slidingWindow.getAllMax(input, 3);
 
-        Assert.assertEquals(result, List.of(3, 3, 4, 5, 5, 5, 6));
-
+        assertEquals(result, List.of(3, 3, 4, 5, 5, 5, 6));
     }
 }

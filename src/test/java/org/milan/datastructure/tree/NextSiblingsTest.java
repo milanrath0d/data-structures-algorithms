@@ -1,20 +1,21 @@
 package org.milan.datastructure.tree;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link NextSiblings}
  *
  * @author Milan Rathod
  */
-public class NextSiblingsTest {
+class NextSiblingsTest {
 
     private CustomNode root;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         root = new CustomNode(1);
         root.left = new CustomNode(2);
         root.right = new CustomNode(3);
@@ -25,13 +26,12 @@ public class NextSiblingsTest {
     }
 
     @Test
-    public void testUpdateSiblings() {
+    void testUpdateSiblings() {
         NextSiblings nextSiblings = new NextSiblings();
 
         CustomNode updatedRoot = nextSiblings.updateSiblings(root);
 
-        Assert.assertEquals(updatedRoot.left.nextSibling.data, 3);
-        Assert.assertEquals(updatedRoot.left.right.nextSibling.data, 6);
-
+        assertEquals(3, updatedRoot.left.nextSibling.data);
+        assertEquals(6, updatedRoot.left.right.nextSibling.data);
     }
 }

@@ -1,28 +1,26 @@
 package org.milan.datastructure.linkedlist;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Test Class for {@link DoublyLinkedList}
  *
  * @author Milan Rathod
  */
-public class DoublyLinkedListTest {
+class DoublyLinkedListTest {
 
     private DoublyLinkedList<Integer> doublyLinkedList;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         doublyLinkedList = new DoublyLinkedList<>(new DoublyLinkedList.Node<>(5));
     }
 
     @Test
-    public void testInsertBeforeHead() {
+    void testInsertBeforeHead() {
         assertEquals(1, doublyLinkedList.getSize());
 
         doublyLinkedList.insertBeforeHead(10);
@@ -33,7 +31,7 @@ public class DoublyLinkedListTest {
     }
 
     @Test
-    public void testInsertAfterSpecifiedNode() {
+    void testInsertAfterSpecifiedNode() {
         assertEquals(1, doublyLinkedList.getSize());
 
         doublyLinkedList.insertAfterSpecifiedNode(5, 10);
@@ -44,7 +42,7 @@ public class DoublyLinkedListTest {
     }
 
     @Test
-    public void testInsertAfterSpecifiedPosition() {
+    void testInsertAfterSpecifiedPosition() {
         assertEquals(1, doublyLinkedList.getSize());
 
         doublyLinkedList.insertAfterSpecifiedPosition(10, 0);
@@ -55,7 +53,7 @@ public class DoublyLinkedListTest {
     }
 
     @Test
-    public void testInsertAtEnd() {
+    void testInsertAtEnd() {
         assertEquals(1, doublyLinkedList.getSize());
 
         doublyLinkedList.insertAtEnd(10);
@@ -66,7 +64,7 @@ public class DoublyLinkedListTest {
     }
 
     @Test
-    public void testDeleteNodeByKey() {
+    void testDeleteNodeByKey() {
         doublyLinkedList.insertAtEnd(10);
 
         assertEquals(2, doublyLinkedList.getSize());
@@ -79,7 +77,7 @@ public class DoublyLinkedListTest {
     }
 
     @Test
-    public void testDeleteNodeByPosition() {
+    void testDeleteNodeByPosition() {
         doublyLinkedList.insertAtEnd(10);
 
         assertEquals(2, doublyLinkedList.getSize());

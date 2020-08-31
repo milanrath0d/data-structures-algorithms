@@ -1,56 +1,57 @@
 package org.milan.datastructure.array;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Add Description
+ * Test class for {@link RotationCount}
  *
  * @author Milan Rathod
  */
-public class RotationCountTest {
+class RotationCountTest {
 
     private RotationCount rotationCount;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         rotationCount = new RotationCount();
     }
 
     @Test
-    public void testFind_Rotated() {
+    void testFind_Rotated() {
         int[] input = new int[]{15, 18, 2, 3, 6, 12};
 
         int result = rotationCount.find(input);
 
-        Assert.assertEquals(2, result);
+        assertEquals(2, result);
     }
 
     @Test
-    public void testFind_NotRotated() {
+    void testFind_NotRotated() {
         int[] input = new int[]{7, 9, 11, 12, 15};
 
         int result = rotationCount.find(input);
 
-        Assert.assertEquals(0, result);
+        assertEquals(0, result);
     }
 
     @Test
-    public void testFindUsingBinarySearch_Rotated() {
+    void testFindUsingBinarySearch_Rotated() {
         int[] input = new int[]{15, 18, 2, 3, 6, 12};
 
         int result = rotationCount.findUsingBinarySearch(input);
 
-        Assert.assertEquals(2, result);
+        assertEquals(2, result);
     }
 
     @Test
-    public void testFindUsingBinarySearch_NotRotated() {
+    void testFindUsingBinarySearch_NotRotated() {
         int[] input = new int[]{7, 9, 11, 12, 15};
 
         int result = rotationCount.findUsingBinarySearch(input);
 
-        Assert.assertEquals(0, result);
+        assertEquals(0, result);
     }
 }

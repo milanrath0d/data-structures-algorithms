@@ -1,24 +1,23 @@
 package org.milan.datastructure.linkedlist;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link CloneList}
  *
  * @author Milan Rathod
  */
-public class CloneListTest {
+class CloneListTest {
 
     private DoublyLinkedList<Integer> doublyLinkedList;
 
     private CloneList cloneList;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         doublyLinkedList = new DoublyLinkedList<>(new DoublyLinkedList.Node<>(5));
 
         doublyLinkedList.insertAtEnd(10);
@@ -31,16 +30,16 @@ public class CloneListTest {
     }
 
     @Test
-    public void testClone() {
+    void testClone() {
         DoublyLinkedList<Integer> clonedList = cloneList.clone(doublyLinkedList.getHead());
 
-        Assert.assertEquals(4, clonedList.getSize());
+        assertEquals(4, clonedList.getSize());
     }
 
     @Test
-    public void testCloneV2() {
+    void testCloneV2() {
         DoublyLinkedList<Integer> clonedList = cloneList.cloneV2(doublyLinkedList.getHead());
 
-        Assert.assertEquals(4, clonedList.getSize());
+        assertEquals(4, clonedList.getSize());
     }
 }

@@ -1,20 +1,21 @@
 package org.milan.datastructure.tree;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Test Class for {@link BinaryTree}
  *
  * @author Milan Rathod
  */
-public class BinaryTreeTest {
+class BinaryTreeTest {
 
     private BinaryTree binaryTree;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         binaryTree = new BinaryTree(4);
         binaryTree.getRoot().left = new BinaryTree.Node(7);
         binaryTree.getRoot().right = new BinaryTree.Node(5);
@@ -24,57 +25,57 @@ public class BinaryTreeTest {
     }
 
     @Test
-    public void testFindMaximumElement() {
+    void testFindMaximumElement() {
         int result = binaryTree.findMaximumElement(binaryTree.getRoot());
 
-        Assert.assertEquals(11, result);
+        assertEquals(11, result);
     }
 
     @Test
-    public void testFindMaximumElementIterative() {
+    void testFindMaximumElementIterative() {
         int result = binaryTree.findMaximumElementIterative(binaryTree.getRoot());
 
-        Assert.assertEquals(11, result);
+        assertEquals(11, result);
     }
 
     @Test
-    public void testFindMinimumElement() {
+    void testFindMinimumElement() {
         int result = binaryTree.findMinimumElement(binaryTree.getRoot());
 
-        Assert.assertEquals(1, result);
+        assertEquals(1, result);
     }
 
     @Test
-    public void testIsPresent() {
-        Assert.assertTrue(binaryTree.isPresent(binaryTree.getRoot(), 11));
+    void testIsPresent() {
+        assertTrue(binaryTree.isPresent(binaryTree.getRoot(), 11));
 
-        Assert.assertFalse(binaryTree.isPresent(binaryTree.getRoot(), 3));
+        assertFalse(binaryTree.isPresent(binaryTree.getRoot(), 3));
     }
 
     @Test
-    public void testIsPresentIterative() {
-        Assert.assertTrue(binaryTree.isPresentIterative(binaryTree.getRoot(), 11));
+    void testIsPresentIterative() {
+        assertTrue(binaryTree.isPresentIterative(binaryTree.getRoot(), 11));
 
-        Assert.assertFalse(binaryTree.isPresentIterative(binaryTree.getRoot(), 3));
+        assertFalse(binaryTree.isPresentIterative(binaryTree.getRoot(), 3));
     }
 
     @Test
-    public void testMirrorTreeIterative() {
+    void testMirrorTreeIterative() {
         binaryTree.mirrorTreeIterative(binaryTree.getRoot());
 
-        Assert.assertTrue(binaryTree.isIdentical(binaryTree.getRoot(), getMirrorBinaryTree().getRoot()));
+        assertTrue(binaryTree.isIdentical(binaryTree.getRoot(), getMirrorBinaryTree().getRoot()));
     }
 
     @Test
-    public void testMirrorTree() {
+    void testMirrorTree() {
         BinaryTree.Node mirrorTreeRoot = binaryTree.mirrorTree(binaryTree.getRoot());
 
-        Assert.assertTrue(binaryTree.isIdentical(mirrorTreeRoot, getMirrorBinaryTree().getRoot()));
+        assertTrue(binaryTree.isIdentical(mirrorTreeRoot, getMirrorBinaryTree().getRoot()));
     }
 
     @Test
-    public void testIsMirror() {
-        Assert.assertTrue(binaryTree.isMirror(binaryTree.getRoot(), getMirrorBinaryTree().getRoot()));
+    void testIsMirror() {
+        assertTrue(binaryTree.isMirror(binaryTree.getRoot(), getMirrorBinaryTree().getRoot()));
     }
 
     private BinaryTree getMirrorBinaryTree() {

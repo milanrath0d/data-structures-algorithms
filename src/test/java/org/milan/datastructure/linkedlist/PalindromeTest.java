@@ -1,24 +1,23 @@
 package org.milan.datastructure.linkedlist;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Test Class for {@link Palindrome}
  *
  * @author Milan Rathod
  */
-public class PalindromeTest {
+class PalindromeTest {
 
     private LinkedList<Integer> linkedList;
 
     private Palindrome palindrome;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         linkedList = new LinkedList<>(new LinkedList.Node<>(5));
 
         linkedList.insertAtEnd(10);
@@ -30,12 +29,12 @@ public class PalindromeTest {
     }
 
     @Test
-    public void testUsingStack() {
-        Assert.assertTrue(palindrome.usingStack(linkedList.getHead()));
+    void testUsingStack() {
+        assertTrue(palindrome.usingStack(linkedList.getHead()));
     }
 
     @Test
-    public void testUsingRecursion() {
-        Assert.assertTrue(palindrome.usingRecursion(linkedList.getHead()));
+    void testUsingRecursion() {
+        assertTrue(palindrome.usingRecursion(linkedList.getHead()));
     }
 }

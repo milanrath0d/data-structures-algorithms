@@ -1,22 +1,23 @@
 package org.milan.datastructure.string;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 /**
  * Test Class for {@link StringsPermutation}
  *
  * @author Milan Rathod
  */
-public class StringsPermutationTest {
+class StringsPermutationTest {
 
     @Test
-    public void testPermutation() {
+    void testPermutation() {
         StringsPermutation stringsPermutation = new StringsPermutation();
 
         String s1 = "abc";
         String s2 = "ccb";
 
-        Assert.assertFalse(stringsPermutation.isPermuted(s1, s2));
+        assertFalse(stringsPermutation.isPermuted(s1, s2));
     }
 }

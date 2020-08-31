@@ -1,23 +1,23 @@
 package org.milan.hackerearth;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class {@link JumpOut}
  *
  * @author Milan Rathod
  */
-public class JumpOutTest {
+class JumpOutTest {
 
     @Test
-    public void testMinimumLengthJump() throws IOException {
+    void testMinimumLengthJump() {
         JumpOut jumpOut = new JumpOut();
         int result = jumpOut.minimumLengthJump(new int[]{4, 2, 4, 2, 3}, 5);
 
-        Assert.assertEquals(3, result);
-
+        assertEquals(3, result);
     }
 }

@@ -1,17 +1,18 @@
 package org.milan.datastructure.graph;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link TreesInForest}
  *
  * @author Milan Rathod
  */
-public class TreesInForestTest {
+class TreesInForestTest {
 
     @Test
-    public void totalTrees() {
+    void totalTrees() {
         Graph graph = new Graph(5);
         graph.addEdge(graph, 0, 1);
         graph.addEdge(graph, 0, 2);
@@ -19,6 +20,6 @@ public class TreesInForestTest {
 
         TreesInForest treesInForest = new TreesInForest(graph);
 
-        Assert.assertEquals(2, treesInForest.totalTrees());
+        assertEquals(2, treesInForest.totalTrees());
     }
 }

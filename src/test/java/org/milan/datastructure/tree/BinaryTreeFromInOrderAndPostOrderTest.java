@@ -1,16 +1,16 @@
 package org.milan.datastructure.tree;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * Test Class for {@link BinaryTreeFromInOrderAndPostOrder}
  *
  * @author Milan Rathod
  */
-public class BinaryTreeFromInOrderAndPostOrderTest {
+class BinaryTreeFromInOrderAndPostOrderTest {
 
     @Test
-    public void testBuildTree() {
+    void testBuildTree() {
         BinaryTreeFromInOrderAndPostOrder binaryTreeFromInOrderAndPostOrder = new BinaryTreeFromInOrderAndPostOrder();
 
         char[] inOrder = new char[]{'D', 'B', 'E', 'A', 'F', 'C'};

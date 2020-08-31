@@ -1,17 +1,18 @@
 package org.milan.misc;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link MaximumPathSumMatrix}
  *
  * @author Milan Rathod
  */
-public class MaximumPathSumMatrixTest {
+class MaximumPathSumMatrixTest {
 
     @Test
-    public void testGetMax() {
+    void testGetMax() {
         int[][] input = {{10, 10, 2, 0, 20, 4},
                 {1, 0, 0, 30, 2, 5},
                 {0, 10, 4, 0, 2, 0},
@@ -21,7 +22,7 @@ public class MaximumPathSumMatrixTest {
 
         int result = maximumPathSumMatrix.getMax(input);
 
-        Assert.assertEquals(74, result);
+        assertEquals(74, result);
 
         input = new int[][]{{1, 2, 3},
                 {9, 8, 7},
@@ -29,6 +30,6 @@ public class MaximumPathSumMatrixTest {
 
         result = maximumPathSumMatrix.getMax(input);
 
-        Assert.assertEquals(17, result);
+        assertEquals(17, result);
     }
 }

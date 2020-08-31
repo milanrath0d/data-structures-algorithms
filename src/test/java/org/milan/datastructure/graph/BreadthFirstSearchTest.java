@@ -1,16 +1,16 @@
 package org.milan.datastructure.graph;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * Test Class for {@link BreadthFirstSearch}
  *
  * @author Milan Rathod
  */
-public class BreadthFirstSearchTest {
+class BreadthFirstSearchTest {
 
     @Test
-    public void testBfs() {
+    void testBfs() {
         Graph graph = new Graph(4);
         graph.addEdge(graph, 0, 1);
         graph.addEdge(graph, 0, 2);

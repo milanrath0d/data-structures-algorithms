@@ -1,17 +1,18 @@
 package org.milan.datastructure.linkedlist;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link DeleteNodeWithoutHead}
  *
  * @author Milan Rathod
  */
-public class DeleteNodeWithoutHeadTest {
+class DeleteNodeWithoutHeadTest {
 
     @Test
-    public void testDelete() {
+    void testDelete() {
         LinkedList<Integer> linkedList = new LinkedList<>(new LinkedList.Node<>(5));
         linkedList.insertAfterSpecifiedPosition(10, 0);
         linkedList.insertAfterSpecifiedPosition(15, 1);
@@ -28,6 +29,6 @@ public class DeleteNodeWithoutHeadTest {
             count++;
             head = head.next;
         }
-        Assert.assertEquals(4, count);
+        assertEquals(4, count);
     }
 }

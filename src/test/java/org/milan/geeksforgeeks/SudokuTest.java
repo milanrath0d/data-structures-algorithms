@@ -1,17 +1,17 @@
 package org.milan.geeksforgeeks;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Test class for {@link Sudoku}
  *
  * @author Milan Rathod
  */
-public class SudokuTest {
+class SudokuTest {
 
     private int[][] validSudoku;
 
@@ -19,8 +19,8 @@ public class SudokuTest {
 
     private Sudoku sudoku;
 
-    @Before
-    public void setUp() {
+    @BeforeEach
+    void setUp() {
         validSudoku = new int[][]{
                 {7, 2, 6, 4, 9, 3, 8, 1, 5},
                 {3, 1, 5, 7, 2, 8, 9, 4, 6},
@@ -47,13 +47,13 @@ public class SudokuTest {
     }
 
     @Test
-    public void testIsValidSudoku() {
+    void testIsValidSudoku() {
         assertTrue(sudoku.isValidSudoku(validSudoku));
         assertFalse(sudoku.isValidSudoku(invalidSudoku));
     }
 
     @Test
-    public void testIsValidSudokuV2() {
+    void testIsValidSudokuV2() {
         assertTrue(sudoku.IsValidSudokuV2(validSudoku));
         assertFalse(sudoku.IsValidSudokuV2(invalidSudoku));
     }

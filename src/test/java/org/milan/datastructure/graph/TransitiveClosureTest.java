@@ -1,17 +1,18 @@
 package org.milan.datastructure.graph;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link TransitiveClosure}
  *
  * @author Milan Rathod
  */
-public class TransitiveClosureTest {
+class TransitiveClosureTest {
 
     @Test
-    public void testTransitiveClosure() {
+    void testTransitiveClosure() {
         Graph graph = new Graph(4);
 
         graph.addEdge(graph, 0, 1);
@@ -25,7 +26,7 @@ public class TransitiveClosureTest {
 
         int[][] result = transitiveClosure.transitiveClosure();
 
-        Assert.assertEquals(1, result[0][0]);
-        Assert.assertEquals(0, result[3][0]);
+        assertEquals(1, result[0][0]);
+        assertEquals(0, result[3][0]);
     }
 }

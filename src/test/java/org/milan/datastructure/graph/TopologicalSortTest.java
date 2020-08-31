@@ -1,20 +1,21 @@
 package org.milan.datastructure.graph;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link TopologicalSort}
  *
  * @author Milan Rathod
  */
-public class TopologicalSortTest {
+class TopologicalSortTest {
 
     @Test
-    public void testSort() {
+    void testSort() {
         Graph graph = new Graph(6);
         graph.addEdge(graph, 5, 2);
         graph.addEdge(graph, 5, 0);
@@ -27,6 +28,6 @@ public class TopologicalSortTest {
 
         List<Integer> sortedList = topologicalSort.sort();
 
-        Assert.assertEquals(Arrays.asList(5, 4, 2, 3, 1, 0), sortedList);
+        assertEquals(Arrays.asList(5, 4, 2, 3, 1, 0), sortedList);
     }
 }

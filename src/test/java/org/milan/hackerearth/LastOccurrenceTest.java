@@ -1,23 +1,22 @@
 package org.milan.hackerearth;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link LastOccurrence}
  *
  * @author Milan Rathod
  */
-public class LastOccurrenceTest {
+class LastOccurrenceTest {
 
     @Test
-    public void testGet() {
+    void testGet() {
         LastOccurrence lastOccurrence = new LastOccurrence();
 
         int result = lastOccurrence.get(new int[]{1, 2, 3, 4, 1}, 1);
 
-        Assert.assertEquals(5, result);
+        assertEquals(5, result);
     }
 }

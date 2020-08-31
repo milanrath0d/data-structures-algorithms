@@ -1,31 +1,26 @@
 package org.milan.geeksforgeeks;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link DigitsAndProduct}
  *
  * @author Milan Rathod
  */
-public class DigitsAndProductTest {
-
-    public void test() {
-
-        int year = 1111;
-
-    }
+class DigitsAndProductTest {
 
     @Test
-    public void testCount() {
+    void testCount() {
         DigitsAndProduct digitsAndProduct = new DigitsAndProduct();
 
         int result = digitsAndProduct.count(10, 12, 2);
 
-        Assert.assertEquals(1, result);
+        assertEquals(1, result);
 
         result = digitsAndProduct.count(5, 15, 2);
 
-        Assert.assertEquals(9, result);
+        assertEquals(9, result);
     }
 }

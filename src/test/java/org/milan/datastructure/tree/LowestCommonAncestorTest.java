@@ -1,20 +1,21 @@
 package org.milan.datastructure.tree;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link LowestCommonAncestor}
  *
  * @author Milan Rathod
  */
-public class LowestCommonAncestorTest {
+class LowestCommonAncestorTest {
 
     private BinaryTree binaryTree;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         binaryTree = new BinaryTree(1);
         binaryTree.getRoot().left = new BinaryTree.Node(2);
         binaryTree.getRoot().right = new BinaryTree.Node(3);
@@ -25,7 +26,7 @@ public class LowestCommonAncestorTest {
     }
 
     @Test
-    public void testFindLCA() {
-        Assert.assertEquals(2, new LowestCommonAncestor().findLCA(binaryTree.getRoot(), 4, 5).key);
+    void testFindLCA() {
+        assertEquals(2, new LowestCommonAncestor().findLCA(binaryTree.getRoot(), 4, 5).key);
     }
 }

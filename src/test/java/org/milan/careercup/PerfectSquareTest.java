@@ -1,32 +1,34 @@
 package org.milan.careercup;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Test Class for {@link PerfectSquare}
  *
  * @author Milan Rathod
  */
-public class PerfectSquareTest {
+class PerfectSquareTest {
 
     @Test
-    public void testIsPerfectSquare() {
+    void testIsPerfectSquare() {
         PerfectSquare perfectSquare = new PerfectSquare();
         boolean result = perfectSquare.isPerfectSquare(25, true);
 
-        Assert.assertTrue(result);
+        assertTrue(result);
 
         result = perfectSquare.isPerfectSquare(29, true);
 
-        Assert.assertFalse(result);
+        assertFalse(result);
 
         result = perfectSquare.isPerfectSquare(25, false);
 
-        Assert.assertTrue(result);
+        assertTrue(result);
 
         result = perfectSquare.isPerfectSquare(29, false);
 
-        Assert.assertFalse(result);
+        assertFalse(result);
     }
 }

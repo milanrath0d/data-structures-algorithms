@@ -1,25 +1,26 @@
 package org.milan.misc;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link NextGreaterElement}
  *
  * @author Milan Rathod
  */
-public class NextGreaterElementTest {
+class NextGreaterElementTest {
 
     @Test
-    public void testFind() {
+    void testFind() {
         NextGreaterElement nextGreaterElement = new NextGreaterElement();
 
         int result = nextGreaterElement.find(534976);
 
-        Assert.assertEquals(536479, result);
+        assertEquals(536479, result);
 
         result = nextGreaterElement.find(4321);
 
-        Assert.assertEquals(4321, result);
+        assertEquals(4321, result);
     }
 }

@@ -1,52 +1,53 @@
 package org.milan.algorithm.searching;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link BinarySearch}
  *
  * @author Milan Rathod
  */
-public class BinarySearchTest {
+class BinarySearchTest {
 
     private BinarySearch binarySearch;
 
     private int[] inputArray;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         binarySearch = new BinarySearch();
 
         inputArray = new int[]{2, 4, 6, 8, 9, 12, 15, 18};
     }
 
     @Test
-    public void testSearch_ElementIsPresent() {
+    void testSearch_ElementIsPresent() {
         int result = binarySearch.search(inputArray, 12);
 
-        Assert.assertEquals(5, result);
+        assertEquals(5, result);
     }
 
     @Test
-    public void testSearch_ElementIsNotPresent() {
+    void testSearch_ElementIsNotPresent() {
         int result = binarySearch.search(inputArray, 10);
 
-        Assert.assertEquals(-1, result);
+        assertEquals(-1, result);
     }
 
     @Test
-    public void testSearchRecursive_ElementIsPresent() {
+    void testSearchRecursive_ElementIsPresent() {
         int result = binarySearch.searchRecursive(inputArray, 12);
 
-        Assert.assertEquals(5, result);
+        assertEquals(5, result);
     }
 
     @Test
-    public void testSearchRecursive_ElementIsNotPresent() {
+    void testSearchRecursive_ElementIsNotPresent() {
         int result = binarySearch.search(inputArray, 10);
 
-        Assert.assertEquals(-1, result);
+        assertEquals(-1, result);
     }
 }

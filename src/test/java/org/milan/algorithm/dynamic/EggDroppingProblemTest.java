@@ -1,30 +1,29 @@
 package org.milan.algorithm.dynamic;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author Milan Rathod
  */
-public class EggDroppingProblemTest {
+class EggDroppingProblemTest {
 
     @Test
-    public void testMinimumTrialsRecursive() {
+    void testMinimumTrialsRecursive() {
         EggDroppingProblem eggDroppingProblem = new EggDroppingProblem();
 
         int result = eggDroppingProblem.minimumTrialsRecursive(2, 10);
 
-        Assert.assertEquals(4, result);
+        assertEquals(4, result);
     }
 
     @Test
-    public void testMinimumTrials() {
+    void testMinimumTrials() {
         EggDroppingProblem eggDroppingProblem = new EggDroppingProblem();
 
         int result = eggDroppingProblem.minimumTrials(2, 10);
 
-        Assert.assertEquals(4, result);
+        assertEquals(4, result);
     }
 }

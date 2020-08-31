@@ -1,47 +1,47 @@
 package org.milan.datastructure.array;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class MajorityElementInSortedArrayTest {
+class MajorityElementInSortedArrayTest {
 
     private MajorityElementInSortedArray majorityElementInSortedArray;
 
-    @Before
-    public void init() {
+    @BeforeEach
+    void init() {
         majorityElementInSortedArray = new MajorityElementInSortedArray();
     }
 
     @Test
-    public void testIsMajority() {
+    void testIsMajority() {
         int[] arr = {1, 2, 3, 4, 4, 4, 4};
 
         boolean result = majorityElementInSortedArray.isMajority(arr, 4);
 
-        Assert.assertTrue(result);
+        assertTrue(result);
 
         arr = new int[]{1, 3, 4, 4, 5, 5};
 
         result = majorityElementInSortedArray.isMajority(arr, 4);
 
-        Assert.assertFalse(result);
+        assertFalse(result);
     }
 
     @Test
-    public void testIsMajorityV2() {
+    void testIsMajorityV2() {
         int[] arr = {1, 2, 3, 4, 4, 4, 4};
 
         boolean result = majorityElementInSortedArray.isMajorityV2(arr, 4);
 
-        Assert.assertTrue(result);
+        assertTrue(result);
 
         arr = new int[]{1, 3, 4, 4, 5, 5};
 
         result = majorityElementInSortedArray.isMajorityV2(arr, 4);
 
-        Assert.assertFalse(result);
+        assertFalse(result);
     }
 }

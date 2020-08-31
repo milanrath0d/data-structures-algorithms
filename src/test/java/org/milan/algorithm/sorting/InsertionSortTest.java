@@ -1,8 +1,9 @@
 package org.milan.algorithm.sorting;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
  * Test Class for {@link InsertionSort}
@@ -14,30 +15,30 @@ import org.junit.Test;
  *
  * @author Milan Rathod
  */
-public class InsertionSortTest {
+class InsertionSortTest {
 
     private InsertionSort insertionSort;
 
     private int[] inputArray;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         insertionSort = new InsertionSort();
 
         inputArray = new int[]{23, 12, 3, 56, 77, 44, 13, 99};
     }
 
     @Test
-    public void testSort() {
+    void testSort() {
         int[] result = insertionSort.sort(inputArray);
 
-        Assert.assertArrayEquals(new int[]{3, 12, 13, 23, 44, 56, 77, 99}, result);
+        assertArrayEquals(new int[]{3, 12, 13, 23, 44, 56, 77, 99}, result);
     }
 
     @Test
-    public void testRecursiveSort() {
+    void testRecursiveSort() {
         insertionSort.recursiveSort(inputArray, inputArray.length);
 
-        Assert.assertArrayEquals(new int[]{3, 12, 13, 23, 44, 56, 77, 99}, inputArray);
+        assertArrayEquals(new int[]{3, 12, 13, 23, 44, 56, 77, 99}, inputArray);
     }
 }

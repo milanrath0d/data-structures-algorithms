@@ -1,21 +1,22 @@
 package org.milan.hackerearth;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link MonkAndATM}
  *
  * @author Milan Rathod
  */
-public class MonkAndATMTest {
+class MonkAndATMTest {
 
     @Test
-    public void testCheckPin() {
+    void testCheckPin() {
         MonkAndATM monkAndATM = new MonkAndATM();
 
         int result = monkAndATM.checkPin(48);
 
-        Assert.assertEquals(result, 8);
+        assertEquals(8, result);
     }
 }

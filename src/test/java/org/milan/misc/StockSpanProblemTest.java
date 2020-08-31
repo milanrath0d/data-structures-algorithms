@@ -1,21 +1,22 @@
 package org.milan.misc;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
  * Test Class for {@link StockSpanProblem}
  *
  * @author Milan Rathod
  */
-public class StockSpanProblemTest {
+class StockSpanProblemTest {
 
     @Test
-    public void testCalculateSpan() {
+    void testCalculateSpan() {
         StockSpanProblem stockSpanProblem = new StockSpanProblem();
 
         int[] result = stockSpanProblem.calculateSpan(new int[]{10, 4, 5, 90, 120, 80}, 6);
 
-        Assert.assertArrayEquals(new int[]{1, 1, 2, 4, 5, 1}, result);
+        assertArrayEquals(new int[]{1, 1, 2, 4, 5, 1}, result);
     }
 }

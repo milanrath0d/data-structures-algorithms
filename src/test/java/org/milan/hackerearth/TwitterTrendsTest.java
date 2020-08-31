@@ -1,21 +1,22 @@
 package org.milan.hackerearth;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.milan.util.ListUtil;
 
 import java.util.Arrays;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Test class for {@link TwitterTrends}
  *
  * @author Milan Rathod
  */
-public class TwitterTrendsTest {
+class TwitterTrendsTest {
 
     @Test
-    public void testTrendingHashTags() {
+    void testTrendingHashTags() {
         List<String> tweets = List.of("Donald Trump becomes the 45th #US President",
                 "Potentially habitable exoplanet #ProximaB discovered",
                 "#RogerFederer wins #US Open for 5th time",
@@ -37,6 +38,6 @@ public class TwitterTrendsTest {
                 "#US",
                 "#GravitationalWaves");
 
-        Assert.assertTrue(ListUtil.isEqual(result, expectedResult));
+        assertTrue(ListUtil.isEqual(result, expectedResult));
     }
 }

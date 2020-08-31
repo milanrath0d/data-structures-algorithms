@@ -1,19 +1,20 @@
 package org.milan.careercup;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link OddNumbers}
  *
  * @author Milan Rathod
  */
-public class OddNumbersTest {
+class OddNumbersTest {
 
     @Test
-    public void testFindOddNumbers() {
+    void testFindOddNumbers() {
         OddNumbers oddNumbers = new OddNumbers();
         int[] inputArray = {2, 3, 2, 3, 3, 4, 5, 4, 2, 2, 5, 6};
 
@@ -21,6 +22,6 @@ public class OddNumbersTest {
 
         List<Integer> actual = List.of(3, 6);
 
-        Assert.assertEquals(result, actual);
+        assertEquals(result, actual);
     }
 }

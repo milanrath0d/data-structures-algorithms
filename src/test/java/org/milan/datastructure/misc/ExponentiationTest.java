@@ -1,19 +1,20 @@
 package org.milan.datastructure.misc;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link Exponentiation}
  *
  * @author Milan Rathod
  */
-public class ExponentiationTest {
+class ExponentiationTest {
 
     @Test
-    public void testPow() {
+    void testPow() {
         Exponentiation exponentiation = new Exponentiation();
 
-        Assert.assertEquals(32, exponentiation.pow(2, 5));
+        assertEquals(32, exponentiation.pow(2, 5));
     }
 }

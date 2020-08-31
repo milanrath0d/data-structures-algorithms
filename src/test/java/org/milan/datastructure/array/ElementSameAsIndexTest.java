@@ -1,21 +1,22 @@
 package org.milan.datastructure.array;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link ElementSameAsIndex}
  *
  * @author Milan Rathod
  */
-public class ElementSameAsIndexTest {
+class ElementSameAsIndexTest {
 
     @Test
-    public void findIndex() {
+    void findIndex() {
         ElementSameAsIndex elementSameAsIndex = new ElementSameAsIndex();
 
         int result = elementSameAsIndex.findIndex(new int[]{-4, -2, 1, 2, 3, 5, 9});
 
-        Assert.assertEquals(5, result);
+        assertEquals(5, result);
     }
 }

@@ -1,28 +1,26 @@
 package org.milan.datastructure.stack;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Test Class for {@link LinkedStack}
  *
  * @author Milan Rathod
  */
-public class LinkedStackTest {
+class LinkedStackTest {
 
     private LinkedStack<Integer> linkedStack;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         linkedStack = new LinkedStack<>();
     }
 
     @Test
-    public void testPush() {
+    void testPush() {
         assertTrue(linkedStack.isEmpty());
 
         linkedStack.push(10);
@@ -35,7 +33,7 @@ public class LinkedStackTest {
     }
 
     @Test
-    public void testPop() {
+    void testPop() {
         linkedStack.push(10);
 
         assertFalse(linkedStack.isEmpty());
@@ -46,7 +44,7 @@ public class LinkedStackTest {
     }
 
     @Test
-    public void testPeek() {
+    void testPeek() {
         linkedStack.push(10);
 
         assertFalse(linkedStack.isEmpty());

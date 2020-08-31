@@ -1,17 +1,18 @@
 package org.milan.datastructure.graph;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Test class for {@link GraphCycle}
  *
  * @author Milan Rathod
  */
-public class GraphCycleTest {
+class GraphCycleTest {
 
     @Test
-    public void TestIsCycleExists() {
+    void TestIsCycleExists() {
         Graph graph = new Graph(4);
         graph.addEdge(graph, 0, 1);
         graph.addEdge(graph, 0, 2);
@@ -21,6 +22,6 @@ public class GraphCycleTest {
 
         GraphCycle graphCycle = new GraphCycle(graph);
 
-        Assert.assertTrue(graphCycle.isCycleExists());
+        assertTrue(graphCycle.isCycleExists());
     }
 }

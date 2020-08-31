@@ -1,19 +1,20 @@
 package org.milan.datastructure.graph;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Set;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link KruskalMST}
  *
  * @author Milan Rathod
  */
-public class KruskalMSTTest {
+class KruskalMSTTest {
 
     @Test
-    public void testFind() {
+    void testFind() {
         KruskalMST.Graph graph = new KruskalMST.Graph();
 
         Vertex v0 = new Vertex("0");
@@ -45,6 +46,6 @@ public class KruskalMSTTest {
 
         Set<Edge> result = kruskalMST.find(graph);
 
-        Assert.assertEquals(Set.of(new Edge(v2, v3, 4), new Edge(v0, v3, 5), new Edge(v0, v1, 10)), result);
+        assertEquals(Set.of(new Edge(v2, v3, 4), new Edge(v0, v3, 5), new Edge(v0, v1, 10)), result);
     }
 }

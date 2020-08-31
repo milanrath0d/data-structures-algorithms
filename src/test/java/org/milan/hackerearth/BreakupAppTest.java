@@ -1,20 +1,21 @@
 package org.milan.hackerearth;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link BreakupApp}
  *
  * @author Milan Rathod
  */
-public class BreakupAppTest {
+class BreakupAppTest {
 
     @Test
-    public void testGetDate() {
+    void testGetDate() {
         List<String> list = new ArrayList<>();
 
         list.add("G: I want to go on 19");
@@ -26,7 +27,7 @@ public class BreakupAppTest {
 
         String result = breakupApp.getDate(list);
 
-        Assert.assertEquals("Date", result);
+        assertEquals("Date", result);
     }
 
 }

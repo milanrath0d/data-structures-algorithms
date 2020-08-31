@@ -1,20 +1,21 @@
 package org.milan.hackerearth;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * test class for {@link Mystery}
  *
  * @author Milan Rathod
  */
-public class MysteryTest {
+class MysteryTest {
 
     @Test
-    public void testSolve() {
+    void testSolve() {
         Mystery mystery = new Mystery();
         int result = mystery.solve(14, 5, 9);
 
-        Assert.assertEquals(464, result);
+        assertEquals(464, result);
     }
 }
