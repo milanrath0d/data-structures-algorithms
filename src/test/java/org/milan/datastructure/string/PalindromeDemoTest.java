@@ -1,29 +1,30 @@
 package org.milan.datastructure.string;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.milan.datastructure.string.PalindromeDemo;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Test Class for {@link PalindromeDemo}
  *
  * @author Milan Rathod
  */
-public class PalindromeDemoTest {
+class PalindromeDemoTest {
 
     @Test
-    public void testPalindromeString() {
+    void testPalindromeString() {
         PalindromeDemo palindromeDemo = new PalindromeDemo();
         boolean result = palindromeDemo.palindromeString("abc");
 
-        Assert.assertFalse(result);
+        assertFalse(result);
     }
 
     @Test
-    public void testPalindromeNumber() {
+    void testPalindromeNumber() {
         PalindromeDemo palindromeDemo = new PalindromeDemo();
         boolean result = palindromeDemo.palindromeNumber(13431);
 
-        Assert.assertTrue(result);
+        assertTrue(result);
     }
 }

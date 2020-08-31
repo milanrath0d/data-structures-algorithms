@@ -1,20 +1,20 @@
 package org.milan.datastructure.misc;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.milan.datastructure.misc.Josephus;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link Josephus}
  *
  * @author Milan Rathod
  */
-public class JosephusTest {
+class JosephusTest {
 
     @Test
-    public void testLuckyPerson() {
+    void testLuckyPerson() {
         Josephus josephus = new Josephus();
 
-        Assert.assertEquals(4, josephus.luckyPerson(7, 3));
+        assertEquals(4, josephus.luckyPerson(7, 3));
     }
 }

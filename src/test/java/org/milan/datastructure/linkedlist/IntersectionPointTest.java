@@ -1,15 +1,16 @@
 package org.milan.datastructure.linkedlist;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link IntersectionPoint}
  *
  * @author Milan Rathod
  */
-public class IntersectionPointTest {
+class IntersectionPointTest {
 
     private LinkedList<Integer> firstLinkedList;
 
@@ -17,8 +18,8 @@ public class IntersectionPointTest {
 
     private IntersectionPoint intersectionPoint;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         firstLinkedList = new LinkedList<>(new LinkedList.Node<>(5));
 
         firstLinkedList.insertAtEnd(10);
@@ -36,9 +37,9 @@ public class IntersectionPointTest {
     }
 
     @Test
-    public void testFind() {
+    void testFind() {
         LinkedList.Node<Integer> intersectedNode = intersectionPoint.find(firstLinkedList.getHead(), secondLinkedList.getHead());
 
-        Assert.assertEquals(20, intersectedNode.getData().intValue());
+        assertEquals(20, intersectedNode.getData().intValue());
     }
 }

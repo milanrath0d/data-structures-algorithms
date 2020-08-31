@@ -1,26 +1,26 @@
 package org.milan.datastructure.tree;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link Distance}
  *
  * @author Milan Rathod
  */
-public class DistanceTest {
+class DistanceTest {
 
     private BinaryTree binaryTree;
 
     private Distance distance;
 
-    @Before
-    public void setup() {
-
+    @BeforeEach
+    void setup() {
         distance = new Distance();
 
         binaryTree = new BinaryTree(1);
@@ -33,11 +33,11 @@ public class DistanceTest {
     }
 
     @Test
-    public void testFindDistance() {
+    void testFindDistance() {
         List<Integer> result = distance.findDistance(binaryTree.getRoot(), binaryTree.getRoot().left, 3);
 
-        Assert.assertEquals(2, result.size());
+        assertEquals(2, result.size());
 
-        Assert.assertEquals(Arrays.asList(6, 7), result);
+        assertEquals(Arrays.asList(6, 7), result);
     }
 }

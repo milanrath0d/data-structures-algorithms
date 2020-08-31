@@ -1,23 +1,21 @@
 package org.milan.datastructure.linkedlist;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Test Class for {@link LinkedList}
  *
  * @author Milan Rathod
  */
-public class LinkedListTest {
+class LinkedListTest {
 
     private LinkedList<Integer> linkedList;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         linkedList = new LinkedList<>(new LinkedList.Node<>(5));
 
         linkedList.insertAfterSpecifiedPosition(10, 0);
@@ -25,7 +23,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void testInsertBeforeHead() {
+    void testInsertBeforeHead() {
         assertEquals(3, linkedList.getSize());
 
         linkedList.insertBeforeHead(1);
@@ -38,7 +36,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void testInsertAfterSpecifiedNode() {
+    void testInsertAfterSpecifiedNode() {
         assertEquals(3, linkedList.getSize());
 
         linkedList.insertAfterSpecifiedNode(10, 12);
@@ -51,7 +49,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void testInsertAfterSpecifiedPosition() {
+    void testInsertAfterSpecifiedPosition() {
         assertEquals(3, linkedList.getSize());
 
         linkedList.insertAfterSpecifiedPosition(12, 1);
@@ -64,7 +62,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void testInsertAtEnd() {
+    void testInsertAtEnd() {
         assertEquals(3, linkedList.getSize());
 
         linkedList.insertAtEnd(20);
@@ -77,7 +75,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void testDeleteNodeByKey() {
+    void testDeleteNodeByKey() {
         assertEquals(3, linkedList.getSize());
 
         linkedList.deleteNodeByKey(15);
@@ -88,7 +86,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void testDeleteNodeByPosition() {
+    void testDeleteNodeByPosition() {
         assertEquals(3, linkedList.getSize());
 
         linkedList.deleteNodeByPosition(1);

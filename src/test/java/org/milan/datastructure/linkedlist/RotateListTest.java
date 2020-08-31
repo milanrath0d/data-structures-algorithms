@@ -1,17 +1,18 @@
 package org.milan.datastructure.linkedlist;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link RotateList}
  *
  * @author Milan Rathod
  */
-public class RotateListTest {
+class RotateListTest {
 
     @Test
-    public void testRotate() {
+    void testRotate() {
         LinkedList<Integer> linkedList = new LinkedList<>(new LinkedList.Node<>(1));
         linkedList.insertAtEnd(2);
         linkedList.insertAtEnd(3);
@@ -24,12 +25,12 @@ public class RotateListTest {
 
         linkedList = new LinkedList<>(newHead);
 
-        Assert.assertEquals(5, linkedList.getSize());
+        assertEquals(5, linkedList.getSize());
 
-        Assert.assertEquals(4, linkedList.searchByIndex(0).getData().intValue());
+        assertEquals(4, linkedList.searchByIndex(0).getData().intValue());
 
-        Assert.assertEquals(5, linkedList.searchByIndex(1).getData().intValue());
+        assertEquals(5, linkedList.searchByIndex(1).getData().intValue());
 
-        Assert.assertEquals(1, linkedList.searchByIndex(2).getData().intValue());
+        assertEquals(1, linkedList.searchByIndex(2).getData().intValue());
     }
 }

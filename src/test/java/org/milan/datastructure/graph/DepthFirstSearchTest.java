@@ -1,19 +1,19 @@
 package org.milan.datastructure.graph;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * Test class for {@link DepthFirstSearch}
  *
  * @author Milan Rathod
  */
-public class DepthFirstSearchTest {
+class DepthFirstSearchTest {
 
     private DepthFirstSearch depthFirstSearch;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         Graph graph = new Graph(4);
         graph.addEdge(graph, 0, 1);
         graph.addEdge(graph, 0, 2);
@@ -26,12 +26,12 @@ public class DepthFirstSearchTest {
     }
 
     @Test
-    public void testDfs() {
+    void testDfs() {
         depthFirstSearch.dfs(2);
     }
 
     @Test
-    public void testDfsIterative() {
+    void testDfsIterative() {
         depthFirstSearch.dfsIterative(2);
     }
 }

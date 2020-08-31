@@ -1,22 +1,23 @@
 package org.milan.datastructure.heap;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link KthSmallestElement}
  *
  * @author Milan Rathod
  */
-public class KthSmallestElementTest {
+class KthSmallestElementTest {
 
     private BinaryHeap binaryHeap;
 
     private KthSmallestElement kthSmallestElement;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    void setUp() throws Exception {
         binaryHeap = new BinaryHeap(7, HeapType.MIN);
 
         binaryHeap.buildHeap(new int[]{10, 50, 40, 75, 60, 65, 45});
@@ -25,12 +26,12 @@ public class KthSmallestElementTest {
     }
 
     @Test
-    public void testFind() {
-        Assert.assertEquals(60, kthSmallestElement.find(5));
+    void testFind() {
+        assertEquals(60, kthSmallestElement.find(5));
     }
 
     @Test
-    public void testFindV2() {
-        Assert.assertEquals(65, kthSmallestElement.findV2(6));
+    void testFindV2() {
+        assertEquals(65, kthSmallestElement.findV2(6));
     }
 }

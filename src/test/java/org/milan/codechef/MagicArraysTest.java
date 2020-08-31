@@ -1,22 +1,21 @@
 package org.milan.codechef;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link MagicArrays}
  *
  * @author Milan Rathod
  */
-public class MagicArraysTest {
+class MagicArraysTest {
 
     @Test
-    public void testGetMaxQualityDishes() {
+    void testGetMaxQualityDishes() {
         MagicArrays magicArrays = new MagicArrays();
 
         List<List<Integer>> input = new ArrayList<>();
@@ -27,6 +26,6 @@ public class MagicArraysTest {
 
         long result = magicArrays.getMaxQualityDishes(input);
 
-        Assert.assertEquals(8, result);
+        assertEquals(8, result);
     }
 }

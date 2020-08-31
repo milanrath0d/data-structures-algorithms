@@ -1,17 +1,18 @@
 package org.milan.algorithm.dynamic;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link MaximumSizeSquareSubMatrix}
  *
  * @author Milan Rathod
  */
-public class MaximumSizeSquareSubMatrixTest {
+class MaximumSizeSquareSubMatrixTest {
 
     @Test
-    public void testFindMaximum() {
+    void testFindMaximum() {
         int[][] matrix = {{0, 1, 1, 0, 1},
                 {1, 1, 0, 1, 0},
                 {0, 1, 1, 1, 0},
@@ -23,6 +24,6 @@ public class MaximumSizeSquareSubMatrixTest {
 
         int result = maximumSizeSquareSubMatrix.findMaximum(matrix);
 
-        Assert.assertEquals(3, result);
+        assertEquals(3, result);
     }
 }

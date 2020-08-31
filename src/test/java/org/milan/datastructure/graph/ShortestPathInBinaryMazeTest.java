@@ -1,17 +1,18 @@
 package org.milan.datastructure.graph;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link ShortestPathInBinaryMaze}
  *
  * @author Milan Rathod
  */
-public class ShortestPathInBinaryMazeTest {
+class ShortestPathInBinaryMazeTest {
 
     @Test
-    public void testFind() {
+    void testFind() {
         int[][] maze = {{1, 0, 1, 1, 1, 1, 0, 1, 1, 1},
                 {1, 0, 1, 0, 1, 1, 1, 0, 1, 1},
                 {1, 1, 1, 0, 1, 1, 0, 1, 0, 1},
@@ -29,6 +30,6 @@ public class ShortestPathInBinaryMazeTest {
 
         int result = shortestPathInBinaryMaze.find(maze, source, dest);
 
-        Assert.assertEquals(11, result);
+        assertEquals(11, result);
     }
 }

@@ -4,6 +4,9 @@ import org.milan.exception.StackUnderflowError;
 
 /**
  * Problem: Implement three stacks in single array
+ * <p>
+ * NOTE: with below implementation one position occupied by base3 pointer is
+ * getting wasted if there is zero push operation performed on stack 3
  *
  * @author Milan Rathod
  */
@@ -39,6 +42,8 @@ public class ThreeStacksWithOneArray {
 
     private int[] stack;
 
+    private static final String INVALID_STACK = " is not valid stack number";
+
     public ThreeStacksWithOneArray(int size) {
 
         if (size < 3) {
@@ -49,8 +54,10 @@ public class ThreeStacksWithOneArray {
         this.size = size;
         top1 = -1;
         top2 = size;
+
+        // We can use size/3 also
         base3 = size / 2;
-        top3 = base3;
+        top3 = base3 - 1;
     }
 
     /**
@@ -88,13 +95,13 @@ public class ThreeStacksWithOneArray {
                     shiftStack3ToLeft();
                     stack[++top3] = item;
                 } else {
-                    throw new StackOverflowError("Stack 2 is full");
+                    throw new StackOverflowError("Stack 3 is full");
                 }
             } else {
                 stack[++top3] = item;
             }
         } else {
-            throw new IllegalArgumentException(stackNumber + " is not valid stack number");
+            throw new IllegalArgumentException(stackNumber + INVALID_STACK);
         }
     }
 
@@ -126,15 +133,11 @@ public class ThreeStacksWithOneArray {
                 throw new StackUnderflowError("Stack 3 is empty");
             } else {
                 int item = stack[top3];
-                if (top3 > base3) {
-                    stack[top3--] = Integer.MIN_VALUE;
-                } else if (top3 == base3) {
-                    stack[top3] = Integer.MIN_VALUE;
-                }
+                stack[top3--] = Integer.MIN_VALUE;
                 return item;
             }
         } else {
-            throw new IllegalArgumentException(stackNumber + " is not valid stack number");
+            throw new IllegalArgumentException(stackNumber + INVALID_STACK);
         }
     }
 
@@ -164,14 +167,14 @@ public class ThreeStacksWithOneArray {
                 return stack[top3];
             }
         } else {
-            throw new IllegalArgumentException(stackNumber + " is not valid stack number");
+            throw new IllegalArgumentException(stackNumber + INVALID_STACK);
         }
     }
 
     /**
      * check if stack with stack number specified is empty or not
      *
-     * @param stackNumber stack for which emptyness to be checked
+     * @param stackNumber stack for which emptiness to be checked
      * @return true if empty otherwise false
      */
     public boolean isEmpty(int stackNumber) {
@@ -180,9 +183,9 @@ public class ThreeStacksWithOneArray {
         } else if (stackNumber == 2) {
             return top2 == this.size;
         } else if (stackNumber == 3) {
-            return (top3 == base3) && stack[base3] == 0;
+            return (top3 == base3 - 1);
         } else {
-            throw new IllegalArgumentException(stackNumber + " is not valid stack number");
+            throw new IllegalArgumentException(stackNumber + INVALID_STACK);
         }
     }
 
@@ -200,7 +203,7 @@ public class ThreeStacksWithOneArray {
     /**
      * check if stack 3 is left shiftable
      *
-     * @return true if left shiftable otherwise false
+     * @return true if stack 3 is left shiftable otherwise false
      */
     private boolean isStack3LeftShiftable() {
         return top1 + 1 < base3;
@@ -220,7 +223,7 @@ public class ThreeStacksWithOneArray {
     /**
      * check if stack 3 is right shiftable
      *
-     * @return true if right shiftable otherwise false
+     * @return true if stack 3 is right shiftable otherwise false
      */
     private boolean isStack3RightShiftable() {
         return top3 + 1 < top2;

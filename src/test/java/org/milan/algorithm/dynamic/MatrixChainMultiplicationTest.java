@@ -1,23 +1,24 @@
 package org.milan.algorithm.dynamic;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link MatrixChainMultiplication}
  *
  * @author Milan Rathod
  */
-public class MatrixChainMultiplicationTest {
+class MatrixChainMultiplicationTest {
 
     @Test
-    public void testFindMinimum() {
+    void testFindMinimum() {
         int[] d = new int[] {1, 2, 3, 4};
 
         MatrixChainMultiplication matrixChainMultiplication = new MatrixChainMultiplication();
 
         int result = matrixChainMultiplication.findMinimum(d);
 
-        Assert.assertEquals(18, result);
+        assertEquals(18, result);
     }
 }

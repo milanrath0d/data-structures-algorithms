@@ -1,19 +1,20 @@
 package org.milan.datastructure.graph;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link SnakeLadderProblem}
  *
  * @author Milan Rathod
  */
-public class SnakeLadderProblemTest {
+class SnakeLadderProblemTest {
 
     @Test
-    public void testGetMinDiceThrows() {
+    void testGetMinDiceThrows() {
         int N = 30;
         int[] moves = new int[N];
         Arrays.fill(moves, -1);
@@ -34,6 +35,6 @@ public class SnakeLadderProblemTest {
 
         int result = snakeLadderProblem.getMinDiceThrows(moves, N);
 
-        Assert.assertEquals(3, result);
+        assertEquals(3, result);
     }
 }

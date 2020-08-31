@@ -1,27 +1,28 @@
 package org.milan.datastructure.string;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link FirstNonRepeatingCharacter}
  *
  * @author Milan Rathod
  */
-public class FirstNonRepeatingCharacterTest {
+class FirstNonRepeatingCharacterTest {
 
     private FirstNonRepeatingCharacter firstNonRepeatingCharacter;
 
-    @Before
-    public void setUp() {
+    @BeforeEach
+    void setUp() {
         firstNonRepeatingCharacter = new FirstNonRepeatingCharacter();
     }
 
     @Test
-    public void testFind() {
+    void testFind() {
         int result = firstNonRepeatingCharacter.find("geeksforgeeks");
 
-        Assert.assertEquals(5, result);
+        assertEquals(5, result);
     }
 }

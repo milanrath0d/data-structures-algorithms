@@ -1,21 +1,22 @@
 package org.milan.datastructure.tree;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.milan.datastructure.linkedlist.LinkedList;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link SortedLL2BST}
  *
  * @author Milan Rathod
  */
-public class SortedLL2BSTTest {
+class SortedLL2BSTTest {
 
     private LinkedList<Integer> linkedList;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         linkedList = new LinkedList<>(new LinkedList.Node<>(1));
 
         linkedList.insertAtEnd(2);
@@ -27,11 +28,11 @@ public class SortedLL2BSTTest {
     }
 
     @Test
-    public void testConvert() {
+    void testConvert() {
         SortedLL2BST sortedLL2BST = new SortedLL2BST();
 
         BinarySearchTree.Node root = sortedLL2BST.convert(linkedList.getHead(), 7);
 
-        Assert.assertEquals(4, root.key);
+        assertEquals(4, root.key);
     }
 }

@@ -1,22 +1,23 @@
 package org.milan.datastructure.tree;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Test class for {@link SumTree}
  *
  * @author Milan Rathod
  */
-public class SumTreeTest {
+class SumTreeTest {
 
     private BinaryTree binaryTree;
 
     private SumTree sumTree;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         sumTree = new SumTree();
         binaryTree = new BinaryTree(26);
         binaryTree.getRoot().left = new BinaryTree.Node(3);
@@ -27,12 +28,12 @@ public class SumTreeTest {
     }
 
     @Test
-    public void testIsSumTree() {
-        Assert.assertTrue(sumTree.isSumTree(binaryTree.getRoot()));
+    void testIsSumTree() {
+        assertTrue(sumTree.isSumTree(binaryTree.getRoot()));
     }
 
     @Test
-    public void testIsSumTreeV2() {
-        Assert.assertTrue(sumTree.isSumTreeV2(binaryTree.getRoot()));
+    void testIsSumTreeV2() {
+        assertTrue(sumTree.isSumTreeV2(binaryTree.getRoot()));
     }
 }

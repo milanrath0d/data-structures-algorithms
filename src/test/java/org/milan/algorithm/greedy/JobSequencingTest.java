@@ -1,17 +1,18 @@
 package org.milan.algorithm.greedy;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link JobSequencing}
  *
  * @author Milan Rathod
  */
-public class JobSequencingTest {
+class JobSequencingTest {
 
     @Test
-    public void testFind() {
+    void testFind() {
         JobSequencing jobSequencing = new JobSequencing();
 
         Job[] jobs = {new Job('a', 2, 100),
@@ -22,6 +23,6 @@ public class JobSequencingTest {
 
         String result = jobSequencing.find(jobs);
 
-        Assert.assertEquals("cae", result);
+        assertEquals("cae", result);
     }
 }

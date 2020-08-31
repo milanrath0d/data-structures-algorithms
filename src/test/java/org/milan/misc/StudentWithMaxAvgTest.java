@@ -1,23 +1,24 @@
 package org.milan.misc;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link StudentWithMaxAvg}
  *
  * @author Milan Rathod
  */
-public class StudentWithMaxAvgTest {
+class StudentWithMaxAvgTest {
 
     @Test
-    public void testFind() {
+    void testFind() {
         String[][] arr = {{"Bob", "87"}, {"Mike", "35"}, {"Bob", "52"}, {"Jason", "35"}, {"Mike", "55"}, {"Jessica", "99"}};
 
         StudentWithMaxAvg studentWithMaxAvg = new StudentWithMaxAvg();
 
         int result = studentWithMaxAvg.find(arr);
 
-        Assert.assertEquals(99, result);
+        assertEquals(99, result);
     }
 }

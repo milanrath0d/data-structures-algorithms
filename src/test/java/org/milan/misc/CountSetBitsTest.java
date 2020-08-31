@@ -1,28 +1,29 @@
 package org.milan.misc;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link CountSetBits}
  *
  * @author Milan Rathod
  */
-public class CountSetBitsTest {
+class CountSetBitsTest {
 
     @Test
-    public void testCount() {
+    void testCount() {
         CountSetBits countSetBits = new CountSetBits();
         int result = countSetBits.count(31);
 
-        Assert.assertEquals(5, result);
+        assertEquals(5, result);
     }
 
     @Test
-    public void testCountRec() {
+    void testCountRec() {
         CountSetBits countSetBits = new CountSetBits();
         int result = countSetBits.countRec(31);
 
-        Assert.assertEquals(5, result);
+        assertEquals(5, result);
     }
 }

@@ -1,20 +1,21 @@
 package org.milan.hackerearth;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class {@link StringMadeOf}
  *
  * @author Milan Rathod
  */
-public class StringMadeOfTest {
+class StringMadeOfTest {
 
     @Test
-    public void testCountDashes() {
+    void testCountDashes() {
         StringMadeOf stringMadeOf = new StringMadeOf();
         int result = stringMadeOf.countDashes("12134");
 
-        Assert.assertEquals(18, result);
+        assertEquals(18, result);
     }
 }

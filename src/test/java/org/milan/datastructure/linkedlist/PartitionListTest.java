@@ -1,17 +1,18 @@
 package org.milan.datastructure.linkedlist;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link PartitionList}
  *
  * @author Milan Rathod
  */
-public class PartitionListTest {
+class PartitionListTest {
 
     @Test
-    public void partition() {
+    void partition() {
         LinkedList<Integer> linkedList = new LinkedList<>(new LinkedList.Node<>(1));
         linkedList.insertAtEnd(4);
         linkedList.insertAtEnd(3);
@@ -25,12 +26,12 @@ public class PartitionListTest {
 
         linkedList = new LinkedList<>(partitionHead);
 
-        Assert.assertEquals(6, linkedList.getSize());
+        assertEquals(6, linkedList.getSize());
 
-        Assert.assertEquals(2, linkedList.searchByIndex(1).getData().intValue());
+        assertEquals(2, linkedList.searchByIndex(1).getData().intValue());
 
-        Assert.assertEquals(4, linkedList.searchByIndex(3).getData().intValue());
+        assertEquals(4, linkedList.searchByIndex(3).getData().intValue());
 
-        Assert.assertEquals(5, linkedList.searchByIndex(5).getData().intValue());
+        assertEquals(5, linkedList.searchByIndex(5).getData().intValue());
     }
 }

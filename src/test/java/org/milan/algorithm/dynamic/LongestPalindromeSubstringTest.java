@@ -1,30 +1,31 @@
 package org.milan.algorithm.dynamic;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link LongestPalindromeSubstring}
  *
  * @author Milan Rathod
  */
-public class LongestPalindromeSubstringTest {
+class LongestPalindromeSubstringTest {
 
     @Test
-    public void testFind() {
+    void testFind() {
         LongestPalindromeSubstring longestPalindromeSubstring = new LongestPalindromeSubstring();
 
         String result = longestPalindromeSubstring.find("forgeeksskeegfor");
 
-        Assert.assertEquals("geeksskeeg", result);
+        assertEquals("geeksskeeg", result);
     }
 
     @Test
-    public void testFindV2() {
+    void testFindV2() {
         LongestPalindromeSubstring longestPalindromeSubstring = new LongestPalindromeSubstring();
 
         String result = longestPalindromeSubstring.findV2("forgeeksskeegfor");
 
-        Assert.assertEquals("geeksskeeg", result);
+        assertEquals("geeksskeeg", result);
     }
 }

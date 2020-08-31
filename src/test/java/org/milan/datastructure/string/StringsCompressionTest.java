@@ -1,25 +1,26 @@
 package org.milan.datastructure.string;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link StringsCompression}
  *
  * @author Milan Rathod
  */
-public class StringsCompressionTest {
+class StringsCompressionTest {
 
     @Test
-    public void testCompression() {
+    void testCompression() {
         StringsCompression stringsCompression = new StringsCompression();
 
         String input = "ssssuuuummmmmmiiiittttttttttttt";
 
-        Assert.assertEquals("s4u4m6i4t13", stringsCompression.compression(input));
+        assertEquals("s4u4m6i4t13", stringsCompression.compression(input));
 
         input = "Jaain";
 
-        Assert.assertEquals("Jaain", stringsCompression.compression(input));
+        assertEquals("Jaain", stringsCompression.compression(input));
     }
 }

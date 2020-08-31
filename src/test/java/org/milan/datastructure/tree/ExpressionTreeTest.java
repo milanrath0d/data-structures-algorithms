@@ -1,23 +1,24 @@
 package org.milan.datastructure.tree;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link ExpressionTree}
  *
  * @author Milan Rathod
  */
-public class ExpressionTreeTest {
+class ExpressionTreeTest {
 
     @Test
-    public void testConstructTree() {
+    void testConstructTree() {
         ExpressionTree expressionTree = new ExpressionTree();
 
         TreeNode<Character> root = expressionTree.constructTree("ABC*+D/".toCharArray());
 
-        Assert.assertEquals('/', root.key.charValue());
-        Assert.assertEquals('+', root.left.key.charValue());
-        Assert.assertEquals('D', root.right.key.charValue());
+        assertEquals('/', root.key.charValue());
+        assertEquals('+', root.left.key.charValue());
+        assertEquals('D', root.right.key.charValue());
     }
 }

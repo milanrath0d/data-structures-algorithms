@@ -1,20 +1,21 @@
 package org.milan.misc;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link AddNumber}
  *
  * @author Milan Rathod
  */
-public class AddNumberTest {
+class AddNumberTest {
 
     @Test
-    public void testAdd() {
+    void testAdd() {
         AddNumber addNumber = new AddNumber();
         int result = addNumber.add(11);
 
-        Assert.assertEquals(12, result);
+        assertEquals(12, result);
     }
 }

@@ -1,22 +1,23 @@
 package org.milan.datastructure.linkedlist;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link NthNodeFromEnd}
  *
  * @author Milan Rathod
  */
-public class NthNodeFromEndTest {
+class NthNodeFromEndTest {
 
     private LinkedList<Integer> linkedList;
 
     private NthNodeFromEnd nthNodeFromEnd;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         linkedList = new LinkedList<>(new LinkedList.Node<>(1));
 
         linkedList.insertAtEnd(2);
@@ -29,24 +30,24 @@ public class NthNodeFromEndTest {
     }
 
     @Test
-    public void testFind() {
+    void testFind() {
         LinkedList.Node<Integer> result = nthNodeFromEnd.find(linkedList.getHead(), 3);
 
-        Assert.assertEquals(4, result.data.intValue());
+        assertEquals(4, result.data.intValue());
 
         result = nthNodeFromEnd.find(linkedList.getHead(), 6);
 
-        Assert.assertEquals(1, result.data.intValue());
+        assertEquals(1, result.data.intValue());
     }
 
     @Test
-    public void testFindV2() {
+    void testFindV2() {
         LinkedList.Node<Integer> result = nthNodeFromEnd.findV2(linkedList.getHead(), 3);
 
-        Assert.assertEquals(4, result.data.intValue());
+        assertEquals(4, result.data.intValue());
 
         result = nthNodeFromEnd.find(linkedList.getHead(), 6);
 
-        Assert.assertEquals(1, result.data.intValue());
+        assertEquals(1, result.data.intValue());
     }
 }

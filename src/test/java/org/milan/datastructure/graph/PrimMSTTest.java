@@ -1,16 +1,16 @@
 package org.milan.datastructure.graph;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * Test class for {@link PrimMST}
  *
  * @author Milan Rathod
  */
-public class PrimMSTTest {
+class PrimMSTTest {
 
     @Test
-    public void testFind() {
+    void testFind() {
         WeightedGraph graph = new WeightedGraph(4);
 
         // Edge 0-1

@@ -1,16 +1,16 @@
 package org.milan.geeksforgeeks;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * Test Class for {@link Splitwise}
  *
  * @author Milan Rathod
  */
-public class SplitwiseTest {
+class SplitwiseTest {
 
     @Test
-    public void testSimplifyDebt() {
+    void testSimplifyDebt() {
         // Input Graph describing debts of persons to each other
         int[][] input = {{0, 1000, 2000},
                 {0, 0, 5000},

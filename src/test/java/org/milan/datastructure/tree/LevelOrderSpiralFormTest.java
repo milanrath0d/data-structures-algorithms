@@ -1,26 +1,27 @@
 package org.milan.datastructure.tree;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.milan.util.ListUtil;
 
 import java.util.Arrays;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Test class for {@link LevelOrderSpiralForm}
  *
  * @author Milan Rathod
  */
-public class LevelOrderSpiralFormTest {
+class LevelOrderSpiralFormTest {
 
     private BinaryTree binaryTree;
 
     private LevelOrderSpiralForm levelOrderSpiralForm;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         levelOrderSpiralForm = new LevelOrderSpiralForm();
         binaryTree = new BinaryTree(1);
         binaryTree.getRoot().left = new BinaryTree.Node(2);
@@ -32,24 +33,24 @@ public class LevelOrderSpiralFormTest {
     }
 
     @Test
-    public void testUsingTwoStacks() {
+    void testUsingTwoStacks() {
         List<Integer> result = levelOrderSpiralForm.usingTwoStacks(binaryTree.getRoot());
 
-        Assert.assertTrue(ListUtil.isEqual(result, expectedResultList()));
+        assertTrue(ListUtil.isEqual(result, expectedResultList()));
     }
 
     @Test
-    public void testUsingQueueAndStack() {
+    void testUsingQueueAndStack() {
         List<Integer> result = levelOrderSpiralForm.usingQueueAndStack(binaryTree.getRoot());
 
-        Assert.assertTrue(ListUtil.isEqual(result, expectedResultList()));
+        assertTrue(ListUtil.isEqual(result, expectedResultList()));
     }
 
     @Test
-    public void testUsingDeque() {
+    void testUsingDeque() {
         List<Integer> result = levelOrderSpiralForm.usingDeque(binaryTree.getRoot());
 
-        Assert.assertTrue(ListUtil.isEqual(result, expectedResultList()));
+        assertTrue(ListUtil.isEqual(result, expectedResultList()));
     }
 
     private List<Integer> expectedResultList() {

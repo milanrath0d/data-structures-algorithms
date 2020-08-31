@@ -1,20 +1,21 @@
 package org.milan.hackerearth;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link AlphaPrimes}
  *
  * @author Milan Rathod
  */
-public class AlphaPrimesTest {
+class AlphaPrimesTest {
 
     @Test
-    public void testGetCount() {
+    void testGetCount() {
         AlphaPrimes alphaPrimes = new AlphaPrimes();
         int count = alphaPrimes.getCount(110, 114);
 
-        Assert.assertEquals(3, count);
+        assertEquals(3, count);
     }
 }

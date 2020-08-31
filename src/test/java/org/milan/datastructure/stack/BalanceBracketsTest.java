@@ -1,20 +1,21 @@
 package org.milan.datastructure.stack;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Test Class for {@link BalanceBrackets}
  *
  * @author Milan Rathod
  */
-public class BalanceBracketsTest {
+class BalanceBracketsTest {
 
     @Test
-    public void testCheckBalance() {
+    void testCheckBalance() {
         BalanceBrackets balanceBrackets = new BalanceBrackets();
         boolean result = balanceBrackets.checkBalance("(())");
 
-        Assert.assertTrue(result);
+        assertTrue(result);
     }
 }

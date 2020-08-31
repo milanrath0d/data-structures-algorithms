@@ -1,22 +1,21 @@
 package org.milan.datastructure.tree;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author Milan Rathod
  */
-public class VerticalWidthTest {
+class VerticalWidthTest {
 
     private BinaryTree binaryTree;
 
     private VerticalWidth verticalWidth;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         verticalWidth = new VerticalWidth();
         binaryTree = new BinaryTree(1);
         binaryTree.getRoot().left = new BinaryTree.Node(2);
@@ -28,9 +27,9 @@ public class VerticalWidthTest {
     }
 
     @Test
-    public void testPreorderGet() {
+    void testPreorderGet() {
         int result = verticalWidth.get(binaryTree.getRoot());
 
-        Assert.assertEquals(5, result);
+        assertEquals(5, result);
     }
 }

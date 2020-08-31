@@ -1,20 +1,21 @@
 package org.milan.datastructure.subsequence;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link LongestSubSequenceWithKChars}
  *
  * @author Milan Rathod
  */
-public class LongestSubSequenceWithKCharsTest {
+class LongestSubSequenceWithKCharsTest {
 
     @Test
-    public void testCompute() {
+    void testCompute() {
         LongestSubSequenceWithKChars longestSubSequenceWithKChars = new LongestSubSequenceWithKChars();
         String result = longestSubSequenceWithKChars.compute("geeksforgeeks", 2);
 
-        Assert.assertEquals("geeksgeeks", result);
+        assertEquals("geeksgeeks", result);
     }
 }

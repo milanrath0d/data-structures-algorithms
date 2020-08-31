@@ -1,21 +1,22 @@
 package org.milan.datastructure.misc;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link Euclid}
  *
  * @author Milan Rathod
  */
-public class EuclidTest {
+class EuclidTest {
 
     @Test
-    public void testGcd() {
+    void testGcd() {
         Euclid euclid = new Euclid();
 
         int result = euclid.gcd(5, 1);
 
-        Assert.assertEquals(1, result);
+        assertEquals(1, result);
     }
 }

@@ -1,21 +1,22 @@
 package org.milan.misc;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link TrailingZerosInFactorial}
  *
  * @author Milan Rathod
  */
-public class TrailingZerosInFactorialTest {
+class TrailingZerosInFactorialTest {
 
     @Test
-    public void testFind() {
+    void testFind() {
         TrailingZerosInFactorial trailingZerosInFactorial = new TrailingZerosInFactorial();
 
         int result = trailingZerosInFactorial.find(100);
 
-        Assert.assertEquals(24, result);
+        assertEquals(24, result);
     }
 }

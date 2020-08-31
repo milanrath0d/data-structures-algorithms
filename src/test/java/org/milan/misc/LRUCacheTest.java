@@ -1,17 +1,18 @@
 package org.milan.misc;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link LRUCache}
  *
  * @author Milan Rathod
  */
-public class LRUCacheTest {
+class LRUCacheTest {
 
     @Test
-    public void testRefer() {
+    void testRefer() {
         LRUCache lruCache = new LRUCache(4);
         lruCache.refer(1);
         lruCache.refer(15);
@@ -21,8 +22,8 @@ public class LRUCacheTest {
         lruCache.refer(10);
         lruCache.refer(16);
 
-        Assert.assertEquals(2, lruCache.getPageHit());
+        assertEquals(2, lruCache.getPageHit());
 
-        Assert.assertEquals(5, lruCache.getPageFault());
+        assertEquals(5, lruCache.getPageFault());
     }
 }

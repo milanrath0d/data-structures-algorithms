@@ -1,17 +1,18 @@
 package org.milan.datastructure.graph;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Test class for {@link UnionByRank}
  *
  * @author Milan Rathod
  */
-public class UnionByRankTest {
+class UnionByRankTest {
 
     @Test
-    public void testIsCycleExists() {
+    void testIsCycleExists() {
         Graph graph = new Graph(3, GraphType.UNDIRECTED);
 
         graph.addEdge(graph, 0, 1);
@@ -20,6 +21,6 @@ public class UnionByRankTest {
 
         UnionByRank unionByRank = new UnionByRank();
 
-        Assert.assertTrue(unionByRank.isCycleExists(graph));
+        assertTrue(unionByRank.isCycleExists(graph));
     }
 }

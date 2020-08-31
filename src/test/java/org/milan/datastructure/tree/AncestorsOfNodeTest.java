@@ -1,22 +1,23 @@
 package org.milan.datastructure.tree;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link AncestorsOfNode}
  *
  * @author Milan Rathod
  */
-public class AncestorsOfNodeTest {
+class AncestorsOfNodeTest {
 
     private BinaryTree binaryTree;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         binaryTree = new BinaryTree(1);
         binaryTree.getRoot().left = new BinaryTree.Node(2);
         binaryTree.getRoot().right = new BinaryTree.Node(3);
@@ -27,22 +28,22 @@ public class AncestorsOfNodeTest {
     }
 
     @Test
-    public void testFindAll() {
+    void testFindAll() {
         AncestorsOfNode ancestorsOfNode = new AncestorsOfNode();
 
         List<BinaryTree.Node> result = ancestorsOfNode.findAll(binaryTree.getRoot(), 7);
 
-        Assert.assertEquals(3, result.get(0).key);
-        Assert.assertEquals(1, result.get(1).key);
+        assertEquals(3, result.get(0).key);
+        assertEquals(1, result.get(1).key);
     }
 
     @Test
-    public void testFindAllIterative() {
+    void testFindAllIterative() {
         AncestorsOfNode ancestorsOfNode = new AncestorsOfNode();
 
         List<BinaryTree.Node> result = ancestorsOfNode.findAllIterative(binaryTree.getRoot(), 7);
 
-        Assert.assertEquals(3, result.get(0).key);
-        Assert.assertEquals(1, result.get(1).key);
+        assertEquals(3, result.get(0).key);
+        assertEquals(1, result.get(1).key);
     }
 }

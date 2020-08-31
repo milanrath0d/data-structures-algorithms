@@ -1,7 +1,8 @@
 package org.milan.datastructure.array;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class SegregateZerosAndOnesTest {
 
@@ -13,6 +14,6 @@ class SegregateZerosAndOnesTest {
 
         segregateZerosAndOnes.segregate(arr);
 
-        Assert.assertArrayEquals(arr, new int[]{0, 0, 0, 1, 1, 1});
+        assertArrayEquals(arr, new int[]{0, 0, 0, 1, 1, 1});
     }
 }

@@ -1,17 +1,18 @@
 package org.milan.datastructure.tree;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link SpecialPreOrderTraversal}
  *
  * @author Milan Rathod
  */
-public class SpecialPreOrderTraversalTest {
+class SpecialPreOrderTraversalTest {
 
     @Test
-    public void constructTree() {
+    void constructTree() {
         int[] pre = new int[]{10, 30, 20, 5, 15};
         char[] preLN = new char[]{'N', 'N', 'L', 'L', 'L'};
 
@@ -20,10 +21,10 @@ public class SpecialPreOrderTraversalTest {
 
         BinaryTree.Node newRoot = specialPreOrderTraversal.constructTree(pre, preLN, binaryTree.getRoot());
 
-        Assert.assertEquals(newRoot.key, 10);
-        Assert.assertEquals(newRoot.getLeft().key, 30);
-        Assert.assertEquals(newRoot.getRight().key, 15);
-        Assert.assertEquals(newRoot.getLeft().getLeft().key, 20);
-        Assert.assertEquals(newRoot.getLeft().getRight().key, 5);
+        assertEquals(10, newRoot.key);
+        assertEquals(30, newRoot.getLeft().key);
+        assertEquals(15, newRoot.getRight().key);
+        assertEquals(20, newRoot.getLeft().getLeft().key);
+        assertEquals(5, newRoot.getLeft().getRight().key);
     }
 }

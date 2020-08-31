@@ -1,15 +1,16 @@
 package org.milan.algorithm.dynamic;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link LongestCommonSubsequence}
  *
  * @author Milan Rathod
  */
-public class LongestCommonSubsequenceTest {
+class LongestCommonSubsequenceTest {
 
     private LongestCommonSubsequence longestCommonSubsequence;
 
@@ -17,30 +18,30 @@ public class LongestCommonSubsequenceTest {
 
     private String s2 = "GXTXAYB";
 
-    @Before
-    public void setUp() {
+    @BeforeEach
+    void setUp() {
         longestCommonSubsequence = new LongestCommonSubsequence();
     }
 
     @Test
-    public void testLcsByRecursion() {
+    void testLcsByRecursion() {
         int result = longestCommonSubsequence.lcsByRecursion(s1, s2);
 
-        Assert.assertEquals(4, result);
+        assertEquals(4, result);
     }
 
     @Test
-    public void testLcsByDynamic() {
+    void testLcsByDynamic() {
         int result = longestCommonSubsequence.lcsByDynamic(s1, s2);
 
-        Assert.assertEquals(4, result);
+        assertEquals(4, result);
     }
 
     @Test
-    public void testFindLcs() {
+    void testFindLcs() {
         String result = longestCommonSubsequence.findLcs(s1, s2);
 
-        Assert.assertEquals("GTAB", result);
+        assertEquals("GTAB", result);
     }
 
 }

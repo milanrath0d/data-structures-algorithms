@@ -1,21 +1,21 @@
 package org.milan.geeksforgeeks;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link Survival}
  *
  * @author Milan Rathod
  */
-public class SurvivalTest {
+class SurvivalTest {
 
     @Test
-    public void testBuyFoodDays() {
+    void testBuyFoodDays() {
         Survival survival = new Survival();
         int result = survival.buyFoodDays(16, 10, 2);
 
-        Assert.assertEquals(2, result);
-
+        assertEquals(2, result);
     }
 }

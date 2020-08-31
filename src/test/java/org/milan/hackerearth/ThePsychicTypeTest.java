@@ -1,20 +1,21 @@
 package org.milan.hackerearth;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Test Class for {@link ThePsychicType}
  *
  * @author Milan Rathod
  */
-public class ThePsychicTypeTest {
+class ThePsychicTypeTest {
 
     @Test
-    public void testIsReachable() {
+    void testIsReachable() {
         ThePsychicType thePsychicType = new ThePsychicType();
         boolean result = thePsychicType.isReachable(new int[]{3, 4, 2, 5, 5}, 1, 4);
 
-        Assert.assertTrue(result);
+        assertTrue(result);
     }
 }

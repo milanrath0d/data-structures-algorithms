@@ -1,6 +1,6 @@
 package org.milan.datastructure.string;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
@@ -10,10 +10,10 @@ import java.util.List;
  *
  * @author Milan Rathod
  */
-public class StringBustTest {
+class StringBustTest {
 
     @Test
-    public void testCompute() {
+    void testCompute() {
         List<String> input = Arrays.asList("a", "b", "c", "d", "e", "e", "e", "e", "d", "d", "c", "b", "f", "g", "f");
 
         StringBust stringBust = new StringBust();

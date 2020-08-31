@@ -1,22 +1,24 @@
 package org.milan.datastructure.tree;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Test class for {@link Cousins}
  *
  * @author Milan Rathod
  */
-public class CousinsTest {
+class CousinsTest {
 
     private BinaryTree binaryTree;
 
     private Cousins cousins;
 
-    @Before
-    public void setUp() {
+    @BeforeEach
+    void setUp() {
         binaryTree = new BinaryTree(4);
         binaryTree.getRoot().left = new BinaryTree.Node(7);
         binaryTree.getRoot().right = new BinaryTree.Node(5);
@@ -29,16 +31,16 @@ public class CousinsTest {
     }
 
     @Test
-    public void testIsCousins() {
-        Assert.assertTrue(cousins.isCousins(binaryTree.getRoot(), new BinaryTree.Node(1), new BinaryTree.Node(11)));
+    void testIsCousins() {
+        assertTrue(cousins.isCousins(binaryTree.getRoot(), new BinaryTree.Node(1), new BinaryTree.Node(11)));
 
-        Assert.assertFalse(cousins.isCousins(binaryTree.getRoot(), new BinaryTree.Node(1), new BinaryTree.Node(8)));
+        assertFalse(cousins.isCousins(binaryTree.getRoot(), new BinaryTree.Node(1), new BinaryTree.Node(8)));
     }
 
     @Test
-    public void testIsCousinsV2() {
-        Assert.assertTrue(cousins.isCousinsV2(binaryTree.getRoot(), new BinaryTree.Node(1), new BinaryTree.Node(11)));
+    void testIsCousinsV2() {
+        assertTrue(cousins.isCousinsV2(binaryTree.getRoot(), new BinaryTree.Node(1), new BinaryTree.Node(11)));
 
-        Assert.assertFalse(cousins.isCousinsV2(binaryTree.getRoot(), new BinaryTree.Node(1), new BinaryTree.Node(8)));
+        assertFalse(cousins.isCousinsV2(binaryTree.getRoot(), new BinaryTree.Node(1), new BinaryTree.Node(8)));
     }
 }

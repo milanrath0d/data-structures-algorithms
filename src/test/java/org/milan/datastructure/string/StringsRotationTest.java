@@ -1,22 +1,23 @@
 package org.milan.datastructure.string;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Test Class for {@link StringsRotation}
  *
  * @author Milan Rathod
  */
-public class StringsRotationTest {
+class StringsRotationTest {
 
     @Test
-    public void testIsRotated() {
+    void testIsRotated() {
         StringsRotation stringsRotation = new StringsRotation();
 
         String s1 = "sumitjain";
         String s2 = "tjainsumi";
 
-        Assert.assertTrue(stringsRotation.isRotated(s1, s2));
+        assertTrue(stringsRotation.isRotated(s1, s2));
     }
 }

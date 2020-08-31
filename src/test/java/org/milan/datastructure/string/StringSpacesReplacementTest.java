@@ -1,20 +1,21 @@
 package org.milan.datastructure.string;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link StringSpacesReplacement}
  *
  * @author Milan Rathod
  */
-public class StringSpacesReplacementTest {
+class StringSpacesReplacementTest {
 
     @Test
-    public void testReplaceSpaces() {
+    void testReplaceSpaces() {
         String input = "I am Sumit Jain";
         StringSpacesReplacement spacesReplacement = new StringSpacesReplacement();
 
-        Assert.assertEquals("I%20am%20Sumit%20Jain", spacesReplacement.replaceSpaces(input));
+        assertEquals("I%20am%20Sumit%20Jain", spacesReplacement.replaceSpaces(input));
     }
 }

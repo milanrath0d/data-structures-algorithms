@@ -1,24 +1,25 @@
 package org.milan.datastructure.string;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link TextJustification}
  *
  * @author Milan Rathod
  */
-public class TextJustificationTest {
+class TextJustificationTest {
 
     @Test
-    public void testJustify() {
+    void testJustify() {
         TextJustification textJustification = new TextJustification();
 
         String[] words = {"This", "is", "a", "text", "justification", "problem", "in", "tutorial", "horizon"};
 
         String result = textJustification.justify(words, 25, 0);
 
-        Assert.assertEquals(3, result.split("\n").length);
+        assertEquals(3, result.split("\n").length);
     }
 
 }

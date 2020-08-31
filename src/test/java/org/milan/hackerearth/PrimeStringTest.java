@@ -1,21 +1,23 @@
 package org.milan.hackerearth;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Test class for {@link PrimeString}
  *
  * @author Milan Rathod
  */
-public class PrimeStringTest {
+class PrimeStringTest {
 
     @Test
-    public void testIsPrimeString() {
+    void testIsPrimeString() {
         PrimeString primeString = new PrimeString();
 
-        Assert.assertTrue(primeString.isPrimeString("ababb"));
+        assertTrue(primeString.isPrimeString("ababb"));
 
-        Assert.assertFalse(primeString.isPrimeString("abcab"));
+        assertFalse(primeString.isPrimeString("abcab"));
     }
 }

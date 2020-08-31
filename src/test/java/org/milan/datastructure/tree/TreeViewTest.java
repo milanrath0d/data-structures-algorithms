@@ -1,26 +1,28 @@
 package org.milan.datastructure.tree;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.milan.util.ListUtil;
 
 import java.util.Arrays;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Test class for {@link TreeView}
  *
  * @author Milan Rathod
  */
-public class TreeViewTest {
+class TreeViewTest {
 
     private BinaryTree binaryTree;
 
     private TreeView treeView;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         treeView = new TreeView();
         binaryTree = new BinaryTree(1);
         binaryTree.getRoot().left = new BinaryTree.Node(2);
@@ -32,56 +34,56 @@ public class TreeViewTest {
     }
 
     @Test
-    public void testTopView() {
+    void testTopView() {
         List<Integer> result = treeView.topView(binaryTree.getRoot());
 
-        Assert.assertEquals(5, result.size());
+        assertEquals(5, result.size());
 
-        Assert.assertTrue(ListUtil.isEqual(result, Arrays.asList(4, 2, 1, 3, 7)));
+        assertTrue(ListUtil.isEqual(result, Arrays.asList(4, 2, 1, 3, 7)));
     }
 
     @Test
-    public void testLeftView() {
+    void testLeftView() {
         List<Integer> result = treeView.leftView(binaryTree.getRoot());
 
-        Assert.assertEquals(3, result.size());
+        assertEquals(3, result.size());
 
-        Assert.assertTrue(ListUtil.isEqual(result, Arrays.asList(1, 2, 4)));
+        assertTrue(ListUtil.isEqual(result, Arrays.asList(1, 2, 4)));
     }
 
     @Test
-    public void testLeftViewRecursive() {
+    void testLeftViewRecursive() {
         List<Integer> result = treeView.leftViewRecursive(binaryTree.getRoot());
 
-        Assert.assertEquals(3, result.size());
+        assertEquals(3, result.size());
 
-        Assert.assertTrue(ListUtil.isEqual(result, Arrays.asList(1, 2, 4)));
+        assertTrue(ListUtil.isEqual(result, Arrays.asList(1, 2, 4)));
     }
 
     @Test
-    public void testRightView() {
+    void testRightView() {
         List<Integer> result = treeView.rightView(binaryTree.getRoot());
 
-        Assert.assertEquals(3, result.size());
+        assertEquals(3, result.size());
 
-        Assert.assertTrue(ListUtil.isEqual(result, Arrays.asList(1, 3, 7)));
+        assertTrue(ListUtil.isEqual(result, Arrays.asList(1, 3, 7)));
     }
 
     @Test
-    public void testRightViewRecursive() {
+    void testRightViewRecursive() {
         List<Integer> result = treeView.rightViewRecursive(binaryTree.getRoot());
 
-        Assert.assertEquals(3, result.size());
+        assertEquals(3, result.size());
 
-        Assert.assertTrue(ListUtil.isEqual(result, Arrays.asList(1, 3, 7)));
+        assertTrue(ListUtil.isEqual(result, Arrays.asList(1, 3, 7)));
     }
 
     @Test
-    public void testBottomView() {
+    void testBottomView() {
         List<Integer> result = treeView.bottomView(binaryTree.getRoot());
 
-        Assert.assertEquals(5, result.size());
+        assertEquals(5, result.size());
 
-        Assert.assertTrue(ListUtil.isEqual(result, Arrays.asList(4, 2, 6, 3, 7)));
+        assertTrue(ListUtil.isEqual(result, Arrays.asList(4, 2, 6, 3, 7)));
     }
 }

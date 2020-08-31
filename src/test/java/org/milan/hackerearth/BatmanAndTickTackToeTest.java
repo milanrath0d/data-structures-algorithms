@@ -1,17 +1,18 @@
 package org.milan.hackerearth;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Test Class for {@link BatmanAndTickTackToe}
  *
  * @author Milan Rathod
  */
-public class BatmanAndTickTackToeTest {
+class BatmanAndTickTackToeTest {
 
     @Test
-    public void testIsWonScenarioAvailable() {
+    void testIsWonScenarioAvailable() {
         char[][] matrix = {
                 {'x', '.', '.', 'x'},
                 {'.', 'o', 'x', '.'},
@@ -23,6 +24,6 @@ public class BatmanAndTickTackToeTest {
 
         boolean result = batmanAndTickTackToe.isWonScenarioAvailable(matrix);
 
-        Assert.assertTrue(result);
+        assertTrue(result);
     }
 }

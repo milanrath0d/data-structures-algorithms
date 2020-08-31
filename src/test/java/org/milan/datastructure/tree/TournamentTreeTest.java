@@ -1,17 +1,18 @@
 package org.milan.datastructure.tree;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link TournamentTree}
  *
  * @author Milan Rathod
  */
-public class TournamentTreeTest {
+class TournamentTreeTest {
 
     @Test
-    public void testSecondMin() {
+    void testSecondMin() {
         BinaryTree binaryTree = new BinaryTree(2);
         binaryTree.getRoot().left = new BinaryTree.Node(2);
         binaryTree.getRoot().right = new BinaryTree.Node(5);
@@ -24,6 +25,6 @@ public class TournamentTreeTest {
 
         int result = tournamentTree.secondMin(binaryTree.getRoot());
 
-        Assert.assertEquals(4, result);
+        assertEquals(4, result);
     }
 }

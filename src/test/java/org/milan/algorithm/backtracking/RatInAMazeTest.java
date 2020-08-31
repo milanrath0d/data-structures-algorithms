@@ -1,17 +1,18 @@
 package org.milan.algorithm.backtracking;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Test class for {@link RatInAMaze}
  *
  * @author Milan Rathod
  */
-public class RatInAMazeTest {
+class RatInAMazeTest {
 
     @Test
-    public void testSolveMaze() {
+    void testSolveMaze() {
         int[][] maze = {{1, 0, 0, 0},
                 {1, 1, 0, 1},
                 {0, 1, 0, 0},
@@ -20,6 +21,6 @@ public class RatInAMazeTest {
 
         boolean result = ratInAMaze.solveMaze(maze);
 
-        Assert.assertTrue(result);
+        assertTrue(result);
     }
 }

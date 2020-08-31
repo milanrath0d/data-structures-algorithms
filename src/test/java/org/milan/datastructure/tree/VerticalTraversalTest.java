@@ -1,24 +1,25 @@
 package org.milan.datastructure.tree;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link VerticalTraversal}
  *
  * @author Milan Rathod
  */
-public class VerticalTraversalTest {
+class VerticalTraversalTest {
 
     private VerticalTraversal verticalTraversal;
 
     private BinaryTree binaryTree;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         verticalTraversal = new VerticalTraversal();
         binaryTree = new BinaryTree(1);
         binaryTree.getRoot().left = new BinaryTree.Node(2);
@@ -30,14 +31,14 @@ public class VerticalTraversalTest {
     }
 
     @Test
-    public void testTraverse() {
+    void testTraverse() {
         List<String> result = verticalTraversal.traverse(binaryTree.getRoot());
 
-        Assert.assertEquals(5, result.size());
+        assertEquals(5, result.size());
     }
 
     @Test
-    public void testTraverseV2() {
+    void testTraverseV2() {
         verticalTraversal.traverseV2(binaryTree.getRoot());
     }
 }

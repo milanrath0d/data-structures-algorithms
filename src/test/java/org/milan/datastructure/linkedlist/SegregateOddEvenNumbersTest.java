@@ -1,20 +1,21 @@
 package org.milan.datastructure.linkedlist;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link SegregateOddEvenNumbers}
  *
  * @author Milan Rathod
  */
-public class SegregateOddEvenNumbersTest {
+class SegregateOddEvenNumbersTest {
 
     private LinkedList<Integer> linkedList;
 
-    @Before
-    public void setup() {
+    @BeforeEach
+    void setup() {
         linkedList = new LinkedList<>(new LinkedList.Node<>(11));
 
         linkedList.insertAtEnd(10);
@@ -26,17 +27,17 @@ public class SegregateOddEvenNumbersTest {
     }
 
     @Test
-    public void testSegregate() {
+    void testSegregate() {
         SegregateOddEvenNumbers segregateOddEvenNumbers = new SegregateOddEvenNumbers();
 
         LinkedList.Node<Integer> segregatedHead = segregateOddEvenNumbers.segregate(linkedList.getHead());
 
         LinkedList<Integer> newList = new LinkedList<>(segregatedHead);
 
-        Assert.assertEquals(7, newList.getSize());
+        assertEquals(7, newList.getSize());
 
-        Assert.assertEquals(6,newList.searchByIndex(1).getData().intValue());
+        assertEquals(6,newList.searchByIndex(1).getData().intValue());
 
-        Assert.assertEquals(11,newList.searchByIndex(4).getData().intValue());
+        assertEquals(11,newList.searchByIndex(4).getData().intValue());
     }
 }

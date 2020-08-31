@@ -1,19 +1,20 @@
 package org.milan.datastructure.stack;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link InfixToPrefix}
  *
  * @author Milan Rathod
  */
-public class InfixToPrefixTest {
+class InfixToPrefixTest {
 
     @Test
-    public void testConversion() {
+    void testConversion() {
         InfixToPrefix infixToPrefix = new InfixToPrefix();
 
-        Assert.assertEquals("*-A/BC-/AKL", infixToPrefix.conversion("(A-B/C)*(A/K-L)"));
+        assertEquals("*-A/BC-/AKL", infixToPrefix.conversion("(A-B/C)*(A/K-L)"));
     }
 }

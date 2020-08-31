@@ -1,21 +1,22 @@
 package org.milan.datastructure.string;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link FirstRepeatingLeftmostCharacter}
  *
  * @author Milan Rathod
  */
-public class FirstRepeatingLeftmostCharacterTest {
+class FirstRepeatingLeftmostCharacterTest {
 
     @Test
-    public void testFind() {
+    void testFind() {
         FirstRepeatingLeftmostCharacter firstRepeatingLeftmostCharacter = new FirstRepeatingLeftmostCharacter();
 
         char result = firstRepeatingLeftmostCharacter.find("geeksforgeeks");
 
-        Assert.assertEquals('g', result);
+        assertEquals('g', result);
     }
 }

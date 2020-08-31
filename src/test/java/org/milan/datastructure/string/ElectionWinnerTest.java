@@ -1,21 +1,22 @@
 package org.milan.datastructure.string;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link ElectionWinner}
  *
  * @author Milan Rathod
  */
-public class ElectionWinnerTest {
+class ElectionWinnerTest {
 
     @Test
-    public void find() {
+    void find() {
         String[] votes = {"john", "johnny", "jackie", "jamie", "jamie", "john"};
 
         ElectionWinner electionWinner = new ElectionWinner();
 
-        Assert.assertEquals("jamie", electionWinner.find(votes));
+        assertEquals("jamie", electionWinner.find(votes));
     }
 }

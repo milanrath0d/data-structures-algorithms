@@ -1,26 +1,27 @@
 package org.milan.datastructure.string;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Test Class for {@link StartsWithPrefixes }
  *
  * @author Milan Rathod
  */
-public class StartsWithPrefixesTest {
+class StartsWithPrefixesTest {
 
     @Test
-    public void usingRegularExpression() {
+    void usingRegularExpression() {
         StartsWithPrefixes startsWithPrefixes = new StartsWithPrefixes();
         boolean result = startsWithPrefixes.usingRegularExpression("GeeksforGeeks", new String[]{"Geeks", "for", "Gfor"});
-        Assert.assertTrue(result);
+        assertTrue(result);
     }
 
     @Test
-    public void usingStreams() {
+    void usingStreams() {
         StartsWithPrefixes startsWithPrefixes = new StartsWithPrefixes();
         boolean result = startsWithPrefixes.usingStreams("GeeksforGeeks", new String[]{"Geeks", "for", "Gfor"});
-        Assert.assertTrue(result);
+        assertTrue(result);
     }
 }

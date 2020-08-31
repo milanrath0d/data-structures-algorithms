@@ -1,20 +1,22 @@
 package org.milan.datastructure.stack;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Test Class for {@link CustomStack}
  *
  * @author Milan Rathod
  */
-public class CustomStackTest {
+class CustomStackTest {
 
     @Test
-    public void testForIntegerType() {
+    void testForIntegerType() {
         CustomStack<Integer> customStack = new CustomStack<>();
 
-        Assert.assertTrue(customStack.isEmpty());
+        assertTrue(customStack.isEmpty());
 
         // Push 4 integers to stack
         customStack.push(1);
@@ -22,17 +24,17 @@ public class CustomStackTest {
         customStack.push(3);
         customStack.push(4);
 
-        Assert.assertEquals(4, customStack.size());
+        assertEquals(4, customStack.size());
 
         Integer result = customStack.pop();
 
-        Assert.assertEquals(4, result.intValue());
+        assertEquals(4, result.intValue());
 
         result = customStack.pop();
 
-        Assert.assertEquals(3, result.intValue());
+        assertEquals(3, result.intValue());
 
-        Assert.assertEquals(2, customStack.size());
+        assertEquals(2, customStack.size());
 
         // Push 6 integers to stack
         customStack.push(5);
@@ -42,19 +44,19 @@ public class CustomStackTest {
         customStack.push(9);
         customStack.push(10);
 
-        Assert.assertEquals(8, customStack.size());
+        assertEquals(8, customStack.size());
 
-        Assert.assertTrue(customStack.contains(10));
+        assertTrue(customStack.contains(10));
 
         customStack.pop();
         customStack.pop();
         customStack.pop();
         customStack.pop();
 
-        Assert.assertEquals(4, customStack.size());
+        assertEquals(4, customStack.size());
 
         customStack.clear();
 
-        Assert.assertTrue(customStack.isEmpty());
+        assertTrue(customStack.isEmpty());
     }
 }

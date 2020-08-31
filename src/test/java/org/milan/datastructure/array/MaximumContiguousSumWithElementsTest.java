@@ -1,21 +1,22 @@
 package org.milan.datastructure.array;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link MaximumContiguousSumWithElements}
  *
  * @author Milan Rathod
  */
-public class MaximumContiguousSumWithElementsTest {
+class MaximumContiguousSumWithElementsTest {
 
     @Test
-    public void testSolution() {
+    void testSolution() {
         int[] a = {6, 1, 4, 6, 3, 2, 7, 4};
 
         int solution = new MaximumContiguousSumWithElements().solution(a, 3, 2);
 
-        Assert.assertEquals(24, solution);
+        assertEquals(24, solution);
     }
 }

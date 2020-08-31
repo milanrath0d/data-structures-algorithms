@@ -1,21 +1,22 @@
 package org.milan.datastructure.queue;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.milan.exception.EmptyQueueException;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Test Class for {@link DynamicArrayQueue}
  *
  * @author Milan Rathod
  */
-public class DynamicArrayQueueTest {
+class DynamicArrayQueueTest {
 
     @Test
-    public void testQueueOperations() {
+    void testQueueOperations() {
         DynamicArrayQueue queue = new DynamicArrayQueue(4);
 
-        Assert.assertTrue(queue.isEmpty());
+        assertTrue(queue.isEmpty());
 
         // Enqueue operations
         queue.enqueue(4);
@@ -23,23 +24,23 @@ public class DynamicArrayQueueTest {
         queue.enqueue(3);
         queue.enqueue(1);
 
-        Assert.assertTrue(queue.isFull());
+        assertTrue(queue.isFull());
 
-        Assert.assertEquals(4, queue.dequeue());
-        Assert.assertEquals(2, queue.dequeue());
-        Assert.assertEquals(3, queue.dequeue());
-        Assert.assertEquals(1, queue.dequeue());
+        assertEquals(4, queue.dequeue());
+        assertEquals(2, queue.dequeue());
+        assertEquals(3, queue.dequeue());
+        assertEquals(1, queue.dequeue());
 
-        Assert.assertTrue(queue.isEmpty());
+        assertTrue(queue.isEmpty());
     }
 
-    @Test(expected = EmptyQueueException.class)
-    public void testEmptyQueueException() {
+    @Test
+    void testEmptyQueueException() {
         DynamicArrayQueue queue = new DynamicArrayQueue(4);
 
-        Assert.assertTrue(queue.isEmpty());
+        assertTrue(queue.isEmpty());
 
-        queue.dequeue();
+        assertThrows(EmptyQueueException.class, queue::dequeue);
     }
 
 }

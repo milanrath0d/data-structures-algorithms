@@ -1,17 +1,18 @@
 package org.milan.datastructure.graph;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Class for {@link MotherVertex}
  *
  * @author Milan Rathod
  */
-public class MotherVertexTest {
+class MotherVertexTest {
 
     @Test
-    public void testFind() {
+    void testFind() {
         Graph graph = new Graph(7);
         graph.addEdge(graph, 0, 1);
         graph.addEdge(graph, 0, 2);
@@ -26,6 +27,6 @@ public class MotherVertexTest {
 
         int result = motherVertex.find();
 
-        Assert.assertEquals(5, result);
+        assertEquals(5, result);
     }
 }
