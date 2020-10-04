@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class OptimumJumpTest {
 
     @Test
-    void find() {
+    void testFind() {
         int[] arr = new int[]{1, 2, 3, 4, 100};
         OptimumJump optimumJump = new OptimumJump();
 

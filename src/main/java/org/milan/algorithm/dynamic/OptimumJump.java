@@ -1,7 +1,5 @@
 package org.milan.algorithm.dynamic;
 
-import java.util.Map;
-
 /**
  * You are given an array of N integers.
  * You have to find the minimum cost that is required to cross the array by jumping from one element to another.

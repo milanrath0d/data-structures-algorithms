@@ -12,21 +12,24 @@ import java.util.PriorityQueue;
  */
 public class KthSmallestElement {
 
-    private BinaryHeap binaryHeap;
-
-    public KthSmallestElement(BinaryHeap binaryHeap) {
-        this.binaryHeap = binaryHeap;
-    }
-
     /**
-     * First approach: perform deletion k times in min heap
+     * Naive approach: perform deletion k times in min heap
      * <p>
      * Time complexity: O(k*logn)
      *
-     * @param k kth element
+     * @param arr given array
+     * @param k   kth element
      * @return kth smallest element
      */
-    public int find(int k) {
+    public int find(int[] arr, int k) {
+
+        // Base case
+        if (k > arr.length || k < 1) {
+            throw new IllegalArgumentException("value of k is not valid");
+        }
+
+        BinaryHeap binaryHeap = buildMinBinaryHeap(arr);
+
         for (int i = 1; i < k; i++) {
             binaryHeap.delete();
         }
@@ -38,15 +41,28 @@ public class KthSmallestElement {
      * <p>
      * Timex complexity: O(k*logk)
      *
-     * @param k kth element
+     * @param arr given array
+     * @param k   kth element
      * @return kth smallest element
      */
-    public int findV2(int k) {
+    public int findV2(int[] arr, int k) {
+
+        // Base case
+        if (k > arr.length || k < 1) {
+            throw new IllegalArgumentException("value of k is not valid");
+        }
+
+        BinaryHeap binaryHeap = buildMinBinaryHeap(arr);
+
+        return KthSmallestElement.getKthElement(binaryHeap, k);
+    }
+
+    public static int getKthElement(BinaryHeap binaryHeap, int k) {
         PriorityQueue<Pair<Integer, Integer>> priorityQueue = new PriorityQueue<>();
 
         priorityQueue.add(new ImmutablePair<>(0, binaryHeap.getStore()[0]));
 
-        for (int i = 0; i < k - 1; i++) {
+        for (int i = 1; i < k; i++) {
             Pair<Integer, Integer> currentPair = priorityQueue.poll();
             int currentIndex = currentPair.getKey();
 
@@ -62,5 +78,16 @@ public class KthSmallestElement {
 
         Pair<Integer, Integer> currentPair = priorityQueue.poll();
         return currentPair != null ? currentPair.getValue() : -1;
+    }
+
+    /**
+     * Build minimum binary heap from given array and return
+     */
+    private BinaryHeap buildMinBinaryHeap(int[] arr) {
+        BinaryHeap binaryHeap = new BinaryHeap(arr.length, HeapType.MIN);
+
+        binaryHeap.buildHeap(arr);
+
+        return binaryHeap;
     }
 }

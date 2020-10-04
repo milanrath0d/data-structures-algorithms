@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 class MoveZerosToEndTest {
 
     @Test
-    void move() {
+    void testMove() {
         int[] testArray = new int[]{1, 9, 8, 4, 0, 0, 2, 7, 0, 6, 0};
 
         MoveZerosToEnd moveZerosToEnd = new MoveZerosToEnd();

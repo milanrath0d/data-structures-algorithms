@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class SpecialNumbersTest {
 
     @Test
-    void minCost() {
+    void testMinCost() {
         SpecialNumbers specialNumbers = new SpecialNumbers();
 
         long minCost = specialNumbers.minCost(4, 7, 8);

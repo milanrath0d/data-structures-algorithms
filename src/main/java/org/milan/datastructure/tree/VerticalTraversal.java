@@ -3,12 +3,7 @@ package org.milan.datastructure.tree;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * Problem: {@link @https://www.geeksforgeeks.org/print-binary-tree-vertical-order/}
@@ -135,7 +130,8 @@ public class VerticalTraversal {
     }
 
     static class Values {
-        int min, max;
+        int min;
+        int max;
     }
 
 }

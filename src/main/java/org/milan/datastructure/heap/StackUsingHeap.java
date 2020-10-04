@@ -2,6 +2,7 @@ package org.milan.datastructure.heap;
 
 import org.milan.exception.StackUnderflowError;
 
+import java.util.Objects;
 import java.util.PriorityQueue;
 
 /**
@@ -16,7 +17,7 @@ public class StackUsingHeap {
      */
     private int count;
 
-    private PriorityQueue<StackElement> priorityQueue;
+    private final PriorityQueue<StackElement> priorityQueue;
 
     public StackUsingHeap() {
         priorityQueue = new PriorityQueue<>((o1, o2) -> o2.getPriority() - o1.getPriority());
@@ -40,7 +41,7 @@ public class StackUsingHeap {
         if (isEmpty()) {
             throw new StackUnderflowError("Stack is empty");
         }
-        return priorityQueue.poll().getElement();
+        return Objects.requireNonNull(priorityQueue.poll()).getElement();
     }
 
     /**
@@ -56,9 +57,9 @@ public class StackUsingHeap {
  */
 class StackElement {
 
-    private int priority;
+    private final int priority;
 
-    private int element;
+    private final int element;
 
     public StackElement(int priority, int element) {
         this.priority = priority;

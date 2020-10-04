@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class RemoveDuplicatesTest {
 
     @Test
-    void removeDuplicatesSorted() {
+    void testRemoveDuplicatesSorted() {
         LinkedList<Integer> linkedList = new LinkedList<>(new LinkedList.Node<>(1));
         linkedList.insertAtEnd(2);
         linkedList.insertAtEnd(2);
@@ -31,7 +31,7 @@ class RemoveDuplicatesTest {
     }
 
     @Test
-    void removeDuplicatesUnsorted() {
+    void testRemoveDuplicatesUnsorted() {
         LinkedList<Integer> linkedList = new LinkedList<>(new LinkedList.Node<>(1));
         linkedList.insertAtEnd(2);
         linkedList.insertAtEnd(3);

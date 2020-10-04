@@ -11,10 +11,6 @@ import java.util.NoSuchElementException;
  * @author Milan Rathod
  */
 public class CircularLinkedList<E> {
-    /**
-     * Logger for logging circular linked list related logs
-     */
-    private static final Logger LOG = LoggerFactory.getLogger(CircularLinkedList.class);
 
     /**
      * Head node

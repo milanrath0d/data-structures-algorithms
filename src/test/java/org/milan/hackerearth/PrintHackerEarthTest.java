@@ -5,17 +5,17 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link PrintHackerearth}
+ * Test Class for {@link PrintHackerEarth}
  *
  * @author Milan Rathod
  */
-class PrintHackerearthTest {
+class PrintHackerEarthTest {
 
     @Test
-    void testPrintHackerearth() {
+    void testPrint() {
         String input = "aahkcreeatrha";
-        PrintHackerearth printHackerearth = new PrintHackerearth();
-        int result = printHackerearth.printHackerearth(input);
+        PrintHackerEarth printHackerearth = new PrintHackerEarth();
+        int result = printHackerearth.print(input);
 
         assertEquals(1, result);
     }

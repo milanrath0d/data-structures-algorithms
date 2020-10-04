@@ -24,21 +24,21 @@ class TwoRepeatingNumbersTest {
     }
 
     @Test
-    void findUsingCountArray() {
+    void testFindUsingCountArray() {
         int[] result = twoRepeatingNumbers.findUsingCountArray(inputArray);
 
         assertArrayEquals(new int[]{4, 2}, result);
     }
 
     @Test
-    void findUsingEquation() {
+    void testFindUsingEquation() {
         int[] result = twoRepeatingNumbers.findUsingEquation(inputArray);
 
         assertArrayEquals(new int[]{4, 2}, result);
     }
 
     @Test
-    void findUsingAbs() {
+    void testFindUsingAbs() {
         int[] result = twoRepeatingNumbers.findUsingAbs(inputArray);
 
         assertArrayEquals(new int[]{2, 4}, result);

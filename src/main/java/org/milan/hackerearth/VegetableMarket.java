@@ -14,7 +14,6 @@ public class VegetableMarket {
 
     public int minimumToBuy(List<Integer> stalls, int query) {
         return calculateMinimumQuantity(stalls.stream().mapToInt(i -> i).toArray(), query);
-
     }
 
     /**
@@ -48,7 +47,6 @@ public class VegetableMarket {
             tempTotal = 0;
 
             minimum++;
-
         }
     }
 

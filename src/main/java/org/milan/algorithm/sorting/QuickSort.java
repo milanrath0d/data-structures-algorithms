@@ -45,7 +45,7 @@ public class QuickSort {
             low = stack[top--];
 
             // Set pivot at its correct position
-            int partitionIndex = partition(arr, low, high);
+            int partitionIndex = QuickSort.partition(arr, low, high);
 
             // Push elements which are left side of pivot if available
             if (partitionIndex - 1 > low) {
@@ -63,7 +63,7 @@ public class QuickSort {
 
     private void quickSort(int[] arr, int low, int high) {
         if (low < high) {
-            int partitionIndex = partition(arr, low, high);
+            int partitionIndex = QuickSort.partition(arr, low, high);
 
             quickSort(arr, low, partitionIndex - 1);
 
@@ -77,7 +77,7 @@ public class QuickSort {
      * and places all smaller (smaller than pivot) to left and
      * all greater elements to right of pivot
      */
-    private int partition(int[] arr, int low, int high) {
+    public static int partition(int[] arr, int low, int high) {
         int pivot = arr[high];
 
         int i = low - 1;

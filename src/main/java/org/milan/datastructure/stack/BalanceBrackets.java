@@ -1,5 +1,7 @@
 package org.milan.datastructure.stack;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Stack;
 
 /**
@@ -12,7 +14,7 @@ import java.util.Stack;
 public class BalanceBrackets {
 
     public boolean checkBalance(String str) {
-        Stack<Character> stack = new Stack<>();
+        Deque<Character> stack = new ArrayDeque<>();
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
             if (ch == '(') {
@@ -30,10 +32,8 @@ public class BalanceBrackets {
                 }
             }
         }
-        if (stack.isEmpty())
-            return true;
-        else
-            return false;
+
+        return stack.isEmpty();
     }
 
 }

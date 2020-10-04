@@ -7,6 +7,7 @@ import org.milan.datastructure.linkedlist.LinkedList;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
@@ -44,10 +45,13 @@ class MergeKSortedLinkedListsTest {
     void testMerge() {
         MergeKSortedLinkedLists mergeKSortedLinkedLists = new MergeKSortedLinkedLists();
 
-        List<LinkedList.Node<Integer>> lists = Arrays.asList(linkedList1.getHead(), linkedList2.getHead(), linkedList3.getHead());
+        List<LinkedList.Node<Integer>> lists = Arrays.asList(linkedList1.getHead(),
+                linkedList2.getHead(), linkedList3.getHead());
 
         LinkedList.Node<Integer> mergedHead = mergeKSortedLinkedLists.merge(lists, 3);
 
-        assertEquals(1, mergedHead.getData().intValue());
+        LinkedList<Integer> resultList = new LinkedList<>(mergedHead);
+
+        assertArrayEquals(new Integer[]{1, 2, 5, 6, 9, 12, 20, 23, 34, 40, 45, 50}, resultList.toArray(Integer.class));
     }
 }

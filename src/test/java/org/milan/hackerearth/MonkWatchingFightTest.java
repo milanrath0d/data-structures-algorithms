@@ -18,6 +18,6 @@ class MonkWatchingFightTest {
 
         MonkWatchingFight monkWatchingFight = new MonkWatchingFight();
 
-        assertEquals(3, monkWatchingFight.heightOfBST(n, arr));
+        assertEquals(3, monkWatchingFight.heightOfBST(arr));
     }
 }

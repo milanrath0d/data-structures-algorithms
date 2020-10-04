@@ -9,7 +9,7 @@ import org.milan.datastructure.tree.BinarySearchTree;
  */
 public class MonkWatchingFight {
 
-    public int heightOfBST(int size, int[] arr) {
+    public int heightOfBST(int[] arr) {
 
         BinarySearchTree binarySearchTree = new BinarySearchTree(arr[0]);
 
@@ -18,7 +18,6 @@ public class MonkWatchingFight {
         }
 
         return binarySearchTree.height(binarySearchTree.getRoot());
-
     }
 
 }

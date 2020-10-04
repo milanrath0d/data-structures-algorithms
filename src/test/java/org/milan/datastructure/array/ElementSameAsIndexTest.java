@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class ElementSameAsIndexTest {
 
     @Test
-    void findIndex() {
+    void testFindIndex() {
         ElementSameAsIndex elementSameAsIndex = new ElementSameAsIndex();
 
         int result = elementSameAsIndex.findIndex(new int[]{-4, -2, 1, 2, 3, 5, 9});

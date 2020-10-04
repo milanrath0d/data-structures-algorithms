@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class Array2StacksTest {
 
     @Test
-    void test() {
+    void testStackOperations() {
         Array2Stacks<Integer> a2s = new Array2Stacks<>(Integer.class, 10);
         a2s.push(1, 5);
         Integer result = a2s.pop(1);

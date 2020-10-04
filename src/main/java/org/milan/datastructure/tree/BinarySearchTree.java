@@ -1,11 +1,6 @@
 package org.milan.datastructure.tree;
 
-import java.util.ArrayDeque;
-import java.util.Collections;
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * Implementation of binary search tree with all use cases
@@ -14,12 +9,21 @@ import java.util.Stack;
  */
 public class BinarySearchTree {
 
+    private static final String EMPTY_TREE = "Tree is empty";
+
     /**
      * Root of the binary search tree
      */
     private Node root;
 
-    private LinkedList<Integer> list;
+    private final LinkedList<Integer> list;
+
+    public BinarySearchTree() {
+        this.root = null;
+
+        // TODO improve this
+        this.list = new LinkedList<>();
+    }
 
     public BinarySearchTree(int key) {
         this.root = new Node(key);
@@ -128,28 +132,28 @@ public class BinarySearchTree {
      *
      * @param root root of a tree
      */
-    public String preOrder(Node root) {
-        StringBuilder stringBuilder = new StringBuilder();
-        preOrderUtil(root, stringBuilder);
-        return stringBuilder.toString();
+    public List<Integer> preOrder(Node root) {
+        List<Integer> outputList = new LinkedList<>();
+        preOrderUtil(root, outputList);
+        return outputList;
     }
 
     /**
      * Utility function which will actually do pre order
      *
-     * @param root          root of a tree
-     * @param stringBuilder string builder to return pre order result
+     * @param root root of a tree
+     * @param list list to return pre order result
      */
-    private void preOrderUtil(Node root, StringBuilder stringBuilder) {
+    private void preOrderUtil(Node root, List<Integer> list) {
         if (root != null) {
             // Visit the root and append it to string builder
-            stringBuilder.append(root.key);
+            list.add(root.key);
 
             // Traverse left subtree
-            preOrderUtil(root.left, stringBuilder);
+            preOrderUtil(root.left, list);
 
             // Traverse right subtree
-            preOrderUtil(root.right, stringBuilder);
+            preOrderUtil(root.right, list);
         }
     }
 
@@ -158,8 +162,8 @@ public class BinarySearchTree {
      *
      * @param root root of a tree
      */
-    public String preOrderIterative(Node root) {
-        StringBuilder stringBuilder = new StringBuilder();
+    public List<Integer> preOrderIterative(Node root) {
+        List<Integer> outputList = new LinkedList<>();
 
         Deque<Node> stack = new ArrayDeque<>();
 
@@ -170,7 +174,7 @@ public class BinarySearchTree {
             Node temp = stack.pop();
 
             // add it to output
-            stringBuilder.append(temp.key);
+            outputList.add(temp.key);
 
             // First push right and then left child of current popped item
             if (temp.right != null) {
@@ -182,7 +186,7 @@ public class BinarySearchTree {
             }
         }
 
-        return stringBuilder.toString();
+        return outputList;
     }
 
     /**
@@ -190,28 +194,28 @@ public class BinarySearchTree {
      *
      * @param root root of a tree
      */
-    public String inOrder(Node root) {
-        StringBuilder stringBuilder = new StringBuilder();
-        inOrderUtil(root, stringBuilder);
-        return stringBuilder.toString();
+    public List<Integer> inOrder(Node root) {
+        List<Integer> outputList = new LinkedList<>();
+        inOrderUtil(root, outputList);
+        return outputList;
     }
 
     /**
      * Utility function which will actually do in order
      *
-     * @param root          root of a tree
-     * @param stringBuilder string builder to return in order result
+     * @param root root of a tree
+     * @param list list to return in order result
      */
-    private void inOrderUtil(Node root, StringBuilder stringBuilder) {
+    private void inOrderUtil(Node root, List<Integer> list) {
         if (root != null) {
             // Traverse left subtree
-            inOrderUtil(root.left, stringBuilder);
+            inOrderUtil(root.left, list);
 
-            // Visit the root and append it to string builder
-            stringBuilder.append(root.key);
+            // Visit the root and append it to list
+            list.add(root.key);
 
             // Traverse right subtree
-            inOrderUtil(root.right, stringBuilder);
+            inOrderUtil(root.right, list);
         }
     }
 
@@ -220,8 +224,8 @@ public class BinarySearchTree {
      *
      * @param root root of a tree
      */
-    public String inOrderIterative(Node root) {
-        StringBuilder stringBuilder = new StringBuilder();
+    public List<Integer> inOrderIterative(Node root) {
+        List<Integer> outputList = new LinkedList<>();
 
         Deque<Node> stack = new ArrayDeque<>();
 
@@ -243,14 +247,14 @@ public class BinarySearchTree {
                     Node temp = stack.pop();
 
                     // add it to output
-                    stringBuilder.append(temp.key);
+                    outputList.add(temp.key);
 
                     current = temp.right;
                 }
 
             }
         }
-        return stringBuilder.toString();
+        return outputList;
     }
 
     /**
@@ -258,28 +262,28 @@ public class BinarySearchTree {
      *
      * @param root root of a tree
      */
-    public String postOrder(Node root) {
-        StringBuilder stringBuilder = new StringBuilder();
-        postOrderUtil(root, stringBuilder);
-        return stringBuilder.toString();
+    public List<Integer> postOrder(Node root) {
+        List<Integer> outputList = new LinkedList<>();
+        postOrderUtil(root, outputList);
+        return outputList;
     }
 
     /**
      * Utility function which will actually do post order
      *
-     * @param root          root of a tree
-     * @param stringBuilder string builder to return post order result
+     * @param root root of a tree
+     * @param list list to return post order result
      */
-    private void postOrderUtil(Node root, StringBuilder stringBuilder) {
+    private void postOrderUtil(Node root, List<Integer> list) {
         if (root != null) {
             // Traverse left subtree
-            postOrderUtil(root.left, stringBuilder);
+            postOrderUtil(root.left, list);
 
             // Traverse right subtree
-            postOrderUtil(root.right, stringBuilder);
+            postOrderUtil(root.right, list);
 
-            // Visit the root and append it to string builder
-            stringBuilder.append(root.key);
+            // Visit the root and append it to list
+            list.add(root.key);
         }
     }
 
@@ -288,8 +292,8 @@ public class BinarySearchTree {
      *
      * @param root root of a tree
      */
-    public String postOrderIterative(Node root) {
-        StringBuilder stringBuilder = new StringBuilder();
+    public List<Integer> postOrderIterative(Node root) {
+        List<Integer> outputList = new LinkedList<>();
 
         Deque<Node> stack = new ArrayDeque<>();
 
@@ -315,11 +319,11 @@ public class BinarySearchTree {
                     stack.push(curr.right);
                 }
             } else {
-                stringBuilder.append(stack.pop().key);
+                outputList.add(stack.pop().key);
             }
             prev = curr;
         }
-        return stringBuilder.toString();
+        return outputList;
     }
 
     /**
@@ -327,14 +331,14 @@ public class BinarySearchTree {
      *
      * @param root root of the tree
      */
-    public String levelOrder(Node root) {
+    public List<Integer> levelOrder(Node root) {
 
         // Base condition
         if (root == null) {
-            throw new IllegalStateException("Tree is empty");
+            throw new IllegalStateException(EMPTY_TREE);
         }
 
-        StringBuilder stringBuilder = new StringBuilder();
+        List<Integer> outputList = new LinkedList<>();
 
         Queue<Node> queue = new LinkedList<>();
 
@@ -346,12 +350,12 @@ public class BinarySearchTree {
 
             temp = queue.poll();
 
-            stringBuilder.append(temp.key);
+            outputList.add(temp.key);
 
             if (temp.left != null) queue.add(temp.left);
             if (temp.right != null) queue.add(temp.right);
         }
-        return stringBuilder.toString();
+        return outputList;
     }
 
     /**
@@ -359,14 +363,14 @@ public class BinarySearchTree {
      *
      * @param root root of the tree
      */
-    public String levelOrderReverse(Node root) {
+    public List<Integer> levelOrderReverse(Node root) {
 
         // Base condition
         if (root == null) {
-            throw new IllegalStateException("Tree is empty");
+            throw new IllegalStateException(EMPTY_TREE);
         }
 
-        StringBuilder stringBuilder = new StringBuilder();
+        List<Integer> outputList = new LinkedList<>();
 
         Queue<Node> queue = new LinkedList<>();
 
@@ -390,9 +394,9 @@ public class BinarySearchTree {
         }
 
         while (!stack.isEmpty()) {
-            stringBuilder.append(stack.pop().key);
+            outputList.add(stack.pop().key);
         }
-        return stringBuilder.toString();
+        return outputList;
     }
 
     /**
@@ -430,7 +434,7 @@ public class BinarySearchTree {
      */
     public Node findMin(Node root) {
         if (root == null) {
-            throw new IllegalStateException("Tree is empty");
+            throw new IllegalStateException(EMPTY_TREE);
         }
 
         if (root.left != null) {
@@ -447,7 +451,7 @@ public class BinarySearchTree {
      */
     public Node findMax(Node root) {
         if (root == null) {
-            throw new IllegalStateException("Tree is empty");
+            throw new IllegalStateException(EMPTY_TREE);
         }
 
         if (root.right != null) {
@@ -579,7 +583,7 @@ public class BinarySearchTree {
     public int heightIterative(Node root) {
 
         if (root == null) {
-            throw new IllegalStateException("Tree is empty");
+            throw new IllegalStateException(EMPTY_TREE);
         }
 
         int maxHeight = 0;
@@ -627,7 +631,7 @@ public class BinarySearchTree {
     public int minimumDepth(Node root) {
 
         if (root == null) {
-            throw new IllegalStateException("Tree is empty");
+            throw new IllegalStateException(EMPTY_TREE);
         }
 
         int minDepth = 1;
@@ -670,7 +674,7 @@ public class BinarySearchTree {
     public Node findDeepestNode(Node root) {
 
         if (root == null) {
-            throw new IllegalStateException("Tree is empty");
+            throw new IllegalStateException(EMPTY_TREE);
         }
 
         Queue<Node> queue = new LinkedList<>();
@@ -715,7 +719,7 @@ public class BinarySearchTree {
      */
     public int sizeIterative(Node root) {
         if (root == null) {
-            throw new IllegalStateException("Tree is empty");
+            throw new IllegalStateException(EMPTY_TREE);
         }
 
         Queue<Node> queue = new LinkedList<>();
@@ -747,7 +751,7 @@ public class BinarySearchTree {
     public int maximumWidth(Node root) {
 
         if (root == null) {
-            throw new IllegalStateException("Tree is empty");
+            throw new IllegalStateException(EMPTY_TREE);
         }
 
         int currentWidth = 0;
@@ -798,7 +802,7 @@ public class BinarySearchTree {
     public int findMaximumLevelSum(Node root) {
 
         if (root == null) {
-            throw new IllegalStateException("Tree is empty");
+            throw new IllegalStateException(EMPTY_TREE);
         }
 
         int maxSum = 0;
@@ -912,7 +916,7 @@ public class BinarySearchTree {
      */
     public int getTotalLeafNodesIterative(Node root) {
         if (root == null) {
-            throw new IllegalStateException("Tree is empty");
+            throw new IllegalStateException(EMPTY_TREE);
         }
 
         int totalLeafNodes = 0;

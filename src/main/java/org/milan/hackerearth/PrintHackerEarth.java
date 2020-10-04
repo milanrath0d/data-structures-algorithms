@@ -5,9 +5,9 @@ package org.milan.hackerearth;
  *
  * @author Milan Rathod
  */
-public class PrintHackerearth {
+public class PrintHackerEarth {
 
-    public int printHackerearth(String inputString) {
+    public int print(String inputString) {
         int a = 0;
         int h = 0;
         int c = 0;

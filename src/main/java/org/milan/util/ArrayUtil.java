@@ -7,8 +7,10 @@ package org.milan.util;
  */
 public final class ArrayUtil {
 
+    /**
+     * private constructor
+     */
     private ArrayUtil() {
-        // Private constructor
     }
 
     /**

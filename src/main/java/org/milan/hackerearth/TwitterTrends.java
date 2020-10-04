@@ -1,12 +1,7 @@
 package org.milan.hackerearth;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -17,13 +12,13 @@ import java.util.regex.Pattern;
  */
 public class TwitterTrends {
 
-    static Map<String, Integer> treeMap = new TreeMap<>();
+    private Map<String, Integer> treeMap = new TreeMap<>();
 
     public List<String> trendingHashTags(List<String> tweets) {
 
         List<String> outputList = new ArrayList<>();
 
-        tweets.forEach(TwitterTrends::extractHashTags);
+        tweets.forEach(this::extractHashTags);
 
         treeMap = sortByValues(treeMap);
         int count = 0;
@@ -35,7 +30,7 @@ public class TwitterTrends {
         return outputList;
     }
 
-    private static void extractHashTags(String tweet) {
+    private void extractHashTags(String tweet) {
         Pattern pattern = Pattern.compile("#\\w+");
 
         Matcher matcher = pattern.matcher(tweet);
@@ -71,11 +66,11 @@ public class TwitterTrends {
 
             int max = Integer.MIN_VALUE;
             String ht = "";
-            for (String hs : treeMap.keySet()) {
+            for (Map.Entry<String, Integer> entry : treeMap.entrySet()) {
 
-                if (treeMap.get(hs) > max) {
-                    max = treeMap.get(hs);
-                    ht = hs;
+                if (entry.getValue() > max) {
+                    max = entry.getValue();
+                    ht = entry.getKey();
                 }
             }
 

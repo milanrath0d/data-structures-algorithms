@@ -12,7 +12,7 @@ import java.util.Set;
  */
 public class PrimeString {
 
-    private Map<Character, Integer> mapping = new HashMap<>();
+    private final Map<Character, Integer> mapping = new HashMap<>();
 
     public boolean isPrimeString(String input) {
         for (char ch : input.toCharArray()) {

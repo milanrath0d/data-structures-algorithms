@@ -54,7 +54,6 @@ class KthPrime {
         }
 
         return count;
-
     }
 
     private static boolean isPrime(int n) {

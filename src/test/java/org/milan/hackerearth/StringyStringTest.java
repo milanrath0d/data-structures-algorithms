@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class StringyStringTest {
 
     @Test
-    void invalidString() {
+    void testInvalidString() {
         StringyString stringyString = new StringyString();
 
         String result = stringyString.invalidString(List.of("chakshu", "pekka", "punk", "golem", "tyagi"));

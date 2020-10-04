@@ -25,8 +25,8 @@ public class Knapsack {
             for (int w = 0; w <= weight; w++) {
                 if (i == 0 || w == 0) {
                     k[i][w] = 0;
-                } else if (weights[i-1] <= w) {
-                    k[i][w] = Math.max(k[i - 1][w], k[i - 1][w - weights[i-1]] + profits[i-1]);
+                } else if (weights[i - 1] <= w) {
+                    k[i][w] = Math.max(k[i - 1][w], k[i - 1][w - weights[i - 1]] + profits[i - 1]);
                 } else {
                     k[i][w] = k[i - 1][w];
                 }

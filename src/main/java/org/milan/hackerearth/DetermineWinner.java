@@ -61,6 +61,5 @@ class DetermineWinner {
             return "Flash";
         else
             return "Cisco";
-
     }
 }

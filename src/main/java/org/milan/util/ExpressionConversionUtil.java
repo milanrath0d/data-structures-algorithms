@@ -22,7 +22,6 @@ public final class ExpressionConversionUtil {
      * private constructor
      */
     private ExpressionConversionUtil() {
-
     }
 
     /**

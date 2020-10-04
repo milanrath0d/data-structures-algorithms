@@ -10,7 +10,7 @@ import java.math.BigInteger;
 public class BinaryMatrix {
 
     public int maxRowValue(int[][] matrix) {
-        BigInteger maxValue = new BigInteger("0");
+        BigInteger maxValue = BigInteger.valueOf(0);
         int maxIndex = 0;
         for (int i = 0; i < matrix.length; i++) {
             StringBuilder input = new StringBuilder();

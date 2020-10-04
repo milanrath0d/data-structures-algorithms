@@ -22,27 +22,27 @@ public class MergeKSortedLinkedLists {
      */
     public LinkedList.Node<Integer> merge(List<LinkedList.Node<Integer>> lists, int k) {
 
-        PriorityQueue<LinkedList.Node<Integer>> heap = new PriorityQueue<>(k, Comparator.comparingInt(LinkedList.Node::getData));
+        PriorityQueue<LinkedList.Node<Integer>> priorityQueue = new PriorityQueue<>(k, Comparator.comparingInt(LinkedList.Node::getData));
 
         for (LinkedList.Node<Integer> head : lists) {
             if (head != null) {
-                heap.add(head);
+                priorityQueue.add(head);
             }
         }
 
         LinkedList.Node<Integer> head = null;
         LinkedList.Node<Integer> current = null;
-        while (!heap.isEmpty()) {
+        while (!priorityQueue.isEmpty()) {
             if (head == null) {
-                head = heap.poll();
+                head = priorityQueue.poll();
                 current = head;
             } else {
-                current.setNext(heap.poll());
+                current.setNext(priorityQueue.poll());
                 current = current.getNext();
             }
 
             if (current.getNext() != null) {
-                heap.add(current.getNext());
+                priorityQueue.add(current.getNext());
             }
         }
         return head;

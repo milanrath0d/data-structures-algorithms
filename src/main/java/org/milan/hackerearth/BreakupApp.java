@@ -2,7 +2,6 @@ package org.milan.hackerearth;
 
 import java.util.List;
 import java.util.Scanner;
-import java.util.function.Consumer;
 
 /**
  * Breakup App - Linear Search
@@ -10,7 +9,8 @@ import java.util.function.Consumer;
  * @author Milan Rathod
  */
 public class BreakupApp {
-    private int date = 0, noDate = 0;
+    private int date = 0;
+    private int noDate = 0;
 
     public String getDate(List<String> list) {
 

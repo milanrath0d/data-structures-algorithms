@@ -11,6 +11,12 @@ import java.util.List;
 public final class ListUtil {
 
     /**
+     * private constructor
+     */
+    private ListUtil() {
+    }
+
+    /**
      * @param src    source list
      * @param target target list
      * @return true if both lists are equal otherwise false

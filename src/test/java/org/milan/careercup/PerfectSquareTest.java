@@ -15,6 +15,7 @@ class PerfectSquareTest {
     @Test
     void testIsPerfectSquare() {
         PerfectSquare perfectSquare = new PerfectSquare();
+
         boolean result = perfectSquare.isPerfectSquare(25, true);
 
         assertTrue(result);

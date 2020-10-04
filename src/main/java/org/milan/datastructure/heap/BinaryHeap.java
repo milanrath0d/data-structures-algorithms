@@ -14,12 +14,12 @@ public class BinaryHeap {
     /**
      * Store binary heap elements in array of integers
      */
-    private int[] store;
+    private final int[] store;
 
     /**
      * Size of the heap
      */
-    private int capacity;
+    private final int capacity;
 
     /**
      * Number of elements in heap
@@ -28,8 +28,10 @@ public class BinaryHeap {
 
     /**
      * type of the heap i.e. max heap or min heap
+     * <p>
+     * Default value is MAX heap
      */
-    private HeapType heapType;
+    private final HeapType heapType;
 
     public BinaryHeap(int capacity) {
         this(capacity, HeapType.MAX);
@@ -74,6 +76,8 @@ public class BinaryHeap {
 
     /**
      * Heapify the given binary tree
+     * <p>
+     * Time complexity: O(logn)
      *
      * @param index index
      */
@@ -148,7 +152,9 @@ public class BinaryHeap {
     }
 
     /**
-     * Deleting element from binary heap
+     * Extract min/max element from binary heap
+     * <p>
+     * Time complexity: O(logn)
      *
      * @return maximum element for max heap and minimum element for min heap
      */
@@ -171,26 +177,30 @@ public class BinaryHeap {
         return data;
     }
 
+    /**
+     * Insert an element to binary heap
+     * <p>
+     * Time complexity: O(logn)
+     *
+     * @param data data to be inserted
+     */
     public void insert(int data) {
 
         if (this.count == capacity) {
             throw new IllegalStateException("binary heap is full");
         }
 
-        // Increasing the heap size
-        this.count++;
+        store[this.count++] = data;
 
         int index = this.count - 1;
 
-        store[index] = data;
-
         if (this.heapType == HeapType.MAX) {
-            while (index > 0 && store[index] > store[getParent(index)]) {
+            while (index >= 0 && store[index] > store[getParent(index)]) {
                 ArrayUtil.swap(store, index, getParent(index));
                 index = getParent(index);
             }
         } else {
-            while (index > 0 && store[index] < store[getParent(index)]) {
+            while (index >= 0 && store[index] < store[getParent(index)]) {
                 ArrayUtil.swap(store, index, getParent(index));
                 index = getParent(index);
             }
@@ -200,6 +210,8 @@ public class BinaryHeap {
     /**
      * Build heap from given array
      * NOTE: Heap should be empty before calling this method
+     * <p>
+     * Time complexity: O(n)
      *
      * @param array array of integers
      */
@@ -237,14 +249,36 @@ public class BinaryHeap {
     }
 
     /**
+     * Check if given level order traversal of tree
+     * is min heap or not
+     * TODO move this method to separate class
+     *
+     * @param arr given level order traversal
+     */
+    public boolean isMinHeap(int[] arr) {
+        int n = arr.length;
+
+        // First non leaf node is at index n/2 -1
+        // Check whether each parent is greater than child
+        for (int i = (n / 2 - 1); i >= 0; i--) {
+            // Left child will be at index 2*i + 1
+            // Right child will be at index 2*i + 2
+            if (((2 * i + 1 < n) && arr[i] > arr[2 * i + 1]) ||
+                    ((2 * i + 2 < n) && arr[i] > arr[2 * i + 2])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
      * Get element at provided index
      *
      * @param index index
      * @return element at index
      */
     public int getElement(int index) {
-
-        // Base condition
+        // Base case
         if (index < 0 || index >= this.count) {
             throw new IllegalStateException("Incorrect index provided");
         }
@@ -283,7 +317,6 @@ public class BinaryHeap {
     public int size() {
         return this.store.length;
     }
-
 }
 
 /**

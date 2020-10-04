@@ -7,10 +7,10 @@ package org.milan.datastructure.heap;
  */
 public class ConvertMin2Max {
 
-    private BinaryHeap binaryHeap;
-
     /**
      * Convert min heap to max heap
+     * <p>
+     * Time complexity: O(n)
      *
      * @param arr array representation of min heap
      * @return array representation of max heap
@@ -20,7 +20,7 @@ public class ConvertMin2Max {
 
         // Initialize the binary tree
         // Not a good place
-        binaryHeap = new BinaryHeap(length);
+        BinaryHeap binaryHeap = new BinaryHeap(length);
 
         // Build max heap from array which is min heap
         binaryHeap.buildHeap(arr);
