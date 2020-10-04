@@ -20,7 +20,7 @@ public class Sudoku {
         int rowLength = matrix.length;
         int columnLength = matrix[0].length;
 
-        // Row wise comparision
+        // Row wise comparison
         for (int i = 0; i < rowLength; i++) {
 
             for (int j = 0; j < columnLength; j++) {

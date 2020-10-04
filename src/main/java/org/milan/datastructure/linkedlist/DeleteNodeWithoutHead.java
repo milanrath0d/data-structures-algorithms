@@ -24,10 +24,6 @@ public class DeleteNodeWithoutHead {
         LinkedList.Node<Integer> temp = node.next;
         node.data = temp.data;
         node.next = temp.next;
-
-        // This step might not be needed
-        // Run the garbage collector to collect dereference node.
-        System.gc();
     }
 }
 

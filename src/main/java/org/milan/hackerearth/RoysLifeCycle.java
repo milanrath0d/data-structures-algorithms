@@ -18,27 +18,27 @@ public class RoysLifeCycle {
 
         int finalDayCount = 0;
 
-        int tempContinousStreak = codingStreakAcross;
+        int tempContinuousStreak = codingStreakAcross;
 
         for (int i = 0; i < arr.length; i++) {
 
             if (arr[i] == 'C') {
                 tempDayCount++;
-                tempContinousStreak++;
+                tempContinuousStreak++;
             } else {
                 if (tempDayCount > finalDayCount) {
                     finalDayCount = tempDayCount;
                 }
                 tempDayCount = 0;
 
-                if (tempContinousStreak > longestCodingStreakAcross) {
-                    longestCodingStreakAcross = tempContinousStreak;
+                if (tempContinuousStreak > longestCodingStreakAcross) {
+                    longestCodingStreakAcross = tempContinuousStreak;
                 }
-                tempContinousStreak = 0;
+                tempContinuousStreak = 0;
             }
         }
 
-        codingStreakAcross = tempContinousStreak;
+        codingStreakAcross = tempContinuousStreak;
 
         if (tempDayCount > finalDayCount) {
             finalDayCount = tempDayCount;

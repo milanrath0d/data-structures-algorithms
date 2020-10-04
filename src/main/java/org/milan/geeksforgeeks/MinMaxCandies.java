@@ -4,6 +4,9 @@ import java.util.Arrays;
 
 /**
  * Problem: {@link @https://www.geeksforgeeks.org/find-minimum-maximum-amount-buy-n-candies/}
+ * <p>
+ * Time complexity: O(nlogn)
+ * Space complexity: O(1)
  *
  * @author Milan Rathod
  */
@@ -34,9 +37,9 @@ public class MinMaxCandies {
 
         int maximumAmount = 0;
 
-        while (initial < last) {
+        while (initial <= last) {
             maximumAmount += inputArray[last--];
-            initial += k - 1;
+            initial += k;
         }
 
         return maximumAmount;

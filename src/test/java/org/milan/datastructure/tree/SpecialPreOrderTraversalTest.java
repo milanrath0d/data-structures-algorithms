@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class SpecialPreOrderTraversalTest {
 
     @Test
-    void constructTree() {
+    void testConstructTree() {
         int[] pre = new int[]{10, 30, 20, 5, 15};
         char[] preLN = new char[]{'N', 'N', 'L', 'L', 'L'};
 

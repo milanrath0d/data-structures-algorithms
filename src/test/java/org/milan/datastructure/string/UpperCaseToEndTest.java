@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class UpperCaseToEndTest {
 
     @Test
-    void move() {
+    void testMove() {
         UpperCaseToEnd upperCaseToEnd = new UpperCaseToEnd();
 
         String result = upperCaseToEnd.move("Geeksforgeeks A Computer Science Portal for Geeks!!");

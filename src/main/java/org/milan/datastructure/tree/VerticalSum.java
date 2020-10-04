@@ -1,7 +1,6 @@
 package org.milan.datastructure.tree;
 
 import org.milan.datastructure.linkedlist.DoublyLinkedList;
-import org.milan.datastructure.linkedlist.LinkedList;
 
 import java.util.ArrayList;
 import java.util.HashMap;

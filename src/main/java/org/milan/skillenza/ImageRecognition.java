@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class ImageRecognition {
 
-    private static List<String> store = new ArrayList<>();
+    private static final List<String> store = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -72,7 +72,6 @@ public class ImageRecognition {
             }
 
             store.clear();
-
         }
     }
 

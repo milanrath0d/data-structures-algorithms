@@ -13,7 +13,7 @@ class MatrixChainMultiplicationTest {
 
     @Test
     void testFindMinimum() {
-        int[] d = new int[] {1, 2, 3, 4};
+        int[] d = new int[]{1, 2, 3, 4};
 
         MatrixChainMultiplication matrixChainMultiplication = new MatrixChainMultiplication();
 

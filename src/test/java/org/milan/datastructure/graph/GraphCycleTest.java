@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class GraphCycleTest {
 
     @Test
-    void TestIsCycleExists() {
+    void testIsCycleExists() {
         Graph graph = new Graph(4);
         graph.addEdge(graph, 0, 1);
         graph.addEdge(graph, 0, 2);

@@ -33,8 +33,7 @@ public class ChocolatesDistribution {
             // Finding current remainder
             currentRemainder = (int) (sum[i] % k);
 
-            // If true then sum(0..i) is divisible
-            // by k
+            // If true then sum(0..i) is divisible by k
             if (currentRemainder == 0) {
                 // update 'maxSum'
                 if (maxSum < sum[i])

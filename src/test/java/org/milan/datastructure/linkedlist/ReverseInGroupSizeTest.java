@@ -24,7 +24,7 @@ class ReverseInGroupSizeTest {
     }
 
     @Test
-    void reverseByGroupSize() {
+    void testReverseByGroupSize() {
         ReverseInGroupSize reverseInGroupSize = new ReverseInGroupSize();
 
         LinkedList.Node<Integer> reversedHead = reverseInGroupSize.reverseByGroupSize(linkedList.getHead(), 3);

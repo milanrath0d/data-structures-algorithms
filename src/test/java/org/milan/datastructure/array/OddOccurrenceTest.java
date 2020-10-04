@@ -24,14 +24,14 @@ class OddOccurrenceTest {
     }
 
     @Test
-    void findUsingHashing() {
+    void testFindUsingHashing() {
         int result = oddOccurrence.findUsingHashing(inputArray);
 
         assertEquals(3, result);
     }
 
     @Test
-    void findUsingXOR() {
+    void testFindUsingXOR() {
         int result = oddOccurrence.findUsingXOR(inputArray);
 
         assertEquals(3, result);

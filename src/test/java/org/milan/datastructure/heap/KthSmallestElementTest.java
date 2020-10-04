@@ -12,26 +12,24 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 class KthSmallestElementTest {
 
-    private BinaryHeap binaryHeap;
-
     private KthSmallestElement kthSmallestElement;
 
+    private int[] arr;
+
     @BeforeEach
-    void setUp() throws Exception {
-        binaryHeap = new BinaryHeap(7, HeapType.MIN);
+    void setUp() {
+        arr = new int[]{10, 50, 40, 75, 60, 65, 45};
 
-        binaryHeap.buildHeap(new int[]{10, 50, 40, 75, 60, 65, 45});
-
-        kthSmallestElement = new KthSmallestElement(binaryHeap);
+        kthSmallestElement = new KthSmallestElement();
     }
 
     @Test
     void testFind() {
-        assertEquals(60, kthSmallestElement.find(5));
+        assertEquals(60, kthSmallestElement.find(arr, 5));
     }
 
     @Test
     void testFindV2() {
-        assertEquals(65, kthSmallestElement.findV2(6));
+        assertEquals(65, kthSmallestElement.findV2(arr, 6));
     }
 }

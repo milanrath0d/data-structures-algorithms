@@ -23,7 +23,6 @@ public class StringMadeOf {
         }
 
         return sum;
-
     }
 
     private Map<Integer, Integer> getIntegerToDashesMapping() {

@@ -3,8 +3,9 @@ package org.milan.datastructure.tree;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Test Class for {@link BinarySearchTree}
@@ -29,58 +30,58 @@ class BinarySearchTreeTest {
 
     @Test
     void testPreOrder() {
-        String result = binarySearchTree.preOrder(binarySearchTree.getRoot());
+        List<Integer> result = binarySearchTree.preOrder(binarySearchTree.getRoot());
 
-        assertEquals("2010515302535", result);
+        assertArrayEquals(new int[]{20, 10, 5, 15, 30, 25, 35}, toArray(result));
     }
 
     @Test
     void testPreOrderIterative() {
-        String result = binarySearchTree.preOrderIterative(binarySearchTree.getRoot());
+        List<Integer> result = binarySearchTree.preOrderIterative(binarySearchTree.getRoot());
 
-        assertEquals("2010515302535", result);
+        assertArrayEquals(new int[]{20, 10, 5, 15, 30, 25, 35}, toArray(result));
     }
 
     @Test
     void testInOrder() {
-        String result = binarySearchTree.inOrder(binarySearchTree.getRoot());
+        List<Integer> result = binarySearchTree.inOrder(binarySearchTree.getRoot());
 
-        assertEquals("5101520253035", result);
+        assertArrayEquals(new int[]{5, 10, 15, 20, 25, 30, 35}, toArray(result));
     }
 
     @Test
     void testInOrderIterative() {
-        String result = binarySearchTree.inOrderIterative(binarySearchTree.getRoot());
+        List<Integer> result = binarySearchTree.inOrderIterative(binarySearchTree.getRoot());
 
-        assertEquals("5101520253035", result);
+        assertArrayEquals(new int[]{5, 10, 15, 20, 25, 30, 35}, toArray(result));
     }
 
     @Test
     void testPostOrder() {
-        String result = binarySearchTree.postOrder(binarySearchTree.getRoot());
+        List<Integer> result = binarySearchTree.postOrder(binarySearchTree.getRoot());
 
-        assertEquals("5151025353020", result);
+        assertArrayEquals(new int[]{5, 15, 10, 25, 35, 30, 20}, toArray(result));
     }
 
     @Test
     void testPostOrderIterative() {
-        String result = binarySearchTree.postOrderIterative(binarySearchTree.getRoot());
+        List<Integer> result = binarySearchTree.postOrderIterative(binarySearchTree.getRoot());
 
-        assertEquals("5151025353020", result);
+        assertArrayEquals(new int[]{5, 15, 10, 25, 35, 30, 20}, toArray(result));
     }
 
     @Test
     void testLevelOrder() {
-        String result = binarySearchTree.levelOrder(binarySearchTree.getRoot());
+        List<Integer> result = binarySearchTree.levelOrder(binarySearchTree.getRoot());
 
-        assertEquals("2010305152535", result);
+        assertArrayEquals(new int[]{20, 10, 30, 5, 15, 25, 35}, toArray(result));
     }
 
     @Test
     void testLevelOrderReverse() {
-        String result = binarySearchTree.levelOrderReverse(binarySearchTree.getRoot());
+        List<Integer> result = binarySearchTree.levelOrderReverse(binarySearchTree.getRoot());
 
-        assertEquals("5152535103020", result);
+        assertArrayEquals(new int[]{5, 15, 25, 35, 10, 30, 20}, toArray(result));
     }
 
     @Test
@@ -142,5 +143,11 @@ class BinarySearchTreeTest {
     @Test
     void testIsBST() {
         assertTrue(binarySearchTree.isBST(binarySearchTree.getRoot()));
+    }
+
+    private int[] toArray(List<Integer> list) {
+        return list.stream()
+                .mapToInt(i -> i)
+                .toArray();
     }
 }

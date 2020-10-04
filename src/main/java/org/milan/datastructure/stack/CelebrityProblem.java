@@ -1,5 +1,7 @@
 package org.milan.datastructure.stack;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Stack;
 
 /**
@@ -9,14 +11,14 @@ import java.util.Stack;
  */
 public class CelebrityProblem {
 
-    private int[][] matrix;
+    private final int[][] matrix;
 
     public CelebrityProblem(int[][] matrix) {
         this.matrix = matrix;
     }
 
     public int findCelebrity(int n) {
-        Stack<Integer> stack = new Stack<>();
+        Deque<Integer> stack = new ArrayDeque<>();
 
         // Push all members to stack
         for (int i = 0; i < n; i++) {

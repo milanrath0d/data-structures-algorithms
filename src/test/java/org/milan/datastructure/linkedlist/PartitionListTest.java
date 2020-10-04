@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class PartitionListTest {
 
     @Test
-    void partition() {
+    void testPartition() {
         LinkedList<Integer> linkedList = new LinkedList<>(new LinkedList.Node<>(1));
         linkedList.insertAtEnd(4);
         linkedList.insertAtEnd(3);

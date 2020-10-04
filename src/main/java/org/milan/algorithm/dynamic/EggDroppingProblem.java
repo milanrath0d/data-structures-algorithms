@@ -64,7 +64,7 @@ public class EggDroppingProblem {
         }
 
         // We need j trials for one egg and j floors
-        for (int j = 1; j <=k; j++) {
+        for (int j = 1; j <= k; j++) {
             store[1][j] = j;
         }
 
@@ -77,7 +77,7 @@ public class EggDroppingProblem {
                 store[i][j] = Integer.MAX_VALUE;
 
                 for (int x = 1; x <= j; x++) {
-                    out = 1 + Math.max(store[i-1][x-1], store[i][j-x]);
+                    out = 1 + Math.max(store[i - 1][x - 1], store[i][j - x]);
                     if (out < store[i][j]) {
                         store[i][j] = out;
                     }

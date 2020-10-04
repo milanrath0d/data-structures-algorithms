@@ -13,7 +13,7 @@ public class ConvertBST2DLL {
     /**
      * Previous node pointer to point to previous visited node
      */
-    private static BinarySearchTree.Node prev = null;
+    private BinarySearchTree.Node prev;
 
     private BinarySearchTree.Node head;
 

@@ -11,10 +11,10 @@ import java.lang.reflect.Array;
  */
 public class Array2Stacks<T> {
 
-    private T[] array;
+    private final T[] array;
     private int top1;
     private int top2;
-    private int capacity;
+    private final int capacity;
 
     public Array2Stacks(Class<T> classT, int capacity) {
         super();

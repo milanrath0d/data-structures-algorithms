@@ -3,6 +3,7 @@ package org.milan.datastructure.linkedlist;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.lang.reflect.Array;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 
@@ -11,7 +12,7 @@ import java.util.Objects;
  *
  * @author Milan Rathod
  */
-public class LinkedList<E> {
+public class LinkedList<E extends Comparable<E>> {
     /**
      * Logger for logging linked list related logs
      */
@@ -215,7 +216,7 @@ public class LinkedList<E> {
     /**
      * Method to find a node on a given index
      *
-     * @param index
+     * @param index value for which node to be searched
      * @return {@link Node<E>}
      */
     public Node<E> searchByIndex(int index) {
@@ -232,7 +233,7 @@ public class LinkedList<E> {
     /**
      * Method to find a node for a given value
      *
-     * @param value
+     * @param value value for which node to be searched
      * @return {@link Node<E>}
      */
     public Node<E> searchByValue(E value) {
@@ -240,10 +241,7 @@ public class LinkedList<E> {
         while (null != temp && temp.data != value) {
             temp = temp.next;
         }
-        if (temp.data == value) {
-            return temp;
-        }
-        return null;
+        return temp;
     }
 
     /**
@@ -313,7 +311,178 @@ public class LinkedList<E> {
         }
     }
 
-    public static class Node<E> {
+    /**
+     * Get tail node of linked list
+     */
+    private Node<E> getTail() {
+        Node<E> tail = head;
+
+        while (tail != null && tail.next != null) {
+            tail = tail.next;
+        }
+
+        return tail;
+    }
+
+    /**
+     * Sort the given linked list with quick sort algorithm
+     */
+    public void quickSort() {
+        Node<E> tail = getTail();
+
+        quickSortUtil(head, tail);
+    }
+
+    private void quickSortUtil(Node<E> start, Node<E> end) {
+
+        // Base case
+        if (start == end) {
+            return;
+        }
+
+        // Split list and partition recursively
+        Node<E> prevPivot = partition(start, end);
+
+        quickSortUtil(start, prevPivot);
+
+        // If pivot is picked and moved to start that means start and pivot is same
+        // So pick from next of pivot
+        if (prevPivot != null && prevPivot == start) {
+            quickSortUtil(prevPivot.next, end);
+        } else if (prevPivot != null && prevPivot.next != null) {
+            // If pivot is in between list start from next of pivot
+            // Since we have prev pivot so move two nodes
+            quickSortUtil(prevPivot.next.next, end);
+        }
+    }
+
+    private Node<E> partition(Node<E> start, Node<E> end) {
+        if (start == end || start == null || end == null) {
+            return start;
+        }
+
+        Node<E> prevPivot = start;
+        Node<E> current = start;
+        E pivot = end.data;
+
+        while (start != end) {
+            if ((start.data.compareTo(pivot) < 0)) {
+
+                // Keep track of last modified item
+                prevPivot = current;
+                E temp = current.data;
+                current.data = start.data;
+                start.data = temp;
+                current = current.next;
+            }
+            start = start.next;
+        }
+
+        E temp = current.data;
+        current.data = pivot;
+        end.data = temp;
+
+        // Return one previous to pivot since current is pointing to pivot
+        return prevPivot;
+    }
+
+    /**
+     * Sort the given linked list with merge sort algorithm
+     * <p>
+     * NOTE: Always prefer merge sort implementation of
+     * linked list over quick sort
+     */
+    public void sort() {
+        this.head = sortUtil(head);
+    }
+
+    private Node<E> sortUtil(Node<E> newHead) {
+        // Base case if linked list is empty or only has one node
+        if (newHead == null || newHead.next == null) {
+            return newHead;
+        }
+
+        // Get the middle of the list
+        Node<E> middle = getMiddle(newHead);
+        Node<E> nextOfMiddle = middle.next;
+
+        // Set the next of middle node to null
+        middle.next = null;
+
+        // Apply mergeSort on left list
+        Node<E> left = sortUtil(newHead);
+
+        // Apply mergeSort on right list
+        Node<E> right = sortUtil(nextOfMiddle);
+
+        // Merge the left and right lists
+        return sortedMerge(left, right);
+    }
+
+    /**
+     * Merge two sub lists
+     *
+     * @param left  left sub list
+     * @param right right sub list
+     * @return head pointer of merged list
+     */
+    private Node<E> sortedMerge(Node<E> left, Node<E> right) {
+        Node<E> result;
+
+        // Base cases
+        if (left == null)
+            return right;
+        if (right == null)
+            return left;
+
+        // Pick either a or b and recur
+        if (left.data.compareTo(right.data) <= 0) {
+            result = left;
+            result.next = sortedMerge(left.next, right);
+        } else {
+            result = right;
+            result.next = sortedMerge(left, right.next);
+        }
+        return result;
+    }
+
+    /**
+     * Get Middle node of the linked list
+     */
+    public Node<E> getMiddle(Node<E> head) {
+        if (head == null)
+            return null;
+
+        Node<E> slow = head;
+        Node<E> fast = head;
+
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
+    /**
+     * Convert linked list to array
+     * <p>
+     * TODO can we remove input parameter here?
+     *
+     * @param classE type parameter class
+     * @return array of type elements
+     */
+    public E[] toArray(Class<E> classE) {
+        E[] array = (E[]) Array.newInstance(classE, getSize());
+        int index = 0;
+        Node<E> temp = head;
+        while (temp != null) {
+            array[index++] = temp.data;
+            temp = temp.next;
+        }
+        return array;
+    }
+
+    public static class Node<E extends Comparable<E>> implements Comparable<E> {
         E data;
 
         Node<E> next;
@@ -355,6 +524,11 @@ public class LinkedList<E> {
         @Override
         public int hashCode() {
             return Objects.hash(data, next);
+        }
+
+        @Override
+        public int compareTo(E o) {
+            return getData().compareTo(o);
         }
     }
 }

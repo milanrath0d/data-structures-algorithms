@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class ElectionWinnerTest {
 
     @Test
-    void find() {
+    void testFind() {
         String[] votes = {"john", "johnny", "jackie", "jamie", "jamie", "john"};
 
         ElectionWinner electionWinner = new ElectionWinner();

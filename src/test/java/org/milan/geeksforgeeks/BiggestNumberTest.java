@@ -2,8 +2,6 @@ package org.milan.geeksforgeeks;
 
 import org.junit.jupiter.api.Test;
 
-import java.math.BigInteger;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
@@ -17,8 +15,17 @@ class BiggestNumberTest {
     void testFind() {
         BiggestNumber biggestNumber = new BiggestNumber();
 
-        BigInteger result = biggestNumber.find(new int[]{1, 34, 3, 98, 9, 76, 45, 4, 12, 121});
+        String result = biggestNumber.find(new int[]{1, 34, 3, 98, 9, 76, 45, 4, 12, 121});
 
-        assertEquals(new BigInteger("99876454343121211"), result);
+        assertEquals("99876454343121211", result);
+    }
+
+    @Test
+    void testFindV2() {
+        BiggestNumber biggestNumber = new BiggestNumber();
+
+        String result = biggestNumber.findV2(new int[]{1, 34, 3, 98, 9, 76, 45, 4, 12, 121});
+
+        assertEquals("99876454343121211", result);
     }
 }

@@ -1,8 +1,6 @@
 package org.milan.datastructure.tree;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * Problem: {@link @https://www.geeksforgeeks.org/print-ancestors-of-a-given-binary-tree-node-without-recursion/}
@@ -63,7 +61,7 @@ public class AncestorsOfNode {
             throw new IllegalStateException("Tree is empty");
         }
 
-        Stack<BinaryTree.Node> stack = new Stack<>();
+        Deque<BinaryTree.Node> stack = new ArrayDeque<>();
 
         List<BinaryTree.Node> outputList = new ArrayList<>();
 
@@ -94,7 +92,7 @@ public class AncestorsOfNode {
                 }
             }
 
-            root = stack.empty() ? null : stack.peek().right;
+            root = stack.isEmpty() ? null : stack.peek().right;
         }
 
         while (!stack.isEmpty()) {

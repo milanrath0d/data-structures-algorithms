@@ -12,15 +12,15 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 class MergeKSortedArraysTest {
 
     @Test
-    void merge() {
-        int[][] input = {{2, 6, 12, 34},
-                {1, 9, 20, 1000},
-                {23, 33, 90, 2000}};
+    void testMerge() {
+        int[][] input = {{2, 34},
+                {1, 9, 20},
+                {10, 33}};
 
         MergeKSortedArrays mergeKSortedArrays = new MergeKSortedArrays();
 
         int[] result = mergeKSortedArrays.merge(input, input.length);
 
-        assertArrayEquals(result, new int[]{1, 2, 6, 9, 12, 20, 23, 33, 34, 90, 1000, 2000});
+        assertArrayEquals(new int[]{1, 2, 9, 10, 20, 33, 34}, result);
     }
 }

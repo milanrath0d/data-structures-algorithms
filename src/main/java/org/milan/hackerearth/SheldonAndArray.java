@@ -21,7 +21,8 @@ public class SheldonAndArray {
         output[0] = -1;
 
         for (int i = 1; i < arr.length; i++) {
-            int index = i, maxGCD = 1;
+            int index = i;
+            int maxGCD = 1;
             for (int j = i - 1; j >= 0; j--) {
 
                 int gcd = gcd(arr[i], arr[j]);

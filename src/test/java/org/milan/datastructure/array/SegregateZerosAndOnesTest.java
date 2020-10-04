@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 class SegregateZerosAndOnesTest {
 
     @Test
-    void segregate() {
+    void testSegregate() {
         SegregateZerosAndOnes segregateZerosAndOnes = new SegregateZerosAndOnes();
 
         int[] arr = new int[]{0, 1, 0, 1, 0, 1};

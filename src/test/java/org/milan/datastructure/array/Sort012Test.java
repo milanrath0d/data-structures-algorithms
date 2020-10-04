@@ -15,7 +15,7 @@ class Sort012Test {
     }
 
     @Test
-    void sort() {
+    void testSort() {
         int[] result = sort012.sort(new int[]{0, 1, 2, 0, 1, 2});
 
         assertArrayEquals(result, new int[]{0, 0, 1, 1, 2, 2});
@@ -26,7 +26,7 @@ class Sort012Test {
     }
 
     @Test
-    void sortV2() {
+    void testSortV2() {
         int[] result = sort012.sortV2(new int[]{0, 1, 2, 0, 1, 2});
 
         assertArrayEquals(result, new int[]{0, 0, 1, 1, 2, 2});

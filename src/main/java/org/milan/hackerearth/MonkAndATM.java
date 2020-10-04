@@ -36,14 +36,11 @@ public class MonkAndATM {
                 value++;
             }
         }
-        if (isPowerof2(value))
-            return value;
-        else
-            return 0;
 
+        return isPowerOf2(value) ? value : 0;
     }
 
-    private boolean isPowerof2(int value) {
+    private boolean isPowerOf2(int value) {
         return (value & -value) == value;
     }
 

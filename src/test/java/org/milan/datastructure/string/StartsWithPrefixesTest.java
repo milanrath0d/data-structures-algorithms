@@ -12,14 +12,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class StartsWithPrefixesTest {
 
     @Test
-    void usingRegularExpression() {
+    void testUsingRegularExpression() {
         StartsWithPrefixes startsWithPrefixes = new StartsWithPrefixes();
         boolean result = startsWithPrefixes.usingRegularExpression("GeeksforGeeks", new String[]{"Geeks", "for", "Gfor"});
         assertTrue(result);
     }
 
     @Test
-    void usingStreams() {
+    void testUsingStreams() {
         StartsWithPrefixes startsWithPrefixes = new StartsWithPrefixes();
         boolean result = startsWithPrefixes.usingStreams("GeeksforGeeks", new String[]{"Geeks", "for", "Gfor"});
         assertTrue(result);

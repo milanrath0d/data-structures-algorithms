@@ -23,7 +23,8 @@ public class BatmanAndTickTackToe {
      */
     public boolean isWonScenarioAvailable(char[][] matrix) {
 
-        int countX = 0, countO = 0;
+        int countX = 0;
+        int countO = 0;
 
         for (int outer = 0; outer < 4; outer++) {
             for (int inner = 0; inner < 4; inner++) {
@@ -38,7 +39,6 @@ public class BatmanAndTickTackToe {
         // next move of player
         char myChar = countX == countO ? 'x' : 'o';
 
-        boolean wonFlag = false;
         // row wise check
         int counter = 0;
         while (counter < 4) {
@@ -82,25 +82,23 @@ public class BatmanAndTickTackToe {
      */
     private boolean isWonScenarioAvailableForRowsAndColumns(char myChar, char[] charArr, int startIndex, int endIndex) {
 
-        int myCharCount = 0, emptyCellCount = 0;
+        int myCharCount = 0;
+        int emptyCellCount = 0;
 
         for (int index = startIndex; index < endIndex; index++) {
             if (charArr[index] == myChar) myCharCount++;
             else if (charArr[index] == '.') emptyCellCount++;
         }
 
-        if (myCharCount == 2 && emptyCellCount == 1) {
-            return true;
-        }
-
-        return false;
+        return myCharCount == 2 && emptyCellCount == 1;
     }
 
     /**
      * check if won scenario available for diagonal
      */
     private boolean isWonScenarioAvailableForDiagonal(char myChar, char[][] matrix) {
-        int myCharCount = 0, emptyCellCount = 0;
+        int myCharCount = 0;
+        int emptyCellCount = 0;
 
         for (int index = 0; index < diagonalSet.length; index++) {
             int[][] eachSet = diagonalSet[index];

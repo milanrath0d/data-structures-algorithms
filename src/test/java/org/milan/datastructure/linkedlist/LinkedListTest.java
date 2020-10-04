@@ -95,4 +95,32 @@ class LinkedListTest {
 
         assertFalse(linkedList.contains(10));
     }
+
+    @Test
+    void testQuickSort() {
+        LinkedList<Integer> linkedList = new LinkedList<>(new LinkedList.Node<>(5));
+
+        linkedList.insertAtEnd(25);
+        linkedList.insertAtEnd(20);
+        linkedList.insertAtEnd(30);
+        linkedList.insertAtEnd(10);
+
+        linkedList.quickSort();
+
+        assertArrayEquals(new Integer[]{5, 10, 20, 25,30}, linkedList.toArray(Integer.class));
+    }
+
+    @Test
+    void testSort() {
+        LinkedList<Integer> linkedList = new LinkedList<>(new LinkedList.Node<>(5));
+
+        linkedList.insertAtEnd(25);
+        linkedList.insertAtEnd(20);
+        linkedList.insertAtEnd(30);
+        linkedList.insertAtEnd(10);
+
+        linkedList.sort();
+
+        assertArrayEquals(new Integer[]{5, 10, 20, 25,30}, linkedList.toArray(Integer.class));
+    }
 }

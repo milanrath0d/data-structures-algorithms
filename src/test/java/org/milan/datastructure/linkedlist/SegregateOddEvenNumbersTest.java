@@ -36,8 +36,8 @@ class SegregateOddEvenNumbersTest {
 
         assertEquals(7, newList.getSize());
 
-        assertEquals(6,newList.searchByIndex(1).getData().intValue());
+        assertEquals(6, newList.searchByIndex(1).getData().intValue());
 
-        assertEquals(11,newList.searchByIndex(4).getData().intValue());
+        assertEquals(11, newList.searchByIndex(4).getData().intValue());
     }
 }
