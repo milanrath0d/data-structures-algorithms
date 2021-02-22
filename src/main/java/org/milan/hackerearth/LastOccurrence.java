@@ -13,13 +13,14 @@ public class LastOccurrence {
      * @return last occurrence of element M in given array if present otherwise -1
      */
     public int get(int[] arr, int M) {
-        int index = -1;
-        for (int i = 0; i < arr.length; i++) {
+
+        for (int i = arr.length - 1; i >= 0; i--) {
             if (M == arr[i]) {
-                index = i + 1;
+                return i + 1;
             }
         }
-        return index;
+
+        return -1;
     }
 
 }

@@ -13,9 +13,8 @@ class PrintHackerEarthTest {
 
     @Test
     void testPrint() {
-        String input = "aahkcreeatrha";
         PrintHackerEarth printHackerearth = new PrintHackerEarth();
-        int result = printHackerearth.print(input);
+        int result = printHackerearth.print("aahkcreeatrha");
 
         assertEquals(1, result);
     }

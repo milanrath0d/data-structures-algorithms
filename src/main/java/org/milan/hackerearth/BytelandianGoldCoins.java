@@ -10,17 +10,24 @@ import java.util.Map;
  */
 public class BytelandianGoldCoins {
 
-    private final Map<Long, Long> values = new HashMap<>();
+    private final Map<Long, Long> memoizedResult = new HashMap<>();
 
-    public BytelandianGoldCoins() {
-        values.put(0L, 0L);
-        values.put(1L, 1L);
-        values.put(2L, 2L);
-        values.put(12L, 13L);
-    }
-
-    public long replaceCoins(long coin) {
-        return values.containsKey(coin) ? values.get(coin) :
-                Math.max(coin, replaceCoins(coin >> 2) + replaceCoins(coin / 3) + replaceCoins(coin >> 1));
+    /**
+     * @param coin given gold coin
+     * @return maximum amount of dollars you can get for given gold coin
+     */
+    public long computeMaxExchangeInDollar(long coin) {
+        if (coin == 0) {
+            return coin;
+        } else {
+            if (memoizedResult.get(coin) == null) {
+                long result = Math.max(coin, computeMaxExchangeInDollar(coin / 2)
+                        + computeMaxExchangeInDollar(coin / 3) + computeMaxExchangeInDollar(coin / 4));
+                memoizedResult.put(coin, result);
+                return result;
+            } else {
+                return memoizedResult.get(coin);
+            }
+        }
     }
 }

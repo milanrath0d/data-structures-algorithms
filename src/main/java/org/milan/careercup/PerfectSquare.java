@@ -13,7 +13,7 @@ public class PerfectSquare {
      *
      * @param number input number
      * @param useApi whether to use java api
-     * @return true if perfect square otherwise false
+     * @return true if perfect square; false otherwise.
      */
     public boolean isPerfectSquare(int number, boolean useApi) {
         if (useApi) {
@@ -21,13 +21,8 @@ public class PerfectSquare {
             double sqrt = Math.sqrt(number);
 
             // check if double is integer and not an infinite number
-            if ((sqrt == Math.floor(sqrt)) && !Double.isInfinite(sqrt)) {
-                return true;
-            }
-
-            return false;
+            return (sqrt == Math.floor(sqrt)) && !Double.isInfinite(sqrt);
         } else {
-
             // Using Arithmetic Progression here i.e. 1,3,5,7,..
             int i = 1;
 

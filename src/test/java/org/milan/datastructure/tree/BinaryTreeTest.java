@@ -12,16 +12,16 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class BinaryTreeTest {
 
-    private BinaryTree binaryTree;
+    private BinaryTree<Integer> binaryTree;
 
     @BeforeEach
     void setup() {
-        binaryTree = new BinaryTree(4);
-        binaryTree.getRoot().left = new BinaryTree.Node(7);
-        binaryTree.getRoot().right = new BinaryTree.Node(5);
-        binaryTree.getRoot().left.right = new BinaryTree.Node(1);
-        binaryTree.getRoot().right.left = new BinaryTree.Node(11);
-        binaryTree.getRoot().right.right = new BinaryTree.Node(6);
+        binaryTree = new BinaryTree<>(4);
+        binaryTree.getRoot().left = new Node<>(7);
+        binaryTree.getRoot().right = new Node<>(5);
+        binaryTree.getRoot().left.right = new Node<>(1);
+        binaryTree.getRoot().right.left = new Node<>(11);
+        binaryTree.getRoot().right.right = new Node<>(6);
     }
 
     @Test
@@ -68,7 +68,7 @@ class BinaryTreeTest {
 
     @Test
     void testMirrorTree() {
-        BinaryTree.Node mirrorTreeRoot = binaryTree.mirrorTree(binaryTree.getRoot());
+        Node<Integer> mirrorTreeRoot = binaryTree.mirrorTree(binaryTree.getRoot());
 
         assertTrue(binaryTree.isIdentical(mirrorTreeRoot, getMirrorBinaryTree().getRoot()));
     }
@@ -78,14 +78,14 @@ class BinaryTreeTest {
         assertTrue(binaryTree.isMirror(binaryTree.getRoot(), getMirrorBinaryTree().getRoot()));
     }
 
-    private BinaryTree getMirrorBinaryTree() {
-        BinaryTree mirrorBinaryTree = new BinaryTree(4);
+    private BinaryTree<Integer> getMirrorBinaryTree() {
+        BinaryTree<Integer> mirrorBinaryTree = new BinaryTree<>(4);
 
-        mirrorBinaryTree.getRoot().left = new BinaryTree.Node(5);
-        mirrorBinaryTree.getRoot().right = new BinaryTree.Node(7);
-        mirrorBinaryTree.getRoot().right.left = new BinaryTree.Node(1);
-        mirrorBinaryTree.getRoot().left.left = new BinaryTree.Node(6);
-        mirrorBinaryTree.getRoot().left.right = new BinaryTree.Node(11);
+        mirrorBinaryTree.getRoot().left = new Node<>(5);
+        mirrorBinaryTree.getRoot().right = new Node<>(7);
+        mirrorBinaryTree.getRoot().right.left = new Node<>(1);
+        mirrorBinaryTree.getRoot().left.left = new Node<>(6);
+        mirrorBinaryTree.getRoot().left.right = new Node<>(11);
 
         return mirrorBinaryTree;
     }

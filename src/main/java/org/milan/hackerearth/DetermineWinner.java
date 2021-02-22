@@ -30,17 +30,16 @@ class DetermineWinner {
             temp = problemScore - flashScore * decreaseScore;
 
             if (temp > problemScore / 2)
-                flashTotalScore = flashTotalScore + temp;
+                flashTotalScore += temp;
             else
-                flashTotalScore = flashTotalScore + problemScore / 2;
-
+                flashTotalScore += problemScore / 2;
 
             temp = problemScore - ciscoScore * decreaseScore;
 
             if (temp > problemScore / 2)
-                ciscoTotalScore = ciscoTotalScore + temp;
+                ciscoTotalScore += temp;
             else
-                ciscoTotalScore = ciscoTotalScore + problemScore / 2;
+                ciscoTotalScore += problemScore / 2;
         }
 
         // Condition 1: flash & cisco's score are equal

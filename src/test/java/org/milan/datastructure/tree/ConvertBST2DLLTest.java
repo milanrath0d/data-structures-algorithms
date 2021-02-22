@@ -12,34 +12,26 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 class ConvertBST2DLLTest {
 
-    private BinarySearchTree binarySearchTree;
+    private BinarySearchTree<Integer> binarySearchTree;
 
     private ConvertBST2DLL convertBST2DLL;
 
     @BeforeEach
     void setup() {
-        binarySearchTree = new BinarySearchTree(20);
-
-        binarySearchTree.insert(10);
-        binarySearchTree.insert(15);
-        binarySearchTree.insert(5);
-        binarySearchTree.insert(30);
-        binarySearchTree.insert(35);
-        binarySearchTree.insert(25);
-
+        binarySearchTree = TreeDataUtil.initializeBST();
         convertBST2DLL = new ConvertBST2DLL();
     }
 
     @Test
     void testConvert() {
-        BinarySearchTree.Node head = convertBST2DLL.convert(binarySearchTree.getRoot());
+        Node<Integer> head = convertBST2DLL.convert(binarySearchTree.getRoot());
 
         assertEquals(5, head.key);
     }
 
     @Test
     void testConvertV2() {
-        BinarySearchTree.Node head = convertBST2DLL.convertV2(binarySearchTree.getRoot());
+        Node<Integer> head = convertBST2DLL.convertV2(binarySearchTree.getRoot());
 
         assertEquals(5, head.key);
     }

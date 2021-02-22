@@ -32,12 +32,14 @@ public class CoinChangeProblem {
 
     /**
      * Dynamic programming
+     * <p>
+     * Time complexity: O(mn)
+     * Space complexity: O(n)
      *
      * @param coins valued coins
-     * @param m     total coins
      * @param n     N cents
      */
-    public int countV2(int[] coins, int m, int n) {
+    public int countV2(int[] coins, int n) {
 
         int[] combinations = new int[n + 1];
 
@@ -45,7 +47,7 @@ public class CoinChangeProblem {
 
         for (int coin : coins) {
             for (int i = 1; i < combinations.length; i++) {
-                if (i >= coin) {
+                if (coin <= i) {
                     combinations[i] += combinations[i - coin];
                 }
             }

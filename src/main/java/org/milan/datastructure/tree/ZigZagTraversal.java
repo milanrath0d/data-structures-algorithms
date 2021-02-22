@@ -15,21 +15,21 @@ public class ZigZagTraversal {
      * @param root root of the tree
      * @return zig zag order
      */
-    public String traverse(BinaryTree.Node root) {
+    public String traverse(Node<Integer> root) {
         if (root == null) {
             throw new IllegalStateException("Tree is empty");
         }
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        Stack<BinaryTree.Node> currentLevel = new Stack<>();
-        Stack<BinaryTree.Node> nextLevel = new Stack<>();
+        Stack<Node<Integer>> currentLevel = new Stack<>();
+        Stack<Node<Integer>> nextLevel = new Stack<>();
 
         boolean leftToRight = true;
         currentLevel.push(root);
 
         while (!currentLevel.isEmpty()) {
-            BinaryTree.Node current = currentLevel.pop();
+            Node<Integer> current = currentLevel.pop();
 
             stringBuilder.append(current.key);
             stringBuilder.append(" ");
@@ -54,7 +54,7 @@ public class ZigZagTraversal {
 
             if (currentLevel.isEmpty()) {
                 leftToRight = !leftToRight;
-                Stack<BinaryTree.Node> temp = currentLevel;
+                Stack<Node<Integer>> temp = currentLevel;
                 currentLevel = nextLevel;
                 nextLevel = temp;
             }

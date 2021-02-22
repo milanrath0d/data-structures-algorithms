@@ -15,12 +15,12 @@ public class VerticalWidth {
      * @param root root of the binary tree
      * @return vertical width of binary tree
      */
-    public int get(BinaryTree.Node root) {
+    public int get(Node<Integer> root) {
         preOrderGetUtil(root, 0);
         return maximum - minimum + 1;
     }
 
-    private void preOrderGetUtil(BinaryTree.Node root, int current) {
+    private void preOrderGetUtil(Node<Integer> root, int current) {
         if (root == null) {
             return;
         }

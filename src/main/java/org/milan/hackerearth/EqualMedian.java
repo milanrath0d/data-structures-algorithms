@@ -107,8 +107,6 @@ public class EqualMedian {
             }
 
             return total + sub;
-
         }
-
     }
 }

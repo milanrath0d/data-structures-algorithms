@@ -15,7 +15,7 @@ public class SumTree {
      * @param root root of the tree
      * @return true if given tree is sub tree otherwise false
      */
-    public boolean isSumTree(BinaryTree.Node root) {
+    public boolean isSumTree(Node<Integer> root) {
 
         // If node is null or it's leaf node then return true
         if (root == null || (root.left == null && root.right == null)) {
@@ -37,7 +37,7 @@ public class SumTree {
      * @param root root of the tree
      * @return true if given tree is sub tree otherwise false
      */
-    public boolean isSumTreeV2(BinaryTree.Node root) {
+    public boolean isSumTreeV2(Node<Integer> root) {
         return isSumTreeUtil(root) != 0;
     }
 
@@ -49,7 +49,7 @@ public class SumTree {
      * @param root root of the tree
      * @return non-zero sum if sum tree otherwise zero
      */
-    private int isSumTreeUtil(BinaryTree.Node root) {
+    private int isSumTreeUtil(Node<Integer> root) {
 
         // If node's leaf node then return true
         if (root.left == null && root.right == null) {
@@ -67,7 +67,7 @@ public class SumTree {
      * @param node node for which sum to be calculated
      * @return sum of node, left and right children
      */
-    private int sum(BinaryTree.Node node) {
+    private int sum(Node<Integer> node) {
         if (node == null)
             return 0;
         return sum(node.left) + node.key + sum(node.right);

@@ -22,38 +22,52 @@ public class Cousins {
      * @param second second node
      * @return true if first and second nodes are cousins otherwise false
      */
-    public boolean isCousins(BinaryTree.Node root, BinaryTree.Node first, BinaryTree.Node second) {
+    public boolean isCousins(Node<Integer> root, Node<Integer> first, Node<Integer> second) {
         return level(root, first, 1) == level(root, second, 1) && !isSiblings(root, first, second);
     }
 
-    private int level(BinaryTree.Node root, BinaryTree.Node node, int level) {
+    private int level(Node<Integer> root, Node<Integer> node, int level) {
 
         // Base case
         if (root == null) {
             return 0;
         }
 
-        if (root.equals(node)) {
+        if (root == node || root.key.equals(node.key)) {
             return level;
         }
 
-        int l = level(root.left, node, level + 1);
-        if (l != 0) {
-            return l;
-        }
-        return level(root.right, node, level + 1);
+        int temp = level(root.left, node, level + 1);
+
+        return temp != 0 ? temp : level(root.right, node, level + 1);
     }
 
-    private boolean isSiblings(BinaryTree.Node root, BinaryTree.Node first, BinaryTree.Node second) {
+    public boolean isSiblings(Node<Integer> root, Node<Integer> first, Node<Integer> second) {
 
         // Base case
         if (root == null) {
             return false;
         }
 
-        return (root.left != null && root.left.equals(first) && root.right != null && root.right.equals(second)) ||
-                (root.left != null && root.left.equals(second) && root.right != null && root.right.equals(first)) ||
-                isSiblings(root.left, first, second) || isSiblings(root.right, first, second);
+        if (root.left != null && root.right != null) {
+            int left = root.left.key;
+            int right = root.right.key;
+            if (left == first.key && right == second.key) {
+                return true;
+            } else if (left == second.key && right == first.key) {
+                return true;
+            }
+        }
+
+        if (root.left != null) {
+            return isSiblings(root.left, first, second);
+        }
+
+        if (root.right != null) {
+            return isSiblings(root.right, first, second);
+        }
+
+        return false;
     }
 
     /**
@@ -64,34 +78,34 @@ public class Cousins {
      * @param second second node
      * @return true if first and second nodes are cousins otherwise false
      */
-    public boolean isCousinsV2(BinaryTree.Node root, BinaryTree.Node first, BinaryTree.Node second) {
+    public boolean isCousinsV2(Node<Integer> root, Node<Integer> first, Node<Integer> second) {
 
         // Parent of first node
-        BinaryTree.Node firstParent = null;
+        Node<Integer> firstParent = null;
 
         // Parent of second node
-        BinaryTree.Node secondParent = null;
+        Node<Integer> secondParent = null;
 
         // Queue used for performing level order traversal
         // Each element of queue is pair of node and parent node
-        Queue<Pair<BinaryTree.Node, BinaryTree.Node>> queue = new LinkedList<>();
+        Queue<Pair<Node<Integer>, Node<Integer>>> queue = new LinkedList<>();
 
         // Add root and some dummy node as its parent to queue
-        queue.add(ImmutablePair.of(root, new BinaryTree.Node(-1)));
+        queue.add(ImmutablePair.of(root, new Node<>(-1)));
 
         while (!queue.isEmpty()) {
 
             int level = queue.size();
 
             while (level != 0) {
-                Pair<BinaryTree.Node, BinaryTree.Node> node = queue.poll();
+                Pair<Node<Integer>, Node<Integer>> node = queue.poll();
 
                 // Check if current node is first/second node
-                if (node.getKey().key == first.key) {
+                if (node.getKey().key.equals(first.key)) {
                     firstParent = node.getValue();
                 }
 
-                if (node.getKey().key == second.key) {
+                if (node.getKey().key.equals(second.key)) {
                     secondParent = node.getValue();
                 }
 

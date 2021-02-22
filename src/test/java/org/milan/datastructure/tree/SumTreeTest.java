@@ -12,19 +12,19 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  */
 class SumTreeTest {
 
-    private BinaryTree binaryTree;
+    private BinaryTree<Integer> binaryTree;
 
     private SumTree sumTree;
 
     @BeforeEach
     void setup() {
         sumTree = new SumTree();
-        binaryTree = new BinaryTree(26);
-        binaryTree.getRoot().left = new BinaryTree.Node(3);
-        binaryTree.getRoot().right = new BinaryTree.Node(10);
-        binaryTree.getRoot().left.right = new BinaryTree.Node(3);
-        binaryTree.getRoot().right.left = new BinaryTree.Node(6);
-        binaryTree.getRoot().right.right = new BinaryTree.Node(4);
+        binaryTree = new BinaryTree<>(26);
+        binaryTree.getRoot().left = new Node<>(3);
+        binaryTree.getRoot().right = new Node<>(10);
+        binaryTree.getRoot().left.right = new Node<>(3);
+        binaryTree.getRoot().right.left = new Node<>(6);
+        binaryTree.getRoot().right.right = new Node<>(4);
     }
 
     @Test

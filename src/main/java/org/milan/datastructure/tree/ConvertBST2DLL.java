@@ -13,9 +13,9 @@ public class ConvertBST2DLL {
     /**
      * Previous node pointer to point to previous visited node
      */
-    private BinarySearchTree.Node prev;
+    private Node<Integer> prev;
 
-    private BinarySearchTree.Node head;
+    private Node<Integer> head;
 
     /**
      * Convert binary search tree to doubly linked list
@@ -23,19 +23,19 @@ public class ConvertBST2DLL {
      * @param root root of the tree
      * @return head node of doubly linked list
      */
-    public BinarySearchTree.Node convert(BinarySearchTree.Node root) {
+    public Node<Integer> convert(Node<Integer> root) {
         convertUtil(root);
         return head;
     }
 
-    public BinarySearchTree.Node convertV2(BinarySearchTree.Node root) {
+    public Node<Integer> convertV2(Node<Integer> root) {
         // Base condition
         if (root == null) {
             throw new IllegalStateException("tree is empty");
         }
 
         // Node is root of binary tree
-        BinarySearchTree.Node node = convertUtilV2(root);
+        Node<Integer> node = convertUtilV2(root);
 
         // Convert it to head of doubly linked list
         while (node.left != null) {
@@ -50,14 +50,14 @@ public class ConvertBST2DLL {
      *
      * @param root root of the tree
      */
-    private BinarySearchTree.Node convertUtilV2(BinarySearchTree.Node root) {
+    private Node<Integer> convertUtilV2(Node<Integer> root) {
         if (root == null) {
             return null;
         }
 
         // Convert the left subtree and link it to root
         if (root.left != null) {
-            BinarySearchTree.Node left = convertUtilV2(root.left);
+            Node<Integer> left = convertUtilV2(root.left);
 
             // Find in order predecessor
             // After this loop, left will point to in order predecessor
@@ -75,7 +75,7 @@ public class ConvertBST2DLL {
         // Convert the right subtree and link it to root
         if (root.right != null) {
 
-            BinarySearchTree.Node right = convertUtilV2(root.right);
+            Node<Integer> right = convertUtilV2(root.right);
 
             // Find in order successor.
             // After this loop, right will point to the in order successor
@@ -97,7 +97,7 @@ public class ConvertBST2DLL {
      *
      * @param root root of the tree
      */
-    private void convertUtil(BinarySearchTree.Node root) {
+    private void convertUtil(Node<Integer> root) {
 
         // Base condition
         if (root == null) {

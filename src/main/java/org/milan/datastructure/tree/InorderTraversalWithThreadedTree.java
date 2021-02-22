@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class InorderTraversalWithThreadedTree {
 
-    private List<Integer> store = new ArrayList<>();
+    private final List<Integer> store = new ArrayList<>();
 
     /**
      * Inorder traversal using morris method using threaded binary tree
@@ -18,8 +18,8 @@ public class InorderTraversalWithThreadedTree {
      * @param root root of the tree
      * @return list of inorder traversals
      */
-    public List<Integer> traverse(BinaryTree.Node root) {
-        BinaryTree.Node current, previous;
+    public List<Integer> traverse(Node<Integer> root) {
+        Node<Integer> current, previous;
 
         // Base condition
         if (root == null) {

@@ -14,6 +14,7 @@ class PointsTest {
     @Test
     void testFindWays() {
         Points points = new Points();
+
         long result = points.findWays(new long[]{1, 10, 20, 30, 50}, 5, 19);
 
         assertEquals(1, result);

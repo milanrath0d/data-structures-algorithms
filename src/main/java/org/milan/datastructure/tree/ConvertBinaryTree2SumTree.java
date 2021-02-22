@@ -12,7 +12,7 @@ public class ConvertBinaryTree2SumTree {
      *
      * @param root root of the tree
      */
-    public int convert(BinaryTree.Node root) {
+    public int convert(Node<Integer> root) {
         if (root == null) {
             return 0;
         }

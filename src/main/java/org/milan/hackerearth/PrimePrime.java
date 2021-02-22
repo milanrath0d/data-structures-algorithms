@@ -11,9 +11,9 @@ import java.util.TreeSet;
  */
 public class PrimePrime {
 
-    private Set<Long> primes = new TreeSet<>();
+    private final Set<Long> primes = new TreeSet<>();
 
-    private boolean[] prime = new boolean[(int) 1e6 + 10];
+    private final boolean[] prime = new boolean[(int) 1e6 + 10];
 
     public long calculatePrimeCount(long left, long right) {
 
@@ -46,7 +46,6 @@ public class PrimePrime {
         }
 
         return count;
-
     }
 
     private boolean isPrime(long number) {
@@ -74,7 +73,6 @@ public class PrimePrime {
                 }
             }
         }
-
     }
 
     public int getPrimeCount(int left, int right) {
@@ -82,14 +80,14 @@ public class PrimePrime {
 
         int[] ans = new int[(int) 1e6 + 10];
 
-        int n_prime = 0;
+        int nPrime = 0;
         int a = 0;
 
         for (int i = 1; i <= (int) 1e6; i++) {
             if (prime[i])
-                n_prime++;
+                nPrime++;
 
-            if (prime[n_prime])
+            if (prime[nPrime])
                 a++;
 
             ans[i] = a;

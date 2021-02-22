@@ -10,9 +10,9 @@ import java.util.List;
  */
 public class Distance {
 
-    private List<Integer> output = new ArrayList<>();
+    private final List<Integer> output = new ArrayList<>();
 
-    public List<Integer> findDistance(BinaryTree.Node root, BinaryTree.Node target, int k) {
+    public List<Integer> findDistance(Node<Integer> root, Node<Integer> target, int k) {
 
         distanceUtil(root, target, k);
 
@@ -30,7 +30,7 @@ public class Distance {
      * @param target target node
      * @param k      distance
      */
-    private int distanceUtil(BinaryTree.Node root, BinaryTree.Node target, int k) {
+    private int distanceUtil(Node<Integer> root, Node<Integer> target, int k) {
 
         // Base case
         if (root == null) {
@@ -89,7 +89,7 @@ public class Distance {
      * @param root root of the tree
      * @param k    distance
      */
-    private void downDistance(BinaryTree.Node root, int k) {
+    private void downDistance(Node<Integer> root, int k) {
         // Base case
         if (root == null || k < 0) {
             return;

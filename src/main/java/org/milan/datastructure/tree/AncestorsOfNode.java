@@ -9,7 +9,7 @@ import java.util.*;
  */
 public class AncestorsOfNode {
 
-    private static List<BinaryTree.Node> output;
+    private static List<Node<Integer>> output;
 
     /**
      * Find all ancestors of a given node in binary tree
@@ -19,7 +19,7 @@ public class AncestorsOfNode {
      * @param nodeKey node for which ancestors to be found
      * @return list of ancestors
      */
-    public List<BinaryTree.Node> findAll(BinaryTree.Node root, int nodeKey) {
+    public List<Node<Integer>> findAll(Node<Integer> root, int nodeKey) {
 
         output = new ArrayList<>();
 
@@ -28,7 +28,7 @@ public class AncestorsOfNode {
         return output;
     }
 
-    private boolean findAllUtil(BinaryTree.Node root, int nodeKey) {
+    private boolean findAllUtil(Node<Integer> root, int nodeKey) {
         // Base conditions
         if (root == null) {
             return false;
@@ -54,16 +54,16 @@ public class AncestorsOfNode {
      * @param nodeKey node for which ancestors to be found
      * @return list of ancestors
      */
-    public List<BinaryTree.Node> findAllIterative(BinaryTree.Node root, int nodeKey) {
+    public List<Node<Integer>> findAllIterative(Node<Integer> root, int nodeKey) {
 
         // Base condition
         if (root == null) {
             throw new IllegalStateException("Tree is empty");
         }
 
-        Deque<BinaryTree.Node> stack = new ArrayDeque<>();
+        Deque<Node<Integer>> stack = new ArrayDeque<>();
 
-        List<BinaryTree.Node> outputList = new ArrayList<>();
+        List<Node<Integer>> outputList = new ArrayList<>();
 
         // Traverse the complete tree in postorder way till we find the key
         while (true) {
@@ -76,7 +76,7 @@ public class AncestorsOfNode {
             }
 
             // If node found, break the loop
-            if (root != null && root.key == nodeKey) {
+            if (root != null) {
                 break;
             }
 
