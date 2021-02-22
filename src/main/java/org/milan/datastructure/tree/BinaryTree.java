@@ -9,22 +9,22 @@ import java.util.Queue;
  *
  * @author Milan Rathod
  */
-public class BinaryTree {
+public class BinaryTree<T extends Comparable<T>> {
 
     /**
      * root of the binary tree
      */
-    private Node root;
+    private final Node<T> root;
 
     public BinaryTree() {
         root = null;
     }
 
-    public BinaryTree(int rootKey) {
-        this.root = new Node(rootKey);
+    public BinaryTree(T rootKey) {
+        this.root = new Node<>(rootKey);
     }
 
-    public Node getRoot() {
+    public Node<T> getRoot() {
         return root;
     }
 
@@ -34,20 +34,21 @@ public class BinaryTree {
      * @param root root of the tree
      * @return maximum node key
      */
-    public int findMaximumElement(Node root) {
+    public T findMaximumElement(Node<T> root) {
         if (root == null) {
-            return Integer.MIN_VALUE;
+            return null;
         }
 
-        int max = root.key;
-        int leftMax = findMaximumElement(root.left);
-        int rightMax = findMaximumElement(root.right);
+        T max = root.key;
 
-        if (leftMax > max) {
+        T leftMax = findMaximumElement(root.left);
+        T rightMax = findMaximumElement(root.right);
+
+        if (leftMax != null && leftMax.compareTo(max) > 0) {
             max = leftMax;
         }
 
-        if (rightMax > max) {
+        if (rightMax != null && rightMax.compareTo(max) > 0) {
             max = rightMax;
         }
 
@@ -60,25 +61,25 @@ public class BinaryTree {
      * @param root root of the tree
      * @return maximum node key
      */
-    public int findMaximumElementIterative(Node root) {
+    public T findMaximumElementIterative(Node<T> root) {
         // Base condition
         if (root == null) {
             throw new IllegalStateException("Tree is empty");
         }
 
-        Queue<Node> queue = new LinkedList<>();
+        Queue<Node<T>> queue = new LinkedList<>();
 
-        Node temp = root;
+        Node<T> temp = root;
 
         queue.offer(temp);
 
-        int maxElement = Integer.MIN_VALUE;
+        T maxElement = temp.key;
 
         while (!queue.isEmpty()) {
 
             temp = queue.poll();
 
-            if (temp.key > maxElement) {
+            if (temp.key.compareTo(maxElement) > 0) {
                 maxElement = temp.key;
             }
 
@@ -94,20 +95,20 @@ public class BinaryTree {
      * @param root root of the tree
      * @return minimum node key
      */
-    public int findMinimumElement(Node root) {
+    public T findMinimumElement(Node<T> root) {
         if (root == null) {
-            return Integer.MAX_VALUE;
+            return null;
         }
 
-        int min = root.key;
-        int leftMin = findMinimumElement(root.left);
-        int rightMin = findMinimumElement(root.right);
+        T min = root.key;
+        T leftMin = findMinimumElement(root.left);
+        T rightMin = findMinimumElement(root.right);
 
-        if (leftMin < min) {
+        if (leftMin != null && leftMin.compareTo(min) < 0) {
             min = leftMin;
         }
 
-        if (rightMin < min) {
+        if (rightMin != null && rightMin.compareTo(min) < 0) {
             min = rightMin;
         }
 
@@ -121,13 +122,13 @@ public class BinaryTree {
      * @param key  node key
      * @return true if present otherwise false
      */
-    public boolean isPresent(Node root, int key) {
+    public boolean isPresent(Node<T> root, int key) {
         // Base condition
         if (root == null) {
             return false;
         }
 
-        if (root.key == key) {
+        if (root.key.equals(key)) {
             return true;
         }
         return isPresent(root.left, key) || isPresent(root.right, key);
@@ -140,15 +141,15 @@ public class BinaryTree {
      * @param key  node key
      * @return true if present otherwise false
      */
-    public boolean isPresentIterative(Node root, int key) {
+    public boolean isPresentIterative(Node<T> root, int key) {
         // Base condition
         if (root == null) {
             throw new IllegalStateException("Tree is empty");
         }
 
-        Queue<Node> queue = new LinkedList<>();
+        Queue<Node<T>> queue = new LinkedList<>();
 
-        Node temp = root;
+        Node<T> temp = root;
 
         queue.offer(temp);
 
@@ -156,7 +157,7 @@ public class BinaryTree {
 
             temp = queue.poll();
 
-            if (temp.key == key) {
+            if (temp.key.equals(key)) {
                 return true;
             }
 
@@ -172,7 +173,7 @@ public class BinaryTree {
      * @param root root of a tree
      * @return root of a mirror tree
      */
-    public Node mirrorTree(Node root) {
+    public Node<T> mirrorTree(Node<T> root) {
 
         // Base condition
         if (root == null) {
@@ -186,7 +187,7 @@ public class BinaryTree {
         mirrorTree(root.right);
 
         // Swap left and right children
-        Node temp = root.left;
+        Node<T> temp = root.left;
         root.left = root.right;
         root.right = temp;
 
@@ -197,16 +198,15 @@ public class BinaryTree {
      * Get Mirror Tree of a tree - Iterative approach
      *
      * @param root root of a tree
-     * @return root of a mirror tree
      */
-    public void mirrorTreeIterative(Node root) {
+    public void mirrorTreeIterative(Node<T> root) {
 
         // Base condition
         if (root == null) {
             return;
         }
 
-        Queue<Node> queue = new LinkedList<>();
+        Queue<Node<T>> queue = new LinkedList<>();
 
         queue.add(root);
 
@@ -214,9 +214,9 @@ public class BinaryTree {
         while (!queue.isEmpty()) {
 
             // Pop top node from queue
-            Node current = queue.poll();
+            Node<T> current = queue.poll();
 
-            Node temp = current.left;
+            Node<T> temp = current.left;
             current.left = current.right;
             current.right = temp;
 
@@ -235,7 +235,7 @@ public class BinaryTree {
      * @param target root of target tree
      * @return true if identical otherwise false
      */
-    public boolean isIdentical(Node src, Node target) {
+    public boolean isIdentical(Node<T> src, Node<T> target) {
         // Both the nodes are empty
         if (src == null && target == null) {
             return true;
@@ -257,7 +257,7 @@ public class BinaryTree {
      * @param target root of target tree
      * @return true if both trees are mirror of each other otherwise false
      */
-    public boolean isMirror(Node src, Node target) {
+    public boolean isMirror(Node<T> src, Node<T> target) {
         // Both the nodes are empty
         if (src == null && target == null) {
             return true;
@@ -272,60 +272,5 @@ public class BinaryTree {
         return (src.key == target.key
                 && isMirror(src.left, target.right)
                 && isMirror(src.right, target.left));
-    }
-
-    static class Node {
-        int key;
-
-        Node left;
-
-        Node right;
-
-        Node(int key) {
-            this.key = key;
-            left = null;
-            right = null;
-        }
-
-        public int getKey() {
-            return key;
-        }
-
-        public void setKey(int key) {
-            this.key = key;
-        }
-
-        public Node getLeft() {
-            return left;
-        }
-
-        public void setLeft(Node left) {
-            this.left = left;
-        }
-
-        public Node getRight() {
-            return right;
-        }
-
-        public void setRight(Node right) {
-            this.right = right;
-        }
-
-        public String toString() {
-            return "" + this.key;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            Node node = (Node) o;
-            return key == node.key;
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(key);
-        }
     }
 }

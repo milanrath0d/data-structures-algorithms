@@ -21,8 +21,7 @@ public class BatmanAndTickTackToe {
     /**
      * check if won scenario available in tic-tac-toe
      */
-    public boolean isWonScenarioAvailable(char[][] matrix) {
-
+    public boolean isWinningScenarioAvailable(char[][] matrix) {
         int countX = 0;
         int countO = 0;
 
@@ -44,7 +43,7 @@ public class BatmanAndTickTackToe {
         while (counter < 4) {
             char[] rowsArr = matrix[counter++];
 
-            if (isWonScenarioAvailableForRowsAndColumns(myChar, rowsArr)) return true;
+            if (isWinningScenarioAvailableForRowsAndColumns(myChar, rowsArr)) return true;
         }
 
         counter = 0; // resetting it to ZERO.
@@ -52,51 +51,41 @@ public class BatmanAndTickTackToe {
         while (counter < 4) {
             char[] columnsArr = {matrix[0][counter], matrix[1][counter], matrix[2][counter], matrix[3][counter]};
 
-            if (isWonScenarioAvailableForRowsAndColumns(myChar, columnsArr)) return true;
+            if (isWinningScenarioAvailableForRowsAndColumns(myChar, columnsArr)) return true;
 
             counter++;
         }
 
-        return isWonScenarioAvailableForDiagonal(myChar, matrix);
-
+        return isWinningScenarioAvailableForDiagonal(myChar, matrix);
     }
 
-    private boolean isWonScenarioAvailableForRowsAndColumns(char myChar, char[] charArr) {
-
-        boolean flag = isWonScenarioAvailableForRowsAndColumns(myChar, charArr, 0, 3);
-
-        if (flag) {
-            return true;
-        } else {
-            flag = isWonScenarioAvailableForRowsAndColumns(myChar, charArr, 1, 4);
-            if (flag) {
-                return true;
-            }
-        }
-
-        return false;
+    private boolean isWinningScenarioAvailableForRowsAndColumns(char myChar, char[] charArr) {
+        return isWinningScenarioAvailableForRowsAndColumns(myChar, charArr, 0, 3) ||
+                isWinningScenarioAvailableForRowsAndColumns(myChar, charArr, 1, 4);
     }
 
     /**
-     * check if won scenario available for rows & columns
+     * check if winning scenario available for rows & columns
      */
-    private boolean isWonScenarioAvailableForRowsAndColumns(char myChar, char[] charArr, int startIndex, int endIndex) {
-
+    private boolean isWinningScenarioAvailableForRowsAndColumns(char myChar, char[] charArr, int startIndex, int endIndex) {
         int myCharCount = 0;
         int emptyCellCount = 0;
 
         for (int index = startIndex; index < endIndex; index++) {
-            if (charArr[index] == myChar) myCharCount++;
-            else if (charArr[index] == '.') emptyCellCount++;
+            if (charArr[index] == myChar) {
+                myCharCount++;
+            } else if (charArr[index] == '.') {
+                emptyCellCount++;
+            }
         }
 
         return myCharCount == 2 && emptyCellCount == 1;
     }
 
     /**
-     * check if won scenario available for diagonal
+     * check if winning scenario available for diagonal
      */
-    private boolean isWonScenarioAvailableForDiagonal(char myChar, char[][] matrix) {
+    private boolean isWinningScenarioAvailableForDiagonal(char myChar, char[][] matrix) {
         int myCharCount = 0;
         int emptyCellCount = 0;
 
@@ -105,8 +94,11 @@ public class BatmanAndTickTackToe {
             for (int outer = 0; outer < eachSet.length; outer++) {
                 int[] set = eachSet[outer];
                 char currentChar = matrix[set[0]][set[1]];
-                if (currentChar == myChar) myCharCount++;
-                else if (currentChar == '.') emptyCellCount++;
+                if (currentChar == myChar) {
+                    myCharCount++;
+                } else if (currentChar == '.') {
+                    emptyCellCount++;
+                }
             }
             if (myCharCount == 2 && emptyCellCount == 1) {
                 return true;
@@ -114,7 +106,6 @@ public class BatmanAndTickTackToe {
             myCharCount = 0;
             emptyCellCount = 0;
         }
-
         return false;
     }
 }

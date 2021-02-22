@@ -22,7 +22,7 @@ public class VerticalSum {
      * @param root root of the tree
      * @return List of sums for each vertical level
      */
-    public List<Integer> computeSum(BinaryTree.Node root) {
+    public List<Integer> computeSum(Node<Integer> root) {
         // Base condition
         if (root == null) {
             throw new IllegalStateException("binary tree is empty");
@@ -43,7 +43,7 @@ public class VerticalSum {
      * @param root root of the tree
      * @return List of sums for each vertical level
      */
-    public List<Integer> sumUsingDLL(BinaryTree.Node root) {
+    public List<Integer> sumUsingDLL(Node<Integer> root) {
         // Base condition
         if (root == null) {
             throw new IllegalStateException("binary tree is empty");
@@ -79,7 +79,7 @@ public class VerticalSum {
      * @param root    root of the tree
      * @param dllNode doubly linked list node
      */
-    private void sumUsingDLLUtil(BinaryTree.Node root, DoublyLinkedList.Node<Integer> dllNode) {
+    private void sumUsingDLLUtil(Node<Integer> root, DoublyLinkedList.Node<Integer> dllNode) {
 
         // Add current node's data to its vertical line
         dllNode.setData(dllNode.getData() + root.key);
@@ -110,7 +110,7 @@ public class VerticalSum {
      * @param hd   horizontal distance
      * @param map  map to store key as horizontal distance and value as sum of vertical line
      */
-    private void sumUtil(BinaryTree.Node root, int hd, Map<Integer, Integer> map) {
+    private void sumUtil(Node<Integer> root, int hd, Map<Integer, Integer> map) {
         if (root == null) {
             return;
         }

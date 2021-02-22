@@ -14,7 +14,8 @@ class BytelandianGoldCoinsTest {
     @Test
     void testReplaceCoins() {
         BytelandianGoldCoins bytelandianGoldCoins = new BytelandianGoldCoins();
-        long result = bytelandianGoldCoins.replaceCoins(474788800);
+
+        long result = bytelandianGoldCoins.computeMaxExchangeInDollar(474788800);
 
         assertEquals(1901257550, result);
     }

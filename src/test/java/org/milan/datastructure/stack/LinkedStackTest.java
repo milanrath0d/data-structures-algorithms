@@ -1,6 +1,5 @@
 package org.milan.datastructure.stack;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -12,15 +11,10 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class LinkedStackTest {
 
-    private LinkedStack<Integer> linkedStack;
-
-    @BeforeEach
-    void setup() {
-        linkedStack = new LinkedStack<>();
-    }
-
     @Test
-    void testPush() {
+    void testStackOperations() {
+        LinkedStack<Integer> linkedStack = new LinkedStack<>();
+
         assertTrue(linkedStack.isEmpty());
 
         linkedStack.push(10);
@@ -30,28 +24,16 @@ class LinkedStackTest {
         assertFalse(linkedStack.isEmpty());
 
         assertEquals(2, linkedStack.size());
-    }
 
-    @Test
-    void testPop() {
-        linkedStack.push(10);
+        assertEquals(20, linkedStack.peek().intValue());
 
-        assertFalse(linkedStack.isEmpty());
+        assertEquals(2, linkedStack.size());
+
+        assertEquals(20, linkedStack.pop().intValue());
 
         assertEquals(10, linkedStack.pop().intValue());
 
         assertTrue(linkedStack.isEmpty());
-    }
-
-    @Test
-    void testPeek() {
-        linkedStack.push(10);
-
-        assertFalse(linkedStack.isEmpty());
-
-        assertEquals(10, linkedStack.peek().intValue());
-
-        assertFalse(linkedStack.isEmpty());
     }
 
 }

@@ -14,7 +14,7 @@ public class TournamentTree {
      * @param root root of the tree
      * @return second minimum value in the tree
      */
-    public int secondMin(BinaryTree.Node root) {
+    public int secondMin(Node<Integer> root) {
 
         // Base condition
         if (root.left == null || root.right == null) {

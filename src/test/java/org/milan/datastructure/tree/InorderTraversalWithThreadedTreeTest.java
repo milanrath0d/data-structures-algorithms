@@ -14,16 +14,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 class InorderTraversalWithThreadedTreeTest {
 
-    private BinaryTree binaryTree;
+    private BinaryTree<Integer> binaryTree;
 
     @BeforeEach
     void setup() {
-        binaryTree = new BinaryTree(4);
-        binaryTree.getRoot().left = new BinaryTree.Node(7);
-        binaryTree.getRoot().right = new BinaryTree.Node(5);
-        binaryTree.getRoot().left.right = new BinaryTree.Node(1);
-        binaryTree.getRoot().right.left = new BinaryTree.Node(11);
-        binaryTree.getRoot().right.right = new BinaryTree.Node(6);
+        binaryTree = new BinaryTree<>(4);
+        binaryTree.getRoot().left = new Node<>(7);
+        binaryTree.getRoot().right = new Node<>(5);
+        binaryTree.getRoot().left.right = new Node<>(1);
+        binaryTree.getRoot().right.left = new Node<>(11);
+        binaryTree.getRoot().right.right = new Node<>(6);
     }
 
     @Test

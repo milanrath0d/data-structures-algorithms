@@ -31,7 +31,7 @@ class SortedLL2BSTTest {
     void testConvert() {
         SortedLL2BST sortedLL2BST = new SortedLL2BST();
 
-        BinarySearchTree.Node root = sortedLL2BST.convert(linkedList.getHead(), 7);
+        Node<Integer> root = sortedLL2BST.convert(linkedList.getHead(), 7);
 
         assertEquals(4, root.key);
     }

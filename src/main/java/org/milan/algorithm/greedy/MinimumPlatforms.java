@@ -12,7 +12,7 @@ import java.util.TreeMap;
  */
 public class MinimumPlatforms {
 
-    private Map<Integer, String> trainMapping = new TreeMap<>();
+    private final Map<Integer, String> trainMapping = new TreeMap<>();
 
     /**
      * Hash map based implementation

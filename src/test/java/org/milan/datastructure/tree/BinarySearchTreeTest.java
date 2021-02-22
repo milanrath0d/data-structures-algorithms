@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.milan.datastructure.tree.TreeDataUtil.toArray;
 
 /**
  * Test Class for {@link BinarySearchTree}
@@ -14,18 +15,11 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class BinarySearchTreeTest {
 
-    private BinarySearchTree binarySearchTree;
+    private BinarySearchTree<Integer> binarySearchTree;
 
     @BeforeEach
     void setup() {
-        binarySearchTree = new BinarySearchTree(20);
-
-        binarySearchTree.insert(10);
-        binarySearchTree.insert(15);
-        binarySearchTree.insert(5);
-        binarySearchTree.insert(30);
-        binarySearchTree.insert(35);
-        binarySearchTree.insert(25);
+        binarySearchTree = TreeDataUtil.initializeBST();
     }
 
     @Test
@@ -130,24 +124,8 @@ class BinarySearchTreeTest {
     }
 
     @Test
-    void testFindMaximumLevelSum() {
-        assertEquals(80, binarySearchTree.findMaximumLevelSum(binarySearchTree.getRoot()));
-    }
-
-    @Test
     void testLca() {
         assertEquals(20, binarySearchTree.lca(binarySearchTree.getRoot(), 5, 35).key);
         assertEquals(30, binarySearchTree.lca(binarySearchTree.getRoot(), 25, 35).key);
-    }
-
-    @Test
-    void testIsBST() {
-        assertTrue(binarySearchTree.isBST(binarySearchTree.getRoot()));
-    }
-
-    private int[] toArray(List<Integer> list) {
-        return list.stream()
-                .mapToInt(i -> i)
-                .toArray();
     }
 }

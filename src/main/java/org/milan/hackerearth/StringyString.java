@@ -51,44 +51,40 @@ public class StringyString {
         }
 
         int index = 0;
+
         int value = Integer.MAX_VALUE;
 
-        int[] totals = new int[265];
-
-        // Calculate totals
-        for (int i = 1; i <= 260; i++) {
-            for (int j = 0; j < n; j++) {
-                totals[i] += Math.abs(weights[j] - i);
-            }
-        }
-
-        for (int i = 0; i < n; i++) {
-            int low = 0;
-            int high = 260;
-            int ans = 0;
-
-            while (low <= high) {
-
-                int mid = (low + high) / 2;
-
-                int val1 = totals[mid] - Math.abs(weights[i] - mid);
-                int val2 = totals[mid + 1] - Math.abs(weights[i] - mid - 1);
-                if (val1 <= val2) {
-                    ans = mid;
-                    high = mid - 1;
-                } else {
-                    ans = mid + 1;
-                    low = mid + 1;
-                }
-            }
-
-            int temp = totals[ans] - Math.abs(weights[i] - ans);
-            if (value > temp) {
+        for (int i = 0; i < weights.length; i++) {
+            int minimumOperations = findMinimumOperations(weights, i);
+            if (minimumOperations < value) {
                 index = i;
-                value = temp;
+                value = minimumOperations;
             }
         }
 
         return strings.get(index);
+    }
+
+    private int findMinimumOperations(int[] weights, int index) {
+
+        int total = 0;
+
+        for (int i = 0; i < weights.length; i++) {
+            if (index != i) {
+                total += weights[i];
+            }
+        }
+
+        float mean = (float) total / (weights.length - 1);
+
+        int minimumOperations = 0;
+
+        for (int i = 0; i < weights.length; i++) {
+            if (index != i) {
+                minimumOperations += Math.abs(mean - weights[i]);
+            }
+        }
+
+        return minimumOperations;
     }
 }

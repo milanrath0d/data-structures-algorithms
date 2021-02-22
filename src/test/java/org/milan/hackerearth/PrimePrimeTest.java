@@ -14,6 +14,7 @@ class PrimePrimeTest {
     @Test
     void testPrimeCount() {
         PrimePrime primePrime = new PrimePrime();
+
         long result = primePrime.calculatePrimeCount(1, 839);
 
         assertEquals(190, result);

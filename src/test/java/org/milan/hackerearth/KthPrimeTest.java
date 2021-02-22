@@ -14,7 +14,8 @@ class KthPrimeTest {
     @Test
     void testCalculateMinimumOperations() {
         KthPrime kthPrime = new KthPrime();
-        int result = kthPrime.calculateMinimumOperations(new int[]{12, 2, 1, 14}, 4, 3);
+
+        int result = kthPrime.calculateMinimumOperations(new int[]{12, 2, 1, 14}, 3);
 
         assertEquals(2, result);
     }

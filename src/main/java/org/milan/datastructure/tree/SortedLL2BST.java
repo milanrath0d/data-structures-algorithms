@@ -18,7 +18,7 @@ public class SortedLL2BST {
      * @param head  head of the linked list
      * @return root of the tree
      */
-    public BinarySearchTree.Node convert(LinkedList.Node<Integer> head, int count) {
+    public Node<Integer> convert(LinkedList.Node<Integer> head, int count) {
 
         // Base condition
         if (head == null) {
@@ -36,17 +36,16 @@ public class SortedLL2BST {
      * @param count total nodes in linked list
      * @return root of the tree
      */
-    private BinarySearchTree.Node convertUtil(int count) {
+    private Node<Integer> convertUtil(int count) {
 
         // Base condition
         if (count <= 0) {
             return null;
         }
 
-        //
-        BinarySearchTree.Node left = convertUtil(count / 2);
+        Node<Integer> left = convertUtil(count / 2);
 
-        BinarySearchTree.Node root = new BinarySearchTree.Node(head.getData());
+        Node<Integer> root = new Node<>(head.getData());
 
         root.left = left;
 

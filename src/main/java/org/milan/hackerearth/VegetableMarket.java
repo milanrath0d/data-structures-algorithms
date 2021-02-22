@@ -3,6 +3,8 @@ package org.milan.hackerearth;
 import java.util.Arrays;
 import java.util.List;
 
+import static java.util.Arrays.binarySearch;
+
 /**
  * Vegetable Market Problem
  * <p>
@@ -21,8 +23,10 @@ public class VegetableMarket {
      */
     private int calculateMinimumQuantity(int[] arr, int total) {
 
+        int totalQuantitiesOfAllStalls = Arrays.stream(arr).sum();
+
         // Check if requirement can be fulfilled
-        if (totalQuantitiesOfAllStalls(arr) < total) {
+        if (totalQuantitiesOfAllStalls < total) {
             return -1;
         }
 
@@ -33,11 +37,7 @@ public class VegetableMarket {
 
         while (true) {
             for (int element : arr) {
-                if (element >= minimum) {
-                    tempTotal += minimum;
-                } else {
-                    tempTotal += element;
-                }
+                tempTotal += Math.min(element, minimum);
             }
 
             if (tempTotal >= total) {
@@ -50,10 +50,4 @@ public class VegetableMarket {
         }
     }
 
-    /**
-     * Calculate Sum of All quantities available in all stalls
-     */
-    private int totalQuantitiesOfAllStalls(int[] arr) {
-        return Arrays.stream(arr).sum();
-    }
 }

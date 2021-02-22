@@ -36,7 +36,7 @@ class CoinChangeProblemTest {
 
         int n = 4;
 
-        int result = coinChangeProblem.countV2(coins, coins.length, n);
+        int result = coinChangeProblem.countV2(coins, n);
 
         assertEquals(4, result);
     }

@@ -15,14 +15,14 @@ public class SpecialPreOrderTraversal {
      * @param root  root of the tree
      * @return root of the newly constructed tree
      */
-    public BinaryTree.Node constructTree(int[] pre, char[] preLN, BinaryTree.Node root) {
+    public Node<Integer> constructTree(int[] pre, char[] preLN, Node<Integer> root) {
         return constructTreeUtil(pre, preLN, new Index(), pre.length, root);
     }
 
     /**
      * Utility function to construct binary tree from given set of parameters
      */
-    private BinaryTree.Node constructTreeUtil(int[] pre, char[] preLN, Index index, int size, BinaryTree.Node temp) {
+    private Node<Integer> constructTreeUtil(int[] pre, char[] preLN, Index index, int size, Node<Integer> temp) {
         int pre_index = index.pre_index;
 
         // If pre_index is equal to size return
@@ -31,7 +31,7 @@ public class SpecialPreOrderTraversal {
         }
 
         // Create new node from array of preorder traversal
-        temp = new BinaryTree.Node(pre[pre_index]);
+        temp = new Node<Integer>(pre[pre_index]);
 
         // Increment pre_index of given Index object
         (index.pre_index)++;

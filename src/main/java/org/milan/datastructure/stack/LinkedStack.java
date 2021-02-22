@@ -26,12 +26,8 @@ public class LinkedStack<E> {
      */
     public void push(E data) {
         Node<E> newNode = new Node<>(data);
-        if (isEmpty()) {
-            top = newNode;
-        } else {
-            newNode.next = top.next;
-            top = newNode;
-        }
+        newNode.next = top;
+        top = newNode;
         length++;
     }
 

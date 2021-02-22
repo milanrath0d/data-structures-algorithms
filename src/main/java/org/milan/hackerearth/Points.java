@@ -13,10 +13,12 @@ public class Points {
         long count = 0L;
         for (int i = 0; i < n; i++) {
             int l = next;
-            while (l < n && inputArray[l] - inputArray[i] <= k) l++;
-            long temp = l - i - 1;
+            while (l < n && inputArray[l] - inputArray[i] <= k) {
+                l++;
+            }
+            int temp = l - i - 1;
             next = l;
-            count = count + (temp - 1) * (temp) / 2;
+            count += (long) (temp - 1) * (temp) / 2;
         }
         return count;
     }

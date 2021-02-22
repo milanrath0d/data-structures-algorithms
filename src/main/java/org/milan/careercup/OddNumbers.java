@@ -15,28 +15,29 @@ import java.util.Map;
 public class OddNumbers {
 
     /**
-     * @param inputArray given array
+     * Time complexity: O(n)
+     * Space complexity: O(n)
+     *
+     * @param arr given array
      * @return list of integers which are present in array odd number of times
      */
-    public List<Integer> findOddNumbers(int[] inputArray) {
+    public List<Integer> findOddNumbers(int[] arr) {
 
-        Map<Integer, Integer> inputMap = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
 
         List<Integer> outputList = new ArrayList<>();
 
-        for (int element : inputArray) {
-            Integer frequency = inputMap.get(element);
-            inputMap.put(element, (frequency == null) ? 1 : frequency + 1);
-
+        for (int element : arr) {
+            Integer frequency = map.get(element);
+            map.put(element, (frequency == null) ? 1 : frequency + 1);
         }
 
-        for (Map.Entry<Integer, Integer> entry : inputMap.entrySet()) {
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
             if (entry.getValue() % 2 != 0) {
                 outputList.add(entry.getKey());
             }
         }
         return outputList;
-
     }
 
 }

@@ -15,13 +15,13 @@ class ConvertBinaryTree2SumTreeTest {
     void testConvert() {
         ConvertBinaryTree2SumTree convertBinaryTree2SumTree = new ConvertBinaryTree2SumTree();
 
-        BinaryTree binaryTree = new BinaryTree(10);
-        binaryTree.getRoot().left = new BinaryTree.Node(-2);
-        binaryTree.getRoot().right = new BinaryTree.Node(6);
-        binaryTree.getRoot().left.left = new BinaryTree.Node(8);
-        binaryTree.getRoot().left.right = new BinaryTree.Node(-4);
-        binaryTree.getRoot().right.left = new BinaryTree.Node(7);
-        binaryTree.getRoot().right.right = new BinaryTree.Node(5);
+        BinaryTree<Integer> binaryTree = new BinaryTree<>(10);
+        binaryTree.getRoot().left = new Node<>(-2);
+        binaryTree.getRoot().right = new Node<>(6);
+        binaryTree.getRoot().left.left = new Node<>(8);
+        binaryTree.getRoot().left.right = new Node<>(-4);
+        binaryTree.getRoot().right.left = new Node<>(7);
+        binaryTree.getRoot().right.right = new Node<>(5);
 
         convertBinaryTree2SumTree.convert(binaryTree.getRoot());
 

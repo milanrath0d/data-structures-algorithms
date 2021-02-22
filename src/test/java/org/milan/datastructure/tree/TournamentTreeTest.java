@@ -13,13 +13,13 @@ class TournamentTreeTest {
 
     @Test
     void testSecondMin() {
-        BinaryTree binaryTree = new BinaryTree(2);
-        binaryTree.getRoot().left = new BinaryTree.Node(2);
-        binaryTree.getRoot().right = new BinaryTree.Node(5);
-        binaryTree.getRoot().left.left = new BinaryTree.Node(2);
-        binaryTree.getRoot().left.right = new BinaryTree.Node(4);
-        binaryTree.getRoot().right.left = new BinaryTree.Node(5);
-        binaryTree.getRoot().right.right = new BinaryTree.Node(7);
+        BinaryTree<Integer> binaryTree = new BinaryTree<>(2);
+        binaryTree.getRoot().left = new Node<>(2);
+        binaryTree.getRoot().right = new Node<>(5);
+        binaryTree.getRoot().left.left = new Node<>(2);
+        binaryTree.getRoot().left.right = new Node<>(4);
+        binaryTree.getRoot().right.left = new Node<>(5);
+        binaryTree.getRoot().right.right = new Node<>(7);
 
         TournamentTree tournamentTree = new TournamentTree();
 

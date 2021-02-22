@@ -33,13 +33,13 @@ public class TreeView {
      * @param root root of the tree
      * @return list of node keys visible from top view
      */
-    public List<Integer> topView(BinaryTree.Node root) {
+    public List<Integer> topView(Node<Integer> root) {
 
         // TODO check if we can move this statement to constructor
         VerticalTraversal verticalTraversal = new VerticalTraversal();
 
         // Store horizontal distance as key and value as list of nodes
-        Map<Integer, List<BinaryTree.Node>> map = new TreeMap<>();
+        Map<Integer, List<Node<Integer>>> map = new TreeMap<>();
 
         verticalTraversal.traverseUtil(root, map);
 
@@ -60,7 +60,7 @@ public class TreeView {
      * @param root root of the binary tree
      * @return list of node keys visible from left view
      */
-    public List<Integer> leftView(BinaryTree.Node root) {
+    public List<Integer> leftView(Node<Integer> root) {
 
         // Base condition
         if (root == null) {
@@ -69,7 +69,7 @@ public class TreeView {
 
         List<Integer> outputList = new ArrayList<>();
 
-        Queue<BinaryTree.Node> queue = new LinkedList<>();
+        Queue<Node<Integer>> queue = new LinkedList<>();
 
         // Add root to the queue
         queue.add(root);
@@ -80,7 +80,7 @@ public class TreeView {
         while (!queue.isEmpty()) {
 
             // Peek first element in the queue
-            BinaryTree.Node current = queue.peek();
+            Node<Integer> current = queue.peek();
 
             if (current != null) {
 
@@ -124,7 +124,7 @@ public class TreeView {
      * @param root root of the binary tree
      * @return list of node keys visible from right view
      */
-    public List<Integer> leftViewRecursive(BinaryTree.Node root) {
+    public List<Integer> leftViewRecursive(Node<Integer> root) {
 
         List<Integer> outputList = new ArrayList<>();
 
@@ -140,7 +140,7 @@ public class TreeView {
      * @param level      current level of tree
      * @param outputList list of node keys visible from left view
      */
-    private void leftViewUtil(BinaryTree.Node root, int level, List<Integer> outputList) {
+    private void leftViewUtil(Node<Integer> root, int level, List<Integer> outputList) {
 
         // Base case
         if (root == null)
@@ -165,7 +165,7 @@ public class TreeView {
      * @param root root of the binary tree
      * @return list of node keys visible from right view
      */
-    public List<Integer> rightView(BinaryTree.Node root) {
+    public List<Integer> rightView(Node<Integer> root) {
 
         // Base condition
         if (root == null) {
@@ -174,7 +174,7 @@ public class TreeView {
 
         List<Integer> outputList = new ArrayList<>();
 
-        Queue<BinaryTree.Node> queue = new LinkedList<>();
+        Queue<Node<Integer>> queue = new LinkedList<>();
 
         // Add root to the queue
         queue.add(root);
@@ -182,7 +182,7 @@ public class TreeView {
         while (!queue.isEmpty()) {
 
             // Peek first element in the queue
-            BinaryTree.Node current = queue.peek();
+            Node<Integer> current = queue.peek();
 
             // This is the first node in the level
             outputList.add(current.key);
@@ -191,7 +191,7 @@ public class TreeView {
 
             for (int i = 1; i <= size; i++) {
 
-                BinaryTree.Node temp = queue.poll();
+                Node<Integer> temp = queue.poll();
 
                 // Add right child to the queue if present
                 if (temp.right != null) {
@@ -218,7 +218,7 @@ public class TreeView {
      * @param root root of the binary tree
      * @return list of node keys visible from right view
      */
-    public List<Integer> rightViewRecursive(BinaryTree.Node root) {
+    public List<Integer> rightViewRecursive(Node<Integer> root) {
 
         List<Integer> outputList = new ArrayList<>();
 
@@ -235,7 +235,7 @@ public class TreeView {
      * @param level      current level of tree
      * @param outputList list of node keys visible from right view
      */
-    private void rightViewUtil(BinaryTree.Node root, int level, List<Integer> outputList) {
+    private void rightViewUtil(Node<Integer> root, int level, List<Integer> outputList) {
 
         // Base case
         if (root == null)
@@ -260,7 +260,7 @@ public class TreeView {
      * @param root root of the binary tree
      * @return list of node keys visible from bottom view
      */
-    public List<Integer> bottomView(BinaryTree.Node root) {
+    public List<Integer> bottomView(Node<Integer> root) {
 
         Map<Integer, Pair<Integer, Integer>> map = new TreeMap<>();
 
@@ -278,7 +278,7 @@ public class TreeView {
      * @param hd    horizontal distance
      * @param map   map of key as horizontal distance and value as pair of node key and it's level
      */
-    private void bottomViewUtil(BinaryTree.Node root, int level, int hd, Map<Integer, Pair<Integer, Integer>> map) {
+    private void bottomViewUtil(Node<Integer> root, int level, int hd, Map<Integer, Pair<Integer, Integer>> map) {
 
         // Base case
         if (root == null)

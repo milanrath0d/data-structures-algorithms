@@ -21,10 +21,10 @@ public class VerticalTraversal {
      * @param root root of the binary tree
      * @return list of strings of vertical traversal
      */
-    public List<String> traverse(BinaryTree.Node root) {
+    public List<String> traverse(Node<Integer> root) {
 
         // Store horizontal distance as key and value as list of nodes
-        Map<Integer, List<BinaryTree.Node>> map = new TreeMap<>();
+        Map<Integer, List<Node<Integer>>> map = new TreeMap<>();
 
         traverseUtil(root, map);
 
@@ -38,7 +38,7 @@ public class VerticalTraversal {
     /**
      * Utility function to perform actual vertical traversal and store the results in map
      */
-    public void traverseUtil(BinaryTree.Node root, Map<Integer, List<BinaryTree.Node>> map) {
+    public void traverseUtil(Node<Integer> root, Map<Integer, List<Node<Integer>>> map) {
         // Base case
         if (root == null) {
             return;
@@ -46,18 +46,18 @@ public class VerticalTraversal {
 
         int hd = 0;
 
-        Queue<Pair<BinaryTree.Node, Integer>> queue = new ArrayDeque<>();
+        Queue<Pair<Node<Integer>, Integer>> queue = new ArrayDeque<>();
 
         queue.add(ImmutablePair.of(root, hd));
 
         while (!queue.isEmpty()) {
-            Pair<BinaryTree.Node, Integer> current = queue.poll();
+            Pair<Node<Integer>, Integer> current = queue.poll();
 
             hd = current.getValue();
 
             root = current.getKey();
 
-            List<BinaryTree.Node> nodeList = map.get(hd);
+            List<Node<Integer>> nodeList = map.get(hd);
 
             if (nodeList == null) {
                 nodeList = new ArrayList<>();
@@ -86,7 +86,7 @@ public class VerticalTraversal {
      *
      * @param root root of the binary tree
      */
-    public void traverseV2(BinaryTree.Node root) {
+    public void traverseV2(Node<Integer> root) {
 
         Values value = new Values();
 
@@ -98,7 +98,7 @@ public class VerticalTraversal {
         }
     }
 
-    private void traverseV2Util(BinaryTree.Node node, int line, int hd) {
+    private void traverseV2Util(Node<Integer> node, int line, int hd) {
         if (node == null) {
             return;
         }
@@ -111,7 +111,7 @@ public class VerticalTraversal {
         traverseV2Util(node.right, line, hd + 1);
     }
 
-    private void findMinMax(BinaryTree.Node node, Values value, int hd) {
+    private void findMinMax(Node<Integer> node, Values value, int hd) {
 
         // Base case
         if (node == null) {

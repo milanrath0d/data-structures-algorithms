@@ -14,6 +14,7 @@ class ThePsychicTypeTest {
     @Test
     void testIsReachable() {
         ThePsychicType thePsychicType = new ThePsychicType();
+
         boolean result = thePsychicType.isReachable(new int[]{3, 4, 2, 5, 5}, 1, 4);
 
         assertTrue(result);

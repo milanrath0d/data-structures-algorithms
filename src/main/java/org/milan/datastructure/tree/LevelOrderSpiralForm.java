@@ -18,7 +18,7 @@ public class LevelOrderSpiralForm {
      * @param root root of the binary tree
      * @return list of node keys visited during level order traversal using spiral form
      */
-    public List<Integer> usingTwoStacks(BinaryTree.Node root) {
+    public List<Integer> usingTwoStacks(Node<Integer> root) {
 
         // Base case
         if (root == null) {
@@ -26,10 +26,10 @@ public class LevelOrderSpiralForm {
         }
 
         // First stack being used for level order of right to left
-        Stack<BinaryTree.Node> stack1 = new Stack<>();
+        Stack<Node<Integer>> stack1 = new Stack<>();
 
         // Second stack being used for level order of left to right
-        Stack<BinaryTree.Node> stack2 = new Stack<>();
+        Stack<Node<Integer>> stack2 = new Stack<>();
 
         // Push first level to first stack
         stack1.push(root);
@@ -41,7 +41,7 @@ public class LevelOrderSpiralForm {
 
             // Add nodes of current level to output from stack 1 and push nodes of next level to stack 2
             while (!stack1.isEmpty()) {
-                BinaryTree.Node current = stack1.pop();
+                Node<Integer> current = stack1.pop();
 
                 outputList.add(current.key);
 
@@ -57,7 +57,7 @@ public class LevelOrderSpiralForm {
 
             // Add nodes of current level to output from stack 2 and push nodes of next level to stack 1
             while (!stack2.isEmpty()) {
-                BinaryTree.Node current = stack2.pop();
+                Node<Integer> current = stack2.pop();
 
                 outputList.add(current.key);
 
@@ -84,14 +84,14 @@ public class LevelOrderSpiralForm {
      * @param root root of the binary tree
      * @return list of node keys visited during level order traversal using spiral form
      */
-    public List<Integer> usingQueueAndStack(BinaryTree.Node root) {
+    public List<Integer> usingQueueAndStack(Node<Integer> root) {
 
         // Base case
         if (root == null)
             return null;
 
         Stack<Integer> stack = new Stack<>();
-        Queue<BinaryTree.Node> queue = new LinkedList<>();
+        Queue<Node<Integer>> queue = new LinkedList<>();
 
         List<Integer> outputList = new ArrayList<>();
 
@@ -102,7 +102,7 @@ public class LevelOrderSpiralForm {
         while (!queue.isEmpty()) {
             int size = queue.size();
             while (size > 0) {
-                BinaryTree.Node current = queue.poll();
+                Node<Integer> current = queue.poll();
 
                 // If reverse is true, push node's key onto the stack else add it to output list
                 if (reverse) {
@@ -141,14 +141,14 @@ public class LevelOrderSpiralForm {
      * @param root root of the binary tree
      * @return list of node keys visited during level order traversal using spiral form
      */
-    public List<Integer> usingDeque(BinaryTree.Node root) {
+    public List<Integer> usingDeque(Node<Integer> root) {
 
         // Base case
         if (root == null) {
             return null;
         }
 
-        Deque<BinaryTree.Node> deque = new LinkedList<>();
+        Deque<Node<Integer>> deque = new LinkedList<>();
 
         List<Integer> outputList = new ArrayList<>();
 
@@ -165,14 +165,14 @@ public class LevelOrderSpiralForm {
             while (size-- > 0) {
 
                 if (direction == 0) {
-                    BinaryTree.Node temp = deque.pollLast();
+                    Node<Integer> temp = deque.pollLast();
                     if (temp.right != null)
                         deque.addFirst(temp.right);
                     if (temp.left != null)
                         deque.addFirst(temp.left);
                     outputList.add(temp.key);
                 } else {
-                    BinaryTree.Node temp = deque.pollFirst();
+                    Node<Integer> temp = deque.pollFirst();
                     if (temp.left != null)
                         deque.addLast(temp.left);
                     if (temp.right != null)

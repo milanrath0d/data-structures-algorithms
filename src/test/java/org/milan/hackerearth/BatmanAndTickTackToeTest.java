@@ -22,7 +22,7 @@ class BatmanAndTickTackToeTest {
 
         BatmanAndTickTackToe batmanAndTickTackToe = new BatmanAndTickTackToe();
 
-        boolean result = batmanAndTickTackToe.isWonScenarioAvailable(matrix);
+        boolean result = batmanAndTickTackToe.isWinningScenarioAvailable(matrix);
 
         assertTrue(result);
     }

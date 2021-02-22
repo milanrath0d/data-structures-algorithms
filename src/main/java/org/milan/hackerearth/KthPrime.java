@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * Given Array of size n and number k
- * find minimum operation required to make it k-prime array
+ * find minimum operations required to make it k-prime array
  * if already have k prime return 0
  * otherwise return minimum operations.
  *
@@ -12,18 +12,21 @@ import java.util.Arrays;
  */
 class KthPrime {
 
-    public int calculateMinimumOperations(int[] inputArray, int length, int k) {
+    public int calculateMinimumOperations(int[] inputArray, int k) {
 
         int primeCount = 0;
+
+        int length = inputArray.length;
 
         for (int i = 0; i < length; i++) {
             if (isPrime(inputArray[i])) {
                 primeCount++;
+
+                if (primeCount >= k) return 0;
+
                 inputArray[i] = Integer.MAX_VALUE;
             }
         }
-
-        if (primeCount >= k) return 0;
 
         Arrays.sort(inputArray);
 
@@ -44,7 +47,7 @@ class KthPrime {
 
     }
 
-    private static int increaseNumber(int element) {
+    private int increaseNumber(int element) {
 
         int count = 0;
 
@@ -56,7 +59,7 @@ class KthPrime {
         return count;
     }
 
-    private static boolean isPrime(int n) {
+    private boolean isPrime(int n) {
 
         if (n == 1) {
             return false;

@@ -16,6 +16,7 @@ class VegetableMarketTest {
     @Test
     void testMinimumToBuy() {
         VegetableMarket vegetableMarket = new VegetableMarket();
+
         int result = vegetableMarket.minimumToBuy(List.of(3, 8, 4, 1, 7), 22);
 
         assertEquals(7, result);

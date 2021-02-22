@@ -16,20 +16,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  */
 class LevelOrderSpiralFormTest {
 
-    private BinaryTree binaryTree;
+    private BinaryTree<Integer> binaryTree;
 
     private LevelOrderSpiralForm levelOrderSpiralForm;
 
     @BeforeEach
     void setup() {
         levelOrderSpiralForm = new LevelOrderSpiralForm();
-        binaryTree = new BinaryTree(1);
-        binaryTree.getRoot().left = new BinaryTree.Node(2);
-        binaryTree.getRoot().right = new BinaryTree.Node(3);
-        binaryTree.getRoot().left.left = new BinaryTree.Node(4);
-        binaryTree.getRoot().left.right = new BinaryTree.Node(5);
-        binaryTree.getRoot().right.left = new BinaryTree.Node(6);
-        binaryTree.getRoot().right.right = new BinaryTree.Node(7);
+        binaryTree = TreeDataUtil.initialize();
     }
 
     @Test

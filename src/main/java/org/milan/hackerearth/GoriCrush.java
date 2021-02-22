@@ -11,6 +11,7 @@ public class GoriCrush {
         if (queries[0] == 0) {
             int index = (int) (queries[1] - 1);
             inputArray[index] = queries[2];
+            return "";
         } else {
             long a = queries[1];
             long b = queries[2];
@@ -24,14 +25,8 @@ public class GoriCrush {
                     match++;
                 }
             }
-
-            if (match >= K) {
-                return "Propose";
-            } else {
-                return "Do not propose";
-            }
+            return match >= K ? "Propose" : "Do not propose";
         }
-        return "";
     }
 
 }

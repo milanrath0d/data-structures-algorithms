@@ -15,7 +15,7 @@ public class LowestCommonAncestor {
      * @param node2 second node
      * @return LCA
      */
-    public BinaryTree.Node findLCA(BinaryTree.Node root, int node1, int node2) {
+    public Node<Integer> findLCA(Node<Integer> root, int node1, int node2) {
         // Base condition
         if (root == null) {
             return null;
@@ -25,8 +25,8 @@ public class LowestCommonAncestor {
             return root;
         }
 
-        BinaryTree.Node left_LCA = findLCA(root.left, node1, node2);
-        BinaryTree.Node right_LCA = findLCA(root.right, node1, node2);
+        Node<Integer> left_LCA = findLCA(root.left, node1, node2);
+        Node<Integer> right_LCA = findLCA(root.right, node1, node2);
 
         // If both left and right lca returns non-null then one key
         // is present in left subtree and one key is present in right subtree

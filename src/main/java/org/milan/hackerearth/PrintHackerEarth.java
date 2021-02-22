@@ -19,34 +19,27 @@ public class PrintHackerEarth {
 
         for (Character ch : inputString.toCharArray()) {
             switch (ch) {
-                case 'a': {
+                case 'a':
                     a++;
                     break;
-                }
-                case 'h': {
+                case 'h':
                     h++;
                     break;
-                }
-                case 'c': {
+                case 'c':
                     c++;
                     break;
-                }
-                case 'k': {
+                case 'k':
                     k++;
                     break;
-                }
-                case 'e': {
+                case 'e':
                     e++;
                     break;
-                }
-                case 'r': {
+                case 'r':
                     r++;
                     break;
-                }
-                case 't': {
+                case 't':
                     t++;
                     break;
-                }
                 default:
                     break;
             }

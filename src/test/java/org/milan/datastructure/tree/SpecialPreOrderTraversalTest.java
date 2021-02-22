@@ -16,10 +16,10 @@ class SpecialPreOrderTraversalTest {
         int[] pre = new int[]{10, 30, 20, 5, 15};
         char[] preLN = new char[]{'N', 'N', 'L', 'L', 'L'};
 
-        BinaryTree binaryTree = new BinaryTree();
+        BinaryTree<Integer> binaryTree = new BinaryTree<>();
         SpecialPreOrderTraversal specialPreOrderTraversal = new SpecialPreOrderTraversal();
 
-        BinaryTree.Node newRoot = specialPreOrderTraversal.constructTree(pre, preLN, binaryTree.getRoot());
+        Node<Integer> newRoot = specialPreOrderTraversal.constructTree(pre, preLN, binaryTree.getRoot());
 
         assertEquals(10, newRoot.key);
         assertEquals(30, newRoot.getLeft().key);

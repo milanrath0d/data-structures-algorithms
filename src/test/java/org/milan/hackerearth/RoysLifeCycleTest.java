@@ -2,6 +2,8 @@ package org.milan.hackerearth;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
@@ -16,21 +18,8 @@ class RoysLifeCycleTest {
 
         RoysLifeCycle roysLifeCycle = new RoysLifeCycle();
 
-        int result = roysLifeCycle.getLongestCodingStreakPerDay("SSSSEEEECCCCEECCCC");
-
-        assertEquals(4, result);
-
-        result = roysLifeCycle.getLongestCodingStreakPerDay("CCCCCSSSSEEECCCCSS");
-
-        assertEquals(5, result);
-
-        result = roysLifeCycle.getLongestCodingStreakPerDay("SSSSSEEESSCCCCCCCS");
-
-        assertEquals(7, result);
-
-        result = roysLifeCycle.getLongestCodingStreakPerDay("EESSSSCCCCCCSSEEEE");
-
-        assertEquals(6, result);
+        assertEquals(7, roysLifeCycle.getLongestCodingStreakPerDay(List.of("SSSSEEEECCCCEECCCC",
+                "CCCCCSSSSEEECCCCSS", "SSSSSEEESSCCCCCCCS", "EESSSSCCCCCCSSEEEE")));
 
         assertEquals(9, roysLifeCycle.getLongestCodingStreakAcross());
     }

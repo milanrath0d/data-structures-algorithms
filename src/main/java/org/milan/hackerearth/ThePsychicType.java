@@ -9,6 +9,7 @@ public class ThePsychicType {
 
     public boolean isReachable(int[] inputArray, int source, int destination) {
 
+        // Base condition
         if (source == destination) {
             return true;
         }

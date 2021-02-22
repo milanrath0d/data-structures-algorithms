@@ -18,8 +18,6 @@ class TheGreatKianTest {
         TheGreatKian theGreatKian = new TheGreatKian();
         List<Long> result = theGreatKian.getSumValues(new int[]{1, 2, 3, 4, 5});
 
-        assertEquals(5, result.get(0).longValue());
-        assertEquals(7, result.get(1).longValue());
-        assertEquals(3, result.get(2).longValue());
+        assertEquals(List.of(5L, 7L, 3L), result);
     }
 }

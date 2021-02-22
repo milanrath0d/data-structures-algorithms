@@ -6,6 +6,7 @@ import java.util.Set;
 
 /**
  * Challenge: Policy Bazaar
+ * <p>
  * Problem: Prime String {@link @https://www.hackerearth.com/practice/math/number-theory/primality-tests/practice-problems/algorithm/primestring/}
  *
  * @author Milan Rathod
@@ -36,13 +37,21 @@ public class PrimeString {
         return true;
     }
 
-    private static boolean isPrime(int n) {
-        if (n == 1) {
+    /**
+     * Check if given number is prime number or not
+     *
+     * @param value given number
+     * @return true if number is prime number; false otherwise
+     */
+    private boolean isPrime(int value) {
+
+        // 1 is not a prime number
+        if (value == 1) {
             return false;
         }
 
-        for (int i = 2; i <= Math.sqrt(n); i++) {
-            if (n % i == 0)
+        for (int i = 2; i <= Math.sqrt(value); i++) {
+            if (value % i == 0)
                 return false;
         }
         return true;

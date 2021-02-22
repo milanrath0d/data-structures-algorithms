@@ -55,10 +55,6 @@ public class SpecialNumbers {
         int count3;
         List<Long> threesList = new ArrayList<>();
         threesList.add(1L);
-        List<Long> fivesList = new ArrayList<>();
-        fivesList.add(1L);
-        List<Long> sevensList = new ArrayList<>();
-        sevensList.add(1L);
         for (int i = 1; ; i++) {
             threesList.add(i, threesList.get(i - 1) * 3L);
             if (threesList.get(i) > 1e9) {
@@ -68,6 +64,8 @@ public class SpecialNumbers {
         }
 
         int count5;
+        List<Long> fivesList = new ArrayList<>();
+        fivesList.add(1L);
         for (int i = 1; ; i++) {
             fivesList.add(i, fivesList.get(i - 1) * 5L);
             if (fivesList.get(i) > 1e9) {
@@ -77,6 +75,8 @@ public class SpecialNumbers {
         }
 
         int count7;
+        List<Long> sevensList = new ArrayList<>();
+        sevensList.add(1L);
         for (int i = 1; ; i++) {
             sevensList.add(i, sevensList.get(i - 1) * 7L);
             if (sevensList.get(i) > 1e9) {

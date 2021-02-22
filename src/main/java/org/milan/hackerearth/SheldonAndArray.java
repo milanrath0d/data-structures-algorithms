@@ -17,7 +17,7 @@ public class SheldonAndArray {
 
         int[] output = new int[arr.length];
 
-        // First element is left extreme thus put it -1 as output
+        // First element is left extreme thus put it as -1
         output[0] = -1;
 
         for (int i = 1; i < arr.length; i++) {
