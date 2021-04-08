@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Test Class for {@link CustomStack}
+ * Test class for {@link CustomStack}
  *
  * @author Milan Rathod
  */

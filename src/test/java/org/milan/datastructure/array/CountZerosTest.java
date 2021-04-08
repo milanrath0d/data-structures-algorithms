@@ -4,6 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Test class for {@link CountZeros}
+ *
+ * @author Milan Rathod
+ */
 class CountZerosTest {
 
     @Test

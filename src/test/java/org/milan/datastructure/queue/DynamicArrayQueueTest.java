@@ -6,7 +6,7 @@ import org.milan.exception.EmptyQueueException;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test Class for {@link DynamicArrayQueue}
+ * Test class for {@link DynamicArrayQueue}
  *
  * @author Milan Rathod
  */

@@ -7,7 +7,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link OddNumbers}
+ * Test class for {@link OddNumbers}
  *
  * @author Milan Rathod
  */

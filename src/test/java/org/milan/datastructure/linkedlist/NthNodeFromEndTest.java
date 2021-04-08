@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link NthNodeFromEnd}
+ * Test class for {@link NthNodeFromEnd}
  *
  * @author Milan Rathod
  */

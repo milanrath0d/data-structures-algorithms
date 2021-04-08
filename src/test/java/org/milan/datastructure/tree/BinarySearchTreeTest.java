@@ -5,11 +5,12 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.milan.datastructure.tree.TreeDataUtil.toArray;
 
 /**
- * Test Class for {@link BinarySearchTree}
+ * Test class for {@link BinarySearchTree}
  *
  * @author Milan Rathod
  */
@@ -109,16 +110,6 @@ class BinarySearchTreeTest {
     }
 
     @Test
-    void testGetTotalLeafNodes() {
-        assertEquals(4, binarySearchTree.getTotalLeafNodes(binarySearchTree.getRoot()));
-    }
-
-    @Test
-    void testGetTotalLeafNodesIterative() {
-        assertEquals(4, binarySearchTree.getTotalLeafNodesIterative(binarySearchTree.getRoot()));
-    }
-
-    @Test
     void testMaximumWidth() {
         assertEquals(4, binarySearchTree.maximumWidth(binarySearchTree.getRoot()));
     }
@@ -127,5 +118,29 @@ class BinarySearchTreeTest {
     void testLca() {
         assertEquals(20, binarySearchTree.lca(binarySearchTree.getRoot(), 5, 35).key);
         assertEquals(30, binarySearchTree.lca(binarySearchTree.getRoot(), 25, 35).key);
+    }
+
+    @Test
+    void testFindMax() {
+        assertEquals(35, binarySearchTree.findMax(binarySearchTree.getRoot()).key);
+    }
+
+    @Test
+    void testFindMin() {
+        assertEquals(5, binarySearchTree.findMin(binarySearchTree.getRoot()).key);
+    }
+
+    @Test
+    void testInOrderSuccessor() {
+        assertEquals(25, binarySearchTree.inOrderSuccessor(binarySearchTree.getRoot(), binarySearchTree.getRoot()).key);
+
+        assertEquals(20, binarySearchTree.inOrderSuccessor(binarySearchTree.getRoot(), binarySearchTree.getRoot().left.right).key);
+    }
+
+    @Test
+    void testInOrderPredecessor() {
+        assertEquals(20, binarySearchTree.inOrderPredecessor(binarySearchTree.getRoot(), binarySearchTree.getRoot().right.left).key);
+
+        assertEquals(10, binarySearchTree.inOrderPredecessor(binarySearchTree.getRoot(), binarySearchTree.getRoot().left.right).key);
     }
 }

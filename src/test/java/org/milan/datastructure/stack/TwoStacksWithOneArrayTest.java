@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link TwoStacksWithOneArray}
+ * Test class for {@link TwoStacksWithOneArray}
  *
  * @author Milan Rathod
  */

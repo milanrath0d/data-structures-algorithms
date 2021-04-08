@@ -7,7 +7,7 @@ import org.milan.exception.FullQueueException;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test Class for {@link FixedSizeArrayQueue}
+ * Test class for {@link FixedSizeArrayQueue}
  *
  * @author Milan Rathod
  */

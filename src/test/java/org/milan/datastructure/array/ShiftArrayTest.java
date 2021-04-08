@@ -7,7 +7,7 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Test Class for {@link ShiftArray}
+ * Test class for {@link ShiftArray}
  *
  * @author Milan Rathod
  */

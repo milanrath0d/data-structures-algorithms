@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link TreesInForest}
+ * Test class for {@link TreesInForest}
  *
  * @author Milan Rathod
  */

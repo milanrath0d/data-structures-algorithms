@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Test Class for {@link StartsWithPrefixes }
+ * Test class for {@link StartsWithPrefixes }
  *
  * @author Milan Rathod
  */

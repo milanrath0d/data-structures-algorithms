@@ -7,6 +7,11 @@ import java.util.Queue;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Test class for {@link ReverseQueue}
+ *
+ * @author Milan Rathod
+ */
 class ReverseQueueTest {
 
     @Test

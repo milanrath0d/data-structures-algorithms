@@ -8,7 +8,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link SplitCircularList}
+ * Test class for {@link SplitCircularList}
  *
  * @author Milan Rathod
  */

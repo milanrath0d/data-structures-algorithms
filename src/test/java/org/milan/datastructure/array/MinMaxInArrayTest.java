@@ -7,7 +7,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link MinMaxInArray}
+ * Test class for {@link MinMaxInArray}
  *
  * @author Milan Rathod
  */

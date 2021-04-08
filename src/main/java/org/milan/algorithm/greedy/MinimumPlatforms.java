@@ -17,6 +17,37 @@ public class MinimumPlatforms {
     /**
      * Hash map based implementation
      * <p>
+     * Time complexity: O(n*n)
+     *
+     * @param arrivals   array of arrival times
+     * @param departures array of departure times
+     * @return minimum platform required
+     */
+    public int getMinimumPlatformsNaive(int[] arrivals, int[] departures) {
+
+        int result = 1;
+
+        for (int i = 0; i < arrivals.length; i++) {
+
+            int minimumPlatforms = 1;
+
+            for (int j = i + 1; j < arrivals.length; j++) {
+
+                if ((arrivals[i] >= arrivals[j] && arrivals[i] <= departures[j])
+                        || (arrivals[j] >= arrivals[i] && arrivals[j] <= departures[i])) {
+                    minimumPlatforms++;
+                }
+            }
+
+            result = Math.max(minimumPlatforms, result);
+        }
+
+        return result;
+    }
+
+    /**
+     * Hash map based implementation
+     * <p>
      * Time complexity: O(n)
      * Space complexity: O(n)
      *
@@ -38,12 +69,11 @@ public class MinimumPlatforms {
             } else {
                 trainMapping.put(departures[i], "d");
             }
-
         }
 
         int platformNeeded = 0;
 
-        int output = 0;
+        int result = 0;
 
         Set<Map.Entry<Integer, String>> entries = trainMapping.entrySet();
 
@@ -52,12 +82,10 @@ public class MinimumPlatforms {
 
             platformNeeded += getPlatformCount(value);
 
-            if (platformNeeded > output) {
-                output = platformNeeded;
-            }
-
+            result = Math.max(platformNeeded, result);
         }
-        return output;
+
+        return result;
     }
 
     /**

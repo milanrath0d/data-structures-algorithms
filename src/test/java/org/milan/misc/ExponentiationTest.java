@@ -1,11 +1,11 @@
-package org.milan.datastructure.misc;
+package org.milan.misc;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link Exponentiation}
+ * Test class for {@link Exponentiation}
  *
  * @author Milan Rathod
  */

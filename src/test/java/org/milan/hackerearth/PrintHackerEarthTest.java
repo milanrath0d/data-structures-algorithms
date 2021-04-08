@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link PrintHackerEarth}
+ * Test class for {@link PrintHackerEarth}
  *
  * @author Milan Rathod
  */

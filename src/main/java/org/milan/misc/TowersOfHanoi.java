@@ -1,4 +1,4 @@
-package org.milan.datastructure.misc;
+package org.milan.misc;
 
 /**
  * Problem: Tower of hanoi problem

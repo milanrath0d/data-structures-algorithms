@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
- * Test Class for {@link RadixSort}
+ * Test class for {@link RadixSort}
  *
  * @author Milan Rathod
  */

@@ -6,6 +6,11 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
+/**
+ * Test class for {@link UniqueDigits}
+ *
+ * @author Milan Rathod
+ */
 class UniqueDigitsTest {
 
     @Test

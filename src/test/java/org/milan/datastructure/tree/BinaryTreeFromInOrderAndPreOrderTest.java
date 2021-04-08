@@ -3,7 +3,7 @@ package org.milan.datastructure.tree;
 import org.junit.jupiter.api.Test;
 
 /**
- * Test Class for {@link BinaryTreeFromInOrderAndPreOrder}
+ * Test class for {@link BinaryTreeFromInOrderAndPreOrder}
  *
  * @author Milan Rathod
  */

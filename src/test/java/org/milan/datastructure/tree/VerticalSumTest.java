@@ -9,7 +9,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link VerticalSum}
+ * Test class for {@link VerticalSum}
  *
  * @author Milan Rathod
  */

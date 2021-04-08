@@ -1,6 +1,6 @@
 package org.milan.datastructure.array;
 
-import org.milan.datastructure.misc.Euclid;
+import org.milan.misc.Euclid;
 
 /**
  * refer {@link @https://www.geeksforgeeks.org/array-rotation/}

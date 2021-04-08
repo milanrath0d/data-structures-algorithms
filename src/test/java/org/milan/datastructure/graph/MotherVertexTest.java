@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link MotherVertex}
+ * Test class for {@link MotherVertex}
  *
  * @author Milan Rathod
  */

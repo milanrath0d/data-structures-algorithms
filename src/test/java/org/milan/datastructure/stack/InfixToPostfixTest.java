@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link InfixToPostfix}
+ * Test class for {@link InfixToPostfix}
  *
  * @author Milan Rathod
  */

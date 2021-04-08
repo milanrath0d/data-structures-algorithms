@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test Class for {@link DoublyLinkedList}
+ * Test class for {@link DoublyLinkedList}
  *
  * @author Milan Rathod
  */

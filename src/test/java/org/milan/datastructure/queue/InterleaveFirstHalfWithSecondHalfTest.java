@@ -9,7 +9,7 @@ import java.util.Queue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link InterleaveFirstHalfWithSecondHalf}
+ * Test class for {@link InterleaveFirstHalfWithSecondHalf}
  *
  * @author Milan Rathod
  */

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link StringSpacesReplacement}
+ * Test class for {@link StringSpacesReplacement}
  *
  * @author Milan Rathod
  */

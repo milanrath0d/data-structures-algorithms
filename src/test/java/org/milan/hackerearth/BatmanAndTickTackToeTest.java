@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Test Class for {@link BatmanAndTickTackToe}
+ * Test class for {@link BatmanAndTickTackToe}
  *
  * @author Milan Rathod
  */

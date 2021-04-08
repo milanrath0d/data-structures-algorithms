@@ -7,7 +7,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link RoysLifeCycle}
+ * Test class for {@link RoysLifeCycle}
  *
  * @author Milan Rathod
  */

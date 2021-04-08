@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Test Class for {@link BalanceBrackets}
+ * Test class for {@link BalanceBrackets}
  *
  * @author Milan Rathod
  */

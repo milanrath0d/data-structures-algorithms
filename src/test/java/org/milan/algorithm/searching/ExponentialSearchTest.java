@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link ExponentialSearch}
+ * Test class for {@link ExponentialSearch}
  *
  * @author Milan Rathod
  */

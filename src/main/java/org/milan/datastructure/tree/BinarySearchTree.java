@@ -20,6 +20,10 @@ public class BinarySearchTree<T extends Comparable<T>> {
         this.root = null;
     }
 
+    public BinarySearchTree(Node<T> root) {
+        this.root = root;
+    }
+
     public BinarySearchTree(T key) {
         this.root = new Node<>(key);
     }
@@ -95,7 +99,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
             // Node with two children
             // Find in order predecessor of node to be deleted
-            root = findMax(root.left);
+            root = root.left.right;
 
             // Delete the in order predecessor
             root.left = deleteRec(root.left, key);
@@ -421,58 +425,23 @@ public class BinarySearchTree<T extends Comparable<T>> {
     }
 
     /**
-     * Find minimum value of binary search tree
+     * Find node with minimum value of binary search tree
      *
      * @param root root of the tree
-     * @return minimum node
+     * @return Node with minimum value; null for empty bst
      */
     public Node<T> findMin(Node<T> root) {
-        if (root == null) {
-            throw new IllegalStateException(EMPTY_TREE);
-        }
-
-        if (root.left != null) {
-            root = root.left;
-        }
-        return root;
+        return root == null || root.left == null ? root : findMin(root.left);
     }
 
     /**
-     * Find maximum value of binary search tree
+     * Find node with maximum of binary search tree
      *
      * @param root root of the tree
-     * @return maximum node
+     * @return Node with maximum value; null for empty bst
      */
     public Node<T> findMax(Node<T> root) {
-        if (root == null) {
-            throw new IllegalStateException(EMPTY_TREE);
-        }
-
-        if (root.right != null) {
-            root = root.right;
-        }
-        return root;
-    }
-
-    public Node<T> inOrderSuccessor(Node<T> root, Node<T> node) {
-        // step 1 of the above algorithm
-        if (node.right != null)
-            return findMin(node.right);
-
-        Node<T> successor = null;
-
-        // Start from root and search for successor down the tree
-        while (root != null) {
-            if (node.key.compareTo(root.key) < 0) {
-                successor = root;
-                root = root.left;
-            } else if (node.key.compareTo(root.key) > 0)
-                root = root.right;
-            else
-                break;
-        }
-
-        return successor;
+        return root == null || root.right == null ? root : findMax(root.right);
     }
 
     /**
@@ -505,38 +474,34 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
         int maxHeight = 0;
 
-        Deque<Node<T>> stack = new ArrayDeque<>();
+        Queue<Node<T>> queue = new LinkedList<>();
 
-        stack.push(root);
+        queue.add(root);
 
-        Node<T> prev = null;
+        while (true) {
 
-        while (!stack.isEmpty()) {
+            int nodeCount = queue.size();
 
-            Node<T> curr = stack.peek();
-
-            // Traverse from top to bottom and if current has left/right child add it to stack
-            if (prev == null || prev.left == curr || prev.right == curr) {
-
-                if (curr.left != null) {
-                    stack.push(curr.left);
-                } else if (curr.right != null) {
-                    stack.push(curr.right);
-                }
-
-            } else if (curr.left == prev) {
-                if (curr.right != null) {
-                    stack.push(curr.right);
-                }
-            } else {
-                stack.pop();
+            if (nodeCount == 0) {
+                return maxHeight;
             }
-            prev = curr;
-            if (stack.size() > maxHeight) {
-                maxHeight = stack.size();
+
+            maxHeight++;
+
+            while (nodeCount > 0) {
+                Node<T> node = queue.remove();
+
+                if (node.left != null) {
+                    queue.add(node.left);
+                }
+
+                if (node.right != null) {
+                    queue.add(node.right);
+                }
+
+                nodeCount--;
             }
         }
-        return maxHeight;
     }
 
     /**
@@ -727,53 +692,75 @@ public class BinarySearchTree<T extends Comparable<T>> {
     }
 
     /**
-     * Get number of leaves in given binary tree
-     * Recursive approach
+     * Find in order successor of given node
      *
-     * @param root root of the tree
-     * @return total leaves in tree
+     * @param root root of the binary tree
+     * @param node node for which in order successor to be found
+     * @return in order successor of given node
      */
-    public int getTotalLeafNodes(Node<T> root) {
-        if (root == null) {
-            return 0;
-        } else if (root.left == null && root.right == null) {
-            return 1;
-        } else {
-            return getTotalLeafNodes(root.left) + getTotalLeafNodes(root.right);
+    public Node<T> inOrderSuccessor(Node<T> root, Node<T> node) {
+        // If right subtree of the node is not NULL
+        // go to right subtree and return node with minimum key
+        if (node.right != null) {
+            Node<T> current = node.right;
+
+            while (current.left != null) {
+                current = current.left;
+            }
+
+            return current;
         }
+
+        Node<T> successor = null;
+
+        // Start from root and search for successor down the tree
+        while (root != null) {
+            if (node.key.compareTo(root.key) < 0) {
+                successor = root;
+                root = root.left;
+            } else if (node.key.compareTo(root.key) > 0)
+                root = root.right;
+            else
+                break;
+        }
+
+        return successor;
     }
 
     /**
-     * Get number of leaves in given binary tree
-     * Iterative approach
+     * Find in order predecessor of given node
      *
-     * @param root root of the tree
-     * @return total leaves in tree
+     * @param root root of the binary tree
+     * @param node node for which in order predecessor to be found
+     * @return in order predecessor of given node
      */
-    public int getTotalLeafNodesIterative(Node<T> root) {
-        if (root == null) {
-            throw new IllegalStateException(EMPTY_TREE);
-        }
+    public Node<T> inOrderPredecessor(Node<T> root, Node<T> node) {
+        // If right subtree of the node is not NULL
+        // go to right subtree and return node with minimum key
+        if (node.left != null) {
+            Node<T> current = node.left;
 
-        int totalLeafNodes = 0;
-
-        Queue<Node<T>> queue = new LinkedList<>();
-
-        queue.offer(root);
-
-        while (!queue.isEmpty()) {
-
-            Node<T> curr = queue.poll();
-
-            if (curr.left == null && curr.right == null) {
-                totalLeafNodes++;
+            while (current.right != null) {
+                current = current.right;
             }
 
-            if (curr.left != null) queue.offer(curr.left);
-
-            if (curr.right != null) queue.offer(curr.right);
+            return current;
         }
-        return totalLeafNodes;
+
+        Node<T> predecessor = null;
+
+        // Start from root and search for predecessor down the tree
+        while (root != null) {
+            if (node.key.compareTo(root.key) > 0) {
+                predecessor = root;
+                root = root.right;
+            } else if (node.key.compareTo(root.key) < 0)
+                root = root.left;
+            else
+                break;
+        }
+
+        return predecessor;
     }
 
 }

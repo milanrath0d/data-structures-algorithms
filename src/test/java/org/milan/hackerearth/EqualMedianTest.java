@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link EqualMedian}
+ * Test class for {@link EqualMedian}
  *
  * @author Milan Rathod
  */

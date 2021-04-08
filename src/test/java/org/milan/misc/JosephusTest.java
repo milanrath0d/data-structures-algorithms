@@ -1,4 +1,4 @@
-package org.milan.datastructure.misc;
+package org.milan.misc;
 
 import org.junit.jupiter.api.Test;
 

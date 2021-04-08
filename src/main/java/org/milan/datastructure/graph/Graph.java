@@ -10,14 +10,14 @@ import java.util.LinkedList;
  */
 public class Graph {
 
-    private int size;
+    private final int size;
 
-    private LinkedList<Integer>[] adjList;
+    private final LinkedList<Integer>[] adjList;
 
     /**
      * Default type is directed graph
      */
-    private GraphType graphType;
+    private final GraphType graphType;
 
     public Graph(int size) {
         this(size, GraphType.DIRECTED);

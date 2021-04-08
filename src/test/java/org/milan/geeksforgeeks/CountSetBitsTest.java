@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link CountSetBits}
+ * Test class for {@link CountSetBits}
  *
  * @author Milan Rathod
  */

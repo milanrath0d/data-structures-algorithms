@@ -6,7 +6,7 @@ import org.milan.exception.EmptyQueueException;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test Class for {@link QueueWith2Stacks}
+ * Test class for {@link QueueWith2Stacks}
  *
  * @author Milan Rathod
  */

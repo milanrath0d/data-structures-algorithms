@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
- * Test Class for {@link SelectionSort}
+ * Test class for {@link SelectionSort}
  *
  * @author Milan Rathod
  */

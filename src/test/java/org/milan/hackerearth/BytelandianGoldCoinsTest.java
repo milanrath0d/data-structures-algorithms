@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class {@link BytelandianGoldCoins}
+ * Test class {@link BytelandianGoldCoins}
  *
  * @author Milan Rathod
  */
