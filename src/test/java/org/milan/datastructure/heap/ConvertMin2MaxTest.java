@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
- * Test Class for {@link ConvertMin2Max}
+ * Test class for {@link ConvertMin2Max}
  *
  * @author Milan Rathod
  */

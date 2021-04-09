@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test Class for {@link BinaryTree}
+ * Test class for {@link BinaryTree}
  *
  * @author Milan Rathod
  */
@@ -46,6 +46,13 @@ class BinaryTreeTest {
     }
 
     @Test
+    void testFindMinimumElementIterative() {
+        int result = binaryTree.findMinimumElementIterative(binaryTree.getRoot());
+
+        assertEquals(1, result);
+    }
+
+    @Test
     void testIsPresent() {
         assertTrue(binaryTree.isPresent(binaryTree.getRoot(), 11));
 
@@ -76,6 +83,30 @@ class BinaryTreeTest {
     @Test
     void testIsMirror() {
         assertTrue(binaryTree.isMirror(binaryTree.getRoot(), getMirrorBinaryTree().getRoot()));
+    }
+
+    @Test
+    void testIsFoldable_Success() {
+        BinaryTree<Integer> binaryTree = new BinaryTree<>(1);
+
+        binaryTree.getRoot().left = new Node<>(2);
+        binaryTree.getRoot().left.right = new Node<>(4);
+        binaryTree.getRoot().right = new Node<>(3);
+        binaryTree.getRoot().right.left = new Node<>(5);
+
+        assertTrue(binaryTree.isFoldable(binaryTree.getRoot()));
+    }
+
+    @Test
+    void testIsFoldable_Failure() {
+        BinaryTree<Integer> binaryTree = new BinaryTree<>(1);
+
+        binaryTree.getRoot().left = new Node<>(2);
+        binaryTree.getRoot().left.left = new Node<>(4);
+        binaryTree.getRoot().right = new Node<>(3);
+        binaryTree.getRoot().right.left = new Node<>(5);
+
+        assertFalse(binaryTree.isFoldable(binaryTree.getRoot()));
     }
 
     private BinaryTree<Integer> getMirrorBinaryTree() {

@@ -6,12 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
- * Test Class for {@link InsertionSort}
- * <p>
- * Time complexity: O(n*n)
- * Space complexity: O(1)
- * In Place algorithm
- * Stable algorithm
+ * Test class for {@link InsertionSort}
  *
  * @author Milan Rathod
  */

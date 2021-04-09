@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link JumpSearch}
+ * Test class for {@link JumpSearch}
  *
  * @author Milan Rathod
  */

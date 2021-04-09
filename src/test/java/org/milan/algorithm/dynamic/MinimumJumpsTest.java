@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test class for {@link @}
+ * Test class for {@link MinimumJumps}
  *
  * @author Milan Rathod
  */

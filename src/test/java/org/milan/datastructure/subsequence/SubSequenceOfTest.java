@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Test Class for {@link SubSequenceOf}
+ * Test class for {@link SubSequenceOf}
  *
  * @author Milan Rathod
  */

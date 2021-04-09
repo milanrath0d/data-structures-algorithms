@@ -4,6 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
+/**
+ * Test class for {@link ArrayRotation}
+ *
+ * @author Milan Rathod
+ */
 class ArrayRotationTest {
 
     @Test

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Test Class for {@link ThePsychicType}
+ * Test class for {@link ThePsychicType}
  *
  * @author Milan Rathod
  */

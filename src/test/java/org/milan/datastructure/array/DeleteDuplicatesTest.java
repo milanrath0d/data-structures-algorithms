@@ -8,7 +8,7 @@ import java.util.Objects;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link DeleteDuplicates}
+ * Test class for {@link DeleteDuplicates}
  *
  * @author Milan Rathod
  */

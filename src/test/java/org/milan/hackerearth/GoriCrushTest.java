@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link GoriCrush}
+ * Test class for {@link GoriCrush}
  *
  * @author Milan Rathod
  */

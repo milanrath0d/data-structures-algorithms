@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 /**
- * Test Class for {@link DetectLoop}
+ * Test class for {@link DetectLoop}
  *
  * @author Milan Rathod
  */

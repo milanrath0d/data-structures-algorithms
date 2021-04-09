@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class {@link KthPrime}
+ * Test class {@link KthPrime}
  *
  * @author Milan Rathod
  */

@@ -7,7 +7,7 @@ import org.milan.datastructure.linkedlist.LinkedList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link SortedLL2BST}
+ * Test class for {@link SortedLL2BST}
  *
  * @author Milan Rathod
  */

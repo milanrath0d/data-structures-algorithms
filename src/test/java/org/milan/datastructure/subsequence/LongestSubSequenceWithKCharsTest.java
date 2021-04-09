@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link LongestSubSequenceWithKChars}
+ * Test class for {@link LongestSubSequenceWithKChars}
  *
  * @author Milan Rathod
  */

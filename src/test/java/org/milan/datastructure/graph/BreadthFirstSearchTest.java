@@ -3,7 +3,7 @@ package org.milan.datastructure.graph;
 import org.junit.jupiter.api.Test;
 
 /**
- * Test Class for {@link BreadthFirstSearch}
+ * Test class for {@link BreadthFirstSearch}
  *
  * @author Milan Rathod
  */

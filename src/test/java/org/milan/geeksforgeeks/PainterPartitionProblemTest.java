@@ -4,6 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Test class for {@link PainterPartitionProblem}
+ *
+ * @author Milan Rathod
+ */
 class PainterPartitionProblemTest {
 
     @Test

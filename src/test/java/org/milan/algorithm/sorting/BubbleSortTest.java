@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
- * Test Class for {@link BubbleSort}
+ * Test class for {@link BubbleSort}
  *
  * @author Milan Rathod
  */

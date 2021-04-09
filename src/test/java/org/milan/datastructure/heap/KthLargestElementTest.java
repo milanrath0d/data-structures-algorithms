@@ -5,6 +5,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Test class for {@link KthSmallestElement}
+ *
+ * @author Milan Rathod
+ */
 class KthLargestElementTest {
 
     private KthLargestElement kthLargestElement;

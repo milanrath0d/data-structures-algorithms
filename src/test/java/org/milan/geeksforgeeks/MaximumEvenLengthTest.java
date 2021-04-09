@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link MaximumEvenLength}
+ * Test class for {@link MaximumEvenLength}
  *
  * @author Milan Rathod
  */

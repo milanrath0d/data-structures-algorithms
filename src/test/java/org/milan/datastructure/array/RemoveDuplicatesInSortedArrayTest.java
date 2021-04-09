@@ -2,8 +2,13 @@ package org.milan.datastructure.array;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
+/**
+ * Test class for {@link RemoveDuplicatesInSortedArray}
+ *
+ * @author Milan Rathod
+ */
 class RemoveDuplicatesInSortedArrayTest {
 
     @Test

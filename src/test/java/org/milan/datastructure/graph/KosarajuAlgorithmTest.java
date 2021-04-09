@@ -3,7 +3,7 @@ package org.milan.datastructure.graph;
 import org.junit.jupiter.api.Test;
 
 /**
- * Test Class for {@link KosarajuAlgorithm}
+ * Test class for {@link KosarajuAlgorithm}
  *
  * @author Milan Rathod
  */

@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
- * Test Class for {@link ReverseLinkedList}
+ * Test class for {@link ReverseLinkedList}
  *
  * @author Milan Rathod
  */

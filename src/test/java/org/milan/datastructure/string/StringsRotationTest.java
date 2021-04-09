@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Test Class for {@link StringsRotation}
+ * Test class for {@link StringsRotation}
  *
  * @author Milan Rathod
  */

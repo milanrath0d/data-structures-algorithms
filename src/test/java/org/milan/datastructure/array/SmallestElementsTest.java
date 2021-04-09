@@ -7,7 +7,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link SmallestElements}
+ * Test class for {@link SmallestElements}
  *
  * @author Milan Rathod
  */

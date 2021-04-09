@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
- * Test Class for {@link TimSort}
+ * Test class for {@link TimSort}
  *
  * @author Milan Rathod
  */

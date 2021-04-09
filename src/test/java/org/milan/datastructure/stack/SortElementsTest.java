@@ -8,7 +8,7 @@ import java.util.Stack;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link SortElements}
+ * Test class for {@link SortElements}
  *
  * @author Milan Rathod
  */

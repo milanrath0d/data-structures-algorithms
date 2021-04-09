@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link IntersectionPoint}
+ * Test class for {@link IntersectionPoint}
  *
  * @author Milan Rathod
  */

@@ -3,7 +3,7 @@ package org.milan.geeksforgeeks;
 import org.junit.jupiter.api.Test;
 
 /**
- * Test Class for {@link Splitwise}
+ * Test class for {@link Splitwise}
  *
  * @author Milan Rathod
  */

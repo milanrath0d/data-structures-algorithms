@@ -5,6 +5,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Test class for {@link PatternJumping}
+ *
+ * @author Milan Rathod
+ */
 class PatternJumpingTest {
 
     private PatternJumping patternJumping;

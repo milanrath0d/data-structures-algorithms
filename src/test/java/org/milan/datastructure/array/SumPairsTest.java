@@ -9,7 +9,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test Class for {@link SumPairs}
+ * Test class for {@link SumPairs}
  *
  * @author Milan Rathod
  */

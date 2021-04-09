@@ -4,6 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Test class for {@link MinimumOperations}
+ *
+ * @author Milan Rathod
+ */
 class MinimumOperationsTest {
 
     @Test

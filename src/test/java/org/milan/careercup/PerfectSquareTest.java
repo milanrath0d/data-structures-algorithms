@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Test Class for {@link PerfectSquare}
+ * Test class for {@link PerfectSquare}
  *
  * @author Milan Rathod
  */

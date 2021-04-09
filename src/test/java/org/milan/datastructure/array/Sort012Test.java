@@ -5,6 +5,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
+/**
+ * Test class for {@link Sort012}
+ *
+ * @author Milan Rathod
+ */
 class Sort012Test {
 
     private Sort012 sort012;

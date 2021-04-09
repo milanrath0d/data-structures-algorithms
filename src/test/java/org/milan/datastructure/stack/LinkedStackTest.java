@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test Class for {@link LinkedStack}
+ * Test class for {@link LinkedStack}
  *
  * @author Milan Rathod
  */

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link PartitionList}
+ * Test class for {@link PartitionList}
  *
  * @author Milan Rathod
  */

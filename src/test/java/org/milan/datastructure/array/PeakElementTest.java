@@ -5,6 +5,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Test class for {@link PeakElement}
+ *
+ * @author Milan Rathod
+ */
 class PeakElementTest {
 
     private PeakElement peakElement;

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link ConvertBST2DLL}
+ * Test class for {@link ConvertBST2DLL}
  *
  * @author Milan Rathod
  */

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test Class for {@link BinarySearch}
+ * Test class for {@link BinarySearch}
  *
  * @author Milan Rathod
  */

@@ -6,6 +6,11 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Test class for {@link StringyString}
+ *
+ * @author Milan Rathod
+ */
 class StringyStringTest {
 
     @Test

@@ -4,6 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Test class for {@link ReachGivenScore}
+ *
+ * @author Milan Rathod
+ */
 class ReachGivenScoreTest {
 
     @Test

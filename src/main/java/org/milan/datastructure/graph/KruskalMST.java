@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
  */
 public class KruskalMST {
 
-    private UnionByRank unionByRank;
+    private final UnionByRank unionByRank;
 
     public KruskalMST() {
         unionByRank = new UnionByRank();
@@ -26,7 +26,10 @@ public class KruskalMST {
         graph.getVertices().forEach(vertex -> edges.addAll(vertex.getEdges()));
 
         // O(ElogE) to sort the given edges where E is number of edges
-        List<Edge> edgeList = edges.stream().sorted(Comparator.comparingInt(Edge::getWeight)).collect(Collectors.toList());
+        List<Edge> edgeList = edges
+                .stream()
+                .sorted(Comparator.comparingInt(Edge::getWeight))
+                .collect(Collectors.toList());
 
         Subset[] subsets = new Subset[graph.getVertices().size()];
 
@@ -59,7 +62,7 @@ public class KruskalMST {
     }
 
     public static class Graph {
-        private Set<Vertex> vertices;
+        private final Set<Vertex> vertices;
 
         public Graph() {
             vertices = new HashSet<>();
@@ -76,9 +79,9 @@ public class KruskalMST {
 }
 
 class Vertex {
-    private String label;
+    private final String label;
 
-    private Set<Edge> edges;
+    private final Set<Edge> edges;
 
     public Vertex(String label) {
         this.label = label;
@@ -99,11 +102,11 @@ class Vertex {
 }
 
 class Edge {
-    private Vertex src;
+    private final Vertex src;
 
-    private Vertex dest;
+    private final Vertex dest;
 
-    private int weight;
+    private final int weight;
 
     public Edge(Vertex src, Vertex dest, int weight) {
         this.src = src;

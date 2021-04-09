@@ -6,7 +6,7 @@ import org.milan.exception.StackUnderflowError;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test Class for {@link ThreeStacksWithOneArray}
+ * Test class for {@link ThreeStacksWithOneArray}
  *
  * @author Milan Rathod
  */

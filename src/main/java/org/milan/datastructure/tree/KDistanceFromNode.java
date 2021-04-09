@@ -8,7 +8,7 @@ import java.util.List;
  *
  * @author Milan Rathod
  */
-public class Distance {
+public class KDistanceFromNode {
 
     private final List<Integer> output = new ArrayList<>();
 

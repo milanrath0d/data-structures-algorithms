@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
 /**
- * Test Class for {@link StringsPermutation}
+ * Test class for {@link StringsPermutation}
  *
  * @author Milan Rathod
  */

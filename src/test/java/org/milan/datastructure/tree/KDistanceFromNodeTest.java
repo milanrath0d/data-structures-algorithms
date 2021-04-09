@@ -9,25 +9,25 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test class for {@link Distance}
+ * Test class for {@link KDistanceFromNode}
  *
  * @author Milan Rathod
  */
-class DistanceTest {
+class KDistanceFromNodeTest {
 
     private BinaryTree<Integer> binaryTree;
 
-    private Distance distance;
+    private KDistanceFromNode kDistanceFromNode;
 
     @BeforeEach
     void setup() {
-        distance = new Distance();
+        kDistanceFromNode = new KDistanceFromNode();
         binaryTree = TreeDataUtil.initialize();
     }
 
     @Test
     void testFindDistance() {
-        List<Integer> result = distance.findDistance(binaryTree.getRoot(), binaryTree.getRoot().left, 3);
+        List<Integer> result = kDistanceFromNode.findDistance(binaryTree.getRoot(), binaryTree.getRoot().left, 3);
 
         assertEquals(2, result.size());
 

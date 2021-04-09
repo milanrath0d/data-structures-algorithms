@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Test Class for {@link SortBySwapping}
+ * Test class for {@link SortBySwapping}
  *
  * @author Milan Rathod
  */
