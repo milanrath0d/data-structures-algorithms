@@ -67,25 +67,6 @@ class BinaryTreeTest {
     }
 
     @Test
-    void testMirrorTreeIterative() {
-        binaryTree.mirrorTreeIterative(binaryTree.getRoot());
-
-        assertTrue(binaryTree.isIdentical(binaryTree.getRoot(), getMirrorBinaryTree().getRoot()));
-    }
-
-    @Test
-    void testMirrorTree() {
-        Node<Integer> mirrorTreeRoot = binaryTree.mirrorTree(binaryTree.getRoot());
-
-        assertTrue(binaryTree.isIdentical(mirrorTreeRoot, getMirrorBinaryTree().getRoot()));
-    }
-
-    @Test
-    void testIsMirror() {
-        assertTrue(binaryTree.isMirror(binaryTree.getRoot(), getMirrorBinaryTree().getRoot()));
-    }
-
-    @Test
     void testIsFoldable_Success() {
         BinaryTree<Integer> binaryTree = new BinaryTree<>(1);
 
@@ -107,18 +88,6 @@ class BinaryTreeTest {
         binaryTree.getRoot().right.left = new Node<>(5);
 
         assertFalse(binaryTree.isFoldable(binaryTree.getRoot()));
-    }
-
-    private BinaryTree<Integer> getMirrorBinaryTree() {
-        BinaryTree<Integer> mirrorBinaryTree = new BinaryTree<>(4);
-
-        mirrorBinaryTree.getRoot().left = new Node<>(5);
-        mirrorBinaryTree.getRoot().right = new Node<>(7);
-        mirrorBinaryTree.getRoot().right.left = new Node<>(1);
-        mirrorBinaryTree.getRoot().left.left = new Node<>(6);
-        mirrorBinaryTree.getRoot().left.right = new Node<>(11);
-
-        return mirrorBinaryTree;
     }
 
 }

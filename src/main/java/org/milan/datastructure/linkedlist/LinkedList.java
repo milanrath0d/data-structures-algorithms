@@ -13,6 +13,7 @@ import java.util.Objects;
  * @author Milan Rathod
  */
 public class LinkedList<E extends Comparable<E>> {
+
     /**
      * Logger for logging linked list related logs
      */

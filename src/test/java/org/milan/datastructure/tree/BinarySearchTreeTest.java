@@ -90,16 +90,6 @@ class BinarySearchTreeTest {
     }
 
     @Test
-    void testHeight() {
-        assertEquals(3, binarySearchTree.height(binarySearchTree.getRoot()));
-    }
-
-    @Test
-    void testHeightIterative() {
-        assertEquals(3, binarySearchTree.heightIterative(binarySearchTree.getRoot()));
-    }
-
-    @Test
     void testMinimumDepth() {
         assertEquals(3, binarySearchTree.minimumDepth(binarySearchTree.getRoot()));
     }

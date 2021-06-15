@@ -2,7 +2,7 @@ package org.milan.geeksforgeeks;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link SwapNibbleBytes}
@@ -15,6 +15,6 @@ class SwapNibbleBytesTest {
     void testSwap() {
         SwapNibbleBytes swapNibbleBytes = new SwapNibbleBytes();
 
-        assertEquals(70 ,swapNibbleBytes.swap(100));
+        assertEquals(70, swapNibbleBytes.swap(100));
     }
 }

@@ -14,9 +14,9 @@ public class ShortestPathInBinaryMaze {
 
     private int column;
 
-    private int[] rows = {-1, 0, 0, 1};
+    private final int[] rows = {-1, 0, 0, 1};
 
-    private int[] columns = {0, -1, 1, 0};
+    private final int[] columns = {0, -1, 1, 0};
 
     public int find(int[][] maze, Point src, Point dest) {
 

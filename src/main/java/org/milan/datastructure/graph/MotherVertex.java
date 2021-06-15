@@ -9,13 +9,13 @@ package org.milan.datastructure.graph;
  */
 public class MotherVertex {
 
-    private Graph graph;
+    private final Graph graph;
 
-    private DepthFirstSearch depthFirstSearch;
+    private final DepthFirstSearch depthFirstSearch;
 
     public MotherVertex(Graph graph) {
         this.graph = graph;
-        depthFirstSearch = new DepthFirstSearch(graph);
+        this.depthFirstSearch = new DepthFirstSearch(graph);
     }
 
     /**

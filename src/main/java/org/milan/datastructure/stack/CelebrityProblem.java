@@ -2,7 +2,6 @@ package org.milan.datastructure.stack;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.Stack;
 
 /**
  * Problem: {@link @https://www.geeksforgeeks.org/the-celebrity-problem/?ref=rp}

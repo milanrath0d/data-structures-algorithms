@@ -445,66 +445,6 @@ public class BinarySearchTree<T extends Comparable<T>> {
     }
 
     /**
-     * Find height/depth of the binary tree
-     *
-     * @param root root of the tree
-     * @return height of the tree
-     */
-    public int height(Node<T> root) {
-        if (root == null) return 0;
-
-        // Compute height of each sub tree
-        int leftHeight = height(root.left);
-        int rightHeight = height(root.right);
-
-        return leftHeight > rightHeight ? leftHeight + 1 : rightHeight + 1;
-    }
-
-    /**
-     * Find height/depth of the binary tree
-     *
-     * @param root root of the tree
-     * @return height of the tree
-     */
-    public int heightIterative(Node<T> root) {
-
-        if (root == null) {
-            throw new IllegalStateException(EMPTY_TREE);
-        }
-
-        int maxHeight = 0;
-
-        Queue<Node<T>> queue = new LinkedList<>();
-
-        queue.add(root);
-
-        while (true) {
-
-            int nodeCount = queue.size();
-
-            if (nodeCount == 0) {
-                return maxHeight;
-            }
-
-            maxHeight++;
-
-            while (nodeCount > 0) {
-                Node<T> node = queue.remove();
-
-                if (node.left != null) {
-                    queue.add(node.left);
-                }
-
-                if (node.right != null) {
-                    queue.add(node.right);
-                }
-
-                nodeCount--;
-            }
-        }
-    }
-
-    /**
      * Find minimum depth of the binary tree
      *
      * @param root root of the tree
@@ -673,22 +613,6 @@ public class BinarySearchTree<T extends Comparable<T>> {
             }
         }
         return maxWidth;
-    }
-
-    public void printLevelOrder() {
-        int height = height(root);
-        for (int i = 1; i <= height; i++) {
-            printGivenLevel(root, i);
-        }
-    }
-
-    private void printGivenLevel(Node<T> root, int level) {
-        if (root == null) return;
-        if (level == 1) System.out.println(root.key + " ");
-        else if (level > 1) {
-            printGivenLevel(root.left, level - 1);
-            printGivenLevel(root.right, level - 1);
-        }
     }
 
     /**

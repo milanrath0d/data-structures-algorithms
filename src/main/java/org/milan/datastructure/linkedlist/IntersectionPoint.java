@@ -10,6 +10,9 @@ import org.slf4j.LoggerFactory;
  */
 public class IntersectionPoint {
 
+    /**
+     * Logger
+     */
     private static final Logger LOG = LoggerFactory.getLogger(IntersectionPoint.class);
 
     public LinkedList.Node<Integer> find(LinkedList.Node<Integer> head1, LinkedList.Node<Integer> head2) {

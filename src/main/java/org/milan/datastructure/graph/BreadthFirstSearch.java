@@ -14,7 +14,7 @@ import java.util.Queue;
  */
 public class BreadthFirstSearch {
 
-    private Graph graph;
+    private final Graph graph;
 
     public BreadthFirstSearch(Graph graph) {
         this.graph = graph;

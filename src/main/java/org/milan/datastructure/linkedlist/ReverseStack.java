@@ -12,7 +12,7 @@ public class ReverseStack {
 
     private LinkedList.Node<Integer> top;
 
-    private ReverseLinkedList reverseLinkedList;
+    private final ReverseLinkedList reverseLinkedList;
 
     public ReverseStack() {
         reverseLinkedList = new ReverseLinkedList();

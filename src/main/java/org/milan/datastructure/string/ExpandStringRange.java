@@ -26,8 +26,8 @@ public class ExpandStringRange {
     private void expand(String range, StringBuilder output) {
         if (range.contains("-")) {
             String[] split = range.split("-");
-            int start = Integer.valueOf(split[0]);
-            int end = Integer.valueOf(split[1]);
+            int start = Integer.parseInt(split[0]);
+            int end = Integer.parseInt(split[1]);
             for (int i = start; i < end; i++) {
                 output.append(i).append(", ");
             }

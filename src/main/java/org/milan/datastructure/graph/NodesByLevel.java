@@ -13,9 +13,9 @@ import java.util.stream.IntStream;
  */
 public class NodesByLevel {
 
-    private Graph graph;
+    private final Graph graph;
 
-    private int[] levels;
+    private final int[] levels;
 
     public NodesByLevel(Graph graph) {
         this.graph = graph;
@@ -59,6 +59,5 @@ public class NodesByLevel {
             }
         }
     }
-
 
 }

@@ -1,7 +1,5 @@
 package org.milan.datastructure.tree;
 
-import java.util.List;
-
 /**
  * @author Milan Rathod
  */

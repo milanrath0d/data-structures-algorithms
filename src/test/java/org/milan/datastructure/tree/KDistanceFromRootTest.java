@@ -5,8 +5,9 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.milan.datastructure.tree.TreeDataUtil.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.milan.datastructure.tree.TreeDataUtil.initialize;
+import static org.milan.datastructure.tree.TreeDataUtil.toArray;
 
 /**
  * Test class for {@link KDistanceFromRoot}

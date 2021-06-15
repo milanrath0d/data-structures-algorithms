@@ -12,9 +12,7 @@ import java.util.Stack;
  */
 public class KosarajuAlgorithm {
 
-    private Graph graph;
-
-    private DepthFirstSearch depthFirstSearch;
+    private final Graph graph;
 
     public KosarajuAlgorithm(Graph graph) {
         this.graph = graph;
@@ -55,7 +53,7 @@ public class KosarajuAlgorithm {
             visited[i] = false;
         }
 
-        depthFirstSearch = new DepthFirstSearch(newGraph);
+        DepthFirstSearch depthFirstSearch = new DepthFirstSearch(newGraph);
 
         while (!stack.isEmpty()) {
             int v = stack.pop();
