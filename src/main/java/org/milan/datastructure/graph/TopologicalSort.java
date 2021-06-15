@@ -11,7 +11,7 @@ import java.util.Stack;
  */
 public class TopologicalSort {
 
-    private Graph graph;
+    private final Graph graph;
 
     public TopologicalSort(Graph graph) {
         this.graph = graph;

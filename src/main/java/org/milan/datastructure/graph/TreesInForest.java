@@ -9,9 +9,9 @@ package org.milan.datastructure.graph;
  */
 public class TreesInForest {
 
-    private Graph graph;
+    private final Graph graph;
 
-    private DepthFirstSearch depthFirstSearch;
+    private final DepthFirstSearch depthFirstSearch;
 
     public TreesInForest(Graph graph) {
         this.graph = graph;

@@ -19,7 +19,6 @@ public class VersionsComparison {
         version2 = transformVersion(version2);
 
         return version1.compareTo(version2);
-
     }
 
     private String transformVersion(String version) {

@@ -3,8 +3,6 @@ package org.milan.hackerearth;
 import java.util.Arrays;
 import java.util.List;
 
-import static java.util.Arrays.binarySearch;
-
 /**
  * Vegetable Market Problem
  * <p>

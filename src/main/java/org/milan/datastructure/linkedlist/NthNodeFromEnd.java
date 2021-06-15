@@ -10,6 +10,9 @@ import org.slf4j.LoggerFactory;
  */
 public class NthNodeFromEnd {
 
+    /**
+     * Logger
+     */
     private static final Logger LOG = LoggerFactory.getLogger(NthNodeFromEnd.class);
 
     /**

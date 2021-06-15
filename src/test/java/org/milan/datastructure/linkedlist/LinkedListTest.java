@@ -107,7 +107,7 @@ class LinkedListTest {
 
         linkedList.quickSort();
 
-        assertArrayEquals(new Integer[]{5, 10, 20, 25,30}, linkedList.toArray(Integer.class));
+        assertArrayEquals(new Integer[]{5, 10, 20, 25, 30}, linkedList.toArray(Integer.class));
     }
 
     @Test
@@ -121,6 +121,6 @@ class LinkedListTest {
 
         linkedList.sort();
 
-        assertArrayEquals(new Integer[]{5, 10, 20, 25,30}, linkedList.toArray(Integer.class));
+        assertArrayEquals(new Integer[]{5, 10, 20, 25, 30}, linkedList.toArray(Integer.class));
     }
 }

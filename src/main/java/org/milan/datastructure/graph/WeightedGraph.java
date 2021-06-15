@@ -8,9 +8,10 @@ import java.util.LinkedList;
  * @author Milan Rathod
  */
 public class WeightedGraph {
-    private int size;
 
-    private LinkedList<Node>[] adjList;
+    private final int size;
+
+    private final LinkedList<Node>[] adjList;
 
     public WeightedGraph(int size) {
         this.size = size;

@@ -12,6 +12,9 @@ import java.util.NoSuchElementException;
  */
 public class SwapNodes {
 
+    /**
+     * Logger
+     */
     private static final Logger LOG = LoggerFactory.getLogger(SwapNodes.class);
 
     /**

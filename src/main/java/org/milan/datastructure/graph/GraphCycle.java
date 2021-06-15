@@ -5,7 +5,7 @@ package org.milan.datastructure.graph;
  */
 class GraphCycle {
 
-    private Graph graph;
+    private final Graph graph;
 
     public GraphCycle(Graph graph) {
         this.graph = graph;

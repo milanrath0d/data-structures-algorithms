@@ -11,9 +11,9 @@ import java.util.List;
  */
 public class TransitiveClosure {
 
-    private Graph graph;
+    private final Graph graph;
 
-    private int[][] transitiveClosureMatrix;
+    private final int[][] transitiveClosureMatrix;
 
     public TransitiveClosure(Graph graph) {
         this.graph = graph;

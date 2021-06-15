@@ -15,7 +15,7 @@ import java.util.Stack;
  */
 public class DepthFirstSearch {
 
-    private Graph graph;
+    private final Graph graph;
 
     public DepthFirstSearch(Graph graph) {
         this.graph = graph;

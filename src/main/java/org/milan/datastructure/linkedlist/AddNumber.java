@@ -7,7 +7,7 @@ package org.milan.datastructure.linkedlist;
  */
 public class AddNumber {
 
-    private ReverseLinkedList reverseLinkedList;
+    private final ReverseLinkedList reverseLinkedList;
 
     public AddNumber() {
         reverseLinkedList = new ReverseLinkedList();
@@ -47,8 +47,7 @@ public class AddNumber {
         }
 
         if (carry > 0) {
-            LinkedList.Node<Integer> newNode = new LinkedList.Node<>(carry);
-            prev.next = newNode;
+            prev.next = new LinkedList.Node<>(carry);
         }
 
         return temp;
