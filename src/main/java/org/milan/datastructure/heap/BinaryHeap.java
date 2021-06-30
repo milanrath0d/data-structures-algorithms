@@ -249,29 +249,6 @@ public class BinaryHeap {
     }
 
     /**
-     * Check if given level order traversal of tree
-     * is min heap or not
-     * TODO move this method to separate class
-     *
-     * @param arr given level order traversal
-     */
-    public boolean isMinHeap(int[] arr) {
-        int n = arr.length;
-
-        // First non leaf node is at index n/2 -1
-        // Check whether each parent is greater than child
-        for (int i = (n / 2 - 1); i >= 0; i--) {
-            // Left child will be at index 2*i + 1
-            // Right child will be at index 2*i + 2
-            if (((2 * i + 1 < n) && arr[i] > arr[2 * i + 1]) ||
-                    ((2 * i + 2 < n) && arr[i] > arr[2 * i + 2])) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    /**
      * Get element at provided index
      *
      * @param index index

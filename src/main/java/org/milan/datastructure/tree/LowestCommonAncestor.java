@@ -13,7 +13,7 @@ public class LowestCommonAncestor {
      * @param root  root of the binary tree
      * @param node1 first node
      * @param node2 second node
-     * @return LCA
+     * @return lowest common ancestor of given two nodes
      */
     public Node<Integer> findLCA(Node<Integer> root, int node1, int node2) {
         // Base condition
@@ -25,17 +25,17 @@ public class LowestCommonAncestor {
             return root;
         }
 
-        Node<Integer> left_LCA = findLCA(root.left, node1, node2);
-        Node<Integer> right_LCA = findLCA(root.right, node1, node2);
+        Node<Integer> leftLca = findLCA(root.left, node1, node2);
+        Node<Integer> rightLca = findLCA(root.right, node1, node2);
 
         // If both left and right lca returns non-null then one key
         // is present in left subtree and one key is present in right subtree
         // so current node is LCA
-        if (left_LCA != null && right_LCA != null) {
+        if (leftLca != null && rightLca != null) {
             return root;
         }
 
         // Otherwise check if left subtree or right subtree is LCA
-        return left_LCA != null ? left_LCA : right_LCA;
+        return leftLca != null ? leftLca : rightLca;
     }
 }

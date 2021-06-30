@@ -3,7 +3,8 @@ package org.milan.datastructure.heap;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link BinaryHeap}
@@ -74,15 +75,6 @@ class BinaryHeapTest {
         testBinaryHeap.sort(input);
 
         assertArrayEquals(new int[]{10, 5, 4, 3, 1}, testBinaryHeap.getStore());
-    }
-
-    @Test
-    void testIsMinHeap() {
-        int[] arr = new int[]{10, 15, 14, 25, 30};
-
-        BinaryHeap binaryHeap = new BinaryHeap(arr.length);
-
-        assertTrue(binaryHeap.isMinHeap(arr));
     }
 
     @Test
