@@ -117,7 +117,6 @@ public class DynamicArrayQueue {
 
     /**
      * Check if queue is full or not
-     * TODO should we expose this method or not?
      */
     public boolean isFull() {
         return size == capacity;

@@ -9,11 +9,11 @@ import java.util.HashMap;
  */
 public class LRUCache {
 
-    private HashMap<Integer, Entry> map;
+    private final HashMap<Integer, Entry> map;
 
     private Entry start, end;
 
-    private int LRU_SIZE;
+    private final int LRU_SIZE;
 
     /**
      * When referenced page is not available in cache to refer it is called page fault
@@ -61,18 +61,18 @@ public class LRUCache {
             addAtTop(entry);
             pageHit++;
         } else {
-            Entry newnode = new Entry();
-            newnode.left = null;
-            newnode.right = null;
-            newnode.key = key;
+            Entry newNode = new Entry();
+            newNode.left = null;
+            newNode.right = null;
+            newNode.key = key;
             // We have reached maximum size so need to make room for new element
             if (map.size() > LRU_SIZE) {
                 map.remove(end.key);
                 removeNode(end);
             }
-            addAtTop(newnode);
+            addAtTop(newNode);
 
-            map.put(key, newnode);
+            map.put(key, newNode);
             pageFault++;
         }
     }

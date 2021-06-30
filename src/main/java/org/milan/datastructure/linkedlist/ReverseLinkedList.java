@@ -32,6 +32,7 @@ public class ReverseLinkedList {
         }
 
         LinkedList.Node<Integer> first = reverseByRecursive(head.next);
+
         head.next.next = head;
 
         head.next = null;
