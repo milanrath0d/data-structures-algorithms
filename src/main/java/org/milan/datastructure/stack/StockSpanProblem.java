@@ -12,11 +12,6 @@ import java.util.Deque;
 public class StockSpanProblem {
 
     /**
-     * stack being used for storing spans
-     */
-    private Deque<Integer> stack = new ArrayDeque<>();
-
-    /**
      * Compute stock span values based on stock prices
      *
      * @param prices integer array for storing stock price
@@ -24,6 +19,9 @@ public class StockSpanProblem {
      * @return integer array containing stock span values
      */
     public int[] calculateSpan(int[] prices, int length) {
+
+        // stack being used for storing spans
+        Deque<Integer> stack = new ArrayDeque<>();
 
         int[] spans = new int[length];
 

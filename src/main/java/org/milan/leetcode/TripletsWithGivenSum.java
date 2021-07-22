@@ -1,4 +1,4 @@
-package org.milan.datastructure.array;
+package org.milan.leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  * Refer {@link @https://www.geeksforgeeks.org/unique-triplets-sum-given-value/}
+ * {@link @https://leetcode.com/problems/3sum/}
  *
  * @author Milan Rathod
  */

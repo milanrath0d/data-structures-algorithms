@@ -1,10 +1,11 @@
-package org.milan.datastructure.array;
+package org.milan.leetcode;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Problem: {@link @https://www.geeksforgeeks.org/majority-element/}
+ * Refer {@link @https://www.geeksforgeeks.org/majority-element/}
+ * {@link @https://leetcode.com/problems/majority-element/}
  *
  * @author Milan Rathod
  */

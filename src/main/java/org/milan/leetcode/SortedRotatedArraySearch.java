@@ -1,15 +1,14 @@
-package org.milan.datastructure.array;
+package org.milan.leetcode;
 
 /**
- * Search a key in a rotated array
+ * Search a key in a sorted and rotated array
  * <p>
- * Time Complexity - O(logn)
- * <p>
- * {@link @https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/}
+ * Refer {@link @https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/}
+ * {@link @https://leetcode.com/problems/search-in-rotated-sorted-array/}
  *
  * @author Milan Rathod
  */
-public class RotatedArraySearch {
+public class SortedRotatedArraySearch {
 
     /**
      * Find key in given sorted and rotated array using binary search
@@ -50,20 +49,18 @@ public class RotatedArraySearch {
             return mid;
         }
 
-        // if inputArray[low...mid] is sorted
         if (inputArray[low] <= inputArray[mid]) {
-
+            // if inputArray[low...mid] is sorted
             if (key >= inputArray[low] && key <= inputArray[mid]) {
                 return findElementUtil(inputArray, low, mid - 1, key);
             }
             return findElementUtil(inputArray, mid + 1, high, key);
+        } else {
+            // inputArray[mid...high] is sorted.
+            if (inputArray[mid] <= key && inputArray[high] >= key) {
+                return findElementUtil(inputArray, mid + 1, high, key);
+            }
+            return findElementUtil(inputArray, low, mid - 1, key);
         }
-
-        // inputArray[low...mid] is not sorted. it means inputArray[mid...high] is sorted.
-        if (inputArray[mid] <= key && inputArray[high] >= key) {
-            return findElementUtil(inputArray, mid + 1, high, key);
-        }
-
-        return findElementUtil(inputArray, low, mid - 1, key);
     }
 }

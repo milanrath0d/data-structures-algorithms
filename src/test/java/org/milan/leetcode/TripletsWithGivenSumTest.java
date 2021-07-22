@@ -1,4 +1,4 @@
-package org.milan.datastructure.array;
+package org.milan.leetcode;
 
 import org.junit.jupiter.api.Test;
 import org.milan.util.ListUtil;

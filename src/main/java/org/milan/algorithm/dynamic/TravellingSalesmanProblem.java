@@ -14,7 +14,9 @@ import java.util.List;
 public class TravellingSalesmanProblem {
 
     private final int N;
+
     private final int START_NODE;
+
     private final int FINISHED_STATE;
 
     private final double[][] distance;

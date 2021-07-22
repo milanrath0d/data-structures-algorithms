@@ -659,8 +659,8 @@ public class BinarySearchTree<T extends Comparable<T>> {
      * @return in order predecessor of given node
      */
     public Node<T> inOrderPredecessor(Node<T> root, Node<T> node) {
-        // If right subtree of the node is not NULL
-        // go to right subtree and return node with minimum key
+        // If left subtree of the node is not NULL
+        // go to left subtree and return node with maximum key
         if (node.left != null) {
             Node<T> current = node.left;
 

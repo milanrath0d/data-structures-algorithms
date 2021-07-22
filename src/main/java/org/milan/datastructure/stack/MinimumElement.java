@@ -11,7 +11,8 @@ import java.util.EmptyStackException;
  * Problem: {@link @https://www.geeksforgeeks.org/design-and-implement-special-stack-data-structure/}
  * <p>
  * NOTE: normal methods getMinimum, push and pop contains solution with extra stack i.e. min stack
- * where as V2 version of those methods such as getMinimumV2, pushV2 and popV2 contains solution without using extra space
+ * where as V2 version of those methods such as getMinimumV2, pushV2 and popV2 contains solution
+ * without using extra space
  *
  * @author Milan Rathod
  */
@@ -25,17 +26,17 @@ public class MinimumElement {
     /**
      * Stack used to store elements
      */
-    private Deque<Integer> elementStack = new ArrayDeque<>();
+    private final Deque<Integer> elementStack = new ArrayDeque<>();
 
     /**
      * Stack used to store minimum elements
      */
-    private Deque<Integer> minStack = new ArrayDeque<>();
+    private final Deque<Integer> minStack = new ArrayDeque<>();
 
     /**
      * Stack used to store elements for version 2 methods
      */
-    private Deque<Integer> stack = new ArrayDeque<>();
+    private final Deque<Long> stack = new ArrayDeque<>();
 
     /**
      * minimum element being used by version 2 methods
@@ -80,7 +81,7 @@ public class MinimumElement {
     public void push(int item) {
         elementStack.push(item);
 
-        if (minStack.isEmpty() || minStack.peek() >= item) {
+        if (minStack.isEmpty() || minStack.peek() > item) {
             minStack.push(item);
         } else {
             minStack.push(minStack.peek());
@@ -112,15 +113,15 @@ public class MinimumElement {
             throw new EmptyStackException();
         }
 
-        Integer item = stack.pop();
+        long item = stack.pop();
 
         // Minimum will change as the minimum element of stack is being removed
         if (item < minimumElement) {
             int toReturn = minimumElement;
-            minimumElement = 2 * minimumElement - item;
+            minimumElement = (int) (2L * minimumElement - item);
             return toReturn;
         } else {
-            return item;
+            return (int) item;
         }
     }
 
@@ -132,14 +133,14 @@ public class MinimumElement {
     public void pushV2(int item) {
         if (stack.isEmpty()) {
             minimumElement = item;
-            stack.push(item);
+            stack.push((long) item);
         } else {
             // If new item is less than minimum element
             if (item < minimumElement) {
-                stack.push(2 * item - minimumElement);
+                stack.push(2L * item - minimumElement);
                 minimumElement = item;
             } else {
-                stack.push(item);
+                stack.push((long) item);
             }
         }
     }

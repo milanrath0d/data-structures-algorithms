@@ -62,8 +62,7 @@ public class LinkedList<E extends Comparable<E>> {
         if (isEmpty()) {
             head = new Node<>(data);
         } else {
-            Node<E> newHead = new Node<>(data, head);
-            head = newHead;
+            head = new Node<>(data, head);
         }
         size++;
     }
@@ -147,8 +146,8 @@ public class LinkedList<E extends Comparable<E>> {
      * @param data data of the new node to be deleted
      */
     public void deleteNodeByKey(E data) {
+
         Node<E> temp = head;
-        Node<E> previous = null;
 
         // To be deleted node is a head node
         if (temp != null && temp.data == data) {
@@ -156,6 +155,8 @@ public class LinkedList<E extends Comparable<E>> {
             size--;
             return;
         }
+
+        Node<E> previous = null;
 
         // Identify the deletion node
         while (temp != null && temp.data != data) {

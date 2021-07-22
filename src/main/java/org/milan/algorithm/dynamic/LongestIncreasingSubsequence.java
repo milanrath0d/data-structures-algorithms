@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 /**
  * Problem: {@link @https://www.geeksforgeeks.org/longest-increasing-subsequence-dp-3/}
+ * {@link @https://leetcode.com/problems/longest-increasing-subsequence/}
  *
  * @author Milan Rathod
  */
@@ -15,6 +16,7 @@ public class LongestIncreasingSubsequence {
      * Find longest increasing subsequence using dynamic programming
      * <p>
      * Time complexity: O(n*n)
+     * Space complexity: O(n)
      *
      * @param arr input array
      * @return length of longest increasing subsequence
@@ -27,19 +29,18 @@ public class LongestIncreasingSubsequence {
 
         int i, j;
 
-        // Initialize lis values for all indexes
-        for (i = 0; i < n; i++) {
-            lis[i] = 1;
-        }
+        // Initialize lis values as 1
+        Arrays.fill(lis, 1);
 
         for (i = 1; i < n; i++) {
             for (j = 0; j < i; j++) {
-                if (arr[j] < arr[i] && lis[i] < lis[j] + 1) {
-                    lis[i] = lis[j] + 1;
+                if (arr[j] < arr[i]) {
+                    lis[i] = Math.max(lis[i], lis[j] + 1);
                 }
             }
         }
 
+        // Get maximum of all lis values
         return Arrays.stream(lis).max().getAsInt();
     }
 
@@ -53,6 +54,7 @@ public class LongestIncreasingSubsequence {
      */
     public int findV2(int[] arr) {
         int n = arr.length;
+
         int[] tailIndices = new int[n];
 
         int[] prevIndices = new int[n];

@@ -1,5 +1,7 @@
 package org.milan.util;
 
+import java.util.Arrays;
+
 /**
  * Utility for arrays
  *
@@ -24,5 +26,22 @@ public final class ArrayUtil {
         int temp = arr[src];
         arr[src] = arr[dest];
         arr[dest] = temp;
+    }
+
+    /**
+     * Sort the given array of integers in descending order
+     *
+     * @param arr given array of integers
+     */
+    public static void reverseSort(int[] arr) {
+        Arrays.sort(arr);
+
+        int n = arr.length;
+
+        int[] temp = Arrays.copyOf(arr, arr.length);
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = temp[n - i - 1];
+        }
     }
 }
