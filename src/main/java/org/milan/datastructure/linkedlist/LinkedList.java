@@ -467,8 +467,6 @@ public class LinkedList<E extends Comparable<E>> {
 
     /**
      * Convert linked list to array
-     * <p>
-     * TODO can we remove input parameter here?
      *
      * @param classE type parameter class
      * @return array of type elements

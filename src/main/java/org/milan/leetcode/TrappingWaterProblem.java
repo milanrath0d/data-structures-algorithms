@@ -1,7 +1,8 @@
-package org.milan.datastructure.array;
+package org.milan.leetcode;
 
 /**
  * Problem: {@link @https://www.geeksforgeeks.org/trapping-rain-water/}
+ * {@link @https://leetcode.com/problems/trapping-rain-water/}
  *
  * @author Milan Rathod
  */

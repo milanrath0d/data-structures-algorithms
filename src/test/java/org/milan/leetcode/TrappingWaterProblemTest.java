@@ -1,4 +1,4 @@
-package org.milan.datastructure.array;
+package org.milan.leetcode;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -53,5 +53,11 @@ class TrappingWaterProblemTest {
         assertEquals(10, trappingWaterProblem.maxWaterV3(input2));
 
         assertEquals(6, trappingWaterProblem.maxWaterV3(input3));
+
+        int[] arr = new int[]{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
+
+        assertEquals(6, trappingWaterProblem.maxWaterV3(arr));
+
+        assertEquals(9, trappingWaterProblem.maxWater(new int[]{4, 2, 0, 3, 2, 5}));
     }
 }
