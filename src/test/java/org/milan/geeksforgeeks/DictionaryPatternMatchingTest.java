@@ -20,7 +20,7 @@ class DictionaryPatternMatchingTest {
         DictionaryPatternMatching dictionaryPatternMatching = new DictionaryPatternMatching();
 
         List<String> result = dictionaryPatternMatching.findMatchedWords(List.of("abb", "abc",
-                "xyz", "xyy"), "foo");
+            "xyz", "xyy"), "foo");
 
         assertTrue(ListUtil.isEqual(Arrays.asList("abb", "xyy"), result));
     }
@@ -30,7 +30,7 @@ class DictionaryPatternMatchingTest {
         DictionaryPatternMatching dictionaryPatternMatching = new DictionaryPatternMatching();
 
         List<String> result = dictionaryPatternMatching.findMatchedWordsV2(List.of("abb", "abc",
-                "xyz", "xyy"), "foo");
+            "xyz", "xyy"), "foo");
 
         assertTrue(ListUtil.isEqual(Arrays.asList("abb", "xyy"), result));
     }

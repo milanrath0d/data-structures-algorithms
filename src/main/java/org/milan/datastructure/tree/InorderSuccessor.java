@@ -43,7 +43,7 @@ public class InorderSuccessor {
             return null;
 
         if (root == x || (temp = findInorderRec(root.left, temp, x)) != null ||
-                (temp = findInorderRec(root.right, temp, x)) != null) {
+            (temp = findInorderRec(root.right, temp, x)) != null) {
             if (temp != null) {
                 if (root.left == temp) {
                     return root;

@@ -14,9 +14,9 @@ class RatInAMazeTest {
     @Test
     void testSolveMaze() {
         int[][] maze = {{1, 0, 0, 0},
-                {1, 1, 0, 1},
-                {0, 1, 0, 0},
-                {1, 1, 1, 1}};
+            {1, 1, 0, 1},
+            {0, 1, 0, 0},
+            {1, 1, 1, 1}};
         RatInAMaze ratInAMaze = new RatInAMaze();
 
         boolean result = ratInAMaze.solveMaze(maze);

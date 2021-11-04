@@ -30,7 +30,7 @@ public class StartsWithPrefixes {
 
     public boolean usingStreams(String input, String[] prefixes) {
         return Stream.of(prefixes)
-                .anyMatch(input::startsWith);
+            .anyMatch(input::startsWith);
 
     }
 }

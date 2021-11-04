@@ -22,7 +22,7 @@ public class CheckMinHeap {
             // Left child will be at index 2*i + 1
             // Right child will be at index 2*i + 2
             if (((2 * i + 1 < n) && arr[i] > arr[2 * i + 1]) ||
-                    ((2 * i + 2 < n) && arr[i] > arr[2 * i + 2])) {
+                ((2 * i + 2 < n) && arr[i] > arr[2 * i + 2])) {
                 return false;
             }
         }

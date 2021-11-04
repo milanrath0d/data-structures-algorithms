@@ -16,8 +16,8 @@ class MatrixSortingTest {
         MatrixSorting matrixSorting = new MatrixSorting();
 
         int[][] matrix = {{5, 4, 7},
-                {1, 3, 8},
-                {2, 9, 6}};
+            {1, 3, 8},
+            {2, 9, 6}};
 
         int[][] sortedMatrix = matrixSorting.sort(matrix, matrix.length);
 

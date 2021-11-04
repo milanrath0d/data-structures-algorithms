@@ -1,9 +1,7 @@
 package org.milan.algorithm.dynamic;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
@@ -13,30 +11,25 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 class LongestIncreasingSubsequenceTest {
 
-    private LongestIncreasingSubsequence longestIncreasingSubsequence;
+    @Test
+    void find() {
+        LongestIncreasingSubsequence longestIncreasingSubsequence = new LongestIncreasingSubsequence();
 
-    private int[] arr;
+        assertEquals(5, longestIncreasingSubsequence.find(new int[]{10, 22, 9, 33, 21, 50, 41, 60}));
 
-    @BeforeEach
-    void setUp() {
-        longestIncreasingSubsequence = new LongestIncreasingSubsequence();
+        assertEquals(4, longestIncreasingSubsequence.find(new int[]{10, 9, 2, 5, 3, 7, 101, 18}));
 
-        arr = new int[]{10, 22, 9, 33, 21, 50, 41, 60};
+        assertEquals(4, longestIncreasingSubsequence.find(new int[]{0, 1, 0, 3, 2, 3}));
+
+        assertEquals(1, longestIncreasingSubsequence.find(new int[]{7, 7, 7, 7, 7, 7, 7}));
     }
 
     @Test
-    void testFind() {
-        int result = longestIncreasingSubsequence.find(arr);
+    void findV2() {
+        LongestIncreasingSubsequence longestIncreasingSubsequence = new LongestIncreasingSubsequence();
 
-        assertEquals(5, result);
-    }
+        assertEquals(5, longestIncreasingSubsequence.findV2(new int[]{10, 22, 9, 33, 21, 50, 41, 60}));
 
-    @Test
-    void testFindV2() {
-        int result = longestIncreasingSubsequence.findV2(arr);
-
-        assertEquals(5, result);
-
-        assertArrayEquals(new int[]{10, 22, 33, 41, 60}, longestIncreasingSubsequence.getSubsequence());
+        assertEquals(3, longestIncreasingSubsequence.findV2(new int[]{3, 10, 2, 11}));
     }
 }

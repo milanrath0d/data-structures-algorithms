@@ -25,7 +25,6 @@ public class JobSequencing {
         // Iterate through all jobs
         for (int i = 0; i < jobs.length; i++) {
 
-
             for (int j = Math.min(jobs.length, jobs[i].deadline) - 1; j >= 0; j--) {
                 if (!slots[j]) {
                     result[j] = i;
@@ -40,6 +39,7 @@ public class JobSequencing {
                 output.append(jobs[result[i]].jobId);
             }
         }
+
         return output.toString();
     }
 }

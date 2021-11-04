@@ -37,7 +37,7 @@ public final class TreeDataUtil {
 
     public static int[] toArray(List<Integer> list) {
         return list.stream()
-                .mapToInt(i -> i)
-                .toArray();
+            .mapToInt(i -> i)
+            .toArray();
     }
 }

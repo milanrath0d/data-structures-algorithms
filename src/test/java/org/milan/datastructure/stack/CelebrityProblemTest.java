@@ -18,9 +18,9 @@ class CelebrityProblemTest {
     void setUp() throws Exception {
 
         int[][] matrix = {{0, 0, 1, 0},
-                {0, 0, 1, 0},
-                {0, 0, 0, 0},
-                {0, 0, 1, 0}};
+            {0, 0, 1, 0},
+            {0, 0, 0, 0},
+            {0, 0, 1, 0}};
 
         celebrityProblem = new CelebrityProblem(matrix);
     }

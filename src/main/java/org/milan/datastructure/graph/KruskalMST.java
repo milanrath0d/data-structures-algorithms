@@ -27,9 +27,9 @@ public class KruskalMST {
 
         // O(ElogE) to sort the given edges where E is number of edges
         List<Edge> edgeList = edges
-                .stream()
-                .sorted(Comparator.comparingInt(Edge::getWeight))
-                .collect(Collectors.toList());
+            .stream()
+            .sorted(Comparator.comparingInt(Edge::getWeight))
+            .collect(Collectors.toList());
 
         Subset[] subsets = new Subset[graph.getVertices().size()];
 
@@ -132,8 +132,8 @@ class Edge {
         if (o == null || getClass() != o.getClass()) return false;
         Edge edge = (Edge) o;
         return weight == edge.weight &&
-                Objects.equals(src, edge.src) &&
-                Objects.equals(dest, edge.dest);
+            Objects.equals(src, edge.src) &&
+            Objects.equals(dest, edge.dest);
     }
 
     @Override

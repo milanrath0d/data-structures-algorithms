@@ -24,7 +24,7 @@ public class DijkstraAlgorithm {
         }
 
         TreeSet<QueueNode> queue = new TreeSet<>((o1, o2) ->
-                o1.distance - o2.distance != 0 ? o1.distance - o2.distance : o1.vertex - o2.vertex);
+            o1.distance - o2.distance != 0 ? o1.distance - o2.distance : o1.vertex - o2.vertex);
 
         for (int i = 0; i < size; i++) {
             // Initialize key values to infinity

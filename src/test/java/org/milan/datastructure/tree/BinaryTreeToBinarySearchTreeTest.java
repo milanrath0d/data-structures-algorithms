@@ -21,7 +21,7 @@ class BinaryTreeToBinarySearchTreeTest {
         binaryTree.getRoot().right.right = new Node<>(6);
 
         BinaryTreeToBinarySearchTree binaryTreeToBinarySearchTree = new
-                BinaryTreeToBinarySearchTree();
+            BinaryTreeToBinarySearchTree();
 
         binaryTreeToBinarySearchTree.binaryToBST(binaryTree.getRoot());
 

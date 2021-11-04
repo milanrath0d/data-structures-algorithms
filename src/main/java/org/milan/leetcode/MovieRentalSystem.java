@@ -29,8 +29,8 @@ public class MovieRentalSystem {
      * Custom comparator sorts based on price, shop and movie
      */
     private final Comparator<Entry> order = (e1, e2) -> e1.price == e2.price ?
-            (e1.shop == e2.shop ? Integer.compare(e1.movie, e2.movie) : Integer.compare(e1.shop, e2.shop))
-            : Integer.compare(e1.price, e2.price);
+        (e1.shop == e2.shop ? Integer.compare(e1.movie, e2.movie) : Integer.compare(e1.shop, e2.shop))
+        : Integer.compare(e1.price, e2.price);
 
     /**
      * Set of rental movie details
@@ -73,10 +73,10 @@ public class MovieRentalSystem {
      */
     public List<Integer> search(int movie) {
         return availableMap.getOrDefault(movie, new TreeSet<>(order))
-                .stream()
-                .limit(MAX_LIMIT)
-                .map(entry -> entry.shop)
-                .collect(Collectors.toList());
+            .stream()
+            .limit(MAX_LIMIT)
+            .map(entry -> entry.shop)
+            .collect(Collectors.toList());
     }
 
     /**
@@ -112,9 +112,9 @@ public class MovieRentalSystem {
      */
     public List<List<Integer>> report() {
         return rented.stream()
-                .limit(MAX_LIMIT)
-                .map(entry -> Arrays.asList(entry.shop, entry.movie))
-                .collect(Collectors.toList());
+            .limit(MAX_LIMIT)
+            .map(entry -> Arrays.asList(entry.shop, entry.movie))
+            .collect(Collectors.toList());
     }
 
     static class Entry {

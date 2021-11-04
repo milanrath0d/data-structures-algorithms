@@ -22,6 +22,6 @@ class LargestOddNumberInStringTest {
         assertEquals("35427", largestOddNumberInString.largestOddNumber("35427"));
 
         assertEquals("239537672423884969653287101",
-                largestOddNumberInString.largestOddNumber("239537672423884969653287101"));
+            largestOddNumberInString.largestOddNumber("239537672423884969653287101"));
     }
 }

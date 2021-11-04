@@ -26,7 +26,7 @@ public class PrimMST {
         }
 
         TreeSet<QueueNode> queue = new TreeSet<>((o1, o2) ->
-                o1.key - o2.key != 0 ? o1.key - o2.key : o1.vertex - o2.vertex);
+            o1.key - o2.key != 0 ? o1.key - o2.key : o1.vertex - o2.vertex);
 
         for (int i = 0; i < size; i++) {
             // Initialize key values to infinity

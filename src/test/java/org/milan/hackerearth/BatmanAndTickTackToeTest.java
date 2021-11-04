@@ -14,10 +14,10 @@ class BatmanAndTickTackToeTest {
     @Test
     void testIsWonScenarioAvailable() {
         char[][] matrix = {
-                {'x', '.', '.', 'x'},
-                {'.', 'o', 'x', '.'},
-                {'o', '.', '.', '.'},
-                {'o', 'x', 'o', '.'}
+            {'x', '.', '.', 'x'},
+            {'.', 'o', 'x', '.'},
+            {'o', '.', '.', '.'},
+            {'o', 'x', 'o', '.'}
         };
 
         BatmanAndTickTackToe batmanAndTickTackToe = new BatmanAndTickTackToe();

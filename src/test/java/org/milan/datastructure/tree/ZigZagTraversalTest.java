@@ -22,6 +22,6 @@ class ZigZagTraversalTest {
     @Test
     void testTraverse() {
         assertEquals("1 3 2 4 5 6 7",
-                new ZigZagTraversal().traverse(binaryTree.getRoot()));
+            new ZigZagTraversal().traverse(binaryTree.getRoot()));
     }
 }

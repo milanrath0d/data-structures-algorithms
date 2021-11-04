@@ -117,7 +117,7 @@ public class BinaryTreeFromInOrderAndPreOrder {
 
         if (inMid < inEnd) {
             root.right = buildRecursiveUsingHashMap(preOrder, map,
-                    index + inMid - inStart + 1, inMid + 1, inEnd);
+                index + inMid - inStart + 1, inMid + 1, inEnd);
         }
 
         return root;

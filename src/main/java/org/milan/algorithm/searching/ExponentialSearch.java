@@ -32,6 +32,6 @@ public class ExponentialSearch {
 
         // Call binary search for the found range.
         return Arrays.binarySearch(inputArray, i / 2,
-                Math.min(i, arraySize), number);
+            Math.min(i, arraySize), number);
     }
 }

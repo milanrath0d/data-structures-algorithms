@@ -42,7 +42,7 @@ public class MinimumSteps {
         int sum = 0, step = 0;
 
         while (sum < target || (sum - target) % 2
-                != 0) {
+            != 0) {
             step++;
             sum += step;
         }

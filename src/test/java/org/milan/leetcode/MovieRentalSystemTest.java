@@ -19,7 +19,7 @@ class MovieRentalSystemTest {
     @Test
     void testOperations() {
         MovieRentalSystem movieRentalSystem = new MovieRentalSystem(3, new int[][]{{0, 1, 5}, {0, 2, 6}, {0, 3, 7},
-                {1, 1, 4}, {1, 2, 7}, {2, 1, 5}});
+            {1, 1, 4}, {1, 2, 7}, {2, 1, 5}});
 
         assertTrue(ListUtil.isEqual(Arrays.asList(1, 0, 2), movieRentalSystem.search(1)));
 

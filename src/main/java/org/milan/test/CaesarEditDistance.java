@@ -41,7 +41,7 @@ public class CaesarEditDistance {
         int n = source.length();
         int m = target.length();
 
-        int dp[][] = new int[m + 1][n + 1];
+        int[][] dp = new int[m + 1][n + 1];
 
         for (int i = 0; i <= n; i++) {
             dp[i][0] = i;

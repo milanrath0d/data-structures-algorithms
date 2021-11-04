@@ -20,7 +20,7 @@ public class MinCostPath {
             return cost[m][n];
         } else {
             return cost[m][n] + min(minCost(cost, m - 1, n - 1),
-                    minCost(cost, m, n - 1), minCost(cost, m - 1, n));
+                minCost(cost, m, n - 1), minCost(cost, m - 1, n));
         }
     }
 
@@ -53,8 +53,8 @@ public class MinCostPath {
         for (int i = 1; i <= m; i++)
             for (int j = 1; j <= n; j++)
                 dp[i][j] = min(dp[i - 1][j - 1],
-                        dp[i - 1][j],
-                        dp[i][j - 1]) + cost[i][j];
+                    dp[i - 1][j],
+                    dp[i][j - 1]) + cost[i][j];
 
         return dp[m][n];
     }
@@ -84,8 +84,8 @@ public class MinCostPath {
         for (int i = 1; i <= m; i++)
             for (int j = 1; j <= n; j++)
                 cost[i][j] += min(cost[i - 1][j - 1],
-                        cost[i - 1][j],
-                        cost[i][j - 1]);
+                    cost[i - 1][j],
+                    cost[i][j - 1]);
 
         return cost[m][n];
     }

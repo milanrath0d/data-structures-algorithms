@@ -14,11 +14,11 @@ class MaximumSizeSquareSubMatrixTest {
     @Test
     void testFindMaximum() {
         int[][] matrix = {{0, 1, 1, 0, 1},
-                {1, 1, 0, 1, 0},
-                {0, 1, 1, 1, 0},
-                {1, 1, 1, 1, 0},
-                {1, 1, 1, 1, 1},
-                {0, 0, 0, 0, 0}};
+            {1, 1, 0, 1, 0},
+            {0, 1, 1, 1, 0},
+            {1, 1, 1, 1, 0},
+            {1, 1, 1, 1, 1},
+            {0, 0, 0, 0, 0}};
 
         MaximumSizeSquareSubMatrix maximumSizeSquareSubMatrix = new MaximumSizeSquareSubMatrix();
 

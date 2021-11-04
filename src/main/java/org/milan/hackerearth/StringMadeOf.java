@@ -13,15 +13,15 @@ import java.util.Map;
 public class StringMadeOf {
 
     private static final Map<Integer, Integer> mapping = Map.of(0, 6,
-            1, 2,
-            2, 5,
-            3, 5,
-            4, 4,
-            5, 5,
-            6, 6,
-            7, 3,
-            8, 7,
-            9, 6);
+        1, 2,
+        2, 5,
+        3, 5,
+        4, 4,
+        5, 5,
+        6, 6,
+        7, 3,
+        8, 7,
+        9, 6);
 
     public int countDashes(String inputString) {
 

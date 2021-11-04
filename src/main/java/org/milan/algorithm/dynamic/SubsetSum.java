@@ -120,7 +120,7 @@ public class SubsetSum {
                     subset[i % 2][j] = false;
                 else if (arr[i - 1] <= j)
                     subset[i % 2][j] = subset[(i + 1) % 2]
-                            [j - arr[i - 1]] || subset[(i + 1) % 2][j];
+                        [j - arr[i - 1]] || subset[(i + 1) % 2][j];
                 else
                     subset[i % 2][j] = subset[(i + 1) % 2][j];
             }

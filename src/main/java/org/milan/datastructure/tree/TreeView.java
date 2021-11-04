@@ -15,6 +15,12 @@ import java.util.stream.Collectors;
  */
 public class TreeView {
 
+    private final VerticalTraversal verticalTraversal;
+
+    public TreeView() {
+        this.verticalTraversal = new VerticalTraversal();
+    }
+
     /**
      * Maximum level being used in left view
      */
@@ -34,9 +40,6 @@ public class TreeView {
      * @return list of node keys visible from top view
      */
     public List<Integer> topView(Node<Integer> root) {
-
-        // TODO check if we can move this statement to constructor
-        VerticalTraversal verticalTraversal = new VerticalTraversal();
 
         // Store horizontal distance as key and value as list of nodes
         Map<Integer, List<Node<Integer>>> map = new TreeMap<>();

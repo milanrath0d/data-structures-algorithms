@@ -20,19 +20,19 @@ class SmallerNumbersAfterSelfTest {
         SmallerNumbersAfterSelf smallerNumbersAfterSelf = new SmallerNumbersAfterSelf();
 
         assertTrue(ListUtil.isEqual(Arrays.asList(2, 1, 1, 0), smallerNumbersAfterSelf.countSmaller(
-                new int[]{5, 2, 6, 1}
+            new int[]{5, 2, 6, 1}
         )));
 
         assertTrue(ListUtil.isEqual(Collections.singletonList(0), smallerNumbersAfterSelf.countSmaller(
-                new int[]{-1}
+            new int[]{-1}
         )));
 
         assertTrue(ListUtil.isEqual(Arrays.asList(0, 0), smallerNumbersAfterSelf.countSmaller(
-                new int[]{-1, -1}
+            new int[]{-1, -1}
         )));
 
         assertTrue(ListUtil.isEqual(Arrays.asList(0, 1, 0), smallerNumbersAfterSelf.countSmaller(
-                new int[]{0, 2, 1}
+            new int[]{0, 2, 1}
         )));
     }
 }

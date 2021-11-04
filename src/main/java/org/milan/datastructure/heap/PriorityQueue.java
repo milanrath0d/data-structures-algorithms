@@ -43,7 +43,7 @@ public class PriorityQueue {
         priorityQueue.poll();
 
         System.out.println("After removing an element "
-                + "with poll function:");
+            + "with poll function:");
         for (Integer integer : priorityQueue) {
             System.out.println(integer);
         }
@@ -52,7 +52,7 @@ public class PriorityQueue {
         priorityQueue.remove(30);
 
         System.out.println("after removing 30 with"
-                + " remove function:");
+            + " remove function:");
         for (Integer integer : priorityQueue) {
             System.out.println(integer);
         }
@@ -60,7 +60,7 @@ public class PriorityQueue {
         // Check if an element is present using contains()
         boolean b = priorityQueue.contains(20);
         System.out.println("Priority queue contains 20 "
-                + "or not?: " + b);
+            + "or not?: " + b);
 
         // Getting objects from the queue using toArray()
         // in an array and print the array

@@ -24,7 +24,7 @@ public class InorderPredecessor {
             return null;
 
         if (root == x || (temp = findInorderRec(root.right, temp, x)) != null ||
-                (temp = findInorderRec(root.left, temp, x)) != null) {
+            (temp = findInorderRec(root.left, temp, x)) != null) {
             if (temp != null) {
                 if (root.right == temp) {
                     return root;

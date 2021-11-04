@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class SumPairsInRotatedArray {
 
-    private MinimumElementInRotatedArray minimumElementInRotatedArray;
+    private final MinimumElementInRotatedArray minimumElementInRotatedArray;
 
     public SumPairsInRotatedArray() {
         minimumElementInRotatedArray = new MinimumElementInRotatedArray();

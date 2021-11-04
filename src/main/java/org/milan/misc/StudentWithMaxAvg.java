@@ -37,7 +37,7 @@ public class StudentWithMaxAvg {
         for (Map.Entry<String, List<Integer>> entry : map.entrySet()) {
             List<Integer> integers = entry.getValue();
             int average = (int) integers.stream().mapToInt(i -> i)
-                    .average().getAsDouble();
+                .average().getAsDouble();
 
             if (average > max) {
                 max = average;

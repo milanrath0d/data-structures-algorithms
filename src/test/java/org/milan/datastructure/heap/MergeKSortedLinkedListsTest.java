@@ -45,7 +45,7 @@ class MergeKSortedLinkedListsTest {
         MergeKSortedLinkedLists mergeKSortedLinkedLists = new MergeKSortedLinkedLists();
 
         List<LinkedList.Node<Integer>> lists = Arrays.asList(linkedList1.getHead(),
-                linkedList2.getHead(), linkedList3.getHead());
+            linkedList2.getHead(), linkedList3.getHead());
 
         LinkedList.Node<Integer> mergedHead = mergeKSortedLinkedLists.merge(lists, 3);
 

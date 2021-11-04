@@ -32,7 +32,7 @@ public class PostOrderFromInOrderAndPreOrder {
         // If right subtree is not empty, recur right subtree
         if (root != n - 1)
             postOrder(Arrays.copyOfRange(in, root + 1, n),
-                    Arrays.copyOfRange(pre, root + 1, n), n - root - 1, list);
+                Arrays.copyOfRange(pre, root + 1, n), n - root - 1, list);
 
         list.add(pre[0]);
     }

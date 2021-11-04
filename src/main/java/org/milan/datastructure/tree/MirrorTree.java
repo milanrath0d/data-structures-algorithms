@@ -93,8 +93,8 @@ public class MirrorTree {
 
         // Both the nodes are non-empty
         return (src.key.equals(target.key)
-                && isMirror(src.left, target.right)
-                && isMirror(src.right, target.left));
+            && isMirror(src.left, target.right)
+            && isMirror(src.right, target.left));
     }
 
 }
