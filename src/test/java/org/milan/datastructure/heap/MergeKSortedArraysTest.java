@@ -14,8 +14,8 @@ class MergeKSortedArraysTest {
     @Test
     void testMerge() {
         int[][] input = {{2, 34},
-                {1, 9, 20},
-                {10, 33}};
+            {1, 9, 20},
+            {10, 33}};
 
         MergeKSortedArrays mergeKSortedArrays = new MergeKSortedArrays();
 

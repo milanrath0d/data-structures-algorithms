@@ -34,7 +34,7 @@ public class MinimumPlatforms {
             for (int j = i + 1; j < arrivals.length; j++) {
 
                 if ((arrivals[i] >= arrivals[j] && arrivals[i] <= departures[j])
-                        || (arrivals[j] >= arrivals[i] && arrivals[j] <= departures[i])) {
+                    || (arrivals[j] >= arrivals[i] && arrivals[j] <= departures[i])) {
                     minimumPlatforms++;
                 }
             }

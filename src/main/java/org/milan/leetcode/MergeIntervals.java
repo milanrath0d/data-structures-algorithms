@@ -1,6 +1,9 @@
 package org.milan.leetcode;
 
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Deque;
 
 /**
  * Refer {@link @https://leetcode.com/problems/merge-intervals/}

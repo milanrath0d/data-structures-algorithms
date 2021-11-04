@@ -14,8 +14,8 @@ class MinCostPathTest {
     @Test
     void testMinCost() {
         int cost[][] = {{1, 2, 3},
-                {4, 8, 2},
-                {1, 5, 3}};
+            {4, 8, 2},
+            {1, 5, 3}};
 
         MinCostPath minCostPath = new MinCostPath();
 
@@ -27,8 +27,8 @@ class MinCostPathTest {
     @Test
     void testMinCostV2() {
         int cost[][] = {{1, 2, 3},
-                {4, 8, 2},
-                {1, 5, 3}};
+            {4, 8, 2},
+            {1, 5, 3}};
 
         MinCostPath minCostPath = new MinCostPath();
 
@@ -40,8 +40,8 @@ class MinCostPathTest {
     @Test
     void testMinCostV3() {
         int cost[][] = {{1, 2, 3},
-                {4, 8, 2},
-                {1, 5, 3}};
+            {4, 8, 2},
+            {1, 5, 3}};
 
         MinCostPath minCostPath = new MinCostPath();
 

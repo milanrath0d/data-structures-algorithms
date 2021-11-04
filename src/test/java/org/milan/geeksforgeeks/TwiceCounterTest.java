@@ -16,8 +16,8 @@ class TwiceCounterTest {
         TwiceCounter twiceCounter = new TwiceCounter();
 
         String[] str = {"hate", "love", "peace", "love",
-                "peace", "hate", "love", "peace",
-                "love", "peace"};
+            "peace", "hate", "love", "peace",
+            "love", "peace"};
 
         int result = twiceCounter.countWords(str, str.length);
 

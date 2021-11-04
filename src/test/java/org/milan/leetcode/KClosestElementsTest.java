@@ -20,7 +20,7 @@ class KClosestElementsTest {
         assertEquals(List.of(1, 2, 3, 4), kClosestElements.findClosestElements(new int[]{1, 2, 3, 4, 5}, 4, 3));
 
         assertEquals(List.of(-5, -3, -2),
-                kClosestElements.findClosestElements(new int[]{-10, -5, -3, -2, 0, 1, 2}, 3, -3));
+            kClosestElements.findClosestElements(new int[]{-10, -5, -3, -2, 0, 1, 2}, 3, -3));
     }
 
     @Test
@@ -30,6 +30,6 @@ class KClosestElementsTest {
         assertEquals(List.of(1, 2, 3, 4), kClosestElements.findClosestElementsV2(new int[]{1, 2, 3, 4, 5}, 4, 3));
 
         assertEquals(List.of(-5, -3, -2),
-                kClosestElements.findClosestElementsV2(new int[]{-10, -5, -3, -2, 0, 1, 2}, 3, -3));
+            kClosestElements.findClosestElementsV2(new int[]{-10, -5, -3, -2, 0, 1, 2}, 3, -3));
     }
 }

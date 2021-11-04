@@ -17,7 +17,7 @@ public class TowersOfHanoi {
     public void listSteps(int n, String source, String target, String aux) {
         if (n == 1) {
             System.out.println("Please move from Peg " + source + "\tTo Peg\t"
-                    + target);
+                + target);
         } else {
 
             // Move top n - 1 disks from A to B using C as auxiliary
@@ -39,6 +39,6 @@ public class TowersOfHanoi {
         long endTime = System.currentTimeMillis();
 
         System.out.println("Done in " + (endTime - startTime) / 1000
-                + "\t seconds");
+            + "\t seconds");
     }
 }

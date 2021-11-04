@@ -20,8 +20,8 @@ public class CountStrings {
         }
 
         return count(n - 1, bCount, cCount) +
-                count(n - 1, bCount - 1, cCount) +
-                count(n - 1, bCount, cCount - 1);
+            count(n - 1, bCount - 1, cCount) +
+            count(n - 1, bCount, cCount - 1);
     }
 
     /**
@@ -57,8 +57,8 @@ public class CountStrings {
         }
 
         dp[n][bCount][cCount] = count(n - 1, bCount, cCount) +
-                count(n - 1, bCount - 1, cCount) +
-                count(n - 1, bCount, cCount - 1);
+            count(n - 1, bCount - 1, cCount) +
+            count(n - 1, bCount, cCount - 1);
 
         return dp[n][bCount][cCount];
     }

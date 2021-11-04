@@ -518,7 +518,7 @@ public class LinkedList<E extends Comparable<E>> {
             if (o == null || getClass() != o.getClass()) return false;
             Node<?> node = (Node<?>) o;
             return Objects.equals(data, node.data) &&
-                    Objects.equals(next, node.next);
+                Objects.equals(next, node.next);
         }
 
         @Override

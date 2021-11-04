@@ -36,8 +36,8 @@ public class InvalidTransactions {
 
             for (int j = i + 1; j < n; j++) {
                 if (name[i].equals(name[j]) &&
-                        !city[i].equals(city[j]) &&
-                        Math.abs(time[i] - time[j]) <= 60) {
+                    !city[i].equals(city[j]) &&
+                    Math.abs(time[i] - time[j]) <= 60) {
                     isInvalid[i] = true;
                     isInvalid[j] = true;
                 }

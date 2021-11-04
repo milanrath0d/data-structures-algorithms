@@ -239,8 +239,8 @@ public class BinaryTree<T extends Comparable<T>> {
 
         // Both the nodes are non-empty
         return (src.key == target.key
-                && isIdentical(src.left, target.left)
-                && isIdentical(src.right, target.right));
+            && isIdentical(src.left, target.left)
+            && isIdentical(src.right, target.right));
     }
 
     /**
@@ -269,7 +269,7 @@ public class BinaryTree<T extends Comparable<T>> {
         }
 
         return isFoldableUtil(src.left, target.right) &&
-                isFoldableUtil(src.right, target.left);
+            isFoldableUtil(src.right, target.left);
     }
 
 }

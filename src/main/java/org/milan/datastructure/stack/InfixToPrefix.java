@@ -45,7 +45,7 @@ public class InfixToPrefix {
                 ExpressionConversionUtil.pop(stack);
             } else {
                 while (!stack.isEmpty() && stack.peek() != ')' &&
-                        ExpressionConversionUtil.precedence(c) <= ExpressionConversionUtil.precedence(stack.peek()))
+                    ExpressionConversionUtil.precedence(c) <= ExpressionConversionUtil.precedence(stack.peek()))
                     output.append(ExpressionConversionUtil.pop(stack));
 
                 stack.push(c);

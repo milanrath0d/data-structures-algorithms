@@ -25,11 +25,11 @@ class DictionaryStringsMatchingTest {
     @BeforeEach
     void init() {
         dictionary = List.of("find", "a", "geeks",
-                "all", "for", "on",
-                "geeks", "answers", "inter");
+            "all", "for", "on",
+            "geeks", "answers", "inter");
 
         words = List.of("find", "all", "answers", "on",
-                "geeks", "for", "geeks");
+            "geeks", "for", "geeks");
 
         dictionaryStringsMatching = new DictionaryStringsMatching();
     }

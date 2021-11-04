@@ -18,6 +18,6 @@ class MatchingSubsequencesTest {
         assertEquals(3, matchingSubsequences.find("abcde", new String[]{"a", "bb", "acd", "ace"}));
 
         assertEquals(2, matchingSubsequences.find("dsahjpjauf",
-                new String[]{"ahjpjau", "ja", "ahbwzgqnuk", "tnmlanowax"}));
+            new String[]{"ahjpjau", "ja", "ahbwzgqnuk", "tnmlanowax"}));
     }
 }

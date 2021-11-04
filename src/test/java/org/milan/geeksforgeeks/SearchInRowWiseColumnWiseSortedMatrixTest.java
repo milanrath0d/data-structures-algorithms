@@ -15,12 +15,12 @@ class SearchInRowWiseColumnWiseSortedMatrixTest {
     @Test
     void search() {
         int[][] matrix = {{10, 20, 30, 40},
-                {15, 25, 35, 45},
-                {27, 29, 37, 48},
-                {32, 33, 39, 50}};
+            {15, 25, 35, 45},
+            {27, 29, 37, 48},
+            {32, 33, 39, 50}};
 
         SearchInRowWiseColumnWiseSortedMatrix searchInRowWiseColumnWiseSortedMatrix =
-                new SearchInRowWiseColumnWiseSortedMatrix();
+            new SearchInRowWiseColumnWiseSortedMatrix();
 
         assertTrue(searchInRowWiseColumnWiseSortedMatrix.search(matrix, 29));
 
@@ -30,12 +30,12 @@ class SearchInRowWiseColumnWiseSortedMatrixTest {
     @Test
     void searchV2() {
         int[][] matrix = {{10, 20, 30, 40},
-                {15, 25, 35, 45},
-                {27, 29, 37, 48},
-                {32, 33, 39, 50}};
+            {15, 25, 35, 45},
+            {27, 29, 37, 48},
+            {32, 33, 39, 50}};
 
         SearchInRowWiseColumnWiseSortedMatrix searchInRowWiseColumnWiseSortedMatrix =
-                new SearchInRowWiseColumnWiseSortedMatrix();
+            new SearchInRowWiseColumnWiseSortedMatrix();
 
         assertTrue(searchInRowWiseColumnWiseSortedMatrix.searchV2(matrix, 29));
 

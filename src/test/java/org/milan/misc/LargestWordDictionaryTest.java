@@ -24,14 +24,14 @@ class LargestWordDictionaryTest {
     @Test
     void findLargestWord() {
         String largestWord = largestWordDictionary.findLargestWord(List.of(
-                "ale", "apple", "monkey", "plea"
+            "ale", "apple", "monkey", "plea"
         ), "abpcplea");
 
         assertEquals("apple", largestWord);
 
         largestWord = largestWordDictionary.findLargestWord(List.of(
-                "pintu", "geeksfor", "geeksgeeks",
-                " forgeek"
+            "pintu", "geeksfor", "geeksgeeks",
+            " forgeek"
         ), "geeksforgeeks");
 
         assertEquals("geeksgeeks", largestWord);
@@ -40,7 +40,7 @@ class LargestWordDictionaryTest {
     @Test
     void findLargestWord_MultipleMatches() {
         String largestWord = largestWordDictionary.findLargestWord(List.of(
-                "abe", "abc"
+            "abe", "abc"
         ), "abce");
 
         assertEquals("abc", largestWord);

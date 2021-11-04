@@ -14,7 +14,7 @@ class PartitionArrayIntoDisjointIntervalsTest {
     @Test
     void partitionDisjoint() {
         PartitionArrayIntoDisjointIntervals partitionArrayIntoDisjointIntervals =
-                new PartitionArrayIntoDisjointIntervals();
+            new PartitionArrayIntoDisjointIntervals();
 
         assertEquals(3, partitionArrayIntoDisjointIntervals.partitionDisjoint(new int[]{5, 0, 3, 8, 6}));
 

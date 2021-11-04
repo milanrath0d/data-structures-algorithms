@@ -16,16 +16,16 @@ public class Knight {
         int result;
 
         if ((startRow == 1 && startCol == 1 && endRow == 2 && endCol == 2) ||
-                (startRow == 2 && startCol == 2 && endRow == 1 && endCol == 1))
+            (startRow == 2 && startCol == 2 && endRow == 1 && endCol == 1))
             result = 4;
         else if ((startRow == 1 && startCol == n && endRow == 2 && endCol == n - 1) ||
-                (startRow == 2 && startCol == n - 1 && endRow == 1 && endCol == n))
+            (startRow == 2 && startCol == n - 1 && endRow == 1 && endCol == n))
             result = 4;
         else if ((startRow == n && startCol == 1 && endRow == n - 1 && endCol == 2) ||
-                (startRow == n - 1 && startCol == 2 && endRow == n && endCol == 1))
+            (startRow == n - 1 && startCol == 2 && endRow == n && endCol == 1))
             result = 4;
         else if ((startRow == n && startCol == n && endRow == n - 1 && endCol == n - 1) ||
-                (startRow == n - 1 && startCol == n - 1 && endRow == n && endCol == n))
+            (startRow == n - 1 && startCol == n - 1 && endRow == n && endCol == n))
             result = 4;
         else {
             dp[1][0] = 3;
@@ -78,11 +78,11 @@ public class Knight {
                 }
 
                 dp[Math.abs(startRow - endRow)][Math.abs(startCol - endCol)]
-                        = Math.min(minMovesUtil(dp, x1, y1, endRow, endCol),
-                        minMovesUtil(dp, x2, y2, endRow, endCol)) + 1;
+                    = Math.min(minMovesUtil(dp, x1, y1, endRow, endCol),
+                    minMovesUtil(dp, x2, y2, endRow, endCol)) + 1;
 
                 dp[Math.abs(startCol - endCol)][Math.abs(startRow - endRow)]
-                        = dp[Math.abs(startRow - endRow)][Math.abs(startCol - endCol)];
+                    = dp[Math.abs(startRow - endRow)][Math.abs(startCol - endCol)];
 
                 return dp[Math.abs(startRow - endRow)][Math.abs(startCol - endCol)];
             }

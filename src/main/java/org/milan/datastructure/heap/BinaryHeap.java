@@ -271,9 +271,9 @@ public class BinaryHeap {
      */
     public int indexOf(int data) {
         return IntStream.range(0, store.length)
-                .filter(i -> data == store[i])
-                .findFirst()
-                .orElse(-1);
+            .filter(i -> data == store[i])
+            .findFirst()
+            .orElse(-1);
     }
 
     /**

@@ -19,7 +19,7 @@ class GenerateParenthesesTest {
         GenerateParentheses generateParentheses = new GenerateParentheses();
 
         assertEquals(Arrays.asList("((()))", "(()())", "(())()", "()(())", "()()()"),
-                generateParentheses.generateParenthesis(3));
+            generateParentheses.generateParenthesis(3));
 
         assertEquals(Collections.singletonList("()"), generateParentheses.generateParenthesis(1));
     }

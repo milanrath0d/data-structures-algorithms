@@ -14,7 +14,7 @@ class ReverseStringWithSpecialCharsTest {
     @Test
     void reverse() {
         ReverseStringWithSpecialChars reverseStringWithSpecialChars =
-                new ReverseStringWithSpecialChars();
+            new ReverseStringWithSpecialChars();
 
         String result = reverseStringWithSpecialChars.reverse("a,b$c");
 

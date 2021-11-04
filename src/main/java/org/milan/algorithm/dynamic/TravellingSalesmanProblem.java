@@ -45,8 +45,8 @@ public class TravellingSalesmanProblem {
             throw new IllegalArgumentException("Starting node must be: 0 <= startNode < N");
         if (N > 32)
             throw new IllegalArgumentException(
-                    "Matrix too large! A matrix that size for the DP TSP problem with a time complexity of"
-                            + "O(n^2*2^n) requires way too much computation for any modern home computer to handle");
+                "Matrix too large! A matrix that size for the DP TSP problem with a time complexity of"
+                    + "O(n^2*2^n) requires way too much computation for any modern home computer to handle");
 
         // The finished state is when the finished state mask has all bits are set to
         // one (meaning all the nodes have been visited).

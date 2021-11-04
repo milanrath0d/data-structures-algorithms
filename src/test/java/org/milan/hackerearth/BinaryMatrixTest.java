@@ -16,10 +16,10 @@ class BinaryMatrixTest {
         BinaryMatrix binaryMatrix = new BinaryMatrix();
 
         int result = binaryMatrix.maxRowValue(new int[][]{
-                {0, 1, 0, 0},
-                {1, 0, 1, 0},
-                {0, 0, 1, 0},
-                {0, 0, 1, 1}});
+            {0, 1, 0, 0},
+            {1, 0, 1, 0},
+            {0, 0, 1, 0},
+            {0, 0, 1, 1}});
 
         assertEquals(2, result);
     }

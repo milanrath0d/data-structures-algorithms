@@ -46,8 +46,8 @@ public class NearestExitFromMaze {
                 int currentColumn = point.y + colNum[i];
 
                 if (isValid(currentRow, currentColumn, m, n) &&
-                        maze[currentRow][currentColumn] != '+' &&
-                        !visited[currentRow][currentColumn]) {
+                    maze[currentRow][currentColumn] != '+' &&
+                    !visited[currentRow][currentColumn]) {
                     visited[currentRow][currentColumn] = true;
                     Node tempNode = new Node(new Point(currentRow, currentColumn), curr.distance + 1);
                     queue.add(tempNode);
@@ -69,7 +69,7 @@ public class NearestExitFromMaze {
 
     static boolean isValid(int row, int col, int m, int n) {
         return (row >= 0) && (row < m) &&
-                (col >= 0) && (col < n);
+            (col >= 0) && (col < n);
     }
 
     private static class Node {

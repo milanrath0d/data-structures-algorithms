@@ -31,9 +31,9 @@ public class GrayCode {
         List<String> binaryGrayCodes = grayCodeUtil(n);
 
         return binaryGrayCodes
-                .stream()
-                .map(binaryGrayCode -> Integer.parseInt(binaryGrayCode, 2))
-                .collect(Collectors.toList());
+            .stream()
+            .map(binaryGrayCode -> Integer.parseInt(binaryGrayCode, 2))
+            .collect(Collectors.toList());
     }
 
     public List<Integer> grayCodeV2(int n) {

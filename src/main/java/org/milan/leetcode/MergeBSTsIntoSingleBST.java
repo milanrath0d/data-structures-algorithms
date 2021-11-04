@@ -52,12 +52,12 @@ public class MergeBSTsIntoSingleBST {
                 for (TreeNode parent : leaf.get(t.val)) {
                     //Check if adding t to current parent results in valid BST
                     if (parent.left != null && parent.left.val == t.val
-                            && (t.left == null || t.left.val < parent.val)
-                            && (t.right == null || t.right.val < parent.val)) {
+                        && (t.left == null || t.left.val < parent.val)
+                        && (t.right == null || t.right.val < parent.val)) {
                         parent.left = t;
                     } else if (parent.right != null && parent.right.val == t.val
-                            && (t.left == null || t.left.val > parent.val)
-                            && (t.right == null || t.right.val > parent.val)) {
+                        && (t.left == null || t.left.val > parent.val)
+                        && (t.right == null || t.right.val > parent.val)) {
                         parent.right = t;
                     } else continue;
                     //Get the parent - Union

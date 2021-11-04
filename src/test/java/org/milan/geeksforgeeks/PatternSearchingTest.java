@@ -20,10 +20,10 @@ class PatternSearchingTest {
         PatternSearching patternSearching = new PatternSearching();
 
         assertTrue(ListUtil.isEqual(Arrays.asList(10),
-                patternSearching.search("THIS IS A TEST TEXT", "TEST")));
+            patternSearching.search("THIS IS A TEST TEXT", "TEST")));
 
         assertTrue(ListUtil.isEqual(Arrays.asList(0, 9, 12),
-                patternSearching.search("AABAACAADAABAABA", "AABA")));
+            patternSearching.search("AABAACAADAABAABA", "AABA")));
     }
 
     @Test
@@ -32,9 +32,9 @@ class PatternSearchingTest {
         PatternSearching patternSearching = new PatternSearching();
 
         assertTrue(ListUtil.isEqual(Arrays.asList(10),
-                patternSearching.searchV2("THIS IS A TEST TEXT", "TEST")));
+            patternSearching.searchV2("THIS IS A TEST TEXT", "TEST")));
 
         assertTrue(ListUtil.isEqual(Arrays.asList(0, 9, 12),
-                patternSearching.searchV2("AABAACAADAABAABA", "AABA")));
+            patternSearching.searchV2("AABAACAADAABAABA", "AABA")));
     }
 }

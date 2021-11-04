@@ -22,7 +22,7 @@ public class BytelandianGoldCoins {
         } else {
             if (memoizedResult.get(coin) == null) {
                 long result = Math.max(coin, computeMaxExchangeInDollar(coin / 2)
-                        + computeMaxExchangeInDollar(coin / 3) + computeMaxExchangeInDollar(coin / 4));
+                    + computeMaxExchangeInDollar(coin / 3) + computeMaxExchangeInDollar(coin / 4));
                 memoizedResult.put(coin, result);
                 return result;
             } else {

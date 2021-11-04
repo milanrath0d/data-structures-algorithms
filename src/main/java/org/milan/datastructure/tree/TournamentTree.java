@@ -22,6 +22,6 @@ public class TournamentTree {
         }
 
         return root.left.key == root.key ? Math.min(root.right.key, secondMin(root.left)) :
-                Math.min(root.left.key, secondMin(root.right));
+            Math.min(root.left.key, secondMin(root.right));
     }
 }

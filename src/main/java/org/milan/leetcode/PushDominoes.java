@@ -2,7 +2,7 @@ package org.milan.leetcode;
 
 /**
  * Refer {@link @https://leetcode.com/problems/push-dominoes/}
- *
+ * <p>
  * TODO understand this
  *
  * @author Milan Rathod

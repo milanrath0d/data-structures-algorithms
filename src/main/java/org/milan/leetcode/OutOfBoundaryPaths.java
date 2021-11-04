@@ -39,7 +39,7 @@ public class OutOfBoundaryPaths {
                 for (int j = 1; j <= n; j++) {
 
                     dpCurr[i][j] = (int) (((long) dpLast[i - 1][j] + dpLast[i + 1][j]
-                            + dpLast[i][j - 1] + dpLast[i][j + 1]) % 1000000007L);
+                        + dpLast[i][j - 1] + dpLast[i][j + 1]) % 1000000007L);
 
                 }
 

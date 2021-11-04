@@ -23,6 +23,6 @@ public class MaxAreaOfIsland {
         if (i < 0 || j < 0 || i >= n || j >= m || grid[i][j] < 1) return 0;
         grid[i][j] = 0;
         return 1 + traverse(i - 1, j, grid) + traverse(i, j - 1, grid)
-                + traverse(i + 1, j, grid) + traverse(i, j + 1, grid);
+            + traverse(i + 1, j, grid) + traverse(i, j + 1, grid);
     }
 }

@@ -24,7 +24,7 @@ public class CountOccurrencesInSortedArray {
         int n = arr.length;
 
         int index = binarySearch(arr, 0,
-                n, x);
+            n, x);
 
         // If element is not present
         if (index < 0)

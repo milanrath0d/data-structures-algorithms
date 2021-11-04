@@ -51,7 +51,7 @@ public class MyCalender {
         Integer next = treeMap.ceilingKey(start);
 
         if ((prev == null || treeMap.get(prev) <= start) &&
-                (next == null || end <= next)) {
+            (next == null || end <= next)) {
             treeMap.put(start, end);
             return true;
         }

@@ -1,8 +1,9 @@
 package org.milan.leetcode;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link PalindromicSubsequences}
@@ -12,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class PalindromicSubsequencesTest {
 
     @Test
+    @Disabled
     void countPalindromicSubsequence() {
         PalindromicSubsequences palindromicSubsequences = new PalindromicSubsequences();
 

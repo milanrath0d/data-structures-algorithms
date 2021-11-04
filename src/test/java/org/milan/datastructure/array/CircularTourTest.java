@@ -14,9 +14,9 @@ class CircularTourTest {
     @Test
     void getStartingPoint() {
         CircularTour.PetrolPump[] petrolPumps = {new CircularTour.PetrolPump(4, 6),
-                new CircularTour.PetrolPump(6, 5),
-                new CircularTour.PetrolPump(7, 3),
-                new CircularTour.PetrolPump(4, 5)};
+            new CircularTour.PetrolPump(6, 5),
+            new CircularTour.PetrolPump(7, 3),
+            new CircularTour.PetrolPump(4, 5)};
 
         CircularTour circularTour = new CircularTour();
 
@@ -25,8 +25,8 @@ class CircularTourTest {
         assertEquals(1, startingPoint);
 
         petrolPumps = new CircularTour.PetrolPump[]{new CircularTour.PetrolPump(6, 4),
-                new CircularTour.PetrolPump(3, 6),
-                new CircularTour.PetrolPump(7, 3)};
+            new CircularTour.PetrolPump(3, 6),
+            new CircularTour.PetrolPump(7, 3)};
 
         startingPoint = circularTour.getStartingPoint(petrolPumps);
 

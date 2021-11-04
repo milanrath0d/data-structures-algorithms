@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * Refer {@link @https://leetcode.com/problems/word-ladder-ii/}
- *
+ * <p>
  * TODO understand this
  *
  * @author Milan Rathod
@@ -63,7 +63,7 @@ public class WordLadderII {
         ArrayList<String> res = new ArrayList<>();
         char chs[] = node.toCharArray();
 
-        for (char ch ='a'; ch <= 'z'; ch++) {
+        for (char ch = 'a'; ch <= 'z'; ch++) {
             for (int i = 0; i < chs.length; i++) {
                 if (chs[i] == ch) continue;
                 char old_ch = chs[i];

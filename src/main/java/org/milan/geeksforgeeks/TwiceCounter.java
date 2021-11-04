@@ -29,9 +29,9 @@ public class TwiceCounter {
         }
 
         return (int) map
-                .entrySet()
-                .stream()
-                .filter(stringIntegerEntry -> stringIntegerEntry.getValue() == 2)
-                .count();
+            .entrySet()
+            .stream()
+            .filter(stringIntegerEntry -> stringIntegerEntry.getValue() == 2)
+            .count();
     }
 }

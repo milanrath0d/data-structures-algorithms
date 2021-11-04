@@ -19,7 +19,7 @@ class RoysLifeCycleTest {
         RoysLifeCycle roysLifeCycle = new RoysLifeCycle();
 
         assertEquals(7, roysLifeCycle.getLongestCodingStreakPerDay(List.of("SSSSEEEECCCCEECCCC",
-                "CCCCCSSSSEEECCCCSS", "SSSSSEEESSCCCCCCCS", "EESSSSCCCCCCSSEEEE")));
+            "CCCCCSSSSEEECCCCSS", "SSSSSEEESSCCCCCCCS", "EESSSSCCCCCCSSEEEE")));
 
         assertEquals(9, roysLifeCycle.getLongestCodingStreakAcross());
     }

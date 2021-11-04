@@ -26,7 +26,7 @@ public class MaximumSizeSquareSubMatrix {
             for (j = 1; j < columns; j++) {
                 if (matrix[i][j] == 1)
                     S[i][j] = Math.min(S[i][j - 1],
-                            Math.min(S[i - 1][j], S[i - 1][j - 1])) + 1;
+                        Math.min(S[i - 1][j], S[i - 1][j - 1])) + 1;
                 else
                     S[i][j] = 0;
             }

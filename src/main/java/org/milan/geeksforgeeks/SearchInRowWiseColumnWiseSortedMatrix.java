@@ -56,7 +56,7 @@ public class SearchInRowWiseColumnWiseSortedMatrix {
 
     private boolean searchUtil(int[][] matrix, int[] upperLeft, int[] lowerRight, int target) {
         if (upperLeft[0] > lowerRight[0] || upperLeft[1] > lowerRight[1]
-                || lowerRight[0] >= matrix.length || lowerRight[1] >= matrix[0].length)
+            || lowerRight[0] >= matrix.length || lowerRight[1] >= matrix[0].length)
             return false;
         if (lowerRight[0] - upperLeft[0] == 0 && lowerRight[1] - upperLeft[1] == 0)
             return matrix[upperLeft[0]][upperLeft[1]] == target;
@@ -65,12 +65,12 @@ public class SearchInRowWiseColumnWiseSortedMatrix {
         int diff = matrix[rowMid][colMid] - target;
         if (diff > 0) {
             return searchUtil(matrix, upperLeft, new int[]{rowMid, colMid}, target)
-                    || searchUtil(matrix, new int[]{upperLeft[0], colMid + 1}, new int[]{rowMid, lowerRight[1]}, target)
-                    || searchUtil(matrix, new int[]{rowMid + 1, upperLeft[1]}, new int[]{lowerRight[0], colMid}, target);
+                || searchUtil(matrix, new int[]{upperLeft[0], colMid + 1}, new int[]{rowMid, lowerRight[1]}, target)
+                || searchUtil(matrix, new int[]{rowMid + 1, upperLeft[1]}, new int[]{lowerRight[0], colMid}, target);
         } else if (diff < 0) {
             return searchUtil(matrix, new int[]{upperLeft[0], colMid + 1}, new int[]{rowMid, lowerRight[1]}, target)
-                    || searchUtil(matrix, new int[]{rowMid + 1, upperLeft[1]}, new int[]{lowerRight[0], colMid}, target)
-                    || searchUtil(matrix, new int[]{rowMid + 1, colMid + 1}, lowerRight, target);
+                || searchUtil(matrix, new int[]{rowMid + 1, upperLeft[1]}, new int[]{lowerRight[0], colMid}, target)
+                || searchUtil(matrix, new int[]{rowMid + 1, colMid + 1}, lowerRight, target);
         } else return true;
     }
 

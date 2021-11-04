@@ -53,7 +53,7 @@ public class LongestPalindromeSubstring {
                 // jth index iff str.charAt(i+1) to
                 // str.charAt(j-1) is a palindrome
                 if (table[i + 1][j - 1] && str.charAt(i) ==
-                        str.charAt(j)) {
+                    str.charAt(j)) {
                     table[i][j] = true;
 
                     if (k > maxLength) {
@@ -92,7 +92,7 @@ public class LongestPalindromeSubstring {
             low = i - 1;
             high = i;
             while (low >= 0 && high < len
-                    && str.charAt(low) == str.charAt(high)) {
+                && str.charAt(low) == str.charAt(high)) {
                 if (high - low + 1 > maxLength) {
                     start = low;
                     maxLength = high - low + 1;
@@ -106,7 +106,7 @@ public class LongestPalindromeSubstring {
             low = i - 1;
             high = i + 1;
             while (low >= 0 && high < len
-                    && str.charAt(low) == str.charAt(high)) {
+                && str.charAt(low) == str.charAt(high)) {
                 if (high - low + 1 > maxLength) {
                     start = low;
                     maxLength = high - low + 1;

@@ -1,8 +1,5 @@
 package org.milan.leetcode;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * @author Milan Rathod
  */
