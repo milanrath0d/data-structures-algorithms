@@ -17,7 +17,7 @@ public class KthSmallestElement {
      * <p>
      * Time complexity: O(k*logn)
      *
-     * @param arr given array
+     * @param arr given an array
      * @param k   kth element
      * @return kth smallest element
      */
@@ -37,11 +37,11 @@ public class KthSmallestElement {
     }
 
     /**
-     * Second approach: use of priority queue
+     * Second approach: use of a priority queue
      * <p>
      * Timex complexity: O(k*logk)
      *
-     * @param arr given array
+     * @param arr given an array
      * @param k   kth element
      * @return kth smallest element
      */
@@ -81,7 +81,7 @@ public class KthSmallestElement {
     }
 
     /**
-     * Build minimum binary heap from given array and return
+     * Build minimum binary heap from a given array and return
      */
     private BinaryHeap buildMinBinaryHeap(int[] arr) {
         BinaryHeap binaryHeap = new BinaryHeap(arr.length, HeapType.MIN);
