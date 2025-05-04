@@ -6,7 +6,7 @@ import java.util.Deque;
 import java.util.List;
 
 /**
- * Refer {@link @https://leetcode.com/problems/sliding-window-maximum/}
+ * Refer {@link @<a href="https://leetcode.com/problems/sliding-window-maximum/">...</a>}
  *
  * @author Milan Rathod
  */
@@ -20,11 +20,11 @@ public class SlidingWindowMaximum {
      *
      * @param nums input array
      * @param k    window size
-     * @return list of integers of maximum elements
+     * @return integers list of maximum elements
      */
     public int[] maxSlidingWindow(int[] nums, int k) {
 
-        // Stores index of array element
+        // Stores index of an array element
         Deque<Integer> deque = new ArrayDeque<>(k);
 
         int n = nums.length;
@@ -35,21 +35,22 @@ public class SlidingWindowMaximum {
 
         for (int i = 0; i < nums.length; i++) {
 
-            // Remove the elements which are out of window
+            // Remove elements outside the current window
             while (!deque.isEmpty() && deque.peek() <= i - k) {
                 deque.removeFirst();
             }
 
-            // For every element, the previous smaller element is useless so remove it from deque
+            // Remove smaller elements as they cannot be the maximum
             while (!deque.isEmpty() && nums[i] >= nums[deque.peekLast()]) {
                 deque.removeLast();
             }
 
-            // Add new element at the deque
+            // Add current element's index
             deque.addLast(i);
 
+            // Add to the result if we've reached window size
             if (i >= k - 1) {
-                output[index++] = nums[deque.peek()];
+                output[index++] = nums[deque.peekFirst()];
             }
         }
 
@@ -57,7 +58,7 @@ public class SlidingWindowMaximum {
     }
 
     /**
-     * Get maximum element from window of size k
+     * Get a maximum element from a window of size k
      * <p>
      * Time Complexity: O(n*k)
      *
