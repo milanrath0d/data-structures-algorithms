@@ -1,7 +1,7 @@
 package org.milan.leetcode;
 
 /**
- * Refer {@link @https://leetcode.com/problems/max-consecutive-ones/}
+ * Refer {@link @<a href="https://leetcode.com/problems/max-consecutive-ones/">...</a>}
  *
  * @author Milan Rathod
  */
