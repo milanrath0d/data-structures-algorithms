@@ -5,20 +5,21 @@ import java.util.Arrays;
 /**
  * Problem: The knight's tour problem
  * <p>
- * refer {@link @https://www.geeksforgeeks.org/the-knights-tour-problem-backtracking-1/}
+ * refer {@link @<a href="https://www.geeksforgeeks.org/the-knights-tour-problem-backtracking-1/">...</a>}
  *
  * @author Milan Rathod
  */
 public class KnightTour {
 
-    private static final int N = 8;
-
-    public static void main(String[] args) {
-        new KnightTour().solve();
-    }
-
-    private void solve() {
-        int[][] solution = new int[N][N];
+    /**
+     * Solve knight tour problem using backtracking
+     *
+     * @param n size of the chessboard (n x n)
+     * @return solution matrix with the sequence of knight's moves
+     * or {{-1}} if no solution exists
+     */
+    public int[][] solve(int n) {
+        int[][] solution = new int[n][n];
 
         // Initialization of solution matrix
         for (int[] row : solution) {
@@ -32,28 +33,28 @@ public class KnightTour {
         // Knight will initially starts from 0
         solution[0][0] = 0;
 
-        if (!explore(0, 0, 1, solution, xMove, yMove)) {
-            System.out.println("Solution does not exist!");
+        if (!explore(0, 0, 1, n, solution, xMove, yMove)) {
+            return new int[][]{{-1}};
         } else {
-            printSolution(solution);
+            return solution;
         }
     }
 
     /**
      * A recursive method to solve knight tour problem
      */
-    private boolean explore(int x, int y, int move, int[][] solution, int[] xMove, int[] yMove) {
+    private boolean explore(int x, int y, int move, int n, int[][] solution, int[] xMove, int[] yMove) {
         int k, nextX, nextY;
-        if (move == N * N) {
+        if (move == n * n) {
             return true;
         }
 
-        for (k = 0; k < N; k++) {
+        for (k = 0; k < 8; k++) {
             nextX = x + xMove[k];
             nextY = y + yMove[k];
-            if (isValid(nextX, nextY, solution)) {
+            if (isValid(nextX, nextY, n, solution)) {
                 solution[nextX][nextY] = move;
-                if (explore(nextX, nextY, move + 1, solution, xMove, yMove)) {
+                if (explore(nextX, nextY, move + 1, n, solution, xMove, yMove)) {
                     return true;
                 } else {
                     // Backtracking
@@ -68,16 +69,8 @@ public class KnightTour {
     /**
      * x and y are valid indexes for next move in chessboard
      */
-    private boolean isValid(int x, int y, int[][] solution) {
-        return (x >= 0 && x < N && y >= 0 && y < N && solution[x][y] == -1);
+    private boolean isValid(int x, int y, int n, int[][] solution) {
+        return (x >= 0 && x < n && y >= 0 && y < n && solution[x][y] == -1);
     }
 
-    private void printSolution(int[][] solution) {
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
-                System.out.print(solution[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
 }

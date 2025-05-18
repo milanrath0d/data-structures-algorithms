@@ -1,14 +1,9 @@
-package org.milan.test;
+package org.milan.misc;
 
 /**
  * @author Milan Rathod
  */
 public class CaesarEditDistance {
-
-    public static void main(String[] args) {
-        System.out.println(editDistance("abc", "gzu"));
-        //System.out.println(editDistance("www", "ssh"));
-    }
 
     public static int editDistance(String source, String target) {
         int minDistance = Integer.MAX_VALUE;
@@ -41,7 +36,7 @@ public class CaesarEditDistance {
         int n = source.length();
         int m = target.length();
 
-        int[][] dp = new int[m + 1][n + 1];
+        int[][] dp = new int[n + 1][m + 1];
 
         for (int i = 0; i <= n; i++) {
             dp[i][0] = i;
@@ -61,6 +56,6 @@ public class CaesarEditDistance {
             }
         }
 
-        return dp[m][n];
+        return dp[n][m];
     }
 }

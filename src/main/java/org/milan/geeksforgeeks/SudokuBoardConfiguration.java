@@ -10,7 +10,7 @@ import java.util.Set;
  *
  * @author Milan Rathod
  */
-public class Sudoku {
+public class SudokuBoardConfiguration {
 
     public boolean isValidSudoku(int[][] matrix) {
 
