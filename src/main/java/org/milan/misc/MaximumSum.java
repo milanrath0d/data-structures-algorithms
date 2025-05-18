@@ -1,4 +1,4 @@
-package org.milan.test;
+package org.milan.misc;
 
 import java.util.Arrays;
 import java.util.List;

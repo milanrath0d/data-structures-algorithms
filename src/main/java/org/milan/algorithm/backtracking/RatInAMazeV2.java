@@ -3,7 +3,7 @@ package org.milan.algorithm.backtracking;
 /**
  * Problem: Rat in a maze
  * <p>
- * refer {@link @https://www.geeksforgeeks.org/rat-in-a-maze-with-multiple-steps-jump-allowed/}
+ * refer {@link @<a href="https://www.geeksforgeeks.org/rat-in-a-maze-with-multiple-steps-jump-allowed/">...</a>}
  *
  * @author Milan Rathod
  */

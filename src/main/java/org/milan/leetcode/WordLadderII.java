@@ -5,7 +5,6 @@ import java.util.*;
 /**
  * Refer {@link @https://leetcode.com/problems/word-ladder-ii/}
  * <p>
- * TODO understand this
  *
  * @author Milan Rathod
  */
