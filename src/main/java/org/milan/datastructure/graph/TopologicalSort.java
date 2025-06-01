@@ -5,26 +5,29 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * Problem: {@link @https://www.geeksforgeeks.org/topological-sorting/}
+ * Problem: {@link @<a href="https://www.geeksforgeeks.org/topological-sorting/">...</a>}
  *
  * @author Milan Rathod
  */
 public class TopologicalSort {
 
-    private final Graph graph;
-
-    public TopologicalSort(Graph graph) {
-        this.graph = graph;
-    }
-
     /**
-     * topological sort of given direct acyclic graph
+     * Sorts the vertices of a directed graph in topological order using Depth First Search (DFS).
      * <p>
-     * Time complexity: O(V+E)
+     * Time Complexity: O(V+E)
      *
-     * @return list of integers of topologically sorted vertices
+     * @param vertex the number of vertices in the graph
+     * @param edges  the adjacency representation of the edges in the graph,
+     *               where each sub-array contains two integers [source, destination]
+     *               representing a directed edge from source to destination
+     * @return a list of integers representing the topological order of the vertices
      */
-    public List<Integer> sort() {
+    public List<Integer> sort(int vertex, int[][] edges) {
+        Graph graph = new Graph(vertex);
+
+        for (int[] edge : edges) {
+            graph.addEdge(graph, edge[0], edge[1]);
+        }
 
         Stack<Integer> stack = new Stack<>();
 
@@ -34,7 +37,7 @@ public class TopologicalSort {
         // to store topological order
         for (int i = 0; i < graph.getSize(); i++) {
             if (!visited[i]) {
-                visit(i, visited, stack);
+                visit(i, visited, graph, stack);
             }
         }
 
@@ -54,7 +57,7 @@ public class TopologicalSort {
      * @param visited array storing status of visited vertices
      * @param stack   used for storing vertices
      */
-    private void visit(int v, boolean[] visited, Stack<Integer> stack) {
+    private void visit(int v, boolean[] visited, Graph graph, Stack<Integer> stack) {
 
         // Mark the current node as visited
         visited[v] = true;
@@ -65,7 +68,7 @@ public class TopologicalSort {
         // Visit all adjacent vertices if visited flag is false
         for (Integer i : neighbours) {
             if (!visited[i]) {
-                visit(i, visited, stack);
+                visit(i, visited, graph, stack);
             }
         }
 

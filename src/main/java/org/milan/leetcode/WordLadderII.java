@@ -1,95 +1,124 @@
 package org.milan.leetcode;
 
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
 
 /**
- * Refer {@link @https://leetcode.com/problems/word-ladder-ii/}
+ * Refer {@link @<a href="https://leetcode.com/problems/word-ladder-ii/">...</a>}
  * <p>
  *
  * @author Milan Rathod
  */
 public class WordLadderII {
 
+    /**
+     * Finds all shortest transformation sequences from the start word to the end word
+     * using the words in the given word list, where each transformation must be a valid word
+     * and change only one character at a time.
+     *
+     * @param start    the starting word
+     * @param end      the target word
+     * @param wordList the list of available words to use for transformations
+     * @return a list of lists, where each list represents one of the shortest transformation sequences
+     */
     public List<List<String>> findLadders(String start, String end, List<String> wordList) {
-        Set<String> dict = new HashSet<>(wordList);
-        List<List<String>> res = new ArrayList<>();
-        HashMap<String, ArrayList<String>> nodeNeighbors = new HashMap<>();// Neighbors for every node
-        HashMap<String, Integer> distance = new HashMap<>();// Distance of every node from the start node
-        ArrayList<String> solution = new ArrayList<>();
+        List<List<String>> results = new ArrayList<>();
+        if (wordList.isEmpty()) {
+            return results;
+        }
 
-        dict.add(start);
-        bfs(start, end, dict, nodeNeighbors, distance);
-        dfs(start, end, dict, nodeNeighbors, distance, solution, res);
-        return res;
-    }
+        int min = Integer.MAX_VALUE;
 
-    // BFS: Trace every node's distance from the start node (level by level).
-    private void bfs(String start, String end, Set<String> dict, HashMap<String, ArrayList<String>> nodeNeighbors, HashMap<String, Integer> distance) {
-        for (String str : dict)
-            nodeNeighbors.put(str, new ArrayList<>());
+        Queue<String> queue = new ArrayDeque<>();
+        queue.add(start);
 
-        Queue<String> queue = new LinkedList<>();
-        queue.offer(start);
-        distance.put(start, 0);
+        Map<String, List<String>> map = new HashMap<>();
 
+        Map<String, Integer> ladder = new HashMap<>();
+        for (String string : wordList) {
+            ladder.put(string, Integer.MAX_VALUE);
+        }
+        ladder.put(start, 0);
+
+        wordList.add(end);
+
+        //BFS: Dijkstra search
         while (!queue.isEmpty()) {
-            int count = queue.size();
-            boolean foundEnd = false;
-            for (int i = 0; i < count; i++) {
-                String cur = queue.poll();
-                int curDistance = distance.get(cur);
-                ArrayList<String> neighbors = getNeighbors(cur, dict);
 
-                for (String neighbor : neighbors) {
-                    nodeNeighbors.get(cur).add(neighbor);
-                    if (!distance.containsKey(neighbor)) {// Check if visited
-                        distance.put(neighbor, curDistance + 1);
-                        if (end.equals(neighbor))// Found the shortest path
-                            foundEnd = true;
-                        else
-                            queue.offer(neighbor);
-                    }
-                }
-            }
+            String word = queue.poll();
 
-            if (foundEnd)
+            // 'step' indicates how many steps are needed to travel to one word.
+            int step = ladder.get(word) + 1;
+
+            if (step > min) {
                 break;
-        }
-    }
-
-    // Find all next level nodes.
-    private ArrayList<String> getNeighbors(String node, Set<String> dict) {
-        ArrayList<String> res = new ArrayList<>();
-        char chs[] = node.toCharArray();
-
-        for (char ch = 'a'; ch <= 'z'; ch++) {
-            for (int i = 0; i < chs.length; i++) {
-                if (chs[i] == ch) continue;
-                char old_ch = chs[i];
-                chs[i] = ch;
-                if (dict.contains(String.valueOf(chs))) {
-                    res.add(String.valueOf(chs));
-                }
-                chs[i] = old_ch;
             }
 
-        }
-        return res;
+            for (int i = 0; i < word.length(); i++) {
+                StringBuilder builder = new StringBuilder(word);
+                for (char ch = 'a'; ch <= 'z'; ch++) {
+                    builder.setCharAt(i, ch);
+                    String new_word = builder.toString();
+                    if (ladder.containsKey(new_word)) {
+
+                        // Check if it is the shortest path to one word.
+                        if (step > ladder.get(new_word)) {
+                            continue;
+                        } else if (step < ladder.get(new_word)) {
+                            queue.add(new_word);
+                            ladder.put(new_word, step);
+                        }
+                        // It is a KEY line. If one word already appeared in one ladder,
+                        // Do not insert the same word inside the queue twice. Otherwise it gets TLE.
+
+                        //Build adjacent Graph
+                        if (map.containsKey(new_word)) {
+                            map.get(new_word).add(word);
+                        } else {
+                            List<String> list = new LinkedList<>();
+                            list.add(word);
+                            map.put(new_word, list);
+                            //It is possible to write three lines in one:
+                            //map.put(new_word,new LinkedList<String>(Arrays.asList(new String[]{word})));
+                            //Which one is better?
+                        }
+
+                        if (new_word.equals(end)) {
+                            min = step;
+                        }
+
+                    } // End if dict contains new_word
+                } // End:Iteration from 'a' to 'z'
+            } // End:Iteration from the first to the last
+        } // End While
+
+        //BackTracking
+        LinkedList<String> result = new LinkedList<>();
+        backTrace(end, start, result, results, map);
+
+        return results;
     }
 
-    // DFS: output all paths with the shortest distance.
-    private void dfs(String cur, String end, Set<String> dict, HashMap<String, ArrayList<String>> nodeNeighbors, HashMap<String, Integer> distance, ArrayList<String> solution, List<List<String>> res) {
-        solution.add(cur);
-        if (end.equals(cur)) {
-            res.add(new ArrayList<>(solution));
-        } else {
-            for (String next : nodeNeighbors.get(cur)) {
-                if (distance.get(next) == distance.get(cur) + 1) {
-                    dfs(next, end, dict, nodeNeighbors, distance, solution, res);
-                }
+    private void backTrace(String word, String start, List<String> list, List<List<String>> results, Map<String, List<String>> map) {
+        if (word.equals(start)) {
+            list.addFirst(start);
+            results.add(new ArrayList<>(list));
+            list.removeFirst();
+            return;
+        }
+        list.addFirst(word);
+        if (map.get(word) != null) {
+            for (String s : map.get(word)) {
+                backTrace(s, start, list, results, map);
             }
         }
-        solution.remove(solution.size() - 1);
+
+        list.removeFirst();
     }
 
 }

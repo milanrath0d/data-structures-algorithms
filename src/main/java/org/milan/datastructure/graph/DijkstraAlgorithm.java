@@ -1,6 +1,7 @@
 package org.milan.datastructure.graph;
 
-import java.util.TreeSet;
+import java.util.Arrays;
+import java.util.PriorityQueue;
 
 /**
  * Dijkstra algorithm for finding single source shortest path
@@ -9,94 +10,67 @@ import java.util.TreeSet;
  */
 public class DijkstraAlgorithm {
 
-    public void find(WeightedGraph graph, int src) {
+    /**
+     * Finds the shortest distances from the source vertex to all other vertices
+     * in a weighted graph using Dijkstra's algorithm.
+     *
+     * @param V     the number of vertices in the graph
+     * @param edges the array of edges represented as {source, destination, weight}
+     * @param src   the source vertex from which distances are calculated
+     * @return an array where the value at each index represents the shortest distance
+     *         from the source vertex to the vertex at that index
+     */
+    public int[] find(int V, int[][] edges, int src) {
+        WeightedGraph graph = new WeightedGraph(V);
+
+        for (int[] edge : edges) {
+            graph.addEdge(graph, edge[0], edge[1], edge[2]);
+        }
 
         int size = graph.getSize();
 
-        // Whether a vertex is in priority queue or not
-        boolean[] masterSet = new boolean[size];
-        QueueNode[] nodes = new QueueNode[size];
-
         int[] distances = new int[size];
+        Arrays.fill(distances, Integer.MAX_VALUE);
 
-        for (int i = 0; i < size; i++) {
-            nodes[i] = new QueueNode();
-        }
-
-        TreeSet<QueueNode> queue = new TreeSet<>((o1, o2) ->
+        PriorityQueue<QueueNode> priorityQueue = new PriorityQueue<>((o1, o2) ->
             o1.distance - o2.distance != 0 ? o1.distance - o2.distance : o1.vertex - o2.vertex);
 
-        for (int i = 0; i < size; i++) {
-            // Initialize key values to infinity
-            nodes[i].distance = Integer.MAX_VALUE;
-            nodes[i].vertex = i;
-            distances[i] = Integer.MAX_VALUE;
-        }
-
-        // Include the source vertex in master set
-        masterSet[src] = true;
-
-        // Set key value to 0
-        // So that it is extracted first from priority queue
-        nodes[src].distance = 0;
+        QueueNode start = new QueueNode();
+        start.vertex = src;
+        start.distance = 0;
         distances[src] = 0;
 
-        int[] parents = new int[size];
+        priorityQueue.add(start);
 
-        parents[src] = -1;
+        while (!priorityQueue.isEmpty()) {
+            QueueNode queueNode = priorityQueue.poll();
 
-        queue.add(nodes[src]);
-
-        while (!queue.isEmpty()) {
-
-            QueueNode queueNode = queue.pollFirst();
-
-            // Include that node into master set
-            masterSet[queueNode.vertex] = true;
+            int u = queueNode.vertex;
 
             // Iterate over all adjacent vertices of extracted vertex V
-            for (Node node : graph.getAdjList()[queueNode.vertex]) {
+            for (Node neighbor : graph.getAdjList()[u]) {
+                final int v = neighbor.dest;
+                final int weight = neighbor.weight;
 
-                // If V is in queue and key value of adjacent vertex is more than
-                // the extracted key
-                if (!masterSet[node.dest] && distances[queueNode.vertex] != Integer.MAX_VALUE && distances[queueNode.vertex] + node.weight < distances[node.dest]) {
-                    distances[node.dest] = distances[queueNode.vertex] + node.weight;
+                if (distances[v] > distances[u] + weight) {
+                    distances[v] = distances[u] + weight;
 
-                    // TODO can we optimize this?
-                    nodes[node.dest].distance = node.weight;
-                    queue.add(nodes[node.dest]);
+                    QueueNode temp = new QueueNode();
+                    temp.vertex = v;
+                    temp.distance = distances[v];
 
-                    parents[node.dest] = queueNode.vertex;
+                    priorityQueue.offer(temp);
                 }
             }
         }
-        printSolution(src, distances, parents);
-    }
 
-    private void printSolution(int src, int[] distances, int[] parents) {
-        for (int i = 0; i < distances.length; i++) {
-            if (src != i) {
-                System.out.println("From Vertex:" + src + " To Vertex: " + i);
-                System.out.println("Distance: " + distances[i]);
-                printPath(i, parents);
-                System.out.println();
-                System.out.println("-----------------------------------");
-            }
-
-        }
-    }
-
-    private void printPath(int currentVertex, int[] parents) {
-        if (currentVertex != -1) {
-            printPath(parents[currentVertex], parents);
-            System.out.print(currentVertex + " ");
-        }
+        return distances;
     }
 
     /**
      * Class to represent node in priorityQueue/minHeap
      */
-    static class QueueNode {
+    private static class QueueNode {
         int vertex;
 
         int distance;
