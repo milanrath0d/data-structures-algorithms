@@ -1,5 +1,7 @@
 package org.milan.algorithm.dynamic;
 
+import java.util.Arrays;
+
 /**
  * Problem: {@link @https://www.geeksforgeeks.org/longest-common-subsequence-dp-4/}
  *
@@ -32,6 +34,28 @@ public class LongestCommonSubsequence {
     public int lcsByDynamic(String s1, String s2) {
         int[][] L = lcsDynamicUtil(s1.toCharArray(), s2.toCharArray(), s1.length(), s2.length());
         return L[s1.length()][s2.length()];
+    }
+
+    /**
+     * Find length of longest common subsequence by dynamic programming method (i.e. Memoization)
+     * <p>
+     * Time complexity: O(mn)
+     *
+     * @param s1 first string
+     * @param s2 second string
+     * @return length of longest common subsequence
+     */
+    public int lcsByDynamicV2(String s1, String s2) {
+        int m = s1.length();
+        int n = s2.length();
+
+        int[][] dp = new int[m + 1][n + 1];
+
+        for (int[] row : dp) {
+            Arrays.fill(row, -1);
+        }
+
+        return lcsDynamicV2Util(s1, s2, m, n, dp);
     }
 
     /**
@@ -86,6 +110,24 @@ public class LongestCommonSubsequence {
             stringBuilder.append(lcs[k]);
         }
         return stringBuilder.toString();
+    }
+
+    private int lcsDynamicV2Util(String s1, String s2, int m, int n, int[][] dp) {
+        if (m == 0 || n == 0) {
+            return 0;
+        }
+
+        if (dp[m][n] != -1) {
+            return dp[m][n];
+        }
+
+        if (s1.charAt(m - 1) == s2.charAt(n - 1)) {
+            dp[m][n] = 1 + lcsDynamicV2Util(s1, s2, m - 1, n - 1, dp);
+        } else {
+            dp[m][n] = Math.max(lcsDynamicV2Util(s1, s2, m - 1, n, dp), lcsDynamicV2Util(s1, s2, m, n - 1, dp));
+        }
+
+        return dp[m][n];
     }
 
     /**

@@ -1,16 +1,16 @@
 package org.milan.algorithm.dynamic;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
- * Problem: {@link @https://www.geeksforgeeks.org/longest-increasing-subsequence-dp-3/}
- * {@link @https://leetcode.com/problems/longest-increasing-subsequence/}
+ * Refer {@link @<a href="https://leetcode.com/problems/longest-increasing-subsequence/">...</a>}
  *
  * @author Milan Rathod
  */
 public class LongestIncreasingSubsequence {
-
-    private int[] subsequence;
 
     /**
      * Find longest increasing subsequence using dynamic programming
@@ -25,105 +25,94 @@ public class LongestIncreasingSubsequence {
 
         int n = arr.length;
 
-        int[] lis = new int[n];
+        int[] dp = new int[n];
 
         int i, j;
 
         // Initialize lis values as 1
-        Arrays.fill(lis, 1);
+        Arrays.fill(dp, 1);
 
         for (i = 1; i < n; i++) {
             for (j = 0; j < i; j++) {
                 if (arr[j] < arr[i]) {
-                    lis[i] = Math.max(lis[i], lis[j] + 1);
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
                 }
             }
         }
 
         // Get maximum of all lis values
-        return Arrays.stream(lis).max().getAsInt();
+        return Arrays.stream(dp).max().orElse(1);
+    }
+
+    /**
+     * Finds the length of the longest increasing subsequence in the input array
+     * using dynamic programming with memoization.
+     * <p>
+     * Time complexity: O(n*n)
+     * Space complexity: O(n*n)
+     *
+     * @param arr the input array of integers
+     * @return the length of the longest increasing subsequence
+     */
+    public int findV2(int[] arr) {
+        int n = arr.length;
+
+        int[][] dp = new int[n][n + 1];
+
+        for (int[] row : dp) {
+            Arrays.fill(row, -1);
+        }
+
+        return findV2Recursive(arr, 0, -1, dp);
+    }
+
+    private int findV2Recursive(int[] arr, int index, int previousIndex, int[][] dp) {
+        if (index == arr.length) {
+            return 0;
+        }
+
+        if (dp[index][previousIndex + 1] != -1) {
+            return dp[index][previousIndex + 1];
+        }
+
+        int notTake = findV2Recursive(arr, index + 1, previousIndex, dp);
+
+        int take = 0;
+        if (previousIndex == -1 || arr[index] > arr[previousIndex]) {
+            take = 1 + findV2Recursive(arr, index + 1, index, dp);
+        }
+
+        dp[index][previousIndex + 1] = Math.max(notTake, take);
+        return dp[index][previousIndex + 1];
     }
 
     /**
      * Find longest increasing subsequence
      * <p>
      * Time complexity: O(nlogn)
+     * Space complexity: O(n)
      *
      * @param arr input array
      * @return length of longest increasing subsequence
      */
-    public int findV2(int[] arr) {
+    public int findV3(int[] arr) {
         int n = arr.length;
 
-        int[] tailIndices = new int[n];
-
-        int[] prevIndices = new int[n];
-
-        Arrays.fill(prevIndices, -1);
-
-        // Always points to empty slot
-        int index = 1;
+        List<Integer> result = new ArrayList<>();
+        result.add(arr[0]);
 
         for (int i = 1; i < n; i++) {
-
-            // If arr[i] is smallest among all
-            if (arr[i] < arr[tailIndices[0]]) {
-                // New smallest element
-                tailIndices[0] = i;
-            } else if (arr[i] > arr[tailIndices[index - 1]]) {
-                // arr[i] wants to extend largest subsequence
-                prevIndices[i] = tailIndices[index - 1];
-                tailIndices[index++] = i;
+            if (arr[i] > result.getLast()) {
+                result.add(arr[i]);
             } else {
-                // arr[i] wants to be current end element of an existing subsequence.
-                // It will replace ceil value in tailIndices
-                int pos = ceilIndex(arr, tailIndices, -1, index - 1, arr[i]);
-                prevIndices[i] = tailIndices[pos - 1];
-                tailIndices[pos] = i;
+                int low = Collections.binarySearch(result, arr[i]);
+                if (low < 0) {
+                    low = -(low + 1);
+                }
+                result.set(low, arr[i]);
             }
         }
 
-        int[] output = new int[index];
-
-        // Compute longest increasing subsequence
-        for (int i = tailIndices[index - 1]; i >= 0; i = prevIndices[i]) {
-            output[--index] = arr[i];
-        }
-        setSubsequence(output);
-
-        return output.length;
-    }
-
-    /**
-     * Set longest increasing subsequence
-     *
-     * @param subsequence longest increasing subsequence
-     */
-    private void setSubsequence(int[] subsequence) {
-        this.subsequence = subsequence;
-    }
-
-    /**
-     * Get longest increasing subsequence for given array
-     *
-     * @return longest increasing subsequence
-     */
-    public int[] getSubsequence() {
-        return subsequence;
-    }
-
-    /**
-     * Using binary search to find ceil index in given array for a key
-     */
-    private int ceilIndex(int[] arr, int[] tailIndices, int left, int right, int key) {
-        while (right - left > 1) {
-            int mid = left + (right - left) / 2;
-            if (arr[tailIndices[mid]] >= key) {
-                right = mid;
-            } else {
-                left = mid;
-            }
-        }
-        return right;
+        return result.size();
     }
 }
